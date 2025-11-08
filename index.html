@@ -1,34 +1,38 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Daniela Torres Almeida · Portfolio</title>
   <meta name="description" content="Portfolio of Daniela Torres Almeida — front-end, QA, and cloud projects." />
-  <link rel="preload" href="styles.css" as="style" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="assets/favicon.png" />
+
+  <!-- Anchor all relative URLs to the project root on GitHub Pages -->
+  <!-- If your repo name changes, update the href below. -->
+  <base href="https://danielatorresalmeida.github.io/Portfolio-website/">
+
+  <!-- Keep paths explicit too (defensive) -->
+  <link rel="icon" href="./assets/favicon.png" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <!-- Top navigation -->
-<header class="topbar">
-  <div class="container topbar-inner">
-    <a class="brand" href="#home">Daniela</a>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#home">Daniela</a>
 
-    <nav class="nav" aria-label="Main">
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
-    </nav>
+      <nav class="nav" aria-label="Main">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-    <div class="actions">
-      <button id="theme-toggle" class="btn btn-theme" aria-label="Toggle theme">🌙 Light</button>
-      <a href="assets/Daniela-Resume.pdf" class="btn btn-light" target="_blank" rel="noopener noreferrer">CV</a>
+      <div class="actions">
+        <button id="theme-toggle" class="btn btn-theme" aria-label="Toggle theme">🌙 Light</button>
+        <a href="./assets/Daniela-Resume.pdf" class="btn btn-light" target="_blank" rel="noopener noreferrer">CV</a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
   <!-- Hero -->
   <main id="home" class="hero">
@@ -56,7 +60,7 @@
         <article class="card" role="link" tabindex="0"
                  data-href="https://danielatorresalmeida.github.io/resume-site-only/">
           <img
-            src="assets/project-portfolio.2025-11-03.png"
+            src="./assets/project-portfolio.2025-11-03.png"
             alt="Screenshot of responsive portfolio website"
             width="720" height="480"
             loading="lazy" decoding="async" />
@@ -76,7 +80,7 @@
         <article class="card" role="link" tabindex="0"
                  data-href="https://github.com/danielatorresalmeida/api-qa-demo/actions">
           <img
-            src="assets/project-qa.2025-11-03.png"
+            src="./assets/project-qa.2025-11-03.png"
             alt="Terminal showing API QA test suite running"
             width="720" height="480"
             loading="lazy" decoding="async" />
@@ -96,7 +100,7 @@
         <article class="card" role="link" tabindex="0"
                  data-href="https://danielatorresalmeida.github.io/ui-components/">
           <img
-            src="assets/project-ui.2025-11-03.png"
+            src="./assets/project-ui.2025-11-03.png"
             alt="Screenshot of UI components library project"
             width="720" height="480"
             loading="lazy" decoding="async" />
@@ -180,6 +184,7 @@
   </footer>
 
   <button id="to-top" class="to-top" aria-label="Back to top">↑</button>
-  <script src="script.js" defer></script>
+
+  <script defer src="./script.js"></script>
 </body>
 </html>
