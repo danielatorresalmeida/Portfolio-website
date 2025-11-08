@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daniela Torres Almeida· Portfolio</title>
+  <meta name="description" content="Portfolio of Daniela Torres Almeida” front-end, QA, and cloud projects." />
+  <link rel="preload" href="styles.2025-11-03.css" as="style" />
+  <link rel="stylesheet" href="styles.2025-11-03.css" />
+  <link rel="icon" href="assets/favicon.png" />
+</head>
+<body>
+  <!-- Top navigation -->
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a class="brand" href="#home">Daniela</a>
+
+    <nav class="nav" aria-label="Main">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="actions">
+      <button id="theme-toggle" class="btn btn-theme" aria-label="Toggle theme">ðŸŒ™ Light</button>
+      <a href="assets/Daniela-Resume.pdf" class="btn btn-light" target="_blank" rel="noopener noreferrer">CV</a>
+    </div>
+  </div>
+</header>
+
+  <!-- Hero -->
+  <main id="home" class="hero">
+    <div class="container hero-inner">
+      <p class="kicker">Portfolio</p>
+      <h1>Hi, I'm <span class="accent">Daniela Torres Almeida</span></h1>
+      <p class="lead">
+        I design and build responsive web experiences and test them rigorously.
+        Front-end, QA automation, and a bit of cloud to ship fast with confidence.
+      </p>
+      <div class="cta">
+        <a class="btn btn-light" href="#projects">See my work</a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Featured Projects</h2>
+
+      <div class="grid cards" id="project-grid">
+        <!-- CARD 1: Responsive Portfolio -->
+        <article class="card" role="link" tabindex="0"
+                 data-href="https://danielatorresalmeida.github.io/resume-site-only/">
+          <img
+            src="assets/project-portfolio.2025-11-05.png"
+            alt="Screenshot of responsive portfolio website"
+            width="720" height="480"
+            loading="lazy" decoding="async" />
+          <div class="card-body">
+            <h3>Responsive Portfolio</h3>
+            <p>Static site with theming, accessible nav, and CI/CD via GitHub Actions.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span><span>GitHub Actions</span></div>
+            <div class="links">
+              <span class="live-label btn btn-ghost" aria-hidden="true">Live</span>
+              <a href="https://github.com/danielatorresalmeida/resume-site-only"
+                 target="_blank" rel="noopener" class="btn btn-light">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 2: API QA Test Suite -->
+        <article id="project-qa" class="card" role="link" tabindex="0"
+                 data-href="https://danielatorresalmeida.github.io/resume-site/assets/reports/api-qa/">
+          <img
+            src="assets/project-qa.2025-11-05.png"
+            alt="Terminal showing API QA test suite running"
+            width="720" height="480"
+            loading="lazy" decoding="async" />
+          <div class="card-body">
+            <h3>API QA Test Suite</h3>
+            <p>Pytest suite validating REST endpoints; cut manual testing by ~30%.</p>
+            <div class="tags"><span>Python</span><span>Pytest</span><span>Postman</span></div>
+            <div class="links">
+              <span class="live-label btn btn-ghost" aria-hidden="true">Demo</span>
+              <span id="qa-spinner" class="status-chip spinner" aria-hidden="true"></span>
+              <span id="qa-status" class="demo-label status-chip" aria-live="polite">Status: loading...</span>
+              <span id="qa-updated" class="demo-label status-chip" aria-hidden="true">Updated: --</span>
+              <a href="https://github.com/danielatorresalmeida/api-qa-test-suite"
+                 target="_blank" rel="noopener" class="btn btn-light">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 3: UI Components -->
+        <article class="card" role="link" tabindex="0"
+                 data-href="https://danielatorresalmeida.github.io/ui-components/">
+          <img
+            src="assets/project-ui.2025-11-05.png"
+            alt="Screenshot of UI components library project"
+            width="720" height="480"
+            loading="lazy" decoding="async" />
+          <div class="card-body">
+            <h3>UI Components Showcase</h3>
+            <p>Reusable and responsive UI components library built with HTML, CSS, and JS.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <div class="links">
+              <span class="live-label btn btn-ghost" aria-hidden="true">Live</span>
+              <a href="https://github.com/danielatorresalmeida/ui-components"
+                 target="_blank" rel="noopener" class="btn btn-light">Code</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section alt">
+    <div class="container two-col">
+      <div>
+        <h2>About</h2>
+        <p>
+          Career-changer with a background in arts and music education, 
+          now pursuing a career in software development and quality assurance. 
+          Experienced in UI/UX design, front-end development, and QA testing with Python,
+          JavaScript, and modern web technologies. Skilled at adapting quickly to new challenges,
+          collaborating in agile teams, and applying creativity to problem-solving. 
+          Passionate about building user-centered digital solutions and contributing to innovative,
+          quality-driven projects.
+        </p>
+      </div>
+      <aside class="card">
+        <h3>Skills</h3>
+        <p><strong>Frontend:</strong> HTML, CSS, JavaScript/TypeScript</p>
+        <p><strong>QA:</strong> Test design, Pytest, Postman</p>
+        <p><strong>Cloud & DevOps:</strong> GitHub Actions, AWS basics, Git</p>
+        <p><strong>Tools:</strong> VS Code, Docker, WordPress</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <div class="item">
+          <div class="when">2025 - Now</div>
+          <div class="what"><strong>Software Dev Intern” Flo Labs R&D</strong></div>
+          <p>UI features, QA, and small backend tasks; improved bug turnaround ~20%.</p>
+        </div>
+        <div class="item">
+          <div class="when">2024 - Now</div>
+          <div class="what"><strong>LLM Trainer (PT/EN)</strong></div>
+          <p>Review & correct AI prompts/responses for linguistic and cultural accuracy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section alt">
+    <div class="container">
+      <h2>Contact</h2>
+      <form class="contact" name="contact" action="https://formspree.io/f/xdkynkgr" method="POST">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="_replyto" placeholder="Email" required />
+        <textarea name="message" rows="6" placeholder="Your message" required></textarea>
+        <button class="btn btn-light" type="submit">Send</button>
+        <p class="muted small">
+          Prefer email?
+          <a class="chip" href="mailto:danielarosadolealtorresalmeida@gmail.com">
+            danielarosadolealtorresalmeida@gmail.com
+          </a>
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Â© <span id="year"></span> Daniela Torres Almeida Built with HTML/CSS/JS GitHub Pages</p>
+    </div>
+  </footer>
+
+  <button id="to-top" class="to-top" aria-label="Back to top"></button>
+  <script src="script.2025-11-03.js" defer></script>
+</body>
+</html>

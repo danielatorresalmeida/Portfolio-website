@@ -1,0 +1,468 @@
+/* === Theme variables === */
+:root {
+  --bg: #0b0c10;
+  --panel: #12141a;
+  --text: #e9ebf0;
+  --muted: #9aa3b2;
+  --accent: #6b7bff;
+  --border: #1d2230;
+  --paper: #ffffff;
+}
+
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --panel: #f6f7fb;
+  --text: #13151a;
+  --muted: #5a6578;
+  --accent: #4f5dff;
+  --border: #e5e7ef;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --bg: #ffffff;
+    --panel: #f6f7fb;
+    --text: #13151a;
+    --muted: #5a6578;
+    --accent: #4f5dff;
+    --border: #e5e7ef;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.55;
+}
+
+/* Layout */
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+/* Topbar */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(12,14,20,.8);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+:root[data-theme="light"] .topbar {
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 6px var(--border);
+  backdrop-filter: none;
+}
+.topbar .topbar-inner {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  flex-wrap: wrap;
+}
+@media (min-width:720px){
+  .topbar .topbar-inner { flex-wrap: nowrap; }
+}
+
+/* Header-only styles (scoped) */
+.topbar .brand {
+  font-weight: 800;
+  letter-spacing: .2px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.topbar .nav {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.topbar .nav a {
+  color: var(--text);
+  text-decoration: none;
+  opacity: .95;
+}
+.topbar .nav a:hover {
+  opacity: 1;
+}
+
+/* If you keep using .pill in the header only, scope it too */
+.topbar .pill {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+
+/* Actions (Light / CV) — header only */
+.topbar .actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-weight: 600;
+  transition: background 0.25s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-light {
+  background-color: var(--accent);
+}
+
+.btn-ghost {
+  background-color: transparent;
+}
+
+.btn-theme {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.btn-light:hover {
+  background-color: var(--panel);
+}
+
+.btn-light:hover, .btn-ghost:hover, .btn-theme:hover {
+  cursor: pointer;
+  transform: translateY(-1px);
+  text-decoration: underline;
+}
+
+/* Buttons inside cards (Live, Demo, Code) */
+.live-label, .demo-label, .code-link {
+  display: inline-block;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 6px 12px;
+  text-decoration: none;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+/* "Live" and "Demo" → ghost-style buttons */
+.live-label, .demo-label {
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: transparent;
+}
+.live-label:hover, .demo-label:hover {
+  background: var(--panel);
+}
+
+/* "Code" → solid accent-style button */
+.code-link {
+  color: #fff;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  margin-left: 10px;
+}
+.code-link:hover {
+  background: #4a5aff;
+  transform: translateY(-1px);
+}
+
+/* QA status chips */
+.status-chip {
+  margin-left: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.status-chip.spinner {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  padding: 0;
+  animation: qa-spin 0.8s linear infinite;
+}
+.status-chip.is-hidden { display: none !important; }
+.status-ok { border-color: #22c55e !important; color: #22c55e !important; }
+.status-fail { border-color: #ef4444 !important; color: #ef4444 !important; }
+.status-unknown { color: var(--muted) !important; border-color: var(--border) !important; }
+@keyframes qa-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  place-items: center;
+  padding: 70px 0 40px;
+  background:
+    radial-gradient(600px 200px at 20% 0%, rgba(124,92,255,.12), transparent 60%),
+    radial-gradient(800px 300px at 90% 10%, rgba(92,214,255,.06), transparent 60%);
+}
+.hero-inner {
+  text-align: center;
+}
+.kicker {
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+.hero h1 {
+  margin: .2rem 0 .4rem;
+  font-size: clamp(32px,6vw,56px);
+}
+.lead {
+  max-width: 760px;
+  margin: 0 auto 18px;
+  color: var(--muted);
+}
+.cta {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Sections */
+.section {
+  padding: 56px 0;
+}
+.section.alt {
+  background: var(--panel);
+}
+.section h2 {
+  margin: 0 0 16px;
+  font-size: clamp(24px,4.5vw,32px);
+}
+
+/* Cards grid */
+.grid.cards {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(12,1fr);
+}
+.card {
+  grid-column: span 12;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: clip;
+  transition: transform .2s ease, box-shadow .2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,.04);
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+}
+.card[role="link"] {
+  cursor: pointer;
+}
+.card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.card-body {
+  padding: 14px 14px 18px;
+}
+.card h3 {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+.card p {
+  margin: 0 0 10px;
+  color: var(--muted);
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.tags span {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.links {
+  display: flex;
+  gap: 10px;
+}
+@media (min-width:700px){ .card{grid-column:span 6} }
+@media (min-width:1024px){ .card{grid-column:span 4} }
+
+/* Two column */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+@media (min-width:900px){
+  .two-col { grid-template-columns: 1.5fr 1fr; }
+}
+
+/* Timeline */
+.timeline {
+  border-left: 2px solid var(--border);
+  padding-left: 16px;
+}
+.timeline .item {
+  margin: 0 0 14px;
+}
+.timeline .when {
+  font-weight: 700;
+}
+.timeline .what {
+  margin: 4px 0 4px;
+}
+
+/* Contact */
+.contact {
+  max-width: 760px;
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+}
+.contact input, .contact textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+}
+.muted { color: var(--muted); }
+.small { font-size: 12px; }
+
+/* Footer & misc */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 0;
+  color: var(--muted);
+  text-align: center;
+}
+.to-top {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  display: none;
+}
+.to-top.show {
+  display: inline-block;
+}
+
+/* Print */
+@media print {
+  :root {
+    --bg: var(--paper);
+    --panel: var(--paper);
+    --text: #111;
+    --muted: #555;
+    --border: #ddd;
+  }
+  body { background: var(--paper); }
+  .topbar, .actions, #theme-toggle, #print-btn, .to-top { display: none !important; }
+  .container { max-width: 800px; }
+  .card { border: 0; padding: 0; box-shadow: none; }
+  .section { padding: 24px 0; }
+  h2, h3 { break-after: avoid; }
+  .card, .timeline .item { break-inside: avoid; }
+}
+
+/* Transitions */
+html, body, .topbar, .card, .btn {
+  transition: background-color .2s linear, color .2s linear, border-color .2s linear;
+}
+/* --- Card interactions & project link buttons --- */
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+}
+
+/* Make the whole card show a pointer when it's clickable via role="link" */
+.card[role="link"] {
+  cursor: pointer;
+}
+
+/* Buttons inside cards */
+.links .live-label,
+.links .demo-label,
+.links .code-link {
+  display: inline-block;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 6px 12px;
+  text-decoration: none;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+/* “Live/Demo” → ghost style (like the Light button) */
+.links .live-label,
+.links .demo-label {
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: transparent;
+}
+.links .live-label:hover,
+.links .demo-label:hover {
+  background: var(--panel);
+}
+
+/* “Code” → solid accent (like the PDF button) */
+.links .code-link {
+  color: #fff;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  margin-left: 10px;
+}
+.links .code-link:hover {
+  background: #4a5aff;
+  transform: translateY(-1px);
+}
+/* — Email pill styled like the "Code" button — */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  background: transparent;
+  color: var(--accent);
+  transition: border-color .2s ease, box-shadow .2s ease, color .2s ease;
+}
+
+.chip:hover,
+.chip:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
+  outline: 0;
+}
+
+/* keep the paragraph clean */
+.muted.small a.chip { text-decoration: none; }
