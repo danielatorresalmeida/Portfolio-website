@@ -179,30 +179,6 @@ body {
   transform: translateY(-1px);
 }
 
-/* QA status chips */
-.status-chip {
-  margin-left: 8px;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
-.status-chip.spinner {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  border: 2px solid var(--border);
-  border-top-color: var(--accent);
-  padding: 0;
-  animation: qa-spin 0.8s linear infinite;
-}
-.status-chip.is-hidden { display: none !important; }
-.status-ok { border-color: #22c55e !important; color: #22c55e !important; }
-.status-fail { border-color: #ef4444 !important; color: #ef4444 !important; }
-.status-unknown { color: var(--muted) !important; border-color: var(--border) !important; }
-@keyframes qa-spin {
-  to { transform: rotate(360deg); }
-}
-
 /* Hero */
 .hero {
   display: grid;
