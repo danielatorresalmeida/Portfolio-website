@@ -60,7 +60,7 @@
         <article class="card" role="link" tabindex="0"
                  data-href="https://danielatorresalmeida.github.io/resume-site-only/">
           <img
-            src="./assets/project-portfolio.2025-11-03.png"
+            src="./assets/project-portfolio.2025-11-05.png"
             alt="Screenshot of responsive portfolio website"
             width="720" height="480"
             loading="lazy" decoding="async" />
@@ -80,7 +80,7 @@
         <article class="card" role="link" tabindex="0"
                  data-href="https://github.com/danielatorresalmeida/api-qa-demo/actions">
           <img
-            src="./assets/project-qa.2025-11-03.png"
+            src="./assets/project-qa.2025-11-05.png"
             alt="Terminal showing API QA test suite running"
             width="720" height="480"
             loading="lazy" decoding="async" />
@@ -100,7 +100,7 @@
         <article class="card" role="link" tabindex="0"
                  data-href="https://danielatorresalmeida.github.io/ui-components/">
           <img
-            src="./assets/project-ui.2025-11-03.png"
+            src="./assets/project-ui.2025-11-05.png"
             alt="Screenshot of UI components library project"
             width="720" height="480"
             loading="lazy" decoding="async" />
@@ -182,6 +182,20 @@
       <p>© <span id="year"></span> Daniela Torres Almeida • Built with HTML/CSS/JS • GitHub Pages</p>
     </div>
   </footer>
+
+<script>
+  // Footer year
+  const y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+
+  // Dark by default + toggle
+  const KEY = 'resume-theme';
+  const root = document.documentElement;
+  const btn = document.getElementById('theme-toggle');
+  function setTheme(m){ m = (m==='light')?'light':'dark'; root.setAttribute('data-theme', m); localStorage.setItem(KEY,m); if(btn){ btn.textContent = (m==='dark')?'🌞 Light':'🌙 Dark'; } }
+  setTheme(localStorage.getItem(KEY) || 'dark');
+  btn?.addEventListener('click', () => setTheme(root.getAttribute('data-theme')==='light'?'dark':'light'));
+</script>
 
   <button id="to-top" class="to-top" aria-label="Back to top">↑</button>
 
