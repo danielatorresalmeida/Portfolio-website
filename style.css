@@ -1,4 +1,6 @@
-/* === Theme variables === */
+/* === Theme variables — MATCH RESUME SITE === */
+
+/* Default: DARK mode */
 :root {
   --bg: #0b0c10;
   --panel: #12141a;
@@ -6,9 +8,10 @@
   --muted: #9aa3b2;
   --accent: #6b7bff;
   --border: #1d2230;
-  --paper: #ffffff;
+  --paper: #ffffff; /* for print */
 }
 
+/* Force LIGHT theme colors */
 :root[data-theme="light"] {
   --bg: #ffffff;
   --panel: #f6f7fb;
@@ -18,6 +21,17 @@
   --border: #e5e7ef;
 }
 
+/* Explicit DARK override (optional) */
+:root[data-theme="dark"] {
+  --bg: #0b0c10;
+  --panel: #12141a;
+  --text: #e9ebf0;
+  --muted: #9aa3b2;
+  --accent: #6b7bff;
+  --border: #1d2230;
+}
+
+/* Respect system preference when no theme set */
 @media (prefers-color-scheme: light) {
   :root:not([data-theme]) {
     --bg: #ffffff;
@@ -29,6 +43,7 @@
   }
 }
 
+/* === Global base styles === */
 * {
   box-sizing: border-box;
 }
@@ -41,6 +56,43 @@ body {
   color: var(--text);
   background: var(--bg);
   line-height: 1.55;
+  transition: background-color .25s linear, color .25s linear;
+}
+
+/* === Header / Topbar === */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(12,14,20,.8);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  transition: background-color .25s linear, border-color .25s linear, box-shadow .25s linear;
+}
+
+/* Light theme: solid gray header, no blur */
+:root[data-theme="light"] .topbar {
+  background: var(--panel) !important;          /* #f6f7fb */
+  border-bottom: 1px solid var(--border) !important; /* #e5e7ef */
+  box-shadow: 0 2px 6px var(--border);
+  backdrop-filter: none;
+}
+
+/* Dark theme: subtle drop shadow */
+:root[data-theme="dark"] .topbar {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .35);
+}
+
+/* === Cards & Sections === */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: background-color .25s linear, border-color .25s linear;
+}
+
+.section.alt {
+  background: var(--panel);
 }
 
 /* Layout */
