@@ -1,17 +1,16 @@
-/* === Theme variables — MATCH RESUME SITE === */
-
-/* Default: DARK mode */
+/* === Theme variables — DARK by default === */
 :root {
+  /* DARK */
   --bg: #0b0c10;
   --panel: #12141a;
   --text: #e9ebf0;
   --muted: #9aa3b2;
   --accent: #6b7bff;
   --border: #1d2230;
-  --paper: #ffffff; /* for print */
+  --paper: #ffffff; /* print only */
 }
 
-/* Force LIGHT theme colors */
+/* Light theme (optional via toggle) */
 :root[data-theme="light"] {
   --bg: #ffffff;
   --panel: #f6f7fb;
@@ -21,7 +20,7 @@
   --border: #e5e7ef;
 }
 
-/* Explicit DARK override (optional) */
+/* Explicit DARK theme (same as default) */
 :root[data-theme="dark"] {
   --bg: #0b0c10;
   --panel: #12141a;
@@ -31,56 +30,64 @@
   --border: #1d2230;
 }
 
-/* Respect system preference when no theme set */
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme]) {
-    --bg: #ffffff;
-    --panel: #f6f7fb;
-    --text: #13151a;
-    --muted: #5a6578;
-    --accent: #4f5dff;
-    --border: #e5e7ef;
-  }
-}
+/* IMPORTANT: do NOT auto-force light when no data-theme is set.
+   (Remove any previous @media (prefers-color-scheme: light) blocks.) */
 
-/* === Global base styles === */
-* {
-  box-sizing: border-box;
-}
-html, body {
-  height: 100%;
-}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+html { background: var(--bg); }       /* defensive: avoid flash of white */
 body {
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
   color: var(--text);
   background: var(--bg);
   line-height: 1.55;
-  transition: background-color .25s linear, color .25s linear;
+  transition: background-color .2s linear, color .2s linear, border-color .2s linear;
 }
 
-/* === Header / Topbar === */
+/* Header / Topbar */
 .topbar {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: rgba(12,14,20,.8);
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(12,14,20,.8);            /* dark glass */
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
-  transition: background-color .25s linear, border-color .25s linear, box-shadow .25s linear;
+  transition: background-color .2s linear, border-color .2s linear, box-shadow .2s linear;
 }
 
-/* Light theme: solid gray header, no blur */
+/* Light header only when in light theme */
 :root[data-theme="light"] .topbar {
-  background: var(--panel) !important;          /* #f6f7fb */
-  border-bottom: 1px solid var(--border) !important; /* #e5e7ef */
+  background: var(--panel) !important;
+  border-bottom: 1px solid var(--border) !important;
   box-shadow: 0 2px 6px var(--border);
   backdrop-filter: none;
 }
 
-/* Dark theme: subtle drop shadow */
+/* Dark theme subtle shadow */
 :root[data-theme="dark"] .topbar {
-  box-shadow: 0 2px 6px rgba(0, 0, 0, .35);
+  box-shadow: 0 2px 6px rgba(0,0,0,.35);
+}
+
+/* Cards / sections keep using theme vars */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+/* If you have any section with a solid background, keep it themed too */
+.section.alt { background: var(--panel); }
+
+/* Print stays white */
+@media print {
+  :root {
+    --bg: var(--paper);
+    --panel: var(--paper);
+    --text: #111;
+    --muted: #555;
+    --border: #ddd;
+  }
+  body { background: var(--paper); }
+  .topbar, #theme-toggle { display: none !important; }
 }
 
 /* === Cards & Sections === */
