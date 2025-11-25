@@ -1,4 +1,4 @@
-/* === Theme variables — DARK by default === */
+﻿/* === Theme variables — DARK by default === */
 :root {
   /* DARK */
   --bg: #0b0c10;
@@ -231,7 +231,7 @@ body {
   color: #fff;
   background: var(--accent);
   border: 1px solid var(--accent);
-  margin-left: 10px;
+  margin-left: 0;
 }
 .code-link:hover {
   background: #4a5aff;
@@ -337,10 +337,7 @@ body {
   font-size: 12px;
   color: var(--muted);
 }
-.links {
-  display: flex;
-  gap: 10px;
-}
+.links {\n  display: flex;\n  gap: 10px;\n  flex-wrap: wrap;\n  row-gap: 8px;\n}\n.links > * {\n  flex: 1 1 120px;\n  text-align: center;\n}
 @media (min-width:700px){ .card{grid-column:span 6} }
 @media (min-width:1024px){ .card{grid-column:span 4} }
 
@@ -471,7 +468,7 @@ html, body, .topbar, .card, .btn {
   color: #fff;
   background: var(--accent);
   border: 1px solid var(--accent);
-  margin-left: 10px;
+  margin-left: 0;
 }
 .links .code-link:hover {
   background: #4a5aff;
@@ -501,3 +498,4 @@ html, body, .topbar, .card, .btn {
 
 /* keep the paragraph clean */
 .muted.small a.chip { text-decoration: none; }
+
