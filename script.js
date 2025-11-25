@@ -6,7 +6,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 const THEME_KEY = "resume-theme";
 const themeToggle = document.getElementById("theme-toggle");
 const themeIcon = document.getElementById("theme-icon");
-const themeLabel = document.getElementById("theme-label");
+
 const THEME_ICONS = {
   light: "assets/icons8-partly-cloudy-day-94.png",
   dark: "assets/icons8-night-94.png",
@@ -32,9 +32,6 @@ function applyTheme(mode) {
   }
   if (themeIcon) {
     themeIcon.src = theme === "dark" ? THEME_ICONS.dark : THEME_ICONS.light;
-  }
-  if (themeLabel) {
-    themeLabel.textContent = theme === "dark" ? "Dark" : "Light";
   }
 }
 
@@ -100,3 +97,4 @@ document.querySelectorAll('.card[role="link"][data-href]').forEach((card) => {
     }
   });
 });
+
