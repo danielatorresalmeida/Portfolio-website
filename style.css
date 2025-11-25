@@ -191,12 +191,18 @@ body {
   background-color: transparent;
 }
 
-.btn-theme {
-  background-color: #f0f0f0;
-  color: #000;
-}
+.btn-theme {\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 12px;\n  background-color: var(--panel);\n  color: var(--text);\n  border-color: var(--border);\n  box-shadow: 0 2px 6px rgba(0,0,0,.12);\n}
 
-.btn-light:hover {
+.btn-theme.is-dark {
+  background-color: #f3f5ff;
+  border-color: #e1e5f5;
+  color: #0c1018;
+}
+.btn-theme.is-light {
+  background-color: #121622;
+  border-color: #2c3347;
+  color: #e9ebf0;
+}.btn-light:hover {
   background-color: var(--panel);
 }
 
@@ -507,5 +513,9 @@ html, body, .topbar, .card, .btn {
 
 /* keep the paragraph clean */
 .muted.small a.chip { text-decoration: none; }
+
+
+
+
 
 
