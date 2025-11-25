@@ -6,39 +6,31 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 const THEME_KEY = 'resume-theme';
 const themeToggle = document.getElementById('theme-toggle');
 
+function normalizeTheme(value) {
+  return value === 'light' ? 'light' : 'dark';
+}
+
 function applyTheme(mode) {
-  document.documentElement.setAttribute('data-theme', mode);
-  localStorage.setItem(THEME_KEY, mode);
-  if (themeToggle) {
-    themeToggle.textContent = (mode === 'light') ? '🌙 Dark' : '🌞 Light';
-    themeToggle.setAttribute('aria-pressed', mode === 'dark' ? 'true' : 'false');
-  }
+  const normalized = normalizeTheme(mode);
+  document.documentElement.setAttribute('data-theme', normalized);
+  localStorage.setItem(THEME_KEY, normalized);
+
+  if (!themeToggle) return;
+  themeToggle.textContent = normalized === 'light' ? 'Light' : 'Dark';
+  themeToggle.setAttribute('aria-pressed', normalized === 'dark' ? 'true' : 'false');
 }
 
 const saved = localStorage.getItem(THEME_KEY);
-if (saved === 'light' || saved === 'dark') {
-  applyTheme(saved);
-} else {
-  const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-  applyTheme(prefersLight ? 'light' : 'dark');
-}
+const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+const initialTheme = saved === 'light' || saved === 'dark'
+  ? saved
+  : (prefersLight ? 'light' : 'dark');
+applyTheme(initialTheme);
 
 themeToggle?.addEventListener('click', () => {
   const current = document.documentElement.getAttribute('data-theme') || 'dark';
   const next = current === 'light' ? 'dark' : 'light';
-
-  // Apply the new theme
   applyTheme(next);
-
-  // Update button color class
-  const btn = document.getElementById("theme-toggle");
-  if (next === 'dark') {
-    btn.style.backgroundColor = "#ffffff";
-    btn.style.color = "#13151a";
-  } else {
-    btn.style.backgroundColor = "#0b0c10";
-    btn.style.color = "#e9ebf0";
-  }
 });
 
 // === Back-to-top ===
