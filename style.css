@@ -429,6 +429,16 @@ body {
 }
 .muted { color: var(--muted); }
 .small { font-size: 12px; }
+/* Contact section: centered heading and footer text */
+#contact .container {
+  text-align: center;
+}
+#contact .contact {
+  text-align: left;
+}
+#contact .muted.small {
+  text-align: center;
+}
 
 /* Footer & misc */
 .site-footer {
