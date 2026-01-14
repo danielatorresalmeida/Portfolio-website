@@ -8,6 +8,7 @@
   --accent: #6b7bff;
   --border: #1d2230;
   --paper: #ffffff; /* print only */
+  --topbar-height: 72px;
 }
 
 /* Light theme (optional via toggle) */
@@ -35,9 +36,13 @@
 
 * { box-sizing: border-box; }
 html, body { height: 100%; }
-html { background: var(--bg); }       /* defensive: avoid flash of white */
+html {
+  background: var(--bg);       /* defensive: avoid flash of white */
+  scroll-padding-top: var(--topbar-height);
+}
 body {
   margin: 0;
+  padding-top: var(--topbar-height);
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
   color: var(--text);
   background: var(--bg);
@@ -47,7 +52,11 @@ body {
 
 /* Header / Topbar */
 .topbar {
-  position: sticky; top: 0; z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   background: rgba(12,14,20,.8);            /* dark glass */
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
@@ -111,9 +120,11 @@ body {
 
 /* Topbar */
 .topbar {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 10;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   background: rgba(12,14,20,.8);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);

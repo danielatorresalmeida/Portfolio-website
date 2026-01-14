@@ -46,6 +46,16 @@ themeToggle?.addEventListener("click", () => {
   applyTheme(next);
 });
 
+// Keep fixed topbar from overlapping content.
+const topbar = document.querySelector(".topbar");
+const syncTopbarOffset = () => {
+  if (!topbar) return;
+  const height = Math.ceil(topbar.getBoundingClientRect().height);
+  document.documentElement.style.setProperty("--topbar-height", `${height}px`);
+};
+syncTopbarOffset();
+window.addEventListener("resize", syncTopbarOffset);
+
 // === Back-to-top ===
 const toTop = document.getElementById("to-top");
 window.addEventListener("scroll", () => {
