@@ -376,6 +376,18 @@ body {
 @media (min-width:900px){
   .two-col { grid-template-columns: 1.5fr 1fr; }
 }
+/* About section: full width and centered */
+#about .container {
+  max-width: none;
+}
+#about .two-col {
+  grid-template-columns: 1fr;
+  text-align: center;
+  justify-items: center;
+}
+#about .two-col > * {
+  width: 100%;
+}
 
 /* Timeline */
 .timeline {
