@@ -403,6 +403,14 @@ body {
 .timeline .what {
   margin: 4px 0 4px;
 }
+/* Experience section: center the timeline block */
+#experience .container {
+  text-align: center;
+}
+#experience .timeline {
+  display: inline-block;
+  text-align: left;
+}
 
 /* Contact */
 .contact {
