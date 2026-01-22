@@ -670,10 +670,13 @@ body {
 }
 /* Experience section: center the timeline block */
 #experience .container {
-  text-align: left;
+  text-align: center;
 }
 #experience .timeline {
-  display: block;
+  display: inline-block;
+  text-align: left;
+  width: min(900px, 100%);
+  margin: 0 auto;
 }
 
 /* Contact */
