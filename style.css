@@ -418,9 +418,18 @@ body {
   }
 }
 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero::before,
   .hero::after {
+    animation: none;
+  }
+  .status-chip.spinner {
     animation: none;
   }
 }
@@ -455,8 +464,8 @@ body {
 }
 .card {
   grid-column: span 12;
-  display: grid;
-  grid-template-rows: auto 1fr;
+  display: flex;
+  flex-direction: column;
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 16px;
@@ -479,9 +488,24 @@ body {
 .card-media {
   position: relative;
   overflow: hidden;
+  aspect-ratio: 5 / 3;
 }
 .card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: transform .35s ease;
+}
+.card-status {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  color: var(--muted);
+  z-index: 1;
 }
 .card-overlay {
   position: absolute;
@@ -517,6 +541,10 @@ body {
 }
 .card-body {
   padding: 14px 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
 }
 .card h3 {
   margin: 0 0 6px;
@@ -526,11 +554,21 @@ body {
   margin: 0 0 10px;
   color: var(--muted);
 }
+.card-body > p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 .tags {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 6px;
-  margin-bottom: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tags::-webkit-scrollbar {
+  display: none;
 }
 .tags span {
   border: 1px solid var(--border);
@@ -544,10 +582,31 @@ body {
   gap: 10px;
   flex-wrap: wrap;
   row-gap: 8px;
+  margin-top: auto;
 }
 .links > * {
   flex: 1 1 120px;
   text-align: center;
+}
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--muted);
+  background: transparent;
+}
+.status-chip.spinner {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
 @media (min-width:700px){ .card{grid-column:span 6} }
 @media (min-width:1024px){ .card{grid-column:span 4} }
