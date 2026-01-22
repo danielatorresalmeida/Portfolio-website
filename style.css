@@ -628,19 +628,10 @@ body {
   display: grid;
   gap: 24px;
 }
-@media (min-width:900px){
-  .about {
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-    align-items: start;
-  }
-}
 .about-profile {
   display: grid;
-  gap: 20px;
-  align-items: start;
-}
-@media (min-width:720px){
-  .about-profile { grid-template-columns: 160px 1fr; }
+  gap: 18px;
+  justify-items: center;
 }
 .about-photo {
   width: 160px;
@@ -651,12 +642,12 @@ body {
   box-shadow: 0 10px 30px rgba(0,0,0,.2);
   justify-self: center;
 }
-@media (min-width:720px){
-  .about-photo { justify-self: start; }
-}
 .about-summary {
   display: grid;
   gap: 10px;
+  max-width: 560px;
+  text-align: left;
+  width: 100%;
 }
 .about-summary h2 {
   margin-bottom: 2px;
@@ -669,12 +660,18 @@ body {
   margin: 0;
   color: var(--muted);
 }
-.about-skills {
+.about-chips {
   display: grid;
-  gap: 12px;
+  gap: 10px;
+  max-width: 560px;
+  text-align: left;
+  width: 100%;
 }
-.about-skills h4 {
+.about-chips h4 {
   margin: 0;
+}
+.about-tags {
+  justify-content: flex-start;
 }
 .skills-list {
   margin: 0;
