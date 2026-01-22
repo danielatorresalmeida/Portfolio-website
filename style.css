@@ -626,11 +626,15 @@ body {
 }
 .about {
   display: grid;
-  gap: 18px;
-  align-items: center;
+  gap: 20px;
+}
+.about-profile {
+  display: grid;
+  gap: 20px;
+  align-items: start;
 }
 @media (min-width:720px){
-  .about { grid-template-columns: 160px 1fr; }
+  .about-profile { grid-template-columns: 160px 1fr; }
 }
 .about-photo {
   width: 160px;
@@ -641,24 +645,57 @@ body {
   box-shadow: 0 10px 30px rgba(0,0,0,.2);
   justify-self: center;
 }
-.about-text h3 {
-  margin: 0 0 8px;
+@media (min-width:720px){
+  .about-photo { justify-self: start; }
+}
+.about-summary {
+  display: grid;
+  gap: 10px;
+}
+.about-summary h2 {
+  margin-bottom: 2px;
+}
+.about-summary h3 {
+  margin: 0;
   font-size: 20px;
 }
-.about-text p {
-  margin: 0 0 12px;
+.about-summary p {
+  margin: 0;
   color: var(--muted);
+}
+.about-skills {
+  display: grid;
+  gap: 12px;
 }
 .skills-list {
-  margin: 12px 0 0;
-  padding-left: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
   color: var(--muted);
+  display: grid;
+  gap: 12px;
 }
 .skills-list li {
-  margin: 8px 0;
+  position: relative;
+  padding-left: 18px;
+  line-height: 1.5;
+}
+.skills-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
 }
 .skills-list strong {
   color: var(--text);
+}
+@media (min-width:900px){
+  .skills-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 /* Skill bars */
