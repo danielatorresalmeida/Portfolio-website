@@ -108,3 +108,62 @@ document.querySelectorAll('.card[role="link"][data-href]').forEach((card) => {
   });
 });
 
+// === Contact form confirmation ===
+const contactForm = document.getElementById("contact-form");
+const contactStatus = document.getElementById("contact-status");
+
+if (contactForm && contactStatus) {
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    contactStatus.classList.remove("success", "error");
+    contactStatus.textContent = "Sending...";
+    submitButton?.setAttribute("disabled", "disabled");
+
+    try {
+      const formData = new FormData(contactForm);
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+
+      if (response.ok) {
+        contactStatus.textContent = "Thanks! Your message has been sent.";
+        contactStatus.classList.add("success");
+        contactForm.reset();
+      } else {
+        contactStatus.textContent =
+          "Sorry, something went wrong. Please try again or email me directly.";
+        contactStatus.classList.add("error");
+      }
+    } catch (error) {
+      contactStatus.textContent =
+        "Sorry, something went wrong. Please try again or email me directly.";
+      contactStatus.classList.add("error");
+    } finally {
+      submitButton?.removeAttribute("disabled");
+    }
+  });
+}
+
+// === Scroll reveal ===
+const sections = document.querySelectorAll("section");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (sections.length && !prefersReducedMotion) {
+  document.body.classList.add("reveal-on-scroll");
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        obs.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+}
+

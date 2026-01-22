@@ -214,29 +214,78 @@
   <!-- About -->
   <section id="about" class="section alt">
     <div class="container two-col">
-      <div>
-        <h2>About</h2>
-        <p>
-          Career-changer with a background in arts and music education,
-          now pursuing a career in software development and quality assurance.
-          Experienced in UI/UX design, front-end development, and QA testing with Python,
-          JavaScript, and modern web technologies. Skilled at adapting quickly to new challenges,
-          collaborating in agile teams, and applying creativity to problem-solving.
-          Passionate about building user-centered digital solutions and contributing to innovative,
-          quality-driven projects.
-        </p>
+      <div class="about">
+        <img class="about-photo" src="assets/Imagem%20WhatsApp%20.jpg" alt="Daniela Torres Almeida portrait"
+             width="160" height="160" loading="lazy" decoding="async" />
+        <div class="about-text">
+          <h2>About</h2>
+          <h3>Career Summary</h3>
+          <p>
+            A career-changer with a background in arts and music education, currently pursuing a career in
+            software development and quality assurance.
+          </p>
+          <p>
+            Experienced in UI/UX design, front-end development, and QA testing with proficiency in Python,
+            JavaScript, and modern web technologies. Skilled at adapting quickly to new challenges and
+            collaborating in agile teams, with a focus on problem-solving and creativity. Passionate about
+            building user-centered digital solutions and contributing to innovative, quality-driven projects.
+          </p>
+          <h4>Skills</h4>
+          <ul class="skills-list">
+            <li><strong>UI/UX Design:</strong> Expertise in designing user-centric, visually appealing interfaces.</li>
+            <li><strong>Front-End Development:</strong> Proficient in HTML, CSS, JavaScript, and React.</li>
+            <li><strong>Quality Assurance:</strong> Experience in testing applications for usability and functionality.</li>
+            <li><strong>API Integration:</strong> Working knowledge of integrating external services and APIs.</li>
+            <li><strong>Collaboration and Agile:</strong> Strong team player with experience in agile environments.</li>
+            <li><strong>Workflow Automation:</strong> Experience with process automation using Python and Zapier.</li>
+            <li><strong>Robotic System Design:</strong> Exposure to automation and robotics projects at FloLabs.</li>
+          </ul>
+        </div>
       </div>
       <aside class="card">
         <h3>Skills</h3>
-        <p>React Native</p>
-        <p>Node.js</p>
-        <p>JavaScript</p>
-        <p>HTML5</p>
-        <p>CSS</p>
-        <p>Python</p>
-        <p>Strapi.js</p>
-        <p>Vercel V0</p>
-        <p>WordPress (plugins, WooCommerce, REST API, Gutenberg)</p>
+        <div class="skill-bars">
+          <div class="skill-bar" style="--level: 85%;">
+            <div class="skill-meta"><span>UI/UX Design</span><span>85%</span></div>
+            <div class="skill-track"><div class="skill-progress"></div></div>
+          </div>
+          <div class="skill-bar" style="--level: 80%;">
+            <div class="skill-meta"><span>Front-End Development</span><span>80%</span></div>
+            <div class="skill-track"><div class="skill-progress"></div></div>
+          </div>
+          <div class="skill-bar" style="--level: 72%;">
+            <div class="skill-meta"><span>Quality Assurance</span><span>72%</span></div>
+            <div class="skill-track"><div class="skill-progress"></div></div>
+          </div>
+          <div class="skill-bar" style="--level: 65%;">
+            <div class="skill-meta"><span>API Integration</span><span>65%</span></div>
+            <div class="skill-track"><div class="skill-progress"></div></div>
+          </div>
+          <div class="skill-bar" style="--level: 78%;">
+            <div class="skill-meta"><span>Collaboration and Agile</span><span>78%</span></div>
+            <div class="skill-track"><div class="skill-progress"></div></div>
+          </div>
+          <div class="skill-bar" style="--level: 70%;">
+            <div class="skill-meta"><span>Workflow Automation</span><span>70%</span></div>
+            <div class="skill-track"><div class="skill-progress"></div></div>
+          </div>
+          <div class="skill-bar" style="--level: 55%;">
+            <div class="skill-meta"><span>Robotic System Design</span><span>55%</span></div>
+            <div class="skill-track"><div class="skill-progress"></div></div>
+          </div>
+        </div>
+        <h4 class="skill-subhead">Toolbox</h4>
+        <div class="skill-tags">
+          <span>React Native</span>
+          <span>Node.js</span>
+          <span>JavaScript</span>
+          <span>HTML5</span>
+          <span>CSS</span>
+          <span>Python</span>
+          <span>Strapi.js</span>
+          <span>Vercel V0</span>
+          <span>WordPress (plugins, WooCommerce, REST API, Gutenberg)</span>
+        </div>
       </aside>
     </div>
   </section>
@@ -287,11 +336,12 @@
   <section id="contact" class="section alt">
     <div class="container">
       <h2>Contact</h2>
-      <form class="contact" name="contact" action="https://formspree.io/f/xdkynkgr" method="POST">
+      <form class="contact" id="contact-form" name="contact" action="https://formspree.io/f/xdkynkgr" method="POST">
         <input type="text" name="name" placeholder="Your name" required />
         <input type="email" name="_replyto" placeholder="Email" required />
         <textarea name="message" rows="6" placeholder="Your message" required></textarea>
         <button class="btn btn-light" type="submit">Send</button>
+        <p id="contact-status" class="form-status" role="status" aria-live="polite"></p>
         <p class="muted small">
           Prefer email?
           <a class="chip" href="mailto:danielarosadolealtorresalmeida@gmail.com">
@@ -299,11 +349,22 @@
           </a>
         </p>
       </form>
+      <div class="social-links" aria-label="Social links">
+        <a href="https://www.linkedin.com/in/daniela-torres-almeida-945884205/"
+           target="_blank" rel="noopener">LinkedIn</a>
+      </div>
     </div>
   </section>
 
   <footer class="site-footer">
     <div class="container">
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
       <p><span id="year"></span> Daniela Torres Almeida | Built with HTML/CSS/JS | GitHub Pages</p>
     </div>
   </footer>
