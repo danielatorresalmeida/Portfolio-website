@@ -438,6 +438,45 @@ body {
   width: 100%;
   height: auto;
 }
+.card-media {
+  position: relative;
+  overflow: hidden;
+}
+.card-media img {
+  transition: transform .35s ease;
+}
+.card-overlay {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  background: rgba(12,14,20,.75);
+  color: #f5f7ff;
+  padding: 10px 12px;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .25s ease, transform .25s ease;
+  pointer-events: none;
+}
+.card-overlay p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+}
+:root[data-theme="light"] .card-overlay {
+  background: rgba(16,20,34,.7);
+  color: #fff;
+}
+.card:hover .card-media img,
+.card:focus-within .card-media img {
+  transform: scale(1.05);
+}
+.card:hover .card-overlay,
+.card:focus-within .card-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
 .card-body {
   padding: 14px 14px 18px;
 }
