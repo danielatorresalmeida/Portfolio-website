@@ -623,6 +623,13 @@ body {
 /* About layout */
 #about .two-col {
   align-items: start;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+.about,
+#about .card {
+  width: min(900px, 100%);
+  margin: 0 auto;
 }
 .about {
   display: grid;
@@ -711,40 +718,12 @@ body {
   #about .skill-tags {
     justify-content: center;
   }
-  #experience .timeline {
-    border-left: 0;
-    padding-left: 0;
-    text-align: center;
-  }
-  #experience .timeline .when,
-  #experience .timeline .what,
-  #experience .timeline .what p,
-  #experience .experience-org,
-  #experience .experience-link,
-  #experience .experience-label {
-    text-align: center;
-  }
   #experience .experience-link {
     margin-left: auto;
     margin-right: auto;
   }
-  #experience .timeline .item {
-    text-align: center;
-  }
-  #experience .experience-list {
-    list-style: none;
-    padding: 0;
-    margin: 8px 0 12px;
-  }
-  #experience .experience-list li {
-    text-align: center;
-  }
-  #experience .experience-list li::before {
-    content: "•";
-    margin-right: 6px;
-    color: var(--muted);
-  }
 }
+
 .skills-list {
   margin: 0;
   padding: 0;
@@ -864,21 +843,46 @@ body {
   margin-top: 10px;
 }
 .experience-list {
-  margin: 6px 0 10px 18px;
+  margin: 6px 0 10px;
   color: var(--muted);
+  list-style: none;
+  padding: 0;
+  text-align: center;
 }
 .experience-list li {
   margin: 4px 0;
+  text-align: center;
+}
+.experience-list li::before {
+  content: "*";
+  margin-right: 6px;
+  color: var(--muted);
 }
 /* Experience section: center the timeline block */
 #experience .container {
   text-align: center;
 }
 #experience .timeline {
-  display: inline-block;
-  text-align: left;
+  display: grid;
+  justify-items: center;
   width: min(900px, 100%);
   margin: 0 auto;
+  border-left: 0;
+  padding-left: 0;
+  text-align: center;
+}
+#experience .item {
+  width: min(900px, 100%);
+  text-align: center;
+}
+#experience .what {
+  text-align: center;
+}
+#experience .what p,
+#experience .experience-list {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Contact */
