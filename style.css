@@ -687,6 +687,27 @@ body {
   .about-tags {
     justify-content: center;
   }
+  #about .card {
+    text-align: center;
+  }
+  #about .skill-bars {
+    align-items: center;
+  }
+  #about .skill-bar {
+    width: 100%;
+  }
+  #about .skill-meta {
+    justify-content: center;
+    gap: 10px;
+  }
+  #about .skill-track {
+    max-width: 360px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  #about .skill-tags {
+    justify-content: center;
+  }
   #experience .timeline {
     border-left: 0;
     padding-left: 0;
