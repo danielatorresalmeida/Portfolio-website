@@ -673,6 +673,42 @@ body {
 .about-tags {
   justify-content: flex-start;
 }
+
+@media (max-width:720px){
+  .about-profile,
+  .about-summary,
+  .about-chips {
+    text-align: center;
+    justify-items: center;
+  }
+  .about-summary {
+    max-width: 100%;
+  }
+  .about-tags {
+    justify-content: center;
+  }
+  #experience .timeline {
+    border-left: 0;
+    padding-left: 0;
+    text-align: center;
+  }
+  #experience .timeline .item {
+    text-align: center;
+  }
+  #experience .experience-list {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 12px;
+  }
+  #experience .experience-list li {
+    text-align: center;
+  }
+  #experience .experience-list li::before {
+    content: "•";
+    margin-right: 6px;
+    color: var(--muted);
+  }
+}
 .skills-list {
   margin: 0;
   padding: 0;
