@@ -646,7 +646,7 @@ body {
   display: grid;
   gap: 10px;
   max-width: 560px;
-  text-align: left;
+  text-align: center;
   width: 100%;
 }
 .about-summary h2 {
@@ -664,17 +664,20 @@ body {
   display: grid;
   gap: 10px;
   max-width: 560px;
-  text-align: left;
+  text-align: center;
   width: 100%;
 }
 .about-chips h4 {
   margin: 0;
 }
 .about-tags {
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 @media (max-width:720px){
+  .section h2 {
+    text-align: center;
+  }
   .about-profile,
   .about-summary,
   .about-chips {
@@ -712,6 +715,18 @@ body {
     border-left: 0;
     padding-left: 0;
     text-align: center;
+  }
+  #experience .timeline .when,
+  #experience .timeline .what,
+  #experience .timeline .what p,
+  #experience .experience-org,
+  #experience .experience-link,
+  #experience .experience-label {
+    text-align: center;
+  }
+  #experience .experience-link {
+    margin-left: auto;
+    margin-right: auto;
   }
   #experience .timeline .item {
     text-align: center;
