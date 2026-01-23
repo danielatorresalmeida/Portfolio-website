@@ -631,6 +631,11 @@ body {
   width: min(900px, 100%);
   margin: 0 auto;
 }
+#about .card {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
 .about {
   display: grid;
   gap: 24px;
