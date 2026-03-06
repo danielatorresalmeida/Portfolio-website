@@ -17,17 +17,18 @@
       <a class="brand" href="#home">Daniela</a>
 
       <nav class="nav" aria-label="Main">
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#experience" data-i18n="nav.experience">Experience</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
 
       <div class="actions">
         <button id="theme-toggle" class="btn btn-theme" type="button" aria-label="Switch theme" aria-pressed="false">
           <img id="theme-icon" class="theme-icon" src="assets/icons8-night-94.png" alt="" width="26" height="26" aria-hidden="true" />
         </button>
-        <a href="./assets/Daniela-Resume.pdf?v=1" class="btn btn-light" target="_blank" rel="noopener noreferrer">CV</a>
+        <button id="lang-toggle" class="btn btn-ghost btn-lang" type="button" aria-label="Switch language to European Portuguese">PT-PT</button>
+        <a href="./assets/Daniela-Resume.pdf?v=1" class="btn btn-light" target="_blank" rel="noopener noreferrer" data-i18n="topbar.cv">CV</a>
       </div>
     </div>
   </header>
@@ -40,22 +41,39 @@
       </div>
     </div>
     <div class="container hero-inner">
-      <p class="kicker">Portfolio</p>
-      <h1>Hi, I'm <span class="accent">Daniela Torres Almeida</span></h1>
-      <p class="lead">
+      <p class="kicker" data-i18n="hero.kicker">Portfolio</p>
+      <h1 data-i18n-html="hero.title">Hi, I'm <span class="accent">Daniela Torres Almeida</span></h1>
+      <p class="lead" data-i18n="hero.lead">
         UI/UX Designer and Frontend Developer building clean, responsive web experiences.
       </p>
       <div class="cta">
-        <a class="btn btn-light" href="#projects">See my work</a>
-        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        <a class="btn btn-light" href="#projects" data-i18n="hero.cta.work">See my work</a>
+        <a class="btn btn-ghost" href="#contact" data-i18n="hero.cta.contact">Get in touch</a>
       </div>
+      <ul class="hero-highlights" aria-label="Portfolio highlights">
+        <li>
+          <strong data-i18n="hero.highlights.0.title">End-to-end delivery</strong>
+          <span data-i18n="hero.highlights.0.text">From UX planning to front-end implementation and QA.</span>
+        </li>
+        <li>
+          <strong data-i18n="hero.highlights.1.title">International collaboration</strong>
+          <span data-i18n="hero.highlights.1.text">Working in multilingual teams across product and research contexts.</span>
+        </li>
+        <li>
+          <strong data-i18n="hero.highlights.2.title">Fast execution</strong>
+          <span data-i18n="hero.highlights.2.text">Rapid prototyping with clean handoff-ready code and documentation.</span>
+        </li>
+      </ul>
     </div>
   </main>
 
   <!-- Projects -->
   <section id="projects" class="section">
     <div class="container">
-      <h2>Featured Projects</h2>
+      <h2 data-i18n="projects.heading">Featured Projects</h2>
+      <p class="section-intro" data-i18n="projects.intro">
+        Selected work across front-end development, QA automation, and product-focused web experiences.
+      </p>
 
       <div class="grid cards" id="project-grid">
         <!-- CARD 1: To-Do List App -->
@@ -68,18 +86,18 @@
               width="720" height="480"
               loading="lazy" decoding="async" />
             <div class="card-overlay">
-              <p>React + Firebase to-do app with Google sign-in.</p>
+              <p data-i18n="projects.todo.overlay">React + Firebase to-do app with Google sign-in.</p>
             </div>
           </div>
           <div class="card-body">
-            <h3>To-Do List App</h3>
-            <p>React + TypeScript to-do app using Firebase and Google Auth.</p>
+            <h3 data-i18n="projects.todo.title">To-Do List App</h3>
+            <p data-i18n="projects.todo.description">React + TypeScript to-do app using Firebase and Google Auth.</p>
             <div class="tags"><span>React</span><span>TypeScript</span><span>Firebase</span><span>Google Auth</span><span>Vite</span></div>
             <div class="links">
               <a href="https://danielatorresalmeida.github.io/To-Do-List-App/"
-                 target="_blank" rel="noopener" class="live-label btn btn-ghost">Live</a>
+                 target="_blank" rel="noopener" class="live-label btn btn-ghost" data-i18n="projects.actions.live">Live</a>
               <a href="https://github.com/danielatorresalmeida/To-Do-List-App"
-                 target="_blank" rel="noopener" class="btn btn-light">Code</a>
+                 target="_blank" rel="noopener" class="btn btn-light" data-i18n="projects.actions.code">Code</a>
             </div>
           </div>
         </article>
@@ -94,17 +112,17 @@
               width="720" height="480"
               loading="lazy" decoding="async" />
             <div class="card-overlay">
-              <p>Responsive single-page portfolio with clear navigation and project highlights.</p>
+              <p data-i18n="projects.portfolio.overlay">Responsive single-page portfolio with clear navigation and project highlights.</p>
             </div>
           </div>
           <div class="card-body">
-            <h3>Responsive Portfolio</h3>
-            <p><span id="year"></span> Daniela Torres Almeida | Built with HTML/CSS/JS | GitHub Pages</p>
+            <h3 data-i18n="projects.portfolio.title">Responsive Portfolio</h3>
+            <p><span data-year></span> <span data-i18n="projects.meta.default">Daniela Torres Almeida | Built with HTML/CSS/JS | GitHub Pages</span></p>
             <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span><span>GitHub Actions</span></div>
             <div class="links">
-              <span class="live-label btn btn-ghost" aria-hidden="true">Live</span>
+              <span class="live-label btn btn-ghost" aria-hidden="true" data-i18n="projects.actions.live">Live</span>
               <a href="https://github.com/danielatorresalmeida/resume-site-only"
-                 target="_blank" rel="noopener" class="btn btn-light">Code</a>
+                 target="_blank" rel="noopener" class="btn btn-light" data-i18n="projects.actions.code">Code</a>
             </div>
           </div>
         </article>
@@ -120,22 +138,22 @@
               loading="lazy" decoding="async" />
             <div class="card-status">
               <span id="qa-spinner" class="status-chip spinner" aria-hidden="true"></span>
-              <span id="qa-status" class="demo-label status-chip" aria-live="polite">Status: loading...</span>
-              <span id="qa-updated" class="demo-label status-chip" aria-hidden="true">Updated: --</span>
+              <span id="qa-status" class="demo-label status-chip" aria-live="polite" data-i18n="projects.qa.status.loading">Status: loading...</span>
+              <span id="qa-updated" class="demo-label status-chip" aria-hidden="true" data-i18n="projects.qa.status.updated">Updated: --</span>
             </div>
             <div class="card-overlay">
-              <p>Automated API checks with readable status and report links.</p>
+              <p data-i18n="projects.qa.overlay">Automated API checks with readable status and report links.</p>
             </div>
           </div>
           <div class="card-body">
-            <h3>API QA Test Suite</h3>
-            <p><span id="year"></span> Daniela Torres Almeida | Built with HTML/CSS/JS | GitHub Pages</p>
+            <h3 data-i18n="projects.qa.title">API QA Test Suite</h3>
+            <p><span data-year></span> <span data-i18n="projects.meta.default">Daniela Torres Almeida | Built with HTML/CSS/JS | GitHub Pages</span></p>
             <div class="tags"><span>Python</span><span>Pytest</span><span>Postman</span></div>
             <div class="links">
               <a href="https://danielatorresalmeida.github.io/api-qa-test-suite/assets/reports/api-qa/"
-                 target="_blank" rel="noopener" class="live-label btn btn-ghost">Demo</a>
+                 target="_blank" rel="noopener" class="live-label btn btn-ghost" data-i18n="projects.actions.demo">Demo</a>
               <a href="https://github.com/danielatorresalmeida/api-qa-test-suite"
-                 target="_blank" rel="noopener" class="btn btn-light">Code</a>
+                 target="_blank" rel="noopener" class="btn btn-light" data-i18n="projects.actions.code">Code</a>
             </div>
           </div>
         </article>
@@ -150,17 +168,17 @@
               width="720" height="480"
               loading="lazy" decoding="async" />
             <div class="card-overlay">
-              <p>Component gallery showcasing reusable UI patterns.</p>
+              <p data-i18n="projects.ui.overlay">Component gallery showcasing reusable UI patterns.</p>
             </div>
           </div>
           <div class="card-body">
-            <h3>UI Components Showcase</h3>
-            <p><span id="year"></span> Daniela Torres Almeida | Built with HTML/CSS/JS | GitHub Pages</p>
+            <h3 data-i18n="projects.ui.title">UI Components Showcase</h3>
+            <p><span data-year></span> <span data-i18n="projects.meta.default">Daniela Torres Almeida | Built with HTML/CSS/JS | GitHub Pages</span></p>
             <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
             <div class="links">
-              <span class="live-label btn btn-ghost" aria-hidden="true">Live</span>
+              <span class="live-label btn btn-ghost" aria-hidden="true" data-i18n="projects.actions.live">Live</span>
               <a href="https://github.com/danielatorresalmeida/ui-components"
-                 target="_blank" rel="noopener" class="btn btn-light">Code</a>
+                 target="_blank" rel="noopener" class="btn btn-light" data-i18n="projects.actions.code">Code</a>
             </div>
           </div>
         </article>
@@ -175,17 +193,17 @@
               width="720" height="480"
               loading="lazy" decoding="async" />
             <div class="card-overlay">
-              <p>Wellness product site built around adaptive feedback and guided emotional support.</p>
+              <p data-i18n="projects.mood.overlay">Wellness product site built around adaptive feedback and guided emotional support.</p>
             </div>
           </div>
           <div class="card-body">
-            <h3>MoodChanger.ai</h3>
-            <p>Website for a wellness platform combining neuroscience, wearable sensors, and adaptive support experiences.</p>
+            <h3 data-i18n="projects.mood.title">MoodChanger.ai</h3>
+            <p data-i18n="projects.mood.description">Website for a wellness platform combining neuroscience, wearable sensors, and adaptive support experiences.</p>
             <div class="tags"><span>AI</span><span>Wellness</span><span>Sensors</span><span>UX</span></div>
             <div class="links">
-              <span class="live-label btn btn-ghost" aria-hidden="true">Live</span>
+              <span class="live-label btn btn-ghost" aria-hidden="true" data-i18n="projects.actions.live">Live</span>
               <a href="https://moodchanger.ai/"
-                 target="_blank" rel="noopener" class="btn btn-light">View site</a>
+                 target="_blank" rel="noopener" class="btn btn-light" data-i18n="projects.actions.viewSite">View site</a>
             </div>
           </div>
         </article>
@@ -200,17 +218,17 @@
               width="720" height="480"
               loading="lazy" decoding="async" />
             <div class="card-overlay">
-              <p>Custom landing page with bold branding and responsive layout.</p>
+              <p data-i18n="projects.robo.overlay">Custom landing page with bold branding and responsive layout.</p>
             </div>
           </div>
           <div class="card-body">
-            <h3>RoboCollective.ai</h3>
-            <p>Built from scratch with HTML, CSS, JavaScript, and Python automations supporting the content workflow.</p>
+            <h3 data-i18n="projects.robo.title">RoboCollective.ai</h3>
+            <p data-i18n="projects.robo.description">Built from scratch with HTML, CSS, JavaScript, and Python automations supporting the content workflow.</p>
             <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span></div>
             <div class="links">
-              <span class="live-label btn btn-ghost" aria-hidden="true">Live</span>
+              <span class="live-label btn btn-ghost" aria-hidden="true" data-i18n="projects.actions.live">Live</span>
               <a href="https://www.robocollective.ai/"
-                 target="_blank" rel="noopener" class="btn btn-light">View site</a>
+                 target="_blank" rel="noopener" class="btn btn-light" data-i18n="projects.actions.viewSite">View site</a>
             </div>
           </div>
         </article>
@@ -225,17 +243,17 @@
               width="720" height="480"
               loading="lazy" decoding="async" />
             <div class="card-overlay">
-              <p>Service overview site with clear calls to action.</p>
+              <p data-i18n="projects.legal.overlay">Service overview site with clear calls to action.</p>
             </div>
           </div>
           <div class="card-body">
-            <h3>Legal Ventures Institute</h3>
-            <p>Public-facing site for Legal Ventures Institute with clear service overview and contact flow.</p>
+            <h3 data-i18n="projects.legal.title">Legal Ventures Institute</h3>
+            <p data-i18n="projects.legal.description">Public-facing site for Legal Ventures Institute with clear service overview and contact flow.</p>
             <div class="tags"><span>Website</span><span>Responsive</span><span>UX</span></div>
             <div class="links">
-              <span class="live-label btn btn-ghost" aria-hidden="true">Live</span>
+              <span class="live-label btn btn-ghost" aria-hidden="true" data-i18n="projects.actions.live">Live</span>
               <a href="https://www.legalethicsventuresinstitute.com/"
-                 target="_blank" rel="noopener" class="btn btn-light">View site</a>
+                 target="_blank" rel="noopener" class="btn btn-light" data-i18n="projects.actions.viewSite">View site</a>
             </div>
           </div>
         </article>
@@ -250,17 +268,17 @@
               width="720" height="480"
               loading="lazy" decoding="async" />
             <div class="card-overlay">
-              <p>Website card for Space Ventures Institute with a clear, modern presentation.</p>
+              <p data-i18n="projects.space.overlay">Website card for Space Ventures Institute with a clear, modern presentation.</p>
             </div>
           </div>
           <div class="card-body">
-            <h3>Space Ventures Institute</h3>
-            <p>Public-facing website for Space Ventures Institute focused on venture and innovation content.</p>
+            <h3 data-i18n="projects.space.title">Space Ventures Institute</h3>
+            <p data-i18n="projects.space.description">Public-facing website for Space Ventures Institute focused on venture and innovation content.</p>
             <div class="tags"><span>Website</span><span>Responsive</span><span>UX</span></div>
             <div class="links">
-              <span class="live-label btn btn-ghost" aria-hidden="true">Live</span>
+              <span class="live-label btn btn-ghost" aria-hidden="true" data-i18n="projects.actions.live">Live</span>
               <a href="https://www.spaceventuresinstitute.com/"
-                 target="_blank" rel="noopener" class="btn btn-light">View site</a>
+                 target="_blank" rel="noopener" class="btn btn-light" data-i18n="projects.actions.viewSite">View site</a>
             </div>
           </div>
         </article>
@@ -271,18 +289,21 @@
   <!-- About -->
   <section id="about" class="section alt">
     <div class="container two-col">
+      <p class="section-intro" data-i18n="about.intro">
+        I combine visual design, product thinking, and QA discipline to ship polished digital experiences.
+      </p>
       <div class="about">
         <div class="about-profile">
           <img class="about-photo" src="assets/Imagem%20WhatsApp%20.jpg" alt="Daniela Torres Almeida portrait"
                width="160" height="160" loading="lazy" decoding="async" />
           <div class="about-summary">
-            <h2>About</h2>
-            <h3>Career Summary</h3>
-            <p>
+            <h2 data-i18n="about.heading">About</h2>
+            <h3 data-i18n="about.subheading">Career Summary</h3>
+            <p data-i18n="about.p1">
               A career-changer with a background in arts and music education, currently pursuing a career in
               software development and quality assurance.
             </p>
-            <p>
+            <p data-i18n="about.p2">
               Experienced in UI/UX design, front-end development, and QA testing with proficiency in Python,
               JavaScript, and modern web technologies. Skilled at adapting quickly to new challenges and
               collaborating in agile teams, with a focus on problem-solving and creativity. Passionate about
@@ -290,52 +311,52 @@
             </p>
           </div>
           <div class="about-chips">
-            <h4>Skills</h4>
+            <h4 data-i18n="about.skills.heading">Skills</h4>
             <div class="skill-tags about-tags">
-              <span>UI/UX Design</span>
-              <span>Front-End Development</span>
-              <span>Quality Assurance</span>
-              <span>API Integration</span>
-              <span>Collaboration and Agile</span>
-              <span>Workflow Automation</span>
-              <span>Robotic System Design</span>
+              <span data-i18n="about.skills.0">UI/UX Design</span>
+              <span data-i18n="about.skills.1">Front-End Development</span>
+              <span data-i18n="about.skills.2">Quality Assurance</span>
+              <span data-i18n="about.skills.3">API Integration</span>
+              <span data-i18n="about.skills.4">Collaboration and Agile</span>
+              <span data-i18n="about.skills.5">Workflow Automation</span>
+              <span data-i18n="about.skills.6">Robotic System Design</span>
             </div>
           </div>
         </div>
       </div>
       <aside class="card">
-        <h3>Skills</h3>
+        <h3 data-i18n="about.skills.heading">Skills</h3>
         <div class="skill-bars">
           <div class="skill-bar" style="--level: 85%;">
-            <div class="skill-meta"><span>UI/UX Design</span><span>85%</span></div>
+            <div class="skill-meta"><span data-i18n="about.skills.0">UI/UX Design</span><span>85%</span></div>
             <div class="skill-track"><div class="skill-progress"></div></div>
           </div>
           <div class="skill-bar" style="--level: 80%;">
-            <div class="skill-meta"><span>Front-End Development</span><span>80%</span></div>
+            <div class="skill-meta"><span data-i18n="about.skills.1">Front-End Development</span><span>80%</span></div>
             <div class="skill-track"><div class="skill-progress"></div></div>
           </div>
           <div class="skill-bar" style="--level: 72%;">
-            <div class="skill-meta"><span>Quality Assurance</span><span>72%</span></div>
+            <div class="skill-meta"><span data-i18n="about.skills.2">Quality Assurance</span><span>72%</span></div>
             <div class="skill-track"><div class="skill-progress"></div></div>
           </div>
           <div class="skill-bar" style="--level: 65%;">
-            <div class="skill-meta"><span>API Integration</span><span>65%</span></div>
+            <div class="skill-meta"><span data-i18n="about.skills.3">API Integration</span><span>65%</span></div>
             <div class="skill-track"><div class="skill-progress"></div></div>
           </div>
           <div class="skill-bar" style="--level: 78%;">
-            <div class="skill-meta"><span>Collaboration and Agile</span><span>78%</span></div>
+            <div class="skill-meta"><span data-i18n="about.skills.4">Collaboration and Agile</span><span>78%</span></div>
             <div class="skill-track"><div class="skill-progress"></div></div>
           </div>
           <div class="skill-bar" style="--level: 70%;">
-            <div class="skill-meta"><span>Workflow Automation</span><span>70%</span></div>
+            <div class="skill-meta"><span data-i18n="about.skills.5">Workflow Automation</span><span>70%</span></div>
             <div class="skill-track"><div class="skill-progress"></div></div>
           </div>
           <div class="skill-bar" style="--level: 55%;">
-            <div class="skill-meta"><span>Robotic System Design</span><span>55%</span></div>
+            <div class="skill-meta"><span data-i18n="about.skills.6">Robotic System Design</span><span>55%</span></div>
             <div class="skill-track"><div class="skill-progress"></div></div>
           </div>
         </div>
-        <h4 class="skill-subhead">Toolbox</h4>
+        <h4 class="skill-subhead" data-i18n="about.toolbox">Toolbox</h4>
         <div class="skill-tags">
           <span>React Native</span>
           <span>Next.js</span>
@@ -355,37 +376,40 @@
   <!-- Experience -->
   <section id="experience" class="section">
     <div class="container">
-      <h2>Experience</h2>
+      <h2 data-i18n="experience.heading">Experience</h2>
+      <p class="section-intro" data-i18n="experience.intro">
+        Hands-on product work blending UI/UX, development, QA, and automation in multidisciplinary teams.
+      </p>
       <div class="timeline">
         <div class="item">
-          <div class="when">Aug 2025 - Present | Remote</div>
+          <div class="when" data-i18n="experience.when">Aug 2025 - Present | Remote</div>
           <div class="what">
-            <strong>Internship | Web Design and Development | Project Manager | QA | Data Analyst | Automation and Robotics</strong>
-            <div class="experience-org">FloLabs Innovations Group</div>
+            <strong data-i18n="experience.role">Internship | Web Design and Development | Project Manager | QA | Data Analyst | Automation and Robotics</strong>
+            <div class="experience-org" data-i18n="experience.org">FloLabs Innovations Group</div>
             <a class="experience-link" href="https://www.flolabsinnovations.com/"
                target="_blank" rel="noopener">flolabsinnovations.com</a>
-            <p>
+            <p data-i18n="experience.p1">
               FloLabs is a venture studio that co-builds and launches companies across healthcare,
               entertainment, travel, and space exploration through three pillars: Ventures Studio,
               Experiential Learning (Efestos Labs), and the AI Robotics Lab.
             </p>
-            <p>
+            <p data-i18n="experience.p2">
               At Hephaestus Labs Institute, we are reimagining trade school models to foster innovation talent
               and a self-sustaining cycle of education, innovation, and reinvestment.
             </p>
-            <p class="experience-label">Focus projects:</p>
+            <p class="experience-label" data-i18n="experience.focusLabel">Focus projects:</p>
             <ul class="experience-list">
-              <li>MoodChanger.ai - wellness system using neuroscience, wearable sensors, and adaptive feedback for personalized emotional support.</li>
-              <li>RoboCollective - collaborative marketplace connecting engineers and organizations to develop and share robotics solutions.</li>
-              <li>Legal Ventures Institute - legal training paired with product development for scalable solutions.</li>
+              <li data-i18n="experience.focus.0">MoodChanger.ai - wellness system using neuroscience, wearable sensors, and adaptive feedback for personalized emotional support.</li>
+              <li data-i18n="experience.focus.1">RoboCollective - collaborative marketplace connecting engineers and organizations to develop and share robotics solutions.</li>
+              <li data-i18n="experience.focus.2">Legal Ventures Institute - legal training paired with product development for scalable solutions.</li>
             </ul>
-            <p class="experience-label">Highlights:</p>
+            <p class="experience-label" data-i18n="experience.highlightsLabel">Highlights:</p>
             <ul class="experience-list">
-              <li>Workflow automation and robotic system design.</li>
-              <li>UI/UX design for intelligent systems.</li>
-              <li>API integration and product development.</li>
-              <li>Exposure to embodied AI and robotics research.</li>
-              <li>Open-source AI and robotics collaboration.</li>
+              <li data-i18n="experience.highlights.0">Workflow automation and robotic system design.</li>
+              <li data-i18n="experience.highlights.1">UI/UX design for intelligent systems.</li>
+              <li data-i18n="experience.highlights.2">API integration and product development.</li>
+              <li data-i18n="experience.highlights.3">Exposure to embodied AI and robotics research.</li>
+              <li data-i18n="experience.highlights.4">Open-source AI and robotics collaboration.</li>
             </ul>
           </div>
         </div>
@@ -396,15 +420,18 @@
   <!-- Contact -->
   <section id="contact" class="section alt">
     <div class="container">
-      <h2>Contact</h2>
+      <h2 data-i18n="contact.heading">Contact</h2>
+      <p class="section-intro" data-i18n="contact.intro">
+        If you are building something meaningful, let's talk.
+      </p>
       <form class="contact" id="contact-form" name="contact" action="https://formspree.io/f/xdkynkgr" method="POST">
-        <input type="text" name="name" placeholder="Your name" required />
-        <input type="email" name="_replyto" placeholder="Email" required />
-        <textarea name="message" rows="6" placeholder="Your message" required></textarea>
-        <button class="btn btn-light" type="submit">Send</button>
+        <input type="text" name="name" placeholder="Your name" data-i18n-placeholder="contact.form.name" required />
+        <input type="email" name="_replyto" placeholder="Email" data-i18n-placeholder="contact.form.email" required />
+        <textarea name="message" rows="6" placeholder="Your message" data-i18n-placeholder="contact.form.message" required></textarea>
+        <button class="btn btn-light" type="submit" data-i18n="contact.form.send">Send</button>
         <p id="contact-status" class="form-status" role="status" aria-live="polite"></p>
         <p class="muted small">
-          Prefer email?
+          <span data-i18n="contact.preferEmail">Prefer email?</span>
           <a class="chip" href="mailto:danielarosadolealtorresalmeida@gmail.com">
             danielarosadolealtorresalmeida@gmail.com
           </a>
@@ -412,7 +439,7 @@
       </form>
       <div class="social-links" aria-label="Social links">
         <a href="https://www.linkedin.com/in/daniela-torres-almeida-945884205/"
-           target="_blank" rel="noopener">LinkedIn</a>
+           target="_blank" rel="noopener" data-i18n="contact.linkedin">LinkedIn</a>
       </div>
     </div>
   </section>
@@ -420,13 +447,13 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-links">
-        <a href="#home">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
+        <a href="#home" data-i18n="footer.home">Home</a>
+        <a href="#projects" data-i18n="footer.projects">Projects</a>
+        <a href="#about" data-i18n="footer.about">About</a>
+        <a href="#experience" data-i18n="footer.experience">Experience</a>
+        <a href="#contact" data-i18n="footer.contact">Contact</a>
       </div>
-      <p><span id="year"></span> Daniela Torres Almeida | Built with HTML, CSS, JavaScript | Formspree | GitHub Pages</p>
+      <p><span data-year></span> <span data-i18n="footer.meta">Daniela Torres Almeida | Built with HTML, CSS, JavaScript | Formspree | GitHub Pages</span></p>
     </div>
   </footer>
 
@@ -434,6 +461,3 @@
   <script src="script.js?v=7" defer></script>
 </body>
 </html>
-
-
-

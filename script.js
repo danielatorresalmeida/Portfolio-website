@@ -1,16 +1,241 @@
 ﻿// Footer year
-const yearEl = document.getElementById("year");
-if (yearEl) yearEl.textContent = new Date().getFullYear();
+const yearValue = new Date().getFullYear();
+document.querySelectorAll("[data-year]").forEach((yearEl) => {
+  yearEl.textContent = yearValue;
+});
 
 // === Theme toggle ===
 const THEME_KEY = "resume-theme";
+const LANGUAGE_KEY = "portfolio-language";
+const LANG_EN = "en";
+const LANG_PT = "pt-PT";
 const themeToggle = document.getElementById("theme-toggle");
 const themeIcon = document.getElementById("theme-icon");
+const langToggle = document.getElementById("lang-toggle");
 
 const THEME_ICONS = {
   light: "assets/icons8-partly-cloudy-day-94.png",
   dark: "assets/icons8-night-94.png",
 };
+
+const TRANSLATIONS = {
+  [LANG_EN]: {
+    "nav.projects": "Projects",
+    "nav.about": "About",
+    "nav.experience": "Experience",
+    "nav.contact": "Contact",
+    "topbar.cv": "CV",
+    "hero.kicker": "Portfolio",
+    "hero.title": "Hi, I'm <span class=\"accent\">Daniela Torres Almeida</span>",
+    "hero.lead": "UI/UX Designer and Frontend Developer building clean, responsive web experiences.",
+    "hero.cta.work": "See my work",
+    "hero.cta.contact": "Get in touch",
+    "hero.highlights.0.title": "End-to-end delivery",
+    "hero.highlights.0.text": "From UX planning to front-end implementation and QA.",
+    "hero.highlights.1.title": "International collaboration",
+    "hero.highlights.1.text": "Working in multilingual teams across product and research contexts.",
+    "hero.highlights.2.title": "Fast execution",
+    "hero.highlights.2.text": "Rapid prototyping with clean handoff-ready code and documentation.",
+    "projects.heading": "Featured Projects",
+    "projects.intro": "Selected work across front-end development, QA automation, and product-focused web experiences.",
+    "projects.todo.overlay": "React + Firebase to-do app with Google sign-in.",
+    "projects.todo.title": "To-Do List App",
+    "projects.todo.description": "React + TypeScript to-do app using Firebase and Google Auth.",
+    "projects.portfolio.overlay": "Responsive single-page portfolio with clear navigation and project highlights.",
+    "projects.portfolio.title": "Responsive Portfolio",
+    "projects.meta.default": "Daniela Torres Almeida | Built with HTML/CSS/JS | GitHub Pages",
+    "projects.qa.status.loading": "Status: loading...",
+    "projects.qa.status.updated": "Updated: --",
+    "projects.qa.overlay": "Automated API checks with readable status and report links.",
+    "projects.qa.title": "API QA Test Suite",
+    "projects.ui.overlay": "Component gallery showcasing reusable UI patterns.",
+    "projects.ui.title": "UI Components Showcase",
+    "projects.mood.overlay": "Wellness product site built around adaptive feedback and guided emotional support.",
+    "projects.mood.title": "MoodChanger.ai",
+    "projects.mood.description": "Website for a wellness platform combining neuroscience, wearable sensors, and adaptive support experiences.",
+    "projects.robo.overlay": "Custom landing page with bold branding and responsive layout.",
+    "projects.robo.title": "RoboCollective.ai",
+    "projects.robo.description": "Built from scratch with HTML, CSS, JavaScript, and Python automations supporting the content workflow.",
+    "projects.legal.overlay": "Service overview site with clear calls to action.",
+    "projects.legal.title": "Legal Ventures Institute",
+    "projects.legal.description": "Public-facing site for Legal Ventures Institute with clear service overview and contact flow.",
+    "projects.space.overlay": "Website card for Space Ventures Institute with a clear, modern presentation.",
+    "projects.space.title": "Space Ventures Institute",
+    "projects.space.description": "Public-facing website for Space Ventures Institute focused on venture and innovation content.",
+    "projects.actions.live": "Live",
+    "projects.actions.code": "Code",
+    "projects.actions.demo": "Demo",
+    "projects.actions.viewSite": "View site",
+    "about.intro": "I combine visual design, product thinking, and QA discipline to ship polished digital experiences.",
+    "about.heading": "About",
+    "about.subheading": "Career Summary",
+    "about.p1": "A career-changer with a background in arts and music education, currently pursuing a career in software development and quality assurance.",
+    "about.p2": "Experienced in UI/UX design, front-end development, and QA testing with proficiency in Python, JavaScript, and modern web technologies. Skilled at adapting quickly to new challenges and collaborating in agile teams, with a focus on problem-solving and creativity. Passionate about building user-centered digital solutions and contributing to innovative, quality-driven projects.",
+    "about.skills.heading": "Skills",
+    "about.skills.0": "UI/UX Design",
+    "about.skills.1": "Front-End Development",
+    "about.skills.2": "Quality Assurance",
+    "about.skills.3": "API Integration",
+    "about.skills.4": "Collaboration and Agile",
+    "about.skills.5": "Workflow Automation",
+    "about.skills.6": "Robotic System Design",
+    "about.toolbox": "Toolbox",
+    "experience.heading": "Experience",
+    "experience.intro": "Hands-on product work blending UI/UX, development, QA, and automation in multidisciplinary teams.",
+    "experience.when": "Aug 2025 - Present | Remote",
+    "experience.role": "Internship | Web Design and Development | Project Manager | QA | Data Analyst | Automation and Robotics",
+    "experience.org": "FloLabs Innovations Group",
+    "experience.p1": "FloLabs is a venture studio that co-builds and launches companies across healthcare, entertainment, travel, and space exploration through three pillars: Ventures Studio, Experiential Learning (Efestos Labs), and the AI Robotics Lab.",
+    "experience.p2": "At Hephaestus Labs Institute, we are reimagining trade school models to foster innovation talent and a self-sustaining cycle of education, innovation, and reinvestment.",
+    "experience.focusLabel": "Focus projects:",
+    "experience.focus.0": "MoodChanger.ai - wellness system using neuroscience, wearable sensors, and adaptive feedback for personalized emotional support.",
+    "experience.focus.1": "RoboCollective - collaborative marketplace connecting engineers and organizations to develop and share robotics solutions.",
+    "experience.focus.2": "Legal Ventures Institute - legal training paired with product development for scalable solutions.",
+    "experience.highlightsLabel": "Highlights:",
+    "experience.highlights.0": "Workflow automation and robotic system design.",
+    "experience.highlights.1": "UI/UX design for intelligent systems.",
+    "experience.highlights.2": "API integration and product development.",
+    "experience.highlights.3": "Exposure to embodied AI and robotics research.",
+    "experience.highlights.4": "Open-source AI and robotics collaboration.",
+    "contact.heading": "Contact",
+    "contact.intro": "If you are building something meaningful, let's talk.",
+    "contact.form.name": "Your name",
+    "contact.form.email": "Email",
+    "contact.form.message": "Your message",
+    "contact.form.send": "Send",
+    "contact.preferEmail": "Prefer email?",
+    "contact.linkedin": "LinkedIn",
+    "contact.status.sending": "Sending...",
+    "contact.status.success": "Thanks! Your message has been sent.",
+    "contact.status.error": "Sorry, something went wrong. Please try again or email me directly.",
+    "footer.home": "Home",
+    "footer.projects": "Projects",
+    "footer.about": "About",
+    "footer.experience": "Experience",
+    "footer.contact": "Contact",
+    "footer.meta": "Daniela Torres Almeida | Built with HTML, CSS, JavaScript | Formspree | GitHub Pages",
+    "theme.switchToLight": "Switch to light theme",
+    "theme.switchToDark": "Switch to dark theme",
+    "toTop.label": "Top",
+    "toTop.aria": "Back to top",
+    "lang.next.aria": "Switch language to European Portuguese",
+  },
+  [LANG_PT]: {
+    "nav.projects": "Projetos",
+    "nav.about": "Sobre",
+    "nav.experience": "Experiencia",
+    "nav.contact": "Contacto",
+    "topbar.cv": "CV",
+    "hero.kicker": "Portfolio",
+    "hero.title": "Ola, sou a <span class=\"accent\">Daniela Torres Almeida</span>",
+    "hero.lead": "Designer UI/UX e Frontend Developer a criar experiencias web limpas e responsivas.",
+    "hero.cta.work": "Ver projetos",
+    "hero.cta.contact": "Entrar em contacto",
+    "hero.highlights.0.title": "Entrega de ponta a ponta",
+    "hero.highlights.0.text": "Do planeamento UX a implementacao front-end e QA.",
+    "hero.highlights.1.title": "Colaboracao internacional",
+    "hero.highlights.1.text": "Trabalho em equipas multilingues em contextos de produto e investigacao.",
+    "hero.highlights.2.title": "Execucao rapida",
+    "hero.highlights.2.text": "Prototipagem rapida com codigo limpo e pronto para handoff.",
+    "projects.heading": "Projetos em destaque",
+    "projects.intro": "Trabalhos selecionados em desenvolvimento front-end, automacao QA e experiencias web orientadas ao produto.",
+    "projects.todo.overlay": "Aplicacao de tarefas em React + Firebase com login Google.",
+    "projects.todo.title": "App de Tarefas",
+    "projects.todo.description": "Aplicacao de tarefas em React + TypeScript com Firebase e Google Auth.",
+    "projects.portfolio.overlay": "Portfolio single-page responsivo com navegacao clara e destaques de projetos.",
+    "projects.portfolio.title": "Portfolio Responsivo",
+    "projects.meta.default": "Daniela Torres Almeida | Construido com HTML/CSS/JS | GitHub Pages",
+    "projects.qa.status.loading": "Estado: a carregar...",
+    "projects.qa.status.updated": "Atualizado: --",
+    "projects.qa.overlay": "Verificacoes API automatizadas com estado legivel e links para relatorios.",
+    "projects.qa.title": "Suite de Testes API QA",
+    "projects.ui.overlay": "Galeria de componentes com padroes UI reutilizaveis.",
+    "projects.ui.title": "Mostra de Componentes UI",
+    "projects.mood.overlay": "Website de produto de bem-estar centrado em feedback adaptativo e suporte orientado.",
+    "projects.mood.title": "MoodChanger.ai",
+    "projects.mood.description": "Website de uma plataforma de bem-estar que combina neurociencia, sensores wearables e experiencias de suporte adaptativo.",
+    "projects.robo.overlay": "Landing page personalizada com identidade forte e layout responsivo.",
+    "projects.robo.title": "RoboCollective.ai",
+    "projects.robo.description": "Construido de raiz com HTML, CSS, JavaScript e automacoes em Python para suportar o fluxo de conteudos.",
+    "projects.legal.overlay": "Website de servicos com chamadas para acao claras.",
+    "projects.legal.title": "Legal Ventures Institute",
+    "projects.legal.description": "Website publico para o Legal Ventures Institute com apresentacao clara de servicos e fluxo de contacto.",
+    "projects.space.overlay": "Cartao de website para o Space Ventures Institute com apresentacao clara e moderna.",
+    "projects.space.title": "Space Ventures Institute",
+    "projects.space.description": "Website publico para o Space Ventures Institute, focado em conteudos de inovacao e ventures.",
+    "projects.actions.live": "Ao vivo",
+    "projects.actions.code": "Codigo",
+    "projects.actions.demo": "Demo",
+    "projects.actions.viewSite": "Ver site",
+    "about.intro": "Combino design visual, pensamento de produto e disciplina de QA para entregar experiencias digitais polidas.",
+    "about.heading": "Sobre",
+    "about.subheading": "Resumo profissional",
+    "about.p1": "Profissional em transicao com percurso em artes e educacao musical, atualmente a construir carreira em desenvolvimento de software e qualidade.",
+    "about.p2": "Experiencia em design UI/UX, desenvolvimento front-end e testes QA com competencias em Python, JavaScript e tecnologias web modernas. Rapida adaptacao a novos desafios e colaboracao em equipas ageis, com foco em resolucao de problemas e criatividade. Apaixonada por criar solucoes digitais centradas no utilizador e contribuir para projetos inovadores e orientados a qualidade.",
+    "about.skills.heading": "Competencias",
+    "about.skills.0": "Design UI/UX",
+    "about.skills.1": "Desenvolvimento Front-End",
+    "about.skills.2": "Quality Assurance",
+    "about.skills.3": "Integracao de APIs",
+    "about.skills.4": "Colaboracao e Agile",
+    "about.skills.5": "Automacao de workflows",
+    "about.skills.6": "Design de sistemas roboticos",
+    "about.toolbox": "Ferramentas",
+    "experience.heading": "Experiencia",
+    "experience.intro": "Trabalho pratico em produto, cruzando UI/UX, desenvolvimento, QA e automacao em equipas multidisciplinares.",
+    "experience.when": "Ago 2025 - Presente | Remoto",
+    "experience.role": "Estagio | Web Design e Desenvolvimento | Gestao de Projeto | QA | Analise de Dados | Automacao e Robotica",
+    "experience.org": "FloLabs Innovations Group",
+    "experience.p1": "A FloLabs e um venture studio que co-cria e lanca empresas nas areas de saude, entretenimento, viagens e exploracao espacial atraves de tres pilares: Ventures Studio, Experiential Learning (Efestos Labs) e AI Robotics Lab.",
+    "experience.p2": "No Hephaestus Labs Institute, estamos a reinventar modelos de escolas tecnicas para formar talento em inovacao e um ciclo sustentavel de educacao, inovacao e reinvestimento.",
+    "experience.focusLabel": "Projetos em foco:",
+    "experience.focus.0": "MoodChanger.ai - sistema de bem-estar com neurociencia, sensores wearables e feedback adaptativo para suporte emocional personalizado.",
+    "experience.focus.1": "RoboCollective - marketplace colaborativo que liga engenheiros e organizacoes para criar e partilhar solucoes de robotica.",
+    "experience.focus.2": "Legal Ventures Institute - formacao juridica combinada com desenvolvimento de produto para solucoes escalaveis.",
+    "experience.highlightsLabel": "Destaques:",
+    "experience.highlights.0": "Automacao de workflows e design de sistemas roboticos.",
+    "experience.highlights.1": "Design UI/UX para sistemas inteligentes.",
+    "experience.highlights.2": "Integracao de APIs e desenvolvimento de produto.",
+    "experience.highlights.3": "Exposicao a investigacao em IA incorporada e robotica.",
+    "experience.highlights.4": "Colaboracao open-source em IA e robotica.",
+    "contact.heading": "Contacto",
+    "contact.intro": "Se estiveres a construir algo com impacto, vamos falar.",
+    "contact.form.name": "O teu nome",
+    "contact.form.email": "Email",
+    "contact.form.message": "A tua mensagem",
+    "contact.form.send": "Enviar",
+    "contact.preferEmail": "Preferes email?",
+    "contact.linkedin": "LinkedIn",
+    "contact.status.sending": "A enviar...",
+    "contact.status.success": "Obrigada! A tua mensagem foi enviada.",
+    "contact.status.error": "Ocorreu um erro. Tenta novamente ou envia email diretamente.",
+    "footer.home": "Inicio",
+    "footer.projects": "Projetos",
+    "footer.about": "Sobre",
+    "footer.experience": "Experiencia",
+    "footer.contact": "Contacto",
+    "footer.meta": "Daniela Torres Almeida | Construido com HTML, CSS, JavaScript | Formspree | GitHub Pages",
+    "theme.switchToLight": "Mudar para tema claro",
+    "theme.switchToDark": "Mudar para tema escuro",
+    "toTop.label": "Topo",
+    "toTop.aria": "Voltar ao topo",
+    "lang.next.aria": "Switch language to English",
+  },
+};
+
+let currentLanguage = localStorage.getItem(LANGUAGE_KEY);
+if (currentLanguage !== LANG_EN && currentLanguage !== LANG_PT) {
+  currentLanguage = LANG_EN;
+}
+
+function t(key) {
+  return TRANSLATIONS[currentLanguage]?.[key] || TRANSLATIONS[LANG_EN][key] || key;
+}
+
+function setThemeToggleAria(theme) {
+  if (!themeToggle) return;
+  themeToggle.setAttribute("aria-label", theme === "dark" ? t("theme.switchToLight") : t("theme.switchToDark"));
+}
 
 function normalizeTheme(value) {
   return value === "light" ? "light" : "dark";
@@ -23,10 +248,7 @@ function applyTheme(mode) {
 
   if (themeToggle) {
     themeToggle.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
-    themeToggle.setAttribute(
-      "aria-label",
-      theme === "dark" ? "Switch to light theme" : "Switch to dark theme"
-    );
+    setThemeToggleAria(theme);
     themeToggle.classList.toggle("is-dark", theme === "dark");
     themeToggle.classList.toggle("is-light", theme === "light");
   }
@@ -65,6 +287,48 @@ window.addEventListener("scroll", () => {
 toTop?.addEventListener("click", () =>
   window.scrollTo({ top: 0, behavior: "smooth" })
 );
+
+function applyTranslations(language) {
+  currentLanguage = language === LANG_PT ? LANG_PT : LANG_EN;
+  localStorage.setItem(LANGUAGE_KEY, currentLanguage);
+  document.documentElement.lang = currentLanguage === LANG_PT ? "pt-PT" : "en";
+
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    if (!key) return;
+    el.textContent = t(key);
+  });
+
+  document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-html");
+    if (!key) return;
+    el.innerHTML = t(key);
+  });
+
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-placeholder");
+    if (!key) return;
+    el.setAttribute("placeholder", t(key));
+  });
+
+  if (langToggle) {
+    langToggle.textContent = currentLanguage === LANG_PT ? "EN" : "PT-PT";
+    langToggle.setAttribute("aria-label", t("lang.next.aria"));
+  }
+
+  if (toTop) {
+    toTop.textContent = t("toTop.label");
+    toTop.setAttribute("aria-label", t("toTop.aria"));
+  }
+
+  setThemeToggleAria(document.documentElement.getAttribute("data-theme") || "dark");
+}
+
+langToggle?.addEventListener("click", () => {
+  applyTranslations(currentLanguage === LANG_PT ? LANG_EN : LANG_PT);
+});
+
+applyTranslations(currentLanguage);
 
 // === Clickable project cards (works for .card[data-href] OR .card-link[data-href]) ===
 document.querySelectorAll(".card[data-href], .card-link[data-href]").forEach((wrapper) => {
@@ -363,7 +627,7 @@ if (contactForm && contactStatus) {
     e.preventDefault();
     const submitButton = contactForm.querySelector('button[type="submit"]');
     contactStatus.classList.remove("success", "error");
-    contactStatus.textContent = "Sending...";
+    contactStatus.textContent = t("contact.status.sending");
     submitButton?.setAttribute("disabled", "disabled");
 
     try {
@@ -375,17 +639,15 @@ if (contactForm && contactStatus) {
       });
 
       if (response.ok) {
-        contactStatus.textContent = "Thanks! Your message has been sent.";
+        contactStatus.textContent = t("contact.status.success");
         contactStatus.classList.add("success");
         contactForm.reset();
       } else {
-        contactStatus.textContent =
-          "Sorry, something went wrong. Please try again or email me directly.";
+        contactStatus.textContent = t("contact.status.error");
         contactStatus.classList.add("error");
       }
     } catch (error) {
-      contactStatus.textContent =
-        "Sorry, something went wrong. Please try again or email me directly.";
+      contactStatus.textContent = t("contact.status.error");
       contactStatus.classList.add("error");
     } finally {
       submitButton?.removeAttribute("disabled");
