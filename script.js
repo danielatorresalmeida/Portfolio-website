@@ -12,6 +12,8 @@ const LANG_PT = "pt-PT";
 const themeToggle = document.getElementById("theme-toggle");
 const themeIcon = document.getElementById("theme-icon");
 const langToggle = document.getElementById("lang-toggle");
+const navToggle = document.getElementById("nav-toggle");
+const mainNav = document.getElementById("main-nav");
 
 const THEME_ICONS = {
   light: "assets/icons8-partly-cloudy-day-94.png",
@@ -24,6 +26,8 @@ const TRANSLATIONS = {
     "nav.about": "About",
     "nav.experience": "Experience",
     "nav.contact": "Contact",
+    "nav.menu.open": "Open navigation",
+    "nav.menu.close": "Close navigation",
     "topbar.cv": "CV",
     "hero.kicker": "Portfolio",
     "hero.title": "Hi, I'm <span class=\"accent\">Daniela Torres Almeida</span>",
@@ -66,11 +70,41 @@ const TRANSLATIONS = {
     "projects.actions.code": "Code",
     "projects.actions.demo": "Demo",
     "projects.actions.viewSite": "View site",
-    "about.intro": "I design, build, and validate digital products with a strong focus on usability and quality.",
+    "about.intro": "I design and build user-centered products with a strong quality focus.",
     "about.heading": "About",
-    "about.subheading": "Career Summary",
-    "about.p1": "A career-changer with a background in arts and music education, currently pursuing a career in software development and quality assurance.",
-    "about.p2": "Experienced in UI/UX design, front-end development, and QA testing with proficiency in Python, JavaScript, and modern web technologies. Skilled at adapting quickly to new challenges and collaborating in agile teams, with a focus on problem-solving and creativity. Passionate about building user-centered digital solutions and contributing to innovative, quality-driven projects.",
+    "about.p1": "UI/UX designer and front-end developer with a strong QA mindset, focused on building clear and reliable digital products.",
+    "about.p2": "Delivered multiple web projects end-to-end, from interface design and implementation to QA validation and deployment.",
+    "about.technical.heading": "Technical Skills",
+    "about.technical.frontend.title": "Frontend Development",
+    "about.technical.frontend.0": "HTML5",
+    "about.technical.frontend.1": "CSS3",
+    "about.technical.frontend.2": "JavaScript (ES6+)",
+    "about.technical.frontend.3": "React",
+    "about.technical.frontend.4": "Next.js",
+    "about.technical.design.title": "Design & Layout",
+    "about.technical.design.0": "UI/UX Design",
+    "about.technical.design.1": "Responsive Design",
+    "about.technical.design.2": "Wireframing",
+    "about.technical.design.3": "Accessibility (WCAG)",
+    "about.technical.design.4": "Component Systems",
+    "about.technical.tools.title": "Tools & Workflows",
+    "about.technical.tools.0": "Git / GitHub",
+    "about.technical.tools.1": "GitHub Actions",
+    "about.technical.tools.2": "QA Testing",
+    "about.technical.tools.3": "Postman",
+    "about.technical.tools.4": "Python Automation",
+    "about.technical.tools.5": "WordPress",
+    "about.technical.tools.6": "Supabase",
+    "about.technical.key.heading": "Key Skills",
+    "about.technical.key.0": "JavaScript",
+    "about.technical.key.1": "React",
+    "about.technical.key.2": "Next.js",
+    "about.technical.key.3": "UI/UX Design",
+    "about.technical.key.4": "Responsive Design",
+    "about.technical.key.5": "QA Testing",
+    "about.technical.key.6": "API Testing",
+    "about.technical.key.7": "GitHub Actions",
+    "about.technical.key.8": "Python",
     "about.skills.heading": "Skills",
     "about.skills.0": "UI/UX Design",
     "about.skills.1": "Front-End Development",
@@ -78,12 +112,12 @@ const TRANSLATIONS = {
     "about.skills.3": "API Integration",
     "about.skills.4": "Collaboration and Agile",
     "about.skills.5": "Workflow Automation",
-    "about.skills.6": "Java",
     "about.toolbox": "Toolbox",
     "experience.heading": "Experience",
     "experience.intro": "Practical product experience across UI/UX, front-end development, QA, and automation.",
     "experience.when": "Aug 2025 - Present | Remote",
-    "experience.role": "Internship | Web Development and Design | Project Management | QA (Quality Assurance) | Data Analysis | Process Automation | Team Leadership"    "experience.org": "FloLabs Innovations Group",
+    "experience.role": "Internship | Web Development and Design | Project Management | QA (Quality Assurance) | Data Analysis | Process Automation | Team Leadership",
+    "experience.org": "FloLabs Innovations Group",
     "experience.p1": "FloLabs is a venture studio that co-builds and launches companies across healthcare, entertainment, travel, and space exploration through three pillars: Ventures Studio, Experiential Learning (Efestos Labs), and the AI Robotics Lab.",
     "experience.p2": "At Hephaestus Labs Institute, we are reimagining trade school models to foster innovation talent and a self-sustaining cycle of education, innovation, and reinvestment.",
     "experience.focusLabel": "Focus projects:",
@@ -124,6 +158,8 @@ const TRANSLATIONS = {
     "nav.about": "Sobre",
     "nav.experience": "Experiência",
     "nav.contact": "Contacto",
+    "nav.menu.open": "Abrir navegação",
+    "nav.menu.close": "Fechar navegação",
     "topbar.cv": "CV",
     "hero.kicker": "Portefólio",
     "hero.title": "Olá, sou a <span class=\"accent\">Daniela Torres Almeida</span>",
@@ -166,11 +202,41 @@ const TRANSLATIONS = {
     "projects.actions.code": "Código",
     "projects.actions.demo": "Demonstração",
     "projects.actions.viewSite": "Ver site",
-    "about.intro": "Combino design visual, pensamento de produto e rigor de QA para entregar experiências digitais consistentes.",
+    "about.intro": "Desenho e desenvolvo produtos centrados no utilizador com forte foco em qualidade.",
     "about.heading": "Sobre",
-    "about.subheading": "Resumo de carreira",
-    "about.p1": "Profissional em transição, com percurso em artes e educação musical, atualmente focada em desenvolvimento de software e garantia de qualidade.",
-    "about.p2": "Experiência em design UI/UX, desenvolvimento front-end e testes de QA, com competências em Python, JavaScript e tecnologias web modernas. Adaptação rápida a novos desafios e colaboração em equipas ágeis, com foco em resolução de problemas e criatividade. Apaixonada por criar soluções digitais centradas no utilizador e contribuir para projetos inovadores e orientados para a qualidade.",
+    "about.p1": "Designer de UI/UX e frontend developer com mentalidade forte de QA, focada em criar produtos digitais claros e fiáveis.",
+    "about.p2": "Entreguei vários projetos web de ponta a ponta, desde design e implementação até validação em QA e publicação.",
+    "about.technical.heading": "Competências Técnicas",
+    "about.technical.frontend.title": "Desenvolvimento Front-End",
+    "about.technical.frontend.0": "HTML5",
+    "about.technical.frontend.1": "CSS3",
+    "about.technical.frontend.2": "JavaScript (ES6+)",
+    "about.technical.frontend.3": "React",
+    "about.technical.frontend.4": "Next.js",
+    "about.technical.design.title": "Design e Layout",
+    "about.technical.design.0": "Design UI/UX",
+    "about.technical.design.1": "Design Responsivo",
+    "about.technical.design.2": "Wireframing",
+    "about.technical.design.3": "Acessibilidade (WCAG)",
+    "about.technical.design.4": "Sistemas de Componentes",
+    "about.technical.tools.title": "Ferramentas e Fluxos",
+    "about.technical.tools.0": "Git / GitHub",
+    "about.technical.tools.1": "GitHub Actions",
+    "about.technical.tools.2": "Testes de QA",
+    "about.technical.tools.3": "Postman",
+    "about.technical.tools.4": "Automação com Python",
+    "about.technical.tools.5": "WordPress",
+    "about.technical.tools.6": "Supabase",
+    "about.technical.key.heading": "Competências-chave",
+    "about.technical.key.0": "JavaScript",
+    "about.technical.key.1": "React",
+    "about.technical.key.2": "Next.js",
+    "about.technical.key.3": "Design UI/UX",
+    "about.technical.key.4": "Design Responsivo",
+    "about.technical.key.5": "Testes de QA",
+    "about.technical.key.6": "Testes de API",
+    "about.technical.key.7": "GitHub Actions",
+    "about.technical.key.8": "Python",
     "about.skills.heading": "Competências",
     "about.skills.0": "Design UI/UX",
     "about.skills.1": "Desenvolvimento Front-End",
@@ -178,12 +244,11 @@ const TRANSLATIONS = {
     "about.skills.3": "Integração de APIs",
     "about.skills.4": "Colaboração e Métodos Ágeis",
     "about.skills.5": "Automação de fluxos de trabalho",
-    "about.skills.6": "Java",
     "about.toolbox": "Ferramentas",
     "experience.heading": "Experiência",
     "experience.intro": "Experiência prática em produto, cruzando UI/UX, desenvolvimento, QA e automação em equipas multidisciplinares.",
     "experience.when": "Ago 2025 - Presente | Remoto",
-   "experience.role": "Estágio | Desenvolvimento e Design Web | Gestão de Projetos | QA (Quality Assurance) | Análise de Dados | Automação de Processos | Liderança de Equipas"
+    "experience.role": "Estágio | Desenvolvimento e Design Web | Gestão de Projetos | QA (Quality Assurance) | Análise de Dados | Automação de Processos | Liderança de Equipas",
     "experience.org": "FloLabs Innovations Group",
     "experience.p1": "FloLabs é um venture studio que co-cria e lança empresas nas áreas de saúde, entretenimento, viagens e exploração espacial através de três pilares: Ventures Studio, Experiential Learning (Efestos Labs) e AI Robotics Lab.",
     "experience.p2": "No Hephaestus Labs Institute, estamos a reinventar modelos de escolas técnicas para formar talento em inovação e criar um ciclo sustentável de educação, inovação e reinvestimento.",
@@ -277,6 +342,82 @@ const syncTopbarOffset = () => {
 syncTopbarOffset();
 window.addEventListener("resize", syncTopbarOffset);
 
+function setNavMenu(open) {
+  if (!topbar || !navToggle) return;
+  const isOpen = Boolean(open);
+  topbar.classList.toggle("menu-open", isOpen);
+  navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  navToggle.setAttribute("aria-label", isOpen ? t("nav.menu.close") : t("nav.menu.open"));
+}
+
+navToggle?.addEventListener("click", () => {
+  const open = !topbar?.classList.contains("menu-open");
+  setNavMenu(open);
+});
+
+mainNav?.querySelectorAll("a[href^='#']").forEach((link) => {
+  link.addEventListener("click", () => {
+    setNavMenu(false);
+  });
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") setNavMenu(false);
+});
+
+document.addEventListener("click", (event) => {
+  if (!topbar || !topbar.classList.contains("menu-open")) return;
+  const target = event.target;
+  if (!(target instanceof Node)) return;
+  if (!topbar.contains(target)) setNavMenu(false);
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 860) setNavMenu(false);
+});
+
+const navLinks = Array.from(document.querySelectorAll(".topbar .nav a[href^='#']"));
+const navTargets = navLinks
+  .map((link) => {
+    const href = link.getAttribute("href");
+    return href ? document.querySelector(href) : null;
+  })
+  .filter(Boolean);
+
+function setActiveNavLink(activeId) {
+  navLinks.forEach((link) => {
+    const href = link.getAttribute("href");
+    const active = href === `#${activeId}`;
+    link.classList.toggle("is-active", active);
+    if (active) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+  });
+}
+
+function updateActiveNavLink() {
+  if (!topbar || !navTargets.length) return;
+  const currentY = window.scrollY + topbar.offsetHeight + 26;
+  let activeId = "";
+
+  navTargets.forEach((section) => {
+    if (section.offsetTop <= currentY) activeId = section.id;
+  });
+
+  if (!activeId) {
+    navLinks.forEach((link) => {
+      link.classList.remove("is-active");
+      link.removeAttribute("aria-current");
+    });
+    return;
+  }
+
+  setActiveNavLink(activeId);
+}
+
+window.addEventListener("scroll", updateActiveNavLink, { passive: true });
+window.addEventListener("resize", updateActiveNavLink);
+updateActiveNavLink();
+
 // === Back-to-top ===
 const toTop = document.getElementById("to-top");
 window.addEventListener("scroll", () => {
@@ -313,6 +454,11 @@ function applyTranslations(language) {
   if (langToggle) {
     langToggle.textContent = currentLanguage === LANG_PT ? "EN" : "PT-PT";
     langToggle.setAttribute("aria-label", t("lang.next.aria"));
+  }
+
+  if (navToggle) {
+    const menuOpen = topbar?.classList.contains("menu-open");
+    navToggle.setAttribute("aria-label", menuOpen ? t("nav.menu.close") : t("nav.menu.open"));
   }
 
   if (toTop) {
@@ -673,4 +819,3 @@ if (sections.length && !prefersReducedMotion) {
 
   sections.forEach((section) => observer.observe(section));
 }
-
