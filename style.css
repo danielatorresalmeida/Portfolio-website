@@ -213,6 +213,14 @@ body {
   box-shadow: 0 2px 6px rgba(0,0,0,.12);
 }
 
+.theme-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  object-fit: contain;
+  transition: transform .24s ease, opacity .24s ease;
+}
+
 .btn-theme.is-dark {
   background-color: #f3f5ff;
   border-color: #e1e5f5;
@@ -222,6 +230,14 @@ body {
   background-color: #121622;
   border-color: #2c3347;
   color: #e9ebf0;
+}
+
+.btn-theme.is-dark .theme-icon {
+  transform: rotate(10deg);
+}
+
+.btn-theme.is-light .theme-icon {
+  transform: rotate(-8deg);
 }
 
 .btn-lang {

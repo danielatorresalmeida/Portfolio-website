@@ -16,8 +16,8 @@ const navToggle = document.getElementById("nav-toggle");
 const mainNav = document.getElementById("main-nav");
 
 const THEME_ICONS = {
-  light: "assets/icons8-partly-cloudy-day-94.png",
-  dark: "assets/icons8-night-94.png",
+  light: "assets/light.png",
+  dark: "assets/dark.png",
 };
 
 const TRANSLATIONS = {
@@ -307,6 +307,11 @@ function normalizeTheme(value) {
   return value === "light" ? "light" : "dark";
 }
 
+function setThemeIcon(theme) {
+  if (!themeIcon) return;
+  themeIcon.src = theme === "dark" ? THEME_ICONS.dark : THEME_ICONS.light;
+}
+
 function applyTheme(mode) {
   const theme = normalizeTheme(mode);
   document.documentElement.setAttribute("data-theme", theme);
@@ -318,9 +323,7 @@ function applyTheme(mode) {
     themeToggle.classList.toggle("is-dark", theme === "dark");
     themeToggle.classList.toggle("is-light", theme === "light");
   }
-  if (themeIcon) {
-    themeIcon.src = theme === "dark" ? THEME_ICONS.dark : THEME_ICONS.light;
-  }
+  setThemeIcon(theme);
 }
 
 const saved = localStorage.getItem(THEME_KEY);
