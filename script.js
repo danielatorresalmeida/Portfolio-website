@@ -398,6 +398,15 @@ function setActiveNavLink(activeId) {
 
 function updateActiveNavLink() {
   if (!topbar || !navTargets.length) return;
+  const doc = document.documentElement;
+  const nearPageEnd = window.scrollY + window.innerHeight >= doc.scrollHeight - 4;
+
+  if (nearPageEnd) {
+    const lastSection = navTargets[navTargets.length - 1];
+    if (lastSection?.id) setActiveNavLink(lastSection.id);
+    return;
+  }
+
   const currentY = window.scrollY + topbar.offsetHeight + 26;
   let activeId = "";
 

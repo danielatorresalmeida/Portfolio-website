@@ -957,7 +957,7 @@ body {
 
 /* Contact */
 .contact {
-  max-width: 760px;
+  max-width: 620px;
   margin: 0 auto;
   display: grid;
   gap: 12px;
@@ -969,6 +969,16 @@ body {
   border: 1px solid var(--border);
   background: var(--bg);
   color: var(--text);
+  font-size: clamp(16px, 1.05vw, 18px);
+  line-height: 1.45;
+  font-family: inherit;
+}
+
+.contact input::placeholder,
+.contact textarea::placeholder {
+  font-size: clamp(15px, 1vw, 17px);
+  color: color-mix(in srgb, var(--muted) 90%, var(--text) 10%);
+  opacity: 1;
 }
 .form-status {
   min-height: 18px;
@@ -1242,6 +1252,8 @@ main.hero .container,
 #contact .contact .btn {
   justify-self: center;
   width: min(240px, 100%);
+  font-size: clamp(16px, 1vw, 18px);
+  min-height: 46px;
 }
 
 /* About section: force one shared center axis for intro/photo/skills-title */
@@ -1281,19 +1293,27 @@ main.hero .container,
 
 /* Full-width presentation tuning */
 :root {
-  --content-max-width: 100%;
-  --text-max-width: 1440px;
-  --wide-section-width: 100%;
+  --content-max-width: 65vw;
+  --text-max-width: min(65vw, 1100px);
+  --wide-section-width: 65vw;
   --base-text-size: clamp(16px, 0.95vw, 19px);
   --section-title-size: clamp(32px, 3vw, 54px);
   --section-intro-size: clamp(18px, 1.2vw, 24px);
 }
 
+@media (max-width: 1024px) {
+  :root {
+    --content-max-width: 92vw;
+    --text-max-width: 92vw;
+    --wide-section-width: 92vw;
+  }
+}
+
 .container {
   max-width: var(--content-max-width);
-  width: min(var(--content-max-width), calc(100vw - 32px));
-  padding-left: clamp(12px, 1.8vw, 24px);
-  padding-right: clamp(12px, 1.8vw, 24px);
+  width: var(--content-max-width);
+  padding-left: 0;
+  padding-right: 0;
 }
 
 body {
@@ -1325,7 +1345,7 @@ body {
 }
 
 #contact .contact {
-  max-width: var(--wide-section-width);
+  max-width: min(620px, 100%);
 }
 
 @media (min-width: 1400px) {
@@ -1463,44 +1483,76 @@ body {
 }
 
 /* Header reorganization */
+:root[data-theme="light"] .topbar,
+:root[data-theme="dark"] .topbar {
+  background: transparent;
+  border-bottom: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.topbar {
+  background: transparent;
+  border-bottom: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
 .topbar .topbar-inner {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: clamp(12px, 2vw, 24px);
-  min-height: 62px;
-  padding: 10px 0;
+  min-height: 56px;
+  padding: 6px clamp(12px, 1.8vw, 22px);
+  border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--border));
+  background:
+    linear-gradient(120deg, color-mix(in srgb, var(--panel) 90%, transparent), color-mix(in srgb, var(--panel) 84%, transparent));
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, .24),
+    inset 0 1px 0 rgba(255, 255, 255, .04);
+  backdrop-filter: blur(12px) saturate(130%);
 }
 
 .topbar .brand {
-  font-size: 20px;
+  font-size: clamp(22px, 1.8vw, 26px);
   font-weight: 800;
+  letter-spacing: .2px;
+  color: color-mix(in srgb, var(--text) 94%, #ffffff 6%);
 }
 
 .topbar .nav {
   justify-self: center;
   display: flex;
-  gap: clamp(14px, 1.8vw, 24px);
+  gap: clamp(8px, 1.2vw, 14px);
 }
 
 .topbar .nav a {
   position: relative;
-  padding: 8px 2px;
+  padding: 8px 12px;
   font-weight: 600;
-  opacity: .86;
+  border-radius: 999px;
+  opacity: .9;
+  transition: background-color .2s ease, color .2s ease, opacity .2s ease;
+}
+
+.topbar .nav a:hover {
+  opacity: 1;
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
 }
 
 .topbar .nav a::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 100%;
+  left: 12px;
+  right: 12px;
+  bottom: 5px;
   height: 2px;
   border-radius: 999px;
   transform: scaleX(0);
   transform-origin: center;
-  transition: transform .2s ease;
+  transition: transform .24s ease;
   background: linear-gradient(90deg, #6b7bff, #47d6ff);
 }
 
@@ -1517,11 +1569,20 @@ body {
   justify-self: end;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  padding: 4px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--border));
+  background: color-mix(in srgb, var(--panel) 72%, transparent);
 }
 
 .topbar .actions .btn {
-  min-height: 40px;
+  min-height: 38px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .01em;
 }
 
 .topbar .actions .btn-light {
@@ -1534,6 +1595,27 @@ body {
 .topbar .actions .btn-light:hover {
   text-decoration: none;
   background: linear-gradient(135deg, #5f36a1, #4f5dff);
+}
+
+.topbar .actions .btn-ghost,
+.topbar .actions .btn-theme {
+  background: color-mix(in srgb, var(--panel) 80%, transparent);
+}
+
+.topbar .actions .btn-theme {
+  padding: 8px 10px;
+}
+
+:root[data-theme="light"] .topbar .topbar-inner {
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, .94), rgba(245, 248, 255, .88));
+  box-shadow:
+    0 10px 24px rgba(45, 61, 105, .12),
+    inset 0 1px 0 rgba(255, 255, 255, .7);
+}
+
+:root[data-theme="light"] .topbar .actions {
+  background: rgba(245, 248, 255, .88);
 }
 
 .nav-toggle {
@@ -1576,6 +1658,7 @@ body {
   .topbar .topbar-inner {
     grid-template-columns: auto auto 1fr auto;
     position: relative;
+    padding: 8px 10px;
   }
 
   .nav-toggle {
@@ -1597,6 +1680,7 @@ body {
     border-radius: 12px;
     background: color-mix(in srgb, var(--panel) 92%, transparent);
     box-shadow: 0 12px 26px rgba(0, 0, 0, .2);
+    backdrop-filter: blur(12px);
   }
 
   .topbar.menu-open .nav {
