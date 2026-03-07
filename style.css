@@ -1039,6 +1039,9 @@ body {
   gap: 16px;
 }
 .social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: var(--accent);
   text-decoration: none;
   font-weight: 600;
@@ -1165,6 +1168,13 @@ html, body, .topbar, .card, .btn {
   background: transparent;
   color: var(--accent);
   transition: border-color .2s ease, box-shadow .2s ease, color .2s ease;
+}
+
+.contact-icon {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+  flex: 0 0 auto;
 }
 
 .chip:hover,
