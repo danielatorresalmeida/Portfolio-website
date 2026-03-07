@@ -1024,6 +1024,10 @@ body {
   margin-top: 18px;
 }
 
+#contact .muted.small + .muted.small {
+  margin-top: 10px;
+}
+
 #contact .muted.small .chip {
   font-size: clamp(14px, 0.95vw, 17px);
   padding: 8px 14px;
@@ -1539,7 +1543,7 @@ body {
 }
 
 .topbar .nav {
-  justify-self: center;
+  justify-self: end;
   display: flex;
   gap: clamp(8px, 1.2vw, 14px);
 }
