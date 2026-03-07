@@ -993,6 +993,14 @@ body {
 }
 #contact .muted.small {
   text-align: center;
+  font-size: clamp(15px, 1vw, 18px);
+  line-height: 1.5;
+  margin-top: 18px;
+}
+
+#contact .muted.small .chip {
+  font-size: clamp(14px, 0.95vw, 17px);
+  padding: 8px 14px;
 }
 .social-links {
   margin-top: 14px;
@@ -1273,21 +1281,34 @@ main.hero .container,
 
 /* Full-width presentation tuning */
 :root {
-  --content-max-width: 1680px;
-  --text-max-width: 1100px;
-  --wide-section-width: 1200px;
+  --content-max-width: 100%;
+  --text-max-width: 1440px;
+  --wide-section-width: 100%;
+  --base-text-size: clamp(16px, 0.95vw, 19px);
+  --section-title-size: clamp(32px, 3vw, 54px);
+  --section-intro-size: clamp(18px, 1.2vw, 24px);
 }
 
 .container {
   max-width: var(--content-max-width);
   width: min(var(--content-max-width), calc(100vw - 32px));
-  padding-left: clamp(16px, 2.5vw, 40px);
-  padding-right: clamp(16px, 2.5vw, 40px);
+  padding-left: clamp(12px, 1.8vw, 24px);
+  padding-right: clamp(12px, 1.8vw, 24px);
+}
+
+body {
+  font-size: var(--base-text-size);
+}
+
+.section h2 {
+  font-size: var(--section-title-size);
 }
 
 .lead,
 .section-intro {
   max-width: var(--text-max-width);
+  font-size: var(--section-intro-size);
+  line-height: 1.6;
 }
 
 #about {
@@ -1398,10 +1419,11 @@ main.hero .container,
   color: var(--text);
   display: grid;
   gap: 8px;
+  font-size: clamp(16px, 1vw, 19px);
 }
 
 #about .technical-list li {
-  line-height: 1.35;
+  line-height: 1.45;
 }
 
 #about .technical-key {
