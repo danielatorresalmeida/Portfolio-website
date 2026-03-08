@@ -279,9 +279,14 @@ body {
 }
 
 .download-icon {
-  width: 18px;
-  height: 18px;
-  fill: currentColor;
+  width: 19px;
+  height: 19px;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .pill-btn.lang-toggle {

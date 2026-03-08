@@ -12,8 +12,8 @@ const printLabel = printButton?.querySelector(".sr-only");
 const homeLink = document.querySelector(".actions > a.home-btn");
 const homeLinkSrOnly = homeLink?.querySelector(".sr-only");
 const THEME_ICONS = {
-  light: "assets/light.png",
-  dark: "assets/dark.png",
+  light: "assets/icons8-night-94.png",
+  dark: "assets/icons8-partly-cloudy-day-94.png",
 };
 const CV_PDFS = {
   [LANG_EN]: "assets/Daniela-Torres-Almeida-Resume.pdf",
