@@ -41,32 +41,33 @@
             </p>
           </div>
           <div class="actions">
-            <a class="pill-btn ghost" href="https://danielatorresalmeida.github.io/Portfolio-website/#home" aria-label="Back to portfolio home">
-              <span class="sr-only">Back to portfolio home</span>
-              <svg class="icon icon-home" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <defs>
-                  <linearGradient id="homeBody" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#c6d5ff" />
-                    <stop offset="100%" stop-color="#7c8cff" />
-                  </linearGradient>
-                  <linearGradient id="homeFace" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="#f7f9ff" />
-                    <stop offset="100%" stop-color="#d6e1ff" />
-                  </linearGradient>
-                </defs>
-                <path d="M4.6 11.5 12 5l7.4 6.5v6a1.6 1.6 0 0 1-1.6 1.6h-3.9a1.5 1.5 0 0 1-1.5-1.5v-3.7h-2v3.7a1.5 1.5 0 0 1-1.5 1.5H5.8A1.6 1.6 0 0 1 4.2 18V12a.6.6 0 0 1 .4-.5z" fill="url(#homeBody)" />
-                <path d="M6.2 12 12 7l5.8 5v5.9c0 .55-.45 1-.99 1H14v-3.5h-4v3.5H7.2c-.55 0-.99-.45-.99-1z" fill="url(#homeFace)" opacity="0.95" />
-                <path d="M11 14.1h2a.9.9 0 0 1 .9.9v3h-3.8v-3a.9.9 0 0 1 .9-.9z" fill="#ffffff" opacity="0.9" />
+            <a
+              id="print-btn"
+              class="pill-btn solid icon-only"
+              href="assets/Daniela-Torres-Almeida-Resume.pdf"
+              download
+              aria-label="Download CV"
+            >
+              <span class="sr-only">Download CV</span>
+              <svg class="download-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 3a1 1 0 0 1 1 1v8.59l2.3-2.29a1 1 0 1 1 1.4 1.41l-4 3.99a1 1 0 0 1-1.4 0l-4-3.99a1 1 0 0 1 1.4-1.41L11 12.59V4a1 1 0 0 1 1-1Z"></path>
+                <path d="M5 18a1 1 0 0 1 1 1v1h12v-1a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1Z"></path>
               </svg>
             </a>
-            <button id="theme-toggle" class="pill-btn ghost" aria-label="Toggle theme">
+            <button id="lang-toggle" class="pill-btn ghost lang-toggle" aria-label="Switch language to European Portuguese">
+              <span class="pill-label">PT-PT</span>
+            </button>
+            <button id="theme-toggle" class="pill-btn ghost icon-btn" aria-label="Toggle theme">
               <span class="sr-only">Toggle theme</span>
-              <img class="theme-icon theme-icon-dark" src="assets_resume_site_only/dark.png" alt="" width="22" height="22" aria-hidden="true" />
-              <img class="theme-icon theme-icon-light" src="assets_resume_site_only/light.png" alt="" width="22" height="22" aria-hidden="true" />
+              <img id="theme-icon" class="theme-icon" src="assets/dark.png" alt="" width="22" height="22" aria-hidden="true" />
             </button>
-            <button id="print-btn" class="pill-btn solid" aria-label="Download CV">
-              <span class="pill-label">CV</span>
-            </button>
+            <a class="pill-btn ghost icon-btn home-btn" href="https://danielatorresalmeida.github.io/Portfolio-website/#home" aria-label="Back to portfolio home">
+              <span class="sr-only">Back to portfolio home</span>
+              <svg class="home-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M3 10.5 12 3l9 7.5"></path>
+                <path d="M5 9.5V21h5v-5h4v5h5V9.5"></path>
+              </svg>
+            </a>
           </div>
         </div>
       </div>

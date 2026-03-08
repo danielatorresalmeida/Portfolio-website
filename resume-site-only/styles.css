@@ -272,6 +272,18 @@ body {
   letter-spacing: 0.02em;
 }
 
+.pill-btn.icon-only {
+  min-width: 44px;
+  width: 44px;
+  padding: 8px;
+}
+
+.download-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
 .pill-btn.lang-toggle {
   min-width: 76px;
   text-transform: uppercase;
@@ -285,7 +297,8 @@ body {
 }
 
 .pill-btn.home-btn {
-  padding-inline: 12px;
+  min-width: 40px;
+  padding: 8px 10px;
 }
 
 .theme-icon {
@@ -326,6 +339,16 @@ body {
 
 .pill-btn.icon-btn.is-light .theme-icon {
   transform: rotate(-8deg);
+}
+
+.home-icon {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .sr-only {

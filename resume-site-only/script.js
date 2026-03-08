@@ -8,12 +8,16 @@ const themeIcon = document.getElementById("theme-icon");
 const themeToggleSrOnly = themeToggle?.querySelector(".sr-only");
 const langToggle = document.getElementById("lang-toggle");
 const printButton = document.getElementById("print-btn");
-const printLabel = printButton?.querySelector(".pill-label");
-const homeLink = document.querySelector(".actions > a.pill-btn.ghost");
+const printLabel = printButton?.querySelector(".sr-only");
+const homeLink = document.querySelector(".actions > a.home-btn");
 const homeLinkSrOnly = homeLink?.querySelector(".sr-only");
 const THEME_ICONS = {
   light: "assets/light.png",
   dark: "assets/dark.png",
+};
+const CV_PDFS = {
+  [LANG_EN]: "assets/Daniela-Torres-Almeida-Resume.pdf",
+  [LANG_PT]: "assets/Daniela-Torres-Almeida-Resume-pt-PT.pdf",
 };
 
 const metaLine = document.querySelector(".identity .meta");
@@ -292,12 +296,12 @@ const translations = {
     ],
     coursesTitle: "Cursos e CertificaÃ§Ãµes",
     courses: [
-      "Python Software Language - Programming Hub (Ago 2025 - Presente)",
+      "Python Software Language - Programming Hub (Ago 2025)",
       "Fundamentals of Quality Assurance Engineer - Udemy (Jul 2025)",
       "Foundations of Software Testing and Validation - University of Leeds (Jul 2025)",
-      "Conce\u00e7\u00e3o de websites - 23/Fev/2026",
+      "Conception of websites - (Feb 2026)",
     ],
-    educationTitle: "FormaÃ§Ã£o",
+    educationTitle: "Formação",
     educationItems: [
       {
         title: "Diploma em Viola d'Arco (8.Âº Grau) - ClassificaÃ§Ã£o Final 16/20",
@@ -475,8 +479,15 @@ function applyLanguage(language) {
   setText(homeLinkSrOnly, t("backHomeLabel"));
   setText(themeToggleSrOnly, t("themeToggleLabel"));
 
-  if (printButton) printButton.setAttribute("aria-label", t("printAria"));
-  setText(printLabel, t("printLabel"));
+  if (printButton) {
+    printButton.setAttribute("aria-label", t("printAria"));
+    if (printButton.tagName === "A") {
+      const pdfHref = currentLanguage === LANG_PT ? CV_PDFS[LANG_PT] : CV_PDFS[LANG_EN];
+      printButton.setAttribute("href", pdfHref);
+      printButton.setAttribute("download", "");
+    }
+  }
+  setText(printLabel, t("printAria"));
   setHTML(metaLine, t("metaLine"));
 
   renderResumeText();
@@ -499,8 +510,6 @@ themeToggle?.addEventListener("click", () => {
 langToggle?.addEventListener("click", () => {
   applyLanguage(currentLanguage === LANG_PT ? LANG_EN : LANG_PT);
 });
-
-printButton?.addEventListener("click", () => window.print());
 
 applyLanguage(currentLanguage);
 
