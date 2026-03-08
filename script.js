@@ -300,6 +300,39 @@ function t(key) {
   return TRANSLATIONS[currentLanguage]?.[key] || TRANSLATIONS[LANG_EN][key] || key;
 }
 
+const ORPHAN_TEXT_SELECTOR = ".hero p, .hero li, .section p, .section li, .section .when, .section .where";
+
+function tightenTrailingWords(element) {
+  const walker = document.createTreeWalker(
+    element,
+    NodeFilter.SHOW_TEXT,
+    {
+      acceptNode(node) {
+        if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        const parentTag = node.parentElement?.tagName;
+        if (parentTag === "SCRIPT" || parentTag === "STYLE") return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      },
+    }
+  );
+
+  let lastTextNode = null;
+  while (walker.nextNode()) {
+    lastTextNode = walker.currentNode;
+  }
+  if (!lastTextNode) return;
+
+  const currentValue = lastTextNode.nodeValue;
+  if (!/\S+\s+\S+/.test(currentValue)) return;
+  lastTextNode.nodeValue = currentValue.replace(/\s+(\S+)\s*$/u, "\u00A0$1");
+}
+
+function applyOrphanControl() {
+  document.querySelectorAll(ORPHAN_TEXT_SELECTOR).forEach((element) => {
+    tightenTrailingWords(element);
+  });
+}
+
 function setThemeToggleAria(theme) {
   if (!themeToggle) return;
   themeToggle.setAttribute("aria-label", theme === "dark" ? t("theme.switchToLight") : t("theme.switchToDark"));
@@ -483,6 +516,7 @@ function applyTranslations(language) {
   }
 
   setThemeToggleAria(document.documentElement.getAttribute("data-theme") || "dark");
+  applyOrphanControl();
 }
 
 langToggle?.addEventListener("click", () => {

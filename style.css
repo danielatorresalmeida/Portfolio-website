@@ -1782,6 +1782,23 @@ body {
   }
 }
 
+/* Reduce orphan single-word last lines for both EN/PT text blocks */
+.hero p,
+.hero li,
+.section p,
+.section li,
+.section .when,
+.section .where {
+  text-wrap: pretty;
+}
+
+.hero h1,
+.section h2,
+.section h3,
+.section h4 {
+  text-wrap: balance;
+}
+
 
 
 

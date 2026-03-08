@@ -878,3 +878,18 @@ ul.flat.skill-points li:last-child {
     text-decoration: none !important;
   }
 }
+
+/* Reduce orphan single-word last lines for both EN/PT text blocks */
+.resume p,
+.resume li,
+.resume .when,
+.resume .where {
+  text-wrap: pretty;
+}
+
+.resume h1,
+.resume h2,
+.resume h3,
+.resume h4 {
+  text-wrap: balance;
+}

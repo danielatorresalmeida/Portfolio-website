@@ -343,6 +343,39 @@ function t(key) {
   return translations[currentLanguage]?.[key] || translations[LANG_EN][key] || "";
 }
 
+const ORPHAN_TEXT_SELECTOR = ".resume p, .resume li, .resume .when, .resume .where";
+
+function tightenTrailingWords(element) {
+  const walker = document.createTreeWalker(
+    element,
+    NodeFilter.SHOW_TEXT,
+    {
+      acceptNode(node) {
+        if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        const parentTag = node.parentElement?.tagName;
+        if (parentTag === "SCRIPT" || parentTag === "STYLE") return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      },
+    }
+  );
+
+  let lastTextNode = null;
+  while (walker.nextNode()) {
+    lastTextNode = walker.currentNode;
+  }
+  if (!lastTextNode) return;
+
+  const currentValue = lastTextNode.nodeValue;
+  if (!/\S+\s+\S+/.test(currentValue)) return;
+  lastTextNode.nodeValue = currentValue.replace(/\s+(\S+)\s*$/u, "\u00A0$1");
+}
+
+function applyOrphanControl() {
+  document.querySelectorAll(ORPHAN_TEXT_SELECTOR).forEach((element) => {
+    tightenTrailingWords(element);
+  });
+}
+
 function setText(node, value) {
   if (node) node.textContent = value;
 }
@@ -492,6 +525,7 @@ function applyLanguage(language) {
   setHTML(metaLine, t("metaLine"));
 
   renderResumeText();
+  applyOrphanControl();
   updateToggleState(document.documentElement.getAttribute("data-theme") || "dark");
 }
 
