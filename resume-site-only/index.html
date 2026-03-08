@@ -73,7 +73,7 @@
     </header>
 
   <main class="container resume">
-    <section class="intro card">
+    <section class="intro card" id="intro-section">
       <h2>Objective</h2>
       <p>
         Career-changer with a background in arts and music education, now pursuing a career in software development and
@@ -85,7 +85,7 @@
     </section>
 
     <section class="two-col">
-      <div class="col card">
+      <div class="col card" id="experience-col">
         <h2>Experience</h2>
 
         <article class="item">
@@ -135,22 +135,59 @@
         </article>
       </div>
 
-      <div class="col card">
-        <h2>Skills</h2>
-        <h4>Programming &amp; Development</h4>
-        <p>Python (FastAPI, boto3) Â· JavaScript (ES6+, TypeScript) Â· PHP Â· HTML5 Â· CSS3 Â· WordPress</p>
+      <div class="col card" id="skills-col">
+        <h2>Technical Skills</h2>
+        <div class="skills-organized">
+          <div class="skills-cards">
+            <article class="skill-group-card">
+              <h4>Frontend Development</h4>
+              <ul class="flat skill-points">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript (ES6+)</li>
+                <li>React</li>
+                <li>Next.js</li>
+              </ul>
+            </article>
+            <article class="skill-group-card">
+              <h4>Design &amp; Layout</h4>
+              <ul class="flat skill-points">
+                <li>UI/UX Design</li>
+                <li>Responsive Design</li>
+                <li>Wireframing</li>
+                <li>Accessibility (WCAG)</li>
+                <li>Component Systems</li>
+              </ul>
+            </article>
+            <article class="skill-group-card">
+              <h4>Tools &amp; Workflows</h4>
+              <ul class="flat skill-points">
+                <li>Git / GitHub</li>
+                <li>GitHub Actions</li>
+                <li>QA Testing</li>
+                <li>Postman</li>
+                <li>Python Automation</li>
+                <li>Supabase</li>
+              </ul>
+            </article>
+          </div>
 
-        <h4>QA &amp; Testing</h4>
-        <p>Functional &amp; Non-functional Â· Unit, Integration, System, Acceptance Â· Test Case Design Â· Bug Reporting</p>
-
-        <h4>Cloud &amp; DevOps</h4>
-        <p>AWS (Lambda, S3, API Gateway, IAM, CloudWatch) Â· Docker Â· Git/GitHub Â· CI/CD (GitHub Actions)</p>
-
-        <h4>Tools &amp; Frameworks</h4>
-        <p>Postman Â· Pytest Â· Microsoft Word &amp; Excel</p>
-
-        <h4>Languages</h4>
-        <p>Portuguese (Native) Â· English (Fluent)</p>
+          <article class="skill-key-card">
+            <h4>Key Skills</h4>
+            <div class="skill-tags" id="key-skills-tags">
+              <span>JavaScript</span>
+              <span>React</span>
+              <span>Next.js</span>
+              <span>UI/UX Design</span>
+              <span>Responsive Design</span>
+              <span>QA Testing</span>
+              <span>API Testing</span>
+              <span>GitHub Actions</span>
+              <span>Python</span>
+              <span>Supabase</span>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -225,12 +262,13 @@
           <li>Python Software Language â€” Programming Hub (Aug 2025 â€“ Present)</li>
           <li>Fundamentals of Quality Assurance Engineer â€” Udemy (Jul 2025)</li>
           <li>Foundations of Software Testing and Validation â€” University of Leeds (Jul 2025)</li>
+          <li>Website design - 23/Feb/2026</li>
         </ul>
       </div>
     </section>
 
     <section class="two-col">
-      <div class="col card">
+      <div class="col card" id="education-col">
         <h2>Education</h2>
         <article class="item">
           <h3>Diploma in Viola dâ€™Arco (8th Grade) â€” Final 16/20</h3>
@@ -247,7 +285,7 @@
         </article>
       </div>
 
-      <div class="col card highlight">
+      <div class="col card highlight" id="strengths-col">
         <h2>Key Strengths</h2>
         <ul class="flat">
           <li><strong>Frontend Engineering</strong> - building responsive interfaces with HTML, CSS, JavaScript, React, and Next.js.</li>
@@ -259,6 +297,28 @@
         </ul>
       </div>
     </section>
+
+    <section class="two-col" id="supplemental-info">
+      <div class="col card">
+        <h2 data-supp-left-title>Additional Information</h2>
+        <ul class="flat">
+          <li data-supp-left-item><strong>Phone:</strong> +351 962046821.</li>
+          <li data-supp-left-item><strong>Education:</strong> 12th Grade, Secretarial &amp; Administrative Work (Secondary Education, Level 3).</li>
+          <li data-supp-left-item><strong>Languages:</strong> Portuguese (native) and English (oral, written, reading: very good).</li>
+          <li data-supp-left-item><strong>Driver's License:</strong> Light Vehicles.</li>
+        </ul>
+      </div>
+
+      <div class="col card">
+        <h2 data-supp-right-title>Availability, Preferences &amp; Interests</h2>
+        <ul class="flat">
+          <li data-supp-right-item><strong>Availability:</strong> Immediate availability, full-time work.</li>
+          <li data-supp-right-item><strong>Work Preferences:</strong> Fixed-term contract, daytime schedule.</li>
+          <li data-supp-right-item><strong>Mobility:</strong> Available to travel and relocate within Portugal.</li>
+          <li data-supp-right-item><strong>Professional Interests:</strong> Web Developer, Front-End Developer.</li>
+        </ul>
+      </div>
+    </section>
   </main>
 
   <footer class="container footer">
@@ -266,6 +326,7 @@
   </footer>
 
   <script src="script.js" defer></script>
+  <script src="supplemental-info.js" defer></script>
 </body>
 </html>
 
