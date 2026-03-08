@@ -152,7 +152,7 @@ const translations = {
       "Python Software Language - Programming Hub (Aug 2025 - Present)",
       "Fundamentals of Quality Assurance Engineer - Udemy (Jul 2025)",
       "Foundations of Software Testing and Validation - University of Leeds (Jul 2025)",
-      "Website design - 23/Feb/2026",
+      "Website design - (Fev 2026)",
     ],
     educationTitle: "Education",
     educationItems: [
@@ -299,7 +299,7 @@ const translations = {
       "Python Software Language - Programming Hub (Ago 2025)",
       "Fundamentals of Quality Assurance Engineer - Udemy (Jul 2025)",
       "Foundations of Software Testing and Validation - University of Leeds (Jul 2025)",
-      "Conception of websites - (Feb 2026)",
+      "Conception of websites - (Fev 2026)",
     ],
     educationTitle: "Formação",
     educationItems: [
