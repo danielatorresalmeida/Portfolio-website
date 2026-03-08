@@ -550,13 +550,22 @@ h4 {
   font-size: 0.91rem;
 }
 
-ul {
-  margin: 0.42rem 0 0.4rem 1.08rem;
+/* Keep bullet lists visually consistent across all resume sections */
+.resume ul,
+.resume ul.flat,
+.resume ul.flat.skill-points {
+  list-style: disc outside;
+  margin: 0.28rem 0 0;
+  padding-left: 1.18rem;
 }
 
-ul.flat {
-  list-style: disc;
-  margin: 0.2rem 0 0.4rem 1.08rem;
+.resume li {
+  margin: 0 0 0.42rem;
+  padding-left: 0.12rem;
+}
+
+.resume li:last-child {
+  margin-bottom: 0;
 }
 
 .skills-organized {
@@ -610,9 +619,7 @@ ul.flat {
 }
 
 ul.flat.skill-points {
-  margin: 0.1rem 0 0;
-  padding-left: 0.9rem;
-  list-style: disc outside;
+  margin-top: 0.12rem;
 }
 
 ul.flat.skill-points li {
