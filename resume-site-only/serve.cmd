@@ -7,3 +7,4 @@ set "PORT=12701"
 
 echo Serving "%CD%" at http://%HOST%:%PORT%/
 python -m http.server %PORT% --bind %HOST%
+
