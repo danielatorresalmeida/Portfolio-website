@@ -222,14 +222,14 @@ body {
 }
 
 .btn-theme.is-dark {
-  background-color: #f3f5ff;
-  border-color: #e1e5f5;
-  color: #0c1018;
-}
-.btn-theme.is-light {
   background-color: #121622;
   border-color: #2c3347;
   color: #e9ebf0;
+}
+.btn-theme.is-light {
+  background-color: #f3f5ff;
+  border-color: #e1e5f5;
+  color: #0c1018;
 }
 
 .btn-theme.is-dark .theme-icon {
@@ -1673,15 +1673,15 @@ body {
 }
 
 .topbar .actions .btn-theme.is-dark {
-  background: #f3f5ff;
-  border-color: #e1e5f5;
-  color: #0c1018;
-}
-
-.topbar .actions .btn-theme.is-light {
   background: #121622;
   border-color: #2c3347;
   color: #e9ebf0;
+}
+
+.topbar .actions .btn-theme.is-light {
+  background: #f3f5ff;
+  border-color: #e1e5f5;
+  color: #0c1018;
 }
 
 :root[data-theme="light"] .topbar .topbar-inner {

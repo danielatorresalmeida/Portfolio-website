@@ -16,8 +16,9 @@ const navToggle = document.getElementById("nav-toggle");
 const mainNav = document.getElementById("main-nav");
 
 const THEME_ICONS = {
-  light: "assets/light.png",
-  dark: "assets/dark.png",
+  // Keep this mapping explicit because legacy file names are inverted.
+  light: "assets/dark.png",
+  dark: "assets/light.png",
 };
 
 const TRANSLATIONS = {

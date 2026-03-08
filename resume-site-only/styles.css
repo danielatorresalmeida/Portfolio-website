@@ -327,15 +327,15 @@ body {
 }
 
 .pill-btn.icon-btn.is-dark {
-  background: #f3f5ff;
-  border-color: #e1e5f5;
-  color: #0c1018;
-}
-
-.pill-btn.icon-btn.is-light {
   background: #121622;
   border-color: #2c3347;
   color: #e9ebf0;
+}
+
+.pill-btn.icon-btn.is-light {
+  background: #f3f5ff;
+  border-color: #e1e5f5;
+  color: #0c1018;
 }
 
 .pill-btn.icon-btn.is-dark .theme-icon {
