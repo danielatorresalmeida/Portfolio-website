@@ -1663,13 +1663,25 @@ body {
   background: linear-gradient(135deg, #5f36a1, #4f5dff);
 }
 
-.topbar .actions .btn-ghost,
-.topbar .actions .btn-theme {
+.topbar .actions .btn-ghost {
   background: color-mix(in srgb, var(--panel) 80%, transparent);
 }
 
 .topbar .actions .btn-theme {
   padding: 8px 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .12);
+}
+
+.topbar .actions .btn-theme.is-dark {
+  background: #f3f5ff;
+  border-color: #e1e5f5;
+  color: #0c1018;
+}
+
+.topbar .actions .btn-theme.is-light {
+  background: #121622;
+  border-color: #2c3347;
+  color: #e9ebf0;
 }
 
 :root[data-theme="light"] .topbar .topbar-inner {
