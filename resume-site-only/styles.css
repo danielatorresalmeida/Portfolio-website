@@ -755,23 +755,29 @@ ul.flat.skill-points li:last-child {
   }
 }
 
+@page {
+  size: A4 portrait;
+  margin: 10mm 12mm;
+}
+
 @media print {
   :root {
-    --bg: var(--paper);
-    --panel: var(--paper);
-    --text: #111;
-    --muted: #555;
-    --border: #ddd;
+    --bg: #ffffff;
+    --panel: #ffffff;
+    --text: #111111;
+    --muted: #4b5563;
+    --border: #d8dbe5;
   }
 
-  html {
-    background: var(--paper);
-    scroll-padding-top: 0;
-  }
-
+  html,
   body {
-    background: var(--paper);
-    padding-top: 0;
+    background: #ffffff !important;
+    color: #111111 !important;
+    margin: 0;
+    padding: 0;
+    scroll-padding-top: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
   .topbar,
@@ -781,32 +787,94 @@ ul.flat.skill-points li:last-child {
     display: none !important;
   }
 
-  .container {
-    width: 65%;
-    max-width: 65%;
-    padding: 0;
+  .container,
+  .resume,
+  .footer {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .resume {
-    margin: 0;
-    gap: 10px;
-    width: 65%;
-    max-width: 65%;
+    gap: 5mm !important;
   }
 
   .resume::before {
-    display: none;
+    display: none !important;
   }
 
-  .card {
-    border: 0;
-    box-shadow: none;
-    padding: 0;
+  .two-col,
+  .skills-cards,
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 4mm !important;
+  }
+
+  .card,
+  .intro,
+  .highlight,
+  .skill-group-card,
+  .skill-key-card,
+  .projects-grid .item {
+    background: #ffffff !important;
+    color: #111111 !important;
+    border: 1px solid #d8dbe5 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 4mm !important;
     transform: none !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  h2 {
+    font-size: 15pt !important;
+    margin: 0 0 2mm !important;
+  }
+
+  h3 {
+    font-size: 12pt !important;
+    margin: 0 0 1.5mm !important;
+  }
+
+  h4 {
+    font-size: 10.5pt !important;
+    margin: 0 0 1.5mm !important;
+    color: #374151 !important;
+  }
+
+  p,
+  li,
+  .when,
+  .where {
+    color: #111111 !important;
+    font-size: 10pt !important;
+    line-height: 1.35 !important;
+  }
+
+  ul,
+  ul.flat,
+  ul.flat.skill-points {
+    margin: 1.5mm 0 0 5mm !important;
+    padding-left: 3mm !important;
+  }
+
+  .project-site-shot {
+    width: 100% !important;
+    max-width: none !important;
+    border: 1px solid #d8dbe5 !important;
+    box-shadow: none !important;
+  }
+
+  .footer {
+    border-top: 0 !important;
+    margin-top: 4mm !important;
+    font-size: 9pt !important;
   }
 
   a {
-    color: #111;
-    text-decoration: none;
+    color: #111111 !important;
+    text-decoration: none !important;
   }
 }

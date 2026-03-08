@@ -15,10 +15,6 @@ const THEME_ICONS = {
   light: "assets/icons8-partly-cloudy-day-94.png",
   dark: "assets/icons8-night-94.png",
 };
-const CV_PDFS = {
-  [LANG_EN]: "assets/Daniela-Torres-Almeida-Resume.pdf",
-  [LANG_PT]: "assets/Daniela-Torres-Almeida-Resume-pt-PT.pdf",
-};
 
 const metaLine = document.querySelector(".identity .meta");
 const introSection = document.getElementById("intro-section");
@@ -479,14 +475,7 @@ function applyLanguage(language) {
   setText(homeLinkSrOnly, t("backHomeLabel"));
   setText(themeToggleSrOnly, t("themeToggleLabel"));
 
-  if (printButton) {
-    printButton.setAttribute("aria-label", t("printAria"));
-    if (printButton.tagName === "A") {
-      const pdfHref = currentLanguage === LANG_PT ? CV_PDFS[LANG_PT] : CV_PDFS[LANG_EN];
-      printButton.setAttribute("href", pdfHref);
-      printButton.setAttribute("download", "");
-    }
-  }
+  if (printButton) printButton.setAttribute("aria-label", t("printAria"));
   setText(printLabel, t("printAria"));
   setHTML(metaLine, t("metaLine"));
 
@@ -509,6 +498,11 @@ themeToggle?.addEventListener("click", () => {
 
 langToggle?.addEventListener("click", () => {
   applyLanguage(currentLanguage === LANG_PT ? LANG_EN : LANG_PT);
+});
+
+printButton?.addEventListener("click", (event) => {
+  event.preventDefault();
+  window.print();
 });
 
 applyLanguage(currentLanguage);
