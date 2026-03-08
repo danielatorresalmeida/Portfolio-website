@@ -11,10 +11,12 @@ const printButton = document.getElementById("print-btn");
 const printLabel = printButton?.querySelector(".sr-only");
 const homeLink = document.querySelector(".actions > a.home-btn");
 const homeLinkSrOnly = homeLink?.querySelector(".sr-only");
+
 const THEME_ICONS = {
   light: "assets/icons8-partly-cloudy-day-94.png",
   dark: "assets/icons8-night-94.png",
 };
+
 const CV_PDFS = {
   [LANG_EN]: "assets/Daniela-Torres-Almeida-Resume.pdf",
   [LANG_PT]: "assets/Daniela-Torres-Almeida-Resume-pt-PT.pdf",
@@ -33,6 +35,7 @@ const footerParagraph = document.querySelector("footer.footer p");
 const WHATSAPP_ICON = '<svg class="meta-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.5 0 .17 5.34.17 11.9c0 2.1.55 4.16 1.6 5.97L0 24l6.3-1.65a11.9 11.9 0 0 0 5.77 1.47h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.47-8.44Zm-8.45 18.33h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.64-.24-.37a9.84 9.84 0 0 1 1.52-12.3 9.84 9.84 0 0 1 16.8 6.96c0 5.43-4.42 9.86-9.86 9.86Zm5.41-7.37c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.8-1.49-1.78-1.66-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.23-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01s-.52.07-.8.37c-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.27.5 1.7.64.71.23 1.35.2 1.86.12.57-.08 1.77-.72 2.02-1.42.25-.69.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35Z"></path></svg>';
 const LINKEDIN_ICON = '<svg class="meta-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22.23 0H1.77A1.77 1.77 0 0 0 0 1.77v20.46C0 23.2.8 24 1.77 24h20.46A1.77 1.77 0 0 0 24 22.23V1.77A1.77 1.77 0 0 0 22.23 0ZM7.12 20.45H3.56V9h3.56v11.45ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm15.11 13.02H16.9v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29Z"></path></svg>';
 const META_LINE_HTML = `Cascais, Portugal &middot; <a class="meta-link" href="mailto:danielarosadolealtorresalmeida@gmail.com">danielarosadolealtorresalmeida@gmail.com</a> &middot; <a class="meta-link meta-whatsapp" href="https://wa.me/351962046821?text=Hi%20Daniela%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer" aria-label="Open WhatsApp chat">${WHATSAPP_ICON}<span>WhatsApp</span></a> &middot; <a class="meta-link meta-linkedin" href="https://www.linkedin.com/in/daniela-torres-almeida-945884205/" target="_blank" rel="noopener">${LINKEDIN_ICON}<span>LinkedIn</span></a> &middot; <a class="meta-link" href="https://github.com/danielatorresalmeida" target="_blank" rel="noopener">github.com/danielatorresalmeida</a>`;
+
 const translations = {
   [LANG_EN]: {
     langButton: "PT-PT",
@@ -84,7 +87,7 @@ const translations = {
         ],
       },
     ],
-        skillsTitle: "Technical Skills",
+    skillsTitle: "Technical Skills",
     skillGroups: [
       {
         title: "Frontend Development",
@@ -163,11 +166,11 @@ const translations = {
       },
       {
         title: "Kitchen Management & Production (Level V) - Final 16/20",
-        when: "Escola de Hotelaria e Turismo de Setubal Â· 2015 - 2016",
+        when: "Escola de Hotelaria e Turismo de Setúbal · 2015 - 2016",
       },
       {
         title: "Science & Technology Track (Biology & Geology) - Final 15/20",
-        when: "Escola Secundaria de Vergilio Ferreira Â· 2013 - 2015",
+        when: "Escola Secundária de Vergílio Ferreira · 2013 - 2015",
       },
     ],
     strengthsTitle: "Key Strengths",
@@ -183,9 +186,9 @@ const translations = {
   },
   [LANG_PT]: {
     langButton: "EN",
-    langButtonAria: "Switch language to English",
-    backHomeAria: "Voltar ao portefÃ³lio",
-    backHomeLabel: "Voltar ao portefÃ³lio",
+    langButtonAria: "Mudar idioma para inglês",
+    backHomeAria: "Voltar ao portefólio",
+    backHomeLabel: "Voltar ao portefólio",
     themeToggleLabel: "Alternar tema",
     themeSwitchToLight: "Mudar para tema claro",
     themeSwitchToDark: "Mudar para tema escuro",
@@ -194,44 +197,44 @@ const translations = {
     metaLine: META_LINE_HTML,
     objectiveTitle: "Objetivo Profissional",
     objectiveBody:
-      "Profissional em transiÃ§Ã£o, com percurso em artes e educaÃ§Ã£o musical, atualmente focada em desenvolvimento de software e garantia de qualidade. ExperiÃªncia em design de UI/UX, desenvolvimento front-end e testes de QA com Python, JavaScript e tecnologias web modernas. Elevada capacidade de adaptaÃ§Ã£o a novos desafios, colaboraÃ§Ã£o em equipas Ã¡geis e aplicaÃ§Ã£o de criatividade Ã  resoluÃ§Ã£o de problemas. Compromisso com soluÃ§Ãµes digitais centradas no utilizador e com a entrega de projetos inovadores e orientados para a qualidade.",
-    experienceTitle: "ExperiÃªncia",
+      "Profissional em transição, com percurso em artes e educação musical, atualmente focada em desenvolvimento de software e garantia de qualidade. Experiência em design de UI/UX, desenvolvimento front-end e testes de QA com Python, JavaScript e tecnologias web modernas. Elevada capacidade de adaptação a novos desafios, colaboração em equipas ágeis e aplicação de criatividade à resolução de problemas. Compromisso com soluções digitais centradas no utilizador e com a entrega de projetos inovadores e orientados para a qualidade.",
+    experienceTitle: "Experiência",
     experienceItems: [
       {
-        title: "EstagiÃ¡ria de Desenvolvimento de Software - Flo Labs R&D",
+        title: "Estagiária de Desenvolvimento de Software - Flo Labs R&D",
         when: "Ago 2025 - Presente",
         bullets: [
-          "ConceÃ§Ã£o e implementaÃ§Ã£o de mais de 10 funcionalidades de UI/UX, com melhoria de 50% no envolvimento, atravÃ©s de HTML, CSS, JavaScript, PHP e TypeScript.",
+          "Conceção e implementação de mais de 10 funcionalidades de UI/UX, com melhoria de 50% no envolvimento, através de HTML, CSS, JavaScript, PHP e TypeScript.",
           "Apoio ao desenvolvimento de back-end com Python (FastAPI).",
-          "ColaboraÃ§Ã£o em testes de QA e documentaÃ§Ã£o para assegurar a qualidade do produto.",
-          "ReduÃ§Ã£o do tempo de resposta a erros em cerca de 20% atravÃ©s de testes de QA estruturados.",
+          "Colaboração em testes de QA e documentação para assegurar a qualidade do produto.",
+          "Redução do tempo de resposta a erros em cerca de 20% através de testes de QA estruturados.",
         ],
       },
       {
-        title: "LLM Trainer (PortuguÃªs e InglÃªs) - Remoto",
+        title: "LLM Trainer (Português e Inglês) - Remoto",
         when: "Ago 2024 - Presente",
         bullets: [
-          "RevisÃ£o e correÃ§Ã£o de prompts e respostas gerados por IA.",
-          "Garantia de rigor linguÃ­stico e adequaÃ§Ã£o cultural em ambos os idiomas.",
+          "Revisão e correção de prompts e respostas gerados por IA.",
+          "Garantia de rigor linguístico e adequação cultural em ambos os idiomas.",
         ],
       },
       {
-        title: "Docente de MÃºsica (Canto, Piano, Violino e Viola) - VÃ¡rias InstituiÃ§Ãµes",
+        title: "Docente de Música (Canto, Piano, Violino e Viola) - Várias Instituições",
         when: "2018 - 2025",
         bullets: [
-          "LecionaÃ§Ã£o em mÃºltiplos instrumentos, reforÃ§ando comunicaÃ§Ã£o, adaptabilidade e trabalho em equipa aplicÃ¡veis a contextos Ã¡geis de software.",
+          "Lecionação em múltiplos instrumentos, reforçando comunicação, adaptabilidade e trabalho em equipa aplicáveis a contextos ágeis de software.",
         ],
       },
       {
-        title: "Hotelaria - FunÃ§Ãµes de Cozinha e Padaria",
+        title: "Hotelaria - Funções de Cozinha e Padaria",
         when: "2016 - 2018",
         where: "Cantinho do Avillez - Gleba Moagem e Padaria - Lagoas Park Hotel",
         bullets: [
-          "PreparaÃ§Ã£o alimentar, pastelaria e panificaÃ§Ã£o, com desenvolvimento de precisÃ£o e gestÃ£o de tempo.",
+          "Preparação alimentar, pastelaria e panificação, com desenvolvimento de precisão e gestão de tempo.",
         ],
       },
     ],
-        skillsTitle: "Competências Técnicas",
+    skillsTitle: "Competências Técnicas",
     skillGroups: [
       {
         title: "Desenvolvimento Front-End",
@@ -263,74 +266,75 @@ const translations = {
     projectItems: [
       {
         title: "App de Tarefas",
-        bullet: "Aplicacao de tarefas em React + TypeScript com Firebase e autenticacao Google.",
+        bullet: "Aplicação de tarefas em React + TypeScript com Firebase e autenticação Google.",
       },
       {
-        title: "Portefolio Adaptavel",
-        bullet: "Desenvolvido com HTML, CSS e JavaScript; publicado em GitHub Pages com CI/CD via Actions.",
+        title: "Portefólio Adaptável",
+        bullet: "Desenvolvido com HTML, CSS e JavaScript; publicado no GitHub Pages com CI/CD via Actions.",
       },
       {
         title: "Suite de Testes de API (QA)",
-        bullet: "Verificacoes de API automatizadas com estado legivel e acesso direto a relatorios.",
+        bullet: "Verificações de API automatizadas com estado legível e acesso direto a relatórios.",
       },
       {
         title: "Mostra de Componentes UI",
-        bullet: "Galeria de componentes com padroes de UI reutilizaveis.",
+        bullet: "Galeria de componentes com padrões de UI reutilizáveis.",
       },
       {
         title: "MoodChanger.ai",
-        bullet: "Website para uma plataforma de bem-estar que combina neurociencia, sensores wearables e experiencias de suporte adaptativo.",
+        bullet: "Website para uma plataforma de bem-estar que combina neurociência, sensores wearables e experiências de suporte adaptativo.",
       },
       {
         title: "RoboCollective.ai",
-        bullet: "Desenvolvido de raiz com HTML, CSS, JavaScript e automacoes em Python para suportar o fluxo de conteudos.",
+        bullet: "Desenvolvido de raiz com HTML, CSS, JavaScript e automações em Python para suportar o fluxo de conteúdos.",
       },
       {
         title: "Legal Ventures Institute",
-        bullet: "Website publico para o Legal Ventures Institute, com apresentacao clara de servicos.",
+        bullet: "Website público para o Legal Ventures Institute, com apresentação clara de serviços.",
       },
       {
         title: "Space Ventures Institute",
-        bullet: "Website publico para o Space Ventures Institute, focado em inovacao e programas de venture.",
+        bullet: "Website público para o Space Ventures Institute, focado em inovação e programas de venture.",
       },
     ],
-    coursesTitle: "Cursos e CertificaÃ§Ãµes",
+    coursesTitle: "Cursos e Certificações",
     courses: [
       "Python Software Language - Programming Hub (Ago 2025)",
       "Fundamentals of Quality Assurance Engineer - Udemy (Jul 2025)",
       "Foundations of Software Testing and Validation - University of Leeds (Jul 2025)",
-      "Conception of websites - (Fev 2026)",
+      "Conceção de websites - (Fev 2026)",
     ],
     educationTitle: "Formação",
     educationItems: [
       {
-        title: "Diploma em Viola d'Arco (8.Âº Grau) - ClassificaÃ§Ã£o Final 16/20",
+        title: "Diploma em Viola d'Arco (8.º Grau) - Classificação Final 16/20",
         when: "2006 - 2018",
-        text: "FormaÃ§Ã£o intensiva em viola d'arco, voz, coro e performance de cÃ¢mara/orquestra.",
+        text: "Formação intensiva em viola d'arco, voz, coro e performance de câmara/orquestra.",
       },
       {
-        title: "GestÃ£o e ProduÃ§Ã£o de Cozinha (NÃ­vel V) - ClassificaÃ§Ã£o Final 16/20",
-        when: "Escola de Hotelaria e Turismo de SetÃºbal Â· 2015 - 2016",
+        title: "Gestão e Produção de Cozinha (Nível V) - Classificação Final 16/20",
+        when: "Escola de Hotelaria e Turismo de Setúbal · 2015 - 2016",
       },
       {
-        title: "Curso de CiÃªncias e Tecnologias (Biologia e Geologia) - ClassificaÃ§Ã£o Final 15/20",
-        when: "Escola SecundÃ¡ria de VergÃ­lio Ferreira Â· 2013 - 2015",
+        title: "Curso de Ciências e Tecnologias (Biologia e Geologia) - Classificação Final 15/20",
+        when: "Escola Secundária de Vergílio Ferreira · 2013 - 2015",
       },
     ],
     strengthsTitle: "Pontos Fortes",
     strengths: [
       "<strong>Engenharia Front-End</strong> - interfaces responsivas com HTML, CSS, JavaScript, React e Next.js.",
-      "<strong>Execucao de UI/UX</strong> - transformar ideias de design em experiencias acessiveis e baseadas em componentes.",
-      "<strong>Garantia de Qualidade</strong> - QA estruturado e testes de API para detetar falhas cedo e evitar regressao.",
-      "<strong>Performance e Fiabilidade</strong> - foco em codigo limpo, consistencia entre browsers e releases estaveis.",
-      "<strong>Automacao e CI</strong> - uso de scripts em Python e GitHub Actions para acelerar validacao e entrega.",
-      "<strong>Colaboracao Multidisciplinar</strong> - comunicacao clara com equipas de produto, design e engenharia em portugues e ingles.",
+      "<strong>Execução de UI/UX</strong> - transformar ideias de design em experiências acessíveis e baseadas em componentes.",
+      "<strong>Garantia de Qualidade</strong> - QA estruturado e testes de API para detetar falhas cedo e evitar regressão.",
+      "<strong>Performance e Fiabilidade</strong> - foco em código limpo, consistência entre browsers e releases estáveis.",
+      "<strong>Automação e CI</strong> - uso de scripts em Python e GitHub Actions para acelerar validação e entrega.",
+      "<strong>Colaboração Multidisciplinar</strong> - comunicação clara com equipas de produto, design e engenharia em português e inglês.",
     ],
     footerMeta: "Daniela Torres Almeida - Desenvolvido com HTML/CSS/JS - Publicado no GitHub Pages",
   },
 };
 
-let currentLanguage = localStorage.getItem(LANGUAGE_KEY);
+const urlLanguage = new URLSearchParams(window.location.search).get("lang");
+let currentLanguage = urlLanguage || localStorage.getItem(LANGUAGE_KEY);
 if (currentLanguage !== LANG_EN && currentLanguage !== LANG_PT) {
   currentLanguage = LANG_EN;
 }
@@ -459,10 +463,7 @@ function renderResumeText() {
     setHTML(item, translatedStrengths[index] || "");
   });
 
-  setHTML(
-    footerParagraph,
-    `&copy; <span id="year"></span> ${t("footerMeta")}`
-  );
+  setHTML(footerParagraph, `&copy; <span id="year"></span> ${t("footerMeta")}`);
   const yearNode = document.getElementById("year");
   if (yearNode) yearNode.textContent = new Date().getFullYear();
 }
@@ -512,6 +513,3 @@ langToggle?.addEventListener("click", () => {
 });
 
 applyLanguage(currentLanguage);
-
-
-
