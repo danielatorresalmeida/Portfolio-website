@@ -149,7 +149,7 @@ const translations = {
     ],
     coursesTitle: "Courses & Certifications",
     courses: [
-      "Python Software Language - Programming Hub (Aug 2025 - Present)",
+      "Python Software Language - Programming Hub (Aug 2025)",
       "Fundamentals of Quality Assurance Engineer - Udemy (Jul 2025)",
       "Foundations of Software Testing and Validation - University of Leeds (Jul 2025)",
       "Website design - (Fev 2026)",
