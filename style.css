@@ -1734,14 +1734,15 @@ body {
 
 @media (max-width: 860px) {
   .topbar .topbar-inner {
-    grid-template-columns: auto auto 1fr auto;
+    grid-template-columns: auto 1fr auto auto;
     position: relative;
     padding: 8px 10px;
   }
 
   .nav-toggle {
     display: inline-flex;
-    justify-self: start;
+    grid-column: 4;
+    justify-self: end;
   }
 
   .topbar .nav {
@@ -1781,6 +1782,8 @@ body {
   }
 
   .topbar .actions {
+    grid-column: 3;
+    justify-self: end;
     gap: 6px;
   }
 
