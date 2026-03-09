@@ -494,30 +494,44 @@
 
   <!-- Contact -->
   <section id="contact" class="section alt">
-    <div class="container">
-      <h2 data-i18n="contact.heading">Contact</h2>
-      <p class="section-intro" data-i18n="contact.intro">
-        Interested in junior frontend, UI/UX, or web development opportunities? I'd be happy to connect.
-      </p>
-      <div class="contact-quick-actions" aria-label="Contact quick actions">
-        <a class="btn btn-light" href="mailto:danielarosadolealtorresalmeida@gmail.com" data-i18n="contact.actions.email">Email Me</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/daniela-torres-almeida-945884205/" target="_blank" rel="noopener" data-i18n="contact.actions.linkedin">LinkedIn</a>
-        <a class="btn btn-ghost" href="https://github.com/danielatorresalmeida" target="_blank" rel="noopener" data-i18n="contact.actions.github">GitHub</a>
-        <a class="btn btn-ghost" href="./resume-site-only/assets/Daniela-Torres-Almeida-Resume.pdf" target="_blank" rel="noopener" data-i18n="contact.actions.cv">Download CV</a>
+    <div class="container contact-layout">
+      <div class="contact-main">
+        <h2 data-i18n="contact.heading">Contact</h2>
+        <p class="section-intro" data-i18n="contact.intro">
+          Interested in junior frontend, UI/UX, or web development opportunities? Let's connect.
+        </p>
+        <div class="contact-quick-actions" aria-label="Contact quick actions">
+          <a class="btn btn-light" href="mailto:danielarosadolealtorresalmeida@gmail.com" data-i18n="contact.actions.email">Email</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/daniela-torres-almeida-945884205/" target="_blank" rel="noopener" data-i18n="contact.actions.linkedin">LinkedIn</a>
+          <a class="btn btn-ghost" href="./resume-site-only/assets/Daniela-Torres-Almeida-Resume.pdf" target="_blank" rel="noopener" data-i18n="contact.actions.cv">Download CV</a>
+        </div>
       </div>
-      <form class="contact" id="contact-form" name="contact" action="https://formspree.io/f/xdkynkgr" method="POST">
-        <input type="text" name="name" placeholder="Your name" data-i18n-placeholder="contact.form.name" required />
-        <input type="email" name="_replyto" placeholder="Email" data-i18n-placeholder="contact.form.email" required />
-        <textarea name="message" rows="6" placeholder="Your message" data-i18n-placeholder="contact.form.message" required></textarea>
-        <button class="btn btn-light" type="submit" data-i18n="contact.form.send">Send</button>
+
+      <form class="contact contact-form-card" id="contact-form" name="contact" action="https://formspree.io/f/xdkynkgr" method="POST">
+        <div class="contact-field">
+          <label for="contact-name" data-i18n="contact.form.label.name">Name</label>
+          <input id="contact-name" type="text" name="name" placeholder="Your name" data-i18n-placeholder="contact.form.name" required />
+        </div>
+        <div class="contact-field">
+          <label for="contact-email" data-i18n="contact.form.label.email">Email</label>
+          <input id="contact-email" type="email" name="_replyto" placeholder="you@example.com" data-i18n-placeholder="contact.form.email" required />
+        </div>
+        <div class="contact-field">
+          <label for="contact-message" data-i18n="contact.form.label.message">Message</label>
+          <textarea id="contact-message" name="message" rows="6" placeholder="Tell me about the role, project, or how I can help." data-i18n-placeholder="contact.form.message" required></textarea>
+        </div>
+        <button class="btn btn-light" type="submit" data-i18n="contact.form.send">Send Message</button>
         <p id="contact-status" class="form-status" role="status" aria-live="polite"></p>
-        <p class="muted small">
+      </form>
+
+      <div class="contact-alt" aria-label="Alternative contact details">
+        <p class="contact-alt-item">
           <span data-i18n="contact.preferEmail">Prefer email?</span>
           <a class="chip" href="mailto:danielarosadolealtorresalmeida@gmail.com">
             danielarosadolealtorresalmeida@gmail.com
           </a>
         </p>
-        <p class="muted small">
+        <p class="contact-alt-item">
           <span data-i18n="contact.preferWhatsapp">Prefer WhatsApp?</span>
           <a class="chip" href="https://wa.me/351962046821?text=Hi%20Daniela%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer" aria-label="Open WhatsApp chat at +351 962 046 821">
             <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -526,19 +540,10 @@
             <span>+351 962 046 821</span>
           </a>
         </p>
-      </form>
-      <div class="social-links" aria-label="Social links">
-        <a href="https://www.linkedin.com/in/daniela-torres-almeida-945884205/"
-           target="_blank" rel="noopener">
-          <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M22.23 0H1.77A1.77 1.77 0 0 0 0 1.77v20.46C0 23.2.8 24 1.77 24h20.46A1.77 1.77 0 0 0 24 22.23V1.77A1.77 1.77 0 0 0 22.23 0ZM7.12 20.45H3.56V9h3.56v11.45ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm15.11 13.02H16.9v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29Z"></path>
-          </svg>
-          <span data-i18n="contact.linkedin">LinkedIn</span>
-        </a>
-        <a href="https://github.com/danielatorresalmeida"
-           target="_blank" rel="noopener">
-          <span data-i18n="contact.github">GitHub</span>
-        </a>
+        <p class="contact-alt-item">
+          <span data-i18n="contact.alt.github">GitHub</span>
+          <a class="contact-inline-link" href="https://github.com/danielatorresalmeida" target="_blank" rel="noopener" data-i18n="contact.github">GitHub</a>
+        </p>
       </div>
     </div>
   </section>
