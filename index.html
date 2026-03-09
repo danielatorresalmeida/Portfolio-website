@@ -36,6 +36,7 @@
 
       <div class="actions">
         <a href="./resume-site-only/" class="btn btn-light" data-i18n="topbar.cv">CV</a>
+        <a href="https://github.com/danielatorresalmeida" target="_blank" rel="noopener" class="btn btn-ghost" data-i18n="topbar.github">GitHub</a>
         <button id="lang-toggle" class="btn btn-ghost btn-lang" type="button" aria-label="Switch language to European Portuguese">PT-PT</button>
         <button id="theme-toggle" class="btn btn-theme" type="button" aria-label="Switch theme" aria-pressed="false">
           <img id="theme-icon" class="theme-icon" src="assets/light.png" alt="" width="20" height="20" aria-hidden="true" />
@@ -55,11 +56,11 @@
       <p class="kicker" data-i18n="hero.kicker">Portfolio</p>
       <h1 data-i18n-html="hero.title">Hi, I'm <span class="accent">Daniela Torres Almeida</span></h1>
       <p class="lead" data-i18n="hero.lead">
-        UI/UX Designer and Frontend Developer building clean, responsive web experiences.
+        Frontend Developer focused on React, TypeScript, accessible UI, and responsive web experiences.
       </p>
       <div class="cta">
-        <a class="btn btn-light" href="#projects" data-i18n="hero.cta.work">See my work</a>
-        <a class="btn btn-ghost" href="#contact" data-i18n="hero.cta.contact">Get in touch</a>
+        <a class="btn btn-light" href="#projects" data-i18n="hero.cta.work">View Projects</a>
+        <a class="btn btn-ghost" href="#contact" data-i18n="hero.cta.contact">Contact Me</a>
       </div>
       <ul class="hero-highlights" aria-label="Portfolio highlights">
         <li>
@@ -77,6 +78,24 @@
       </ul>
     </div>
   </main>
+
+  <section class="core-stack" aria-labelledby="core-stack-heading">
+    <div class="container">
+      <h2 id="core-stack-heading" data-i18n="coreStack.heading">Core Stack</h2>
+      <div class="core-stack-tags" aria-label="Core stack tags">
+        <span data-i18n="coreStack.0">React</span>
+        <span data-i18n="coreStack.1">TypeScript</span>
+        <span data-i18n="coreStack.2">JavaScript</span>
+        <span data-i18n="coreStack.3">HTML5</span>
+        <span data-i18n="coreStack.4">CSS3</span>
+        <span data-i18n="coreStack.5">Tailwind CSS</span>
+        <span data-i18n="coreStack.6">Git/GitHub</span>
+        <span data-i18n="coreStack.7">Figma</span>
+        <span data-i18n="coreStack.8">REST APIs</span>
+        <span data-i18n="coreStack.9">Accessibility</span>
+      </div>
+    </div>
+  </section>
 
   <!-- Projects -->
   <section id="projects" class="section">
@@ -101,14 +120,21 @@
             </div>
           </div>
           <div class="card-body">
-            <h3 data-i18n="projects.todo.title">To-Do List App</h3>
-            <p data-i18n="projects.todo.description">React + TypeScript to-do app using Firebase and Google Auth.</p>
+            <p class="project-summary">Task manager with authentication and persistent, real-time updates.</p>
+            <h3>To-Do List App</h3>
+            <p class="project-contribution">What I did: Built the frontend interface in React and TypeScript, implemented responsive layouts, and integrated Firebase with Google Auth for a smooth task flow.</p>
+            <ul class="project-flow">
+              <li><strong>Problem:</strong> Users needed a simple task manager with authentication and persistent data.</li>
+              <li><strong>Solution:</strong> Built a React + TypeScript app with Firebase and Google Auth.</li>
+              <li><strong>Outcome:</strong> Delivered a responsive task flow with sign-in and real-time task management.</li>
+            </ul>
+            <p class="project-proof">Focus: Accessibility, responsiveness, semantic HTML.</p>
             <div class="tags"><span>React</span><span>TypeScript</span><span>Firebase</span><span>Google Auth</span><span>Vite</span></div>
             <div class="links">
               <a href="https://danielatorresalmeida.github.io/To-Do-List-App/"
-                 target="_blank" rel="noopener" class="live-label btn btn-ghost" data-i18n="projects.actions.live">Live</a>
+                 target="_blank" rel="noopener" class="live-label btn btn-ghost">Live</a>
               <a href="https://github.com/danielatorresalmeida/To-Do-List-App"
-                 target="_blank" rel="noopener" class="btn btn-light" data-i18n="projects.actions.code">Code</a>
+                 target="_blank" rel="noopener" class="btn btn-light">Code</a>
             </div>
           </div>
         </article>
@@ -127,19 +153,58 @@
             </div>
           </div>
           <div class="card-body">
-            <h3 data-i18n="projects.portfolio.title">Responsive Portfolio</h3>
-            <p><span data-year></span> <span data-i18n="projects.meta.default">Daniela Torres Almeida | Built with HTML/CSS/JS | GitHub Pages</span></p>
-            <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span><span>GitHub Actions</span></div>
+            <p class="project-summary">Personal portfolio built to present frontend work with clear navigation.</p>
+            <h3>Responsive Portfolio</h3>
+            <p class="project-contribution">What I did: Built a responsive single-page portfolio, structured reusable sections, and optimized readability and navigation across desktop and mobile.</p>
+            <ul class="project-flow">
+              <li><strong>Problem:</strong> Needed a clear personal site to present projects and skills professionally.</li>
+              <li><strong>Solution:</strong> Built a responsive single-page portfolio with structured navigation and GitHub Pages deployment.</li>
+              <li><strong>Outcome:</strong> Created a faster, cleaner way for recruiters to review experience and live work.</li>
+            </ul>
+            <p class="project-proof">Built with reusable sections and a mobile-first layout.</p>
+            <div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>GitHub Pages</span><span>GitHub Actions</span></div>
             <div class="links">
               <a href="./resume-site-only/"
-                 target="_blank" rel="noopener" class="live-label btn btn-ghost" data-i18n="projects.actions.live">Live</a>
+                 target="_blank" rel="noopener" class="live-label btn btn-ghost">Live</a>
               <a href="https://github.com/danielatorresalmeida/resume-site-only"
-                 target="_blank" rel="noopener" class="btn btn-light" data-i18n="projects.actions.code">Code</a>
+                 target="_blank" rel="noopener" class="btn btn-light">Code</a>
             </div>
           </div>
         </article>
 
-        <!-- CARD 3: API QA Test Suite -->
+        <!-- CARD 3: UI Components -->
+        <article class="card" role="link" tabindex="0"
+                 data-href="https://danielatorresalmeida.github.io/ui-components/">
+          <div class="card-media">
+            <img
+              src="assets/project-ui.2025-11-05.png"
+              alt="Screenshot of UI components library project"
+              width="720" height="480"
+              loading="lazy" decoding="async" />
+            <div class="card-overlay">
+              <p data-i18n="projects.ui.overlay">Component gallery showcasing reusable UI patterns.</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="project-summary">Reusable UI patterns designed for consistent and scalable interfaces.</p>
+            <h3>UI Components Showcase</h3>
+            <p class="project-contribution">What I did: Developed reusable frontend components, added responsive behavior, and refined interactive states for consistency across layouts.</p>
+            <ul class="project-flow">
+              <li><strong>Problem:</strong> Product pages needed reusable UI blocks to reduce duplicated implementation work.</li>
+              <li><strong>Solution:</strong> Built a component showcase with modular HTML, CSS, and JavaScript patterns.</li>
+              <li><strong>Outcome:</strong> Improved consistency and speed when building new interface sections.</li>
+            </ul>
+            <div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Accessibility</span><span>Design System</span></div>
+            <div class="links">
+              <a href="https://danielatorresalmeida.github.io/ui-components/"
+                 target="_blank" rel="noopener" class="live-label btn btn-ghost">Live</a>
+              <a href="https://github.com/danielatorresalmeida/ui-components"
+                 target="_blank" rel="noopener" class="btn btn-light">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 4: API QA Test Suite -->
         <article id="project-qa" class="card" role="link" tabindex="0"
                  data-href="https://danielatorresalmeida.github.io/api-qa-test-suite/assets/reports/api-qa/">
           <div class="card-media">
@@ -158,69 +223,25 @@
             </div>
           </div>
           <div class="card-body">
-            <h3 data-i18n="projects.qa.title">API QA Test Suite</h3>
-            <p><span data-year></span> <span data-i18n="projects.meta.default">Daniela Torres Almeida | Built with HTML/CSS/JS | GitHub Pages</span></p>
-            <div class="tags"><span>Python</span><span>Pytest</span><span>Postman</span></div>
+            <p class="project-summary">Automated API checks with status visibility and report sharing.</p>
+            <h3>API QA Test Suite</h3>
+            <p class="project-contribution">What I did: Built QA test flows, documented API validations, and published readable report outputs for faster debugging and release checks.</p>
+            <ul class="project-flow">
+              <li><strong>Problem:</strong> API regressions needed to be detected earlier with clearer reporting.</li>
+              <li><strong>Solution:</strong> Implemented automated API checks using Python, Pytest, and Postman flows.</li>
+              <li><strong>Outcome:</strong> Enabled faster verification and clearer QA visibility before release updates.</li>
+            </ul>
+            <div class="tags"><span>Python</span><span>Pytest</span><span>Postman</span><span>API Testing</span></div>
             <div class="links">
               <a href="https://danielatorresalmeida.github.io/api-qa-test-suite/assets/reports/api-qa/"
-                 target="_blank" rel="noopener" class="live-label btn btn-ghost" data-i18n="projects.actions.demo">Demo</a>
+                 target="_blank" rel="noopener" class="live-label btn btn-ghost">Live</a>
               <a href="https://github.com/danielatorresalmeida/api-qa-test-suite"
-                 target="_blank" rel="noopener" class="btn btn-light" data-i18n="projects.actions.code">Code</a>
+                 target="_blank" rel="noopener" class="btn btn-light">Code</a>
             </div>
           </div>
         </article>
 
-        <!-- CARD 4: UI Components -->
-        <article class="card" role="link" tabindex="0"
-                 data-href="https://danielatorresalmeida.github.io/ui-components/">
-          <div class="card-media">
-            <img
-              src="assets/project-ui.2025-11-05.png"
-              alt="Screenshot of UI components library project"
-              width="720" height="480"
-              loading="lazy" decoding="async" />
-            <div class="card-overlay">
-              <p data-i18n="projects.ui.overlay">Component gallery showcasing reusable UI patterns.</p>
-            </div>
-          </div>
-          <div class="card-body">
-            <h3 data-i18n="projects.ui.title">UI Components Showcase</h3>
-            <p><span data-year></span> <span data-i18n="projects.meta.default">Daniela Torres Almeida | Built with HTML/CSS/JS | GitHub Pages</span></p>
-            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-            <div class="links">
-              <span class="live-label btn btn-ghost" aria-hidden="true" data-i18n="projects.actions.live">Live</span>
-              <a href="https://github.com/danielatorresalmeida/ui-components"
-                 target="_blank" rel="noopener" class="btn btn-light" data-i18n="projects.actions.code">Code</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- CARD 5: MoodChanger.ai -->
-        <article class="card" role="link" tabindex="0"
-                 data-href="https://moodchanger.ai/">
-          <div class="card-media">
-            <img
-              src="assets/moodchanger.ai.png"
-              alt="MoodChanger.ai wellness platform website preview"
-              width="720" height="480"
-              loading="lazy" decoding="async" />
-            <div class="card-overlay">
-              <p data-i18n="projects.mood.overlay">Wellness product site built around adaptive feedback and guided emotional support.</p>
-            </div>
-          </div>
-          <div class="card-body">
-            <h3 data-i18n="projects.mood.title">MoodChanger.ai</h3>
-            <p data-i18n="projects.mood.description">Website for a wellness platform combining neuroscience, wearable sensors, and adaptive support experiences.</p>
-            <div class="tags"><span>AI</span><span>Wellness</span><span>Sensors</span><span>UX</span></div>
-            <div class="links">
-              <span class="live-label btn btn-ghost" aria-hidden="true" data-i18n="projects.actions.live">Live</span>
-              <a href="https://moodchanger.ai/"
-                 target="_blank" rel="noopener" class="btn btn-light" data-i18n="projects.actions.viewSite">View site</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- CARD 6: RoboCollective.ai -->
+        <!-- CARD 5: RoboCollective.ai -->
         <article class="card" role="link" tabindex="0"
                  data-href="https://www.robocollective.ai/">
           <div class="card-media">
@@ -234,14 +255,53 @@
             </div>
           </div>
           <div class="card-body">
-            <h3 data-i18n="projects.robo.title">RoboCollective.ai</h3>
-            <p data-i18n="projects.robo.description">Built from scratch with HTML, CSS, JavaScript, and Python automations supporting the content workflow.</p>
-            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span></div>
+            <p class="project-summary">Responsive marketing website for a robotics collaboration platform.</p>
+            <h3>RoboCollective.ai</h3>
+            <p class="project-contribution">What I did: Built responsive frontend sections with clear content hierarchy and optimized layout flow to improve readability and conversion.</p>
+            <ul class="project-flow">
+              <li><strong>Problem:</strong> The platform needed a clear web presence to communicate product value quickly.</li>
+              <li><strong>Solution:</strong> Developed a responsive landing experience with structured messaging and navigation.</li>
+              <li><strong>Outcome:</strong> Delivered a clearer, more modern interface aligned with product and growth goals.</li>
+            </ul>
+            <div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Python</span></div>
             <div class="links">
-              <span class="live-label btn btn-ghost" aria-hidden="true" data-i18n="projects.actions.live">Live</span>
               <a href="https://www.robocollective.ai/"
-                 target="_blank" rel="noopener" class="btn btn-light" data-i18n="projects.actions.viewSite">View site</a>
+                 target="_blank" rel="noopener" class="live-label btn btn-ghost">Live</a>
+              <span class="btn btn-light link-disabled" aria-disabled="true">Code on request</span>
             </div>
+            <p class="project-note">Private repository. Frontend contribution available on request.</p>
+          </div>
+        </article>
+
+        <!-- CARD 6: MoodChanger.ai -->
+        <article class="card" role="link" tabindex="0"
+                 data-href="https://moodchanger.ai/">
+          <div class="card-media">
+            <img
+              src="assets/moodchanger.ai.png"
+              alt="MoodChanger.ai wellness platform website preview"
+              width="720" height="480"
+              loading="lazy" decoding="async" />
+            <div class="card-overlay">
+              <p data-i18n="projects.mood.overlay">Wellness product site built around adaptive feedback and guided emotional support.</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="project-summary">Wellness platform website communicating adaptive support features clearly.</p>
+            <h3>MoodChanger.ai</h3>
+            <p class="project-contribution">What I did: Designed and implemented responsive frontend sections for a wellness platform, focusing on clear messaging, layout structure, and user-centered presentation.</p>
+            <ul class="project-flow">
+              <li><strong>Problem:</strong> Product information needed to be clearer and easier to scan across devices.</li>
+              <li><strong>Solution:</strong> Built responsive sections and improved information hierarchy for user understanding.</li>
+              <li><strong>Outcome:</strong> Delivered a clearer interface that better supports user trust and product discovery.</li>
+            </ul>
+            <div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>UX Writing</span></div>
+            <div class="links">
+              <a href="https://moodchanger.ai/"
+                 target="_blank" rel="noopener" class="live-label btn btn-ghost">Live</a>
+              <span class="btn btn-light link-disabled" aria-disabled="true">Code on request</span>
+            </div>
+            <p class="project-note">Private repository. Frontend contribution available on request.</p>
           </div>
         </article>
 
@@ -259,14 +319,21 @@
             </div>
           </div>
           <div class="card-body">
-            <h3 data-i18n="projects.legal.title">Legal Ventures Institute</h3>
-            <p data-i18n="projects.legal.description">Public-facing site for Legal Ventures Institute with clear service overview and contact flow.</p>
-            <div class="tags"><span>Website</span><span>Responsive</span><span>UX</span></div>
+            <p class="project-summary">Public-facing website presenting legal innovation services and conversion paths.</p>
+            <h3>Legal Ventures Institute</h3>
+            <p class="project-contribution">What I did: Built a public-facing responsive website with clear content hierarchy, service presentation, and contact flow optimization.</p>
+            <ul class="project-flow">
+              <li><strong>Problem:</strong> The organization needed a clear and trustworthy way to present services online.</li>
+              <li><strong>Solution:</strong> Structured responsive page sections and improved service-to-contact navigation.</li>
+              <li><strong>Outcome:</strong> Delivered a cleaner, easier-to-navigate site for prospective clients.</li>
+            </ul>
+            <div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive Design</span></div>
             <div class="links">
-              <span class="live-label btn btn-ghost" aria-hidden="true" data-i18n="projects.actions.live">Live</span>
               <a href="https://www.legalethicsventuresinstitute.com/"
-                 target="_blank" rel="noopener" class="btn btn-light" data-i18n="projects.actions.viewSite">View site</a>
+                 target="_blank" rel="noopener" class="live-label btn btn-ghost">Live</a>
+              <span class="btn btn-light link-disabled" aria-disabled="true">Code on request</span>
             </div>
+            <p class="project-note">Private repository. Frontend contribution available on request.</p>
           </div>
         </article>
 
@@ -284,14 +351,21 @@
             </div>
           </div>
           <div class="card-body">
-            <h3 data-i18n="projects.space.title">Space Ventures Institute</h3>
-            <p data-i18n="projects.space.description">Public-facing website for Space Ventures Institute focused on venture and innovation content.</p>
-            <div class="tags"><span>Website</span><span>Responsive</span><span>UX</span></div>
+            <p class="project-summary">Venture-focused website designed for readability and structured navigation.</p>
+            <h3>Space Ventures Institute</h3>
+            <p class="project-contribution">What I did: Developed a modern, responsive interface for venture-focused content, emphasizing readability, layout consistency, and clear navigation.</p>
+            <ul class="project-flow">
+              <li><strong>Problem:</strong> Complex venture and innovation content needed better structure for users.</li>
+              <li><strong>Solution:</strong> Built responsive layouts with clearer content sections and navigation cues.</li>
+              <li><strong>Outcome:</strong> Improved readability and content discoverability across screen sizes.</li>
+            </ul>
+            <div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Information Architecture</span></div>
             <div class="links">
-              <span class="live-label btn btn-ghost" aria-hidden="true" data-i18n="projects.actions.live">Live</span>
               <a href="https://www.spaceventuresinstitute.com/"
-                 target="_blank" rel="noopener" class="btn btn-light" data-i18n="projects.actions.viewSite">View site</a>
+                 target="_blank" rel="noopener" class="live-label btn btn-ghost">Live</a>
+              <span class="btn btn-light link-disabled" aria-disabled="true">Code on request</span>
             </div>
+            <p class="project-note">Private repository. Frontend contribution available on request.</p>
           </div>
         </article>
       </div>
@@ -304,19 +378,14 @@
       <div class="about">
         <div class="about-profile">
           <p class="section-intro" data-i18n="about.intro">
-            I design and build user-centered products with a strong quality focus.
+            Frontend developer and UI/UX designer with a strong QA mindset, focused on building accessible, responsive, and reliable digital products. I work across design, implementation, and testing to create interfaces that are clear for users and maintainable for teams.
           </p>
           <img class="about-photo" src="assets/Imagem%20WhatsApp%20.jpg" alt="Daniela Torres Almeida portrait"
                width="160" height="160" loading="lazy" decoding="async" />
           <div class="about-summary">
             <h2 data-i18n="about.heading">About</h2>
             <p data-i18n="about.p1">
-              UI/UX designer and front-end developer with a strong QA mindset, focused on building clear and
-              reliable digital products.
-            </p>
-            <p data-i18n="about.p2">
-              Delivered multiple web projects end-to-end, from interface design and implementation to QA
-              validation and deployment.
+              Frontend developer and UI/UX designer with a strong QA mindset, focused on building accessible, responsive, and reliable digital products. I work across design, implementation, and testing to create interfaces that are clear for users and maintainable for teams.
             </p>
           </div>
         </div>
@@ -328,64 +397,61 @@
           <article class="technical-card">
             <div class="technical-card-head">
               <span class="technical-icon" aria-hidden="true">FE</span>
-              <h4 data-i18n="about.technical.frontend.title">Frontend Development</h4>
+              <h4 data-i18n="about.technical.frontend.title">Frontend</h4>
             </div>
             <ul class="technical-list">
               <li data-i18n="about.technical.frontend.0">HTML5</li>
               <li data-i18n="about.technical.frontend.1">CSS3</li>
-              <li data-i18n="about.technical.frontend.2">JavaScript (ES6+)</li>
+              <li data-i18n="about.technical.frontend.2">JavaScript</li>
               <li data-i18n="about.technical.frontend.3">React</li>
-              <li data-i18n="about.technical.frontend.4">Next.js</li>
+              <li data-i18n="about.technical.frontend.4">TypeScript</li>
+              <li data-i18n="about.technical.frontend.5">Next.js</li>
             </ul>
           </article>
 
           <article class="technical-card">
             <div class="technical-card-head">
               <span class="technical-icon" aria-hidden="true">UX</span>
-              <h4 data-i18n="about.technical.design.title">Design & Layout</h4>
+              <h4 data-i18n="about.technical.design.title">UI/UX</h4>
             </div>
             <ul class="technical-list">
-              <li data-i18n="about.technical.design.0">UI/UX Design</li>
-              <li data-i18n="about.technical.design.1">Responsive Design</li>
+              <li data-i18n="about.technical.design.0">Responsive Design</li>
+              <li data-i18n="about.technical.design.1">Accessibility</li>
               <li data-i18n="about.technical.design.2">Wireframing</li>
-              <li data-i18n="about.technical.design.3">Accessibility (WCAG)</li>
-              <li data-i18n="about.technical.design.4">Design Systems</li>
+              <li data-i18n="about.technical.design.3">Design Systems</li>
+              <li data-i18n="about.technical.design.4">Figma</li>
             </ul>
           </article>
 
           <article class="technical-card">
             <div class="technical-card-head">
               <span class="technical-icon" aria-hidden="true">QA</span>
-              <h4 data-i18n="about.technical.tools.title">Tools & Workflows</h4>
+              <h4 data-i18n="about.technical.tools.title">Tools &amp; QA</h4>
             </div>
             <ul class="technical-list">
               <li data-i18n="about.technical.tools.0">Git / GitHub</li>
               <li data-i18n="about.technical.tools.1">GitHub Actions</li>
-              <li data-i18n="about.technical.tools.2">QA Testing</li>
-              <li data-i18n="about.technical.tools.3">Postman</li>
-              <li data-i18n="about.technical.tools.4">Python Automation</li>
-              <li data-i18n="about.technical.tools.5">WordPress</li>
-              <li data-i18n="about.technical.tools.6">Supabase</li>
+              <li data-i18n="about.technical.tools.2">Postman</li>
+              <li data-i18n="about.technical.tools.3">Python</li>
+              <li data-i18n="about.technical.tools.4">Supabase</li>
+              <li data-i18n="about.technical.tools.5">QA Testing</li>
+              <li data-i18n="about.technical.tools.6">API Testing</li>
             </ul>
           </article>
         </div>
-
-        <div class="technical-key">
-          <h4 data-i18n="about.technical.key.heading">Key Skills</h4>
-          <div class="skill-tags technical-key-tags">
-            <span data-i18n="about.technical.key.0">JavaScript</span>
-            <span data-i18n="about.technical.key.1">React</span>
-            <span data-i18n="about.technical.key.2">Next.js</span>
-            <span data-i18n="about.technical.key.3">UI/UX Design</span>
-            <span data-i18n="about.technical.key.4">Responsive Design</span>
-            <span data-i18n="about.technical.key.5">QA Testing</span>
-            <span data-i18n="about.technical.key.6">API Testing</span>
-            <span data-i18n="about.technical.key.7">GitHub Actions</span>
-            <span data-i18n="about.technical.key.8">Python</span>
-            <span data-i18n="about.technical.key.9">Supabase</span>
-          </div>
-        </div>
       </aside>
+    </div>
+  </section>
+
+  <section id="selected-strengths" class="section">
+    <div class="container">
+      <h2 data-i18n="strengths.heading">Selected Strengths</h2>
+      <ul class="selected-strengths-list">
+        <li data-i18n="strengths.0">Responsive frontend development with React and TypeScript</li>
+        <li data-i18n="strengths.1">UI/UX implementation from Figma to production</li>
+        <li data-i18n="strengths.2">Accessibility and clean component structure</li>
+        <li data-i18n="strengths.3">QA-aware workflow with testing and debugging</li>
+      </ul>
     </div>
   </section>
 
@@ -438,8 +504,14 @@
     <div class="container">
       <h2 data-i18n="contact.heading">Contact</h2>
       <p class="section-intro" data-i18n="contact.intro">
-        If you are building something meaningful, let's talk.
+        Interested in junior frontend, UI/UX, or web development opportunities? I'd be happy to connect.
       </p>
+      <div class="contact-quick-actions" aria-label="Contact quick actions">
+        <a class="btn btn-light" href="mailto:danielarosadolealtorresalmeida@gmail.com" data-i18n="contact.actions.email">Email Me</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/daniela-torres-almeida-945884205/" target="_blank" rel="noopener" data-i18n="contact.actions.linkedin">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://github.com/danielatorresalmeida" target="_blank" rel="noopener" data-i18n="contact.actions.github">GitHub</a>
+        <a class="btn btn-ghost" href="./resume-site-only/assets/Daniela-Torres-Almeida-Resume.pdf" target="_blank" rel="noopener" data-i18n="contact.actions.cv">Download CV</a>
+      </div>
       <form class="contact" id="contact-form" name="contact" action="https://formspree.io/f/xdkynkgr" method="POST">
         <input type="text" name="name" placeholder="Your name" data-i18n-placeholder="contact.form.name" required />
         <input type="email" name="_replyto" placeholder="Email" data-i18n-placeholder="contact.form.email" required />
@@ -469,6 +541,10 @@
             <path d="M22.23 0H1.77A1.77 1.77 0 0 0 0 1.77v20.46C0 23.2.8 24 1.77 24h20.46A1.77 1.77 0 0 0 24 22.23V1.77A1.77 1.77 0 0 0 22.23 0ZM7.12 20.45H3.56V9h3.56v11.45ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm15.11 13.02H16.9v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29Z"></path>
           </svg>
           <span data-i18n="contact.linkedin">LinkedIn</span>
+        </a>
+        <a href="https://github.com/danielatorresalmeida"
+           target="_blank" rel="noopener">
+          <span data-i18n="contact.github">GitHub</span>
         </a>
       </div>
     </div>

@@ -50,17 +50,17 @@ const translations = {
     metaLine: META_LINE_HTML,
     objectiveTitle: "Objective",
     objectiveBody:
-      "Career-changer with a background in arts and music education, now pursuing a career in software development and quality assurance. Experienced in UI/UX design, front-end development, and QA testing with Python, JavaScript, and modern web technologies. Skilled at adapting quickly to new challenges, collaborating in agile teams, and applying creativity to problem-solving. Passionate about building user-centered digital solutions and contributing to innovative, quality-driven projects.",
+      "Frontend developer with a background in arts and music education, now focused on building responsive, accessible, and user-centered web interfaces. Experienced in React, JavaScript, TypeScript, UI/UX design, and QA testing. Strong at translating design concepts into clean, maintainable frontend implementations in collaborative environments.",
     experienceTitle: "Experience",
     experienceItems: [
       {
         title: "Software Development Intern - Flo Labs R&D",
         when: "Aug 2025 - Present",
         bullets: [
-          "Designed and implemented 10+ UI/UX features, improving engagement by 50% using HTML, CSS, JavaScript, PHP, and TypeScript.",
+          "Designed and implemented 10+ UI/UX features to improve usability, clarity, and engagement using HTML, CSS, JavaScript, PHP, and TypeScript.",
           "Supported back-end development with Python (FastAPI).",
           "Assisted in QA testing and documentation to ensure product quality.",
-          "Reduced bug turnaround time by approximately 20% through structured QA testing.",
+          "Improved bug tracking and QA workflows, helping speed up issue resolution.",
         ],
       },
       {
@@ -90,25 +90,27 @@ const translations = {
     skillsTitle: "Technical Skills",
     skillGroups: [
       {
-        title: "Frontend Development",
-        items: ["HTML5", "CSS3", "JavaScript (ES6+)", "React", "Next.js"],
+        title: "Frontend",
+        items: ["HTML5", "CSS3", "JavaScript", "React", "TypeScript", "Next.js"],
       },
       {
-        title: "Design & Layout",
-        items: ["UI/UX Design", "Responsive Design", "Wireframing", "Accessibility (WCAG)", "Component Systems"],
+        title: "UI/UX",
+        items: ["Responsive Design", "Accessibility", "Wireframing", "Design Systems", "Figma"],
       },
       {
-        title: "Tools & Workflows",
-        items: ["Git / GitHub", "GitHub Actions", "QA Testing", "Postman", "Python Automation", "Supabase"],
+        title: "Tools & QA",
+        items: ["Git / GitHub", "GitHub Actions", "Postman", "Python", "Supabase", "QA Testing", "API Testing"],
       },
     ],
     keySkillsTitle: "Key Skills",
     keySkills: [
       "JavaScript",
       "React",
-      "Next.js",
-      "UI/UX Design",
+      "TypeScript",
+      "UI/UX",
       "Responsive Design",
+      "Accessibility",
+      "Figma",
       "QA Testing",
       "API Testing",
       "GitHub Actions",
@@ -119,35 +121,35 @@ const translations = {
     projectItems: [
       {
         title: "To-Do List App",
-        bullet: "React + TypeScript to-do app using Firebase and Google Auth.",
+        bullet: "Built the frontend in React + TypeScript with Firebase and Google Auth, delivering a responsive task flow with persistent real-time data.",
       },
       {
         title: "Responsive Portfolio",
-        bullet: "Built with HTML, CSS, and JavaScript; deployed on GitHub Pages with CI/CD via Actions.",
-      },
-      {
-        title: "API QA Test Suite",
-        bullet: "Automated API checks with readable status and report links.",
+        bullet: "Developed a responsive portfolio interface with structured navigation, reusable sections, and GitHub Pages deployment.",
       },
       {
         title: "UI Components Showcase",
-        bullet: "Component gallery showcasing reusable UI patterns.",
+        bullet: "Implemented reusable UI patterns with responsive behavior and consistent interaction states for faster frontend delivery.",
       },
       {
-        title: "MoodChanger.ai",
-        bullet: "Website for a wellness platform combining neuroscience, wearable sensors, and adaptive support experiences.",
+        title: "API QA Test Suite",
+        bullet: "Built automated API checks with readable status and report outputs to support QA validation and release confidence.",
       },
       {
         title: "RoboCollective.ai",
-        bullet: "Built from scratch with HTML, CSS, JavaScript, and Python automations supporting the content workflow.",
+        bullet: "Built responsive frontend sections with clear messaging hierarchy for a robotics collaboration platform.",
+      },
+      {
+        title: "MoodChanger.ai",
+        bullet: "Designed and implemented responsive frontend sections focused on clarity, layout structure, and user-centered presentation.",
       },
       {
         title: "Legal Ventures Institute",
-        bullet: "Public-facing site for Legal Ventures Institute with clear service overview and contact flow.",
+        bullet: "Built a public-facing responsive website with clear content hierarchy, service presentation, and contact flow optimization.",
       },
       {
         title: "Space Ventures Institute",
-        bullet: "Public-facing website for Space Ventures Institute focused on venture and innovation content.",
+        bullet: "Developed a modern responsive interface for venture-focused content, emphasizing readability and navigation consistency.",
       },
     ],
     coursesTitle: "Courses & Certifications",
@@ -155,7 +157,7 @@ const translations = {
       "Python Software Language - Programming Hub (Aug 2025)",
       "Fundamentals of Quality Assurance Engineer - Udemy (Jul 2025)",
       "Foundations of Software Testing and Validation - University of Leeds (Jul 2025)",
-      "Website design - (Fev 2026)",
+      "Website Design, February 2026",
     ],
     educationTitle: "Education",
     educationItems: [
