@@ -268,35 +268,35 @@ const translations = {
     projectItems: [
       {
         title: "App de Tarefas",
-        bullet: "Aplicação de tarefas em React + TypeScript com Firebase e autenticação Google.",
+        bullet: "Desenvolvi o frontend em React + TypeScript com Firebase e Google Auth, entregando um fluxo de tarefas responsivo com dados persistentes em tempo real.",
       },
       {
         title: "Portefólio Adaptável",
-        bullet: "Desenvolvido com HTML, CSS e JavaScript; publicado no GitHub Pages com CI/CD via Actions.",
-      },
-      {
-        title: "Suite de Testes de API (QA)",
-        bullet: "Verificações de API automatizadas com estado legível e acesso direto a relatórios.",
+        bullet: "Desenvolvi uma interface de portefólio responsiva com navegação estruturada, secções reutilizáveis e publicação no GitHub Pages.",
       },
       {
         title: "Mostra de Componentes UI",
-        bullet: "Galeria de componentes com padrões de UI reutilizáveis.",
+        bullet: "Implementei padrões de UI reutilizáveis com comportamento responsivo e estados de interação consistentes para acelerar entregas frontend.",
       },
       {
-        title: "MoodChanger.ai",
-        bullet: "Website para uma plataforma de bem-estar que combina neurociência, sensores wearables e experiências de suporte adaptativo.",
+        title: "Suite de Testes de API (QA)",
+        bullet: "Construí verificações automatizadas de API com estados legíveis e saídas de relatório para apoiar validação de QA e confiança em releases.",
       },
       {
         title: "RoboCollective.ai",
-        bullet: "Desenvolvido de raiz com HTML, CSS, JavaScript e automações em Python para suportar o fluxo de conteúdos.",
+        bullet: "Desenvolvi secções frontend responsivas com hierarquia clara de mensagens para uma plataforma colaborativa de robótica.",
+      },
+      {
+        title: "MoodChanger.ai",
+        bullet: "Desenhei e implementei secções frontend responsivas focadas em clareza, estrutura de layout e apresentação centrada no utilizador.",
       },
       {
         title: "Legal Ventures Institute",
-        bullet: "Website público para o Legal Ventures Institute, com apresentação clara de serviços.",
+        bullet: "Construí um website responsivo de acesso público com hierarquia clara de conteúdo, apresentação de serviços e otimização do fluxo de contacto.",
       },
       {
         title: "Space Ventures Institute",
-        bullet: "Website público para o Space Ventures Institute, focado em inovação e programas de venture.",
+        bullet: "Desenvolvi uma interface responsiva moderna para conteúdo focado em venture, com ênfase em legibilidade e consistência de navegação.",
       },
     ],
     coursesTitle: "Cursos e Certificações",

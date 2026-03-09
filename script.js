@@ -57,32 +57,74 @@ const TRANSLATIONS = {
     "projects.intro": "A curated selection of front-end, QA, and product-driven web projects.",
     "projects.todo.overlay": "React + Firebase to-do app with Google sign-in.",
     "projects.todo.title": "To-Do List App",
+    "projects.todo.summary": "Task manager with authentication and persistent, real-time updates.",
+    "projects.todo.what": "What I did: Built the frontend interface in React and TypeScript, implemented responsive layouts, and integrated Firebase with Google Auth for a smooth task flow.",
+    "projects.todo.problem": "<strong>Problem:</strong> Users needed a simple task manager with authentication and persistent data.",
+    "projects.todo.solution": "<strong>Solution:</strong> Built a React + TypeScript app with Firebase and Google Auth.",
+    "projects.todo.outcome": "<strong>Outcome:</strong> Delivered a responsive task flow with sign-in and real-time task management.",
+    "projects.todo.proof": "Focus: Accessibility, responsiveness, semantic HTML.",
     "projects.todo.description": "React + TypeScript to-do app using Firebase and Google Auth.",
     "projects.portfolio.overlay": "Responsive single-page portfolio with clear navigation and project highlights.",
     "projects.portfolio.title": "Responsive Portfolio",
+    "projects.portfolio.summary": "Personal portfolio built to present frontend work with clear navigation.",
+    "projects.portfolio.what": "What I did: Built a responsive single-page portfolio, structured reusable sections, and optimized readability and navigation across desktop and mobile.",
+    "projects.portfolio.problem": "<strong>Problem:</strong> Needed a clear personal site to present projects and skills professionally.",
+    "projects.portfolio.solution": "<strong>Solution:</strong> Built a responsive single-page portfolio with structured navigation and GitHub Pages deployment.",
+    "projects.portfolio.outcome": "<strong>Outcome:</strong> Created a faster, cleaner way for recruiters to review experience and live work.",
+    "projects.portfolio.proof": "Built with reusable sections and a mobile-first layout.",
     "projects.meta.default": "Daniela Torres Almeida | Built with HTML/CSS/JS | GitHub Pages",
-    "projects.qa.status.loading": "Status: loading...",
-    "projects.qa.status.updated": "Updated: --",
     "projects.qa.overlay": "Automated API checks with readable status and report links.",
     "projects.qa.title": "API QA Test Suite",
+    "projects.qa.summary": "Automated API checks with status visibility and report sharing.",
+    "projects.qa.what": "What I did: Built QA test flows, documented API validations, and published readable report outputs for faster debugging and release checks.",
+    "projects.qa.problem": "<strong>Problem:</strong> API regressions needed to be detected earlier with clearer reporting.",
+    "projects.qa.solution": "<strong>Solution:</strong> Implemented automated API checks using Python, Pytest, and Postman flows.",
+    "projects.qa.outcome": "<strong>Outcome:</strong> Enabled faster verification and clearer QA visibility before release updates.",
     "projects.ui.overlay": "Component gallery showcasing reusable UI patterns.",
     "projects.ui.title": "UI Components Showcase",
+    "projects.ui.summary": "Reusable UI patterns designed for consistent and scalable interfaces.",
+    "projects.ui.what": "What I did: Developed reusable frontend components, added responsive behavior, and refined interactive states for consistency across layouts.",
+    "projects.ui.problem": "<strong>Problem:</strong> Product pages needed reusable UI blocks to reduce duplicated implementation work.",
+    "projects.ui.solution": "<strong>Solution:</strong> Built a component showcase with modular HTML, CSS, and JavaScript patterns.",
+    "projects.ui.outcome": "<strong>Outcome:</strong> Improved consistency and speed when building new interface sections.",
     "projects.mood.overlay": "Responsive frontend sections for a wellness platform with clear product communication.",
     "projects.mood.title": "MoodChanger.ai",
+    "projects.mood.summary": "Wellness platform website communicating adaptive support features clearly.",
+    "projects.mood.what": "What I did: Designed and implemented responsive frontend sections for a wellness platform, focusing on clear messaging, layout structure, and user-centered presentation.",
+    "projects.mood.problem": "<strong>Problem:</strong> Product information needed to be clearer and easier to scan across devices.",
+    "projects.mood.solution": "<strong>Solution:</strong> Built responsive sections and improved information hierarchy for user understanding.",
+    "projects.mood.outcome": "<strong>Outcome:</strong> Delivered a clearer interface that better supports user trust and product discovery.",
     "projects.mood.description": "Website for a wellness platform combining neuroscience, wearable sensors, and adaptive support experiences.",
     "projects.robo.overlay": "Responsive landing page focused on clear structure and conversion-ready messaging.",
     "projects.robo.title": "RoboCollective.ai",
+    "projects.robo.summary": "Responsive marketing website for a robotics collaboration platform.",
+    "projects.robo.what": "What I did: Built responsive frontend sections with clear content hierarchy and optimized layout flow to improve readability and conversion.",
+    "projects.robo.problem": "<strong>Problem:</strong> The platform needed a clear web presence to communicate product value quickly.",
+    "projects.robo.solution": "<strong>Solution:</strong> Developed a responsive landing experience with structured messaging and navigation.",
+    "projects.robo.outcome": "<strong>Outcome:</strong> Delivered a clearer, more modern interface aligned with product and growth goals.",
     "projects.robo.description": "Built from scratch with HTML, CSS, JavaScript, and Python automations supporting the content workflow.",
     "projects.legal.overlay": "Public-facing responsive site with clear services and contact pathways.",
     "projects.legal.title": "Legal Ventures Institute",
+    "projects.legal.summary": "Public-facing website presenting legal innovation services and conversion paths.",
+    "projects.legal.what": "What I did: Built a public-facing responsive website with clear content hierarchy, service presentation, and contact flow optimization.",
+    "projects.legal.problem": "<strong>Problem:</strong> The organization needed a clear and trustworthy way to present services online.",
+    "projects.legal.solution": "<strong>Solution:</strong> Structured responsive page sections and improved service-to-contact navigation.",
+    "projects.legal.outcome": "<strong>Outcome:</strong> Delivered a cleaner, easier-to-navigate site for prospective clients.",
     "projects.legal.description": "Public-facing site for Legal Ventures Institute with clear service overview and contact flow.",
     "projects.space.overlay": "Modern responsive interface focused on readability and clear navigation.",
     "projects.space.title": "Space Ventures Institute",
+    "projects.space.summary": "Venture-focused website designed for readability and structured navigation.",
+    "projects.space.what": "What I did: Developed a modern, responsive interface for venture-focused content, emphasizing readability, layout consistency, and clear navigation.",
+    "projects.space.problem": "<strong>Problem:</strong> Complex venture and innovation content needed better structure for users.",
+    "projects.space.solution": "<strong>Solution:</strong> Built responsive layouts with clearer content sections and navigation cues.",
+    "projects.space.outcome": "<strong>Outcome:</strong> Improved readability and content discoverability across screen sizes.",
     "projects.space.description": "Public-facing website for Space Ventures Institute focused on venture and innovation content.",
     "projects.actions.live": "Live",
     "projects.actions.code": "Code",
+    "projects.actions.codeRequest": "Code on request",
     "projects.actions.demo": "Demo",
     "projects.actions.viewSite": "View site",
+    "projects.privateRepoNote": "Private repository. Frontend contribution available on request.",
     "about.intro": "Frontend developer and UI/UX designer with a strong QA mindset, focused on building accessible, responsive, and reliable digital products. I work across design, implementation, and testing to create interfaces that are clear for users and maintainable for teams.",
     "about.heading": "About",
     "about.p1": "Frontend developer and UI/UX designer with a strong QA mindset, focused on building accessible, responsive, and reliable digital products. I work across design, implementation, and testing to create interfaces that are clear for users and maintainable for teams.",
@@ -214,32 +256,74 @@ const TRANSLATIONS = {
     "projects.intro": "Seleção de projetos em front-end, automação de QA e experiências web orientadas para o produto.",
     "projects.todo.overlay": "Aplicação de tarefas em React + Firebase com autenticação Google.",
     "projects.todo.title": "App de Tarefas",
+    "projects.todo.summary": "Gestor de tarefas com autenticação e atualizações persistentes em tempo real.",
+    "projects.todo.what": "O que fiz: Construí a interface frontend em React e TypeScript, implementei layouts responsivos e integrei Firebase com Google Auth para um fluxo de tarefas fluido.",
+    "projects.todo.problem": "<strong>Problema:</strong> Os utilizadores precisavam de um gestor de tarefas simples com autenticação e dados persistentes.",
+    "projects.todo.solution": "<strong>Solução:</strong> Construí uma aplicação React + TypeScript com Firebase e Google Auth.",
+    "projects.todo.outcome": "<strong>Resultado:</strong> Entreguei um fluxo de tarefas responsivo com login e gestão de tarefas em tempo real.",
+    "projects.todo.proof": "Foco: Acessibilidade, responsividade e HTML semântico.",
     "projects.todo.description": "Aplicação de tarefas em React + TypeScript com Firebase e autenticação Google.",
     "projects.portfolio.overlay": "Portefólio de página única adaptável a diferentes dispositivos, com navegação clara e projetos em destaque.",
     "projects.portfolio.title": "Portefólio Adaptável",
+    "projects.portfolio.summary": "Portefólio pessoal criado para apresentar trabalho frontend com navegação clara.",
+    "projects.portfolio.what": "O que fiz: Construí um portefólio single-page responsivo, organizei secções reutilizáveis e otimizei legibilidade e navegação em desktop e mobile.",
+    "projects.portfolio.problem": "<strong>Problema:</strong> Era necessário um site pessoal claro para apresentar projetos e competências de forma profissional.",
+    "projects.portfolio.solution": "<strong>Solução:</strong> Construí um portefólio single-page responsivo com navegação estruturada e publicação no GitHub Pages.",
+    "projects.portfolio.outcome": "<strong>Resultado:</strong> Criei uma forma mais rápida e limpa para recrutadores reverem experiência e trabalho real.",
+    "projects.portfolio.proof": "Construído com secções reutilizáveis e abordagem mobile-first.",
     "projects.meta.default": "Daniela Torres Almeida | Desenvolvido com HTML/CSS/JS | GitHub Pages",
-    "projects.qa.status.loading": "Estado: a carregar...",
-    "projects.qa.status.updated": "Atualizado: --",
     "projects.qa.overlay": "Verificações de API automatizadas com estado legível e acesso direto a relatórios.",
     "projects.qa.title": "Suite de Testes de API (QA)",
+    "projects.qa.summary": "Verificações de API automatizadas com visibilidade de estado e partilha de relatórios.",
+    "projects.qa.what": "O que fiz: Construí fluxos de testes de QA, documentei validações de API e publiquei relatórios legíveis para acelerar debugging e verificações de release.",
+    "projects.qa.problem": "<strong>Problema:</strong> Era necessário detetar regressões de API mais cedo, com relatórios mais claros.",
+    "projects.qa.solution": "<strong>Solução:</strong> Implementei verificações automatizadas de API com Python, Pytest e fluxos Postman.",
+    "projects.qa.outcome": "<strong>Resultado:</strong> Permiti verificação mais rápida e maior visibilidade de QA antes de novas releases.",
     "projects.ui.overlay": "Galeria de componentes com padrões de UI reutilizáveis.",
     "projects.ui.title": "Mostra de Componentes UI",
+    "projects.ui.summary": "Padrões de UI reutilizáveis desenhados para interfaces consistentes e escaláveis.",
+    "projects.ui.what": "O que fiz: Desenvolvi componentes frontend reutilizáveis, adicionei comportamento responsivo e refinei estados interativos para consistência entre layouts.",
+    "projects.ui.problem": "<strong>Problema:</strong> As páginas de produto precisavam de blocos de UI reutilizáveis para reduzir trabalho duplicado de implementação.",
+    "projects.ui.solution": "<strong>Solução:</strong> Construí uma mostra de componentes com padrões modulares em HTML, CSS e JavaScript.",
+    "projects.ui.outcome": "<strong>Resultado:</strong> Melhorei a consistência e a velocidade na criação de novas secções de interface.",
     "projects.mood.overlay": "Secções frontend responsivas para uma plataforma de bem-estar com comunicação clara.",
     "projects.mood.title": "MoodChanger.ai",
+    "projects.mood.summary": "Website de plataforma de bem-estar que comunica funcionalidades de suporte adaptativo com clareza.",
+    "projects.mood.what": "O que fiz: Desenhei e implementei secções frontend responsivas para uma plataforma de bem-estar, com foco em mensagens claras, estrutura de layout e apresentação centrada no utilizador.",
+    "projects.mood.problem": "<strong>Problema:</strong> A informação do produto precisava de ser mais clara e mais fácil de percorrer em vários dispositivos.",
+    "projects.mood.solution": "<strong>Solução:</strong> Construí secções responsivas e melhorei a hierarquia de informação para facilitar a compreensão.",
+    "projects.mood.outcome": "<strong>Resultado:</strong> Entreguei uma interface mais clara que melhora confiança do utilizador e descoberta do produto.",
     "projects.mood.description": "Website para uma plataforma de bem-estar que combina neurociência, sensores wearables e experiências de suporte adaptativo.",
     "projects.robo.overlay": "Landing page responsiva com estrutura clara e mensagens focadas em conversão.",
     "projects.robo.title": "RoboCollective.ai",
+    "projects.robo.summary": "Website de marketing responsivo para uma plataforma de colaboração em robótica.",
+    "projects.robo.what": "O que fiz: Construí secções frontend responsivas com hierarquia clara de conteúdo e fluxo de layout otimizado para melhorar legibilidade e conversão.",
+    "projects.robo.problem": "<strong>Problema:</strong> A plataforma precisava de uma presença web clara para comunicar rapidamente o valor do produto.",
+    "projects.robo.solution": "<strong>Solução:</strong> Desenvolvi uma landing page responsiva com mensagens estruturadas e navegação clara.",
+    "projects.robo.outcome": "<strong>Resultado:</strong> Entreguei uma interface mais clara e moderna, alinhada com objetivos de produto e crescimento.",
     "projects.robo.description": "Desenvolvido de raiz com HTML, CSS, JavaScript e automações em Python para suportar o fluxo de conteúdos.",
     "projects.legal.overlay": "Website público responsivo com serviços claros e fluxo de contacto eficiente.",
     "projects.legal.title": "Legal Ventures Institute",
+    "projects.legal.summary": "Website público que apresenta serviços de inovação legal e caminhos de conversão.",
+    "projects.legal.what": "O que fiz: Construí um website responsivo de acesso público com hierarquia clara de conteúdo, apresentação de serviços e otimização do fluxo de contacto.",
+    "projects.legal.problem": "<strong>Problema:</strong> A organização precisava de uma forma clara e credível de apresentar serviços online.",
+    "projects.legal.solution": "<strong>Solução:</strong> Estruturei secções responsivas e melhorei a navegação entre serviços e contacto.",
+    "projects.legal.outcome": "<strong>Resultado:</strong> Entreguei um site mais limpo e fácil de navegar para potenciais clientes.",
     "projects.legal.description": "Website público para o Legal Ventures Institute, com apresentação clara de serviços.",
     "projects.space.overlay": "Interface moderna e responsiva com foco em legibilidade e navegação clara.",
     "projects.space.title": "Space Ventures Institute",
+    "projects.space.summary": "Website orientado para venture, desenhado para legibilidade e navegação estruturada.",
+    "projects.space.what": "O que fiz: Desenvolvi uma interface moderna e responsiva para conteúdo focado em venture, com ênfase em legibilidade, consistência de layout e navegação clara.",
+    "projects.space.problem": "<strong>Problema:</strong> Conteúdo complexo de venture e inovação precisava de melhor estrutura para os utilizadores.",
+    "projects.space.solution": "<strong>Solução:</strong> Construí layouts responsivos com secções de conteúdo mais claras e pistas de navegação.",
+    "projects.space.outcome": "<strong>Resultado:</strong> Melhorei legibilidade e descoberta de conteúdo em diferentes tamanhos de ecrã.",
     "projects.space.description": "Website público para o Space Ventures Institute, focado em inovação e programas de \"venture\".",
     "projects.actions.live": "Online",
     "projects.actions.code": "Código",
+    "projects.actions.codeRequest": "Código mediante pedido",
     "projects.actions.demo": "Demonstração",
     "projects.actions.viewSite": "Ver site",
+    "projects.privateRepoNote": "Repositório privado. Contribuição frontend disponível mediante pedido.",
     "about.intro": "Frontend developer e UI/UX designer com forte mentalidade de QA, focada na criação de produtos digitais acessíveis, responsivos e fiáveis. Trabalho entre design, implementação e testes para criar interfaces claras para utilizadores e sustentáveis para equipas.",
     "about.heading": "Sobre",
     "about.p1": "Frontend developer e UI/UX designer com forte mentalidade de QA, focada na criação de produtos digitais acessíveis, responsivos e fiáveis. Trabalho entre design, implementação e testes para criar interfaces claras para utilizadores e sustentáveis para equipas.",
@@ -580,37 +664,27 @@ document.querySelectorAll(".card[data-href], .card-link[data-href]").forEach((wr
   if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "0");
   if (!target.hasAttribute("role")) target.setAttribute("role", "link");
 
+  const isNestedInteractiveTarget = (eventTarget) => {
+    if (!(eventTarget instanceof Element)) return false;
+    const interactive = eventTarget.closest("a, button, input, textarea, select, summary, [contenteditable='true']");
+    return Boolean(interactive && interactive !== target);
+  };
+
   const open = () => {
     const url = wrapper.getAttribute("data-href");
     if (url) window.open(url, "_blank", "noopener");
   };
 
   target.addEventListener("click", (e) => {
-    if (e.target.closest("a")) return;
+    if (isNestedInteractiveTarget(e.target)) return;
     open();
   });
 
   target.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      open();
-    }
-  });
-});
-
-document.querySelectorAll('.card[role="link"][data-href]').forEach((card) => {
-  card.addEventListener("click", (e) => {
-    if (e.target.closest("a")) return;
-    const url = card.getAttribute("data-href");
-    if (url) window.open(url, "_blank", "noopener");
-  });
-
-  card.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      const url = card.getAttribute("data-href");
-      if (url) window.open(url, "_blank", "noopener");
-    }
+    if (e.key !== "Enter" && e.key !== " ") return;
+    if (isNestedInteractiveTarget(e.target)) return;
+    e.preventDefault();
+    open();
   });
 });
 

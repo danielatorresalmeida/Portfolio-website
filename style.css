@@ -481,18 +481,9 @@ body {
   }
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .hero::before,
   .hero::after {
-    animation: none;
-  }
-  .status-chip.spinner {
     animation: none;
   }
 }
@@ -587,17 +578,6 @@ body {
   height: 100%;
   object-fit: cover;
   transition: transform .35s ease;
-}
-.card-status {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-  color: var(--muted);
-  z-index: 1;
 }
 .card-overlay {
   position: absolute;
@@ -706,26 +686,6 @@ body {
 .link-disabled {
   opacity: .8;
   pointer-events: none;
-}
-.status-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 8px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  font-size: 12px;
-  color: var(--muted);
-  background: transparent;
-}
-.status-chip.spinner {
-  width: 12px;
-  height: 12px;
-  padding: 0;
-  border: 2px solid var(--border);
-  border-top-color: var(--accent);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
 }
 @media (min-width:700px){ .card{grid-column:span 6} }
 @media (min-width:1024px){ .card{grid-column:span 4} }
@@ -1030,6 +990,9 @@ body {
   display: grid;
   gap: 10px;
   max-width: 900px;
+  width: min(900px, 100%);
+  margin-left: auto;
+  margin-right: auto;
 }
 .selected-strengths-list li {
   border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border));
@@ -1038,6 +1001,7 @@ body {
   padding: 12px 14px;
   color: var(--text);
   font-weight: 600;
+  text-align: center;
 }
 
 /* Contact */

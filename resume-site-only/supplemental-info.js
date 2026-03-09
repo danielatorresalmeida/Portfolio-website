@@ -5,7 +5,6 @@
   const section = document.getElementById("supplemental-info");
   if (!section) return;
 
-  const metaNode = document.querySelector(".identity .meta");
   const langToggle = document.getElementById("lang-toggle");
 
   const leftTitleNode = section.querySelector("[data-supp-left-title]");
@@ -15,8 +14,6 @@
 
   const translations = {
     en: {
-      metaLine:
-        "Cascais, Portugal · +351 962046821 · <a href=\"mailto:danielarosadolealtorresalmeida@gmail.com\">danielarosadolealtorresalmeida@gmail.com</a> · <a href=\"https://danielatorresalmeida.github.io/Portfolio-website/\" target=\"_blank\" rel=\"noopener\">portfolio website</a> · <a href=\"https://github.com/danielatorresalmeida\" target=\"_blank\" rel=\"noopener\">github.com/danielatorresalmeida</a>",
       leftTitle: "Additional Information",
       leftItems: [
         "<strong>Phone:</strong> +351 962046821.",
@@ -33,8 +30,6 @@
       ],
     },
     pt: {
-      metaLine:
-        "Cascais, Portugal · +351 962046821 · <a href=\"mailto:danielarosadolealtorresalmeida@gmail.com\">danielarosadolealtorresalmeida@gmail.com</a> · <a href=\"https://danielatorresalmeida.github.io/Portfolio-website/\" target=\"_blank\" rel=\"noopener\">website do portefólio</a> · <a href=\"https://github.com/danielatorresalmeida\" target=\"_blank\" rel=\"noopener\">github.com/danielatorresalmeida</a>",
       leftTitle: "Informação Adicional",
       leftItems: [
         "<strong>Telefone:</strong> +351 962046821.",
@@ -60,7 +55,6 @@
     const lang = getLanguage();
     const t = translations[lang];
 
-    if (metaNode) metaNode.innerHTML = t.metaLine;
     if (leftTitleNode) leftTitleNode.textContent = t.leftTitle;
     if (rightTitleNode) rightTitleNode.textContent = t.rightTitle;
 
