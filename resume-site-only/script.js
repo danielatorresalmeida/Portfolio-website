@@ -137,7 +137,7 @@ const translations = {
       },
       {
         title: "RoboCollective.ai",
-        bullet: "Built responsive frontend sections with clear messaging hierarchy for a robotics collaboration platform.",
+        bullet: "Built responsive frontend sections and conversion-focused page flows in a React + Next.js codebase styled with Tailwind CSS.",
       },
       {
         title: "MoodChanger.ai",
@@ -284,7 +284,7 @@ const translations = {
       },
       {
         title: "RoboCollective.ai",
-        bullet: "Desenvolvi secções frontend responsivas com hierarquia clara de mensagens para uma plataforma colaborativa de robótica.",
+        bullet: "Desenvolvi secções frontend responsivas e fluxos de página focados em conversão num código React + Next.js com Tailwind CSS.",
       },
       {
         title: "MoodChanger.ai",
