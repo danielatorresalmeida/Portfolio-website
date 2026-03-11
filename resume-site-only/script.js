@@ -133,7 +133,7 @@ const translations = {
       },
       {
         title: "API QA Test Suite",
-        bullet: "Built automated API checks with readable status and report outputs to support QA validation and release confidence.",
+        bullet: "Built automated API checks in Python + Pytest, generated pytest-html reports, and published QA outputs on GitHub Pages.",
       },
       {
         title: "RoboCollective.ai",
@@ -141,15 +141,15 @@ const translations = {
       },
       {
         title: "MoodChanger.ai",
-        bullet: "Designed and implemented responsive frontend sections focused on clarity, layout structure, and user-centered presentation.",
+        bullet: "Built responsive product and marketing sections in a Next.js + React codebase styled with Tailwind CSS and deployed on Vercel.",
       },
       {
         title: "Legal Ventures Institute",
-        bullet: "Built a public-facing responsive website with clear content hierarchy, service presentation, and contact flow optimization.",
+        bullet: "Built a public-facing Next.js + React website with modular styling, clear service hierarchy, and optimized contact flow.",
       },
       {
         title: "Space Ventures Institute",
-        bullet: "Developed a modern responsive interface for venture-focused content, emphasizing readability and navigation consistency.",
+        bullet: "Developed responsive venture-focused interfaces in a Next.js + React codebase using Tailwind CSS, deployed on Vercel.",
       },
     ],
     coursesTitle: "Courses & Certifications",
@@ -280,7 +280,7 @@ const translations = {
       },
       {
         title: "Suite de Testes de API (QA)",
-        bullet: "Construí verificações automatizadas de API com estados legíveis e saídas de relatório para apoiar validação de QA e confiança em releases.",
+        bullet: "Construi verificacoes automatizadas de API em Python + Pytest, gerei relatorios pytest-html e publiquei saidas de QA no GitHub Pages.",
       },
       {
         title: "RoboCollective.ai",
@@ -288,15 +288,15 @@ const translations = {
       },
       {
         title: "MoodChanger.ai",
-        bullet: "Desenhei e implementei secções frontend responsivas focadas em clareza, estrutura de layout e apresentação centrada no utilizador.",
+        bullet: "Construi seccoes de produto e marketing responsivas num codigo Next.js + React com Tailwind CSS e deploy na Vercel.",
       },
       {
         title: "Legal Ventures Institute",
-        bullet: "Construí um website responsivo de acesso público com hierarquia clara de conteúdo, apresentação de serviços e otimização do fluxo de contacto.",
+        bullet: "Construi um website publico em Next.js + React com estilos modulares, hierarquia clara de servicos e fluxo de contacto otimizado.",
       },
       {
         title: "Space Ventures Institute",
-        bullet: "Desenvolvi uma interface responsiva moderna para conteúdo focado em venture, com ênfase em legibilidade e consistência de navegação.",
+        bullet: "Desenvolvi interfaces responsivas para conteudo venture num codigo Next.js + React com Tailwind CSS, publicado na Vercel.",
       },
     ],
     coursesTitle: "Cursos e Certificações",
