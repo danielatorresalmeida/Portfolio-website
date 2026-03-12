@@ -491,10 +491,12 @@ body {
 /* Core stack strip */
 .core-stack {
   padding: 0 0 20px;
+  text-align: center;
 }
 .core-stack h2 {
   margin: 0 0 14px;
   font-size: clamp(24px, 2.4vw, 34px);
+  text-align: center;
 }
 .core-stack-tags {
   display: flex;
