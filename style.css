@@ -2324,10 +2324,31 @@ html[lang="en"] #about .technical-card:first-child h4 {
   }
 
   .project-flow,
-  .experience-list,
-  #about .technical-list {
+  .experience-list {
     padding-left: 0;
     list-style-position: inside;
+  }
+
+  #about .technical-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  #about .technical-list li {
+    margin: 0;
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border));
+    background: color-mix(in srgb, var(--panel) 76%, transparent);
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.25;
   }
 
   #contact .contact-quick-actions {
