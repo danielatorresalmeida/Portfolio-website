@@ -2341,14 +2341,19 @@ html[lang="en"] #about .technical-card:first-child h4 {
 
   #about .technical-list li {
     margin: 0;
-    padding: 6px 12px;
+    padding: 6px 10px;
     border-radius: 999px;
-    border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border));
-    background: color-mix(in srgb, var(--panel) 76%, transparent);
-    color: var(--text);
-    font-size: 14px;
-    font-weight: 600;
+    border: 1px solid color-mix(in srgb, var(--accent) 42%, var(--border));
+    background: color-mix(in srgb, #0f162a 84%, var(--panel));
+    color: #eaf0ff;
+    font-size: 12px;
+    font-weight: 500;
     line-height: 1.25;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
+  }
+
+  #about .technical-list li::marker {
+    content: "";
   }
 
   #contact .contact-quick-actions {
