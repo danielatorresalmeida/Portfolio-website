@@ -1817,14 +1817,16 @@ body {
 
 @media (max-width: 860px) {
   .topbar .topbar-inner {
-    grid-template-columns: auto 1fr auto auto;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 8px;
     position: relative;
     padding: 8px 10px;
   }
 
   .nav-toggle {
     display: inline-flex;
-    grid-column: 4;
+    grid-column: 3;
     justify-self: end;
   }
 
@@ -1865,18 +1867,31 @@ body {
   }
 
   .topbar .actions {
-    grid-column: 3;
+    grid-column: 2;
     justify-self: end;
     gap: 6px;
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .topbar .actions::-webkit-scrollbar {
+    display: none;
   }
 
   .topbar .actions .btn {
     padding: 8px 10px;
+    flex: 0 0 auto;
+    white-space: nowrap;
   }
 
   .topbar .actions .btn-lang {
-    min-width: 64px;
-    padding-inline: 10px;
+    min-width: 56px;
+    padding-inline: 8px;
+    text-align: center;
   }
 }
 
@@ -2013,12 +2028,49 @@ body {
 }
 
 @media (max-width: 520px) {
+  .topbar .topbar-inner {
+    gap: 6px;
+    padding: 6px 8px;
+  }
+
   .topbar .brand {
     display: none;
   }
 
   .topbar .brand-group {
     gap: 0;
+  }
+
+  .topbar .brand-linkedin {
+    width: 30px;
+    height: 30px;
+  }
+
+  .topbar .actions {
+    gap: 4px;
+    padding: 2px;
+  }
+
+  .topbar .actions .btn {
+    min-height: 32px;
+    padding: 6px 8px;
+    font-size: 11px;
+    border-radius: 8px;
+  }
+
+  .topbar .actions .btn-lang {
+    min-width: 44px;
+    padding-inline: 6px;
+  }
+
+  .topbar .actions .btn-theme {
+    padding: 6px 8px;
+  }
+
+  .nav-toggle {
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
   }
 }
 

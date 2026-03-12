@@ -54,7 +54,7 @@ const translations = {
     experienceTitle: "Experience",
     experienceItems: [
       {
-        title: "Software Development Intern - Flo Labs R&D",
+        title: "Software Development Intern - FloLabs Innovations Group",
         when: "Aug 2025 - Present",
         bullets: [
           "Designed and implemented 10+ UI/UX features to improve usability, clarity, and engagement using HTML, CSS, JavaScript, PHP, and TypeScript.",
@@ -203,7 +203,7 @@ const translations = {
     experienceTitle: "Experiência",
     experienceItems: [
       {
-        title: "Estagiária de Desenvolvimento de Software - Flo Labs R&D",
+        title: "Estagiária de Desenvolvimento de Software - FloLabs Innovations Group",
         when: "Ago 2025 - Presente",
         bullets: [
           "Conceção e implementação de mais de 10 funcionalidades de UI/UX, com melhoria de 50% no envolvimento, através de HTML, CSS, JavaScript, PHP e TypeScript.",

@@ -979,7 +979,7 @@ if (contactForm && contactStatus) {
 const sections = document.querySelectorAll("section");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-if (sections.length && !prefersReducedMotion) {
+if (sections.length && !prefersReducedMotion && "IntersectionObserver" in window) {
   document.body.classList.add("reveal-on-scroll");
   const observer = new IntersectionObserver(
     (entries, obs) => {
@@ -989,8 +989,11 @@ if (sections.length && !prefersReducedMotion) {
         obs.unobserve(entry.target);
       });
     },
-    { threshold: 0.15 }
+    { threshold: 0 }
   );
 
   sections.forEach((section) => observer.observe(section));
+} else {
+  // Fallback: keep sections visible when reveal animation cannot run.
+  sections.forEach((section) => section.classList.add("visible"));
 }
