@@ -952,11 +952,6 @@ body {
   margin: 4px 0;
   text-align: center;
 }
-.experience-list li::before {
-  content: "*";
-  margin-right: 6px;
-  color: var(--muted);
-}
 /* Experience section: center the timeline block */
 #experience .container {
   text-align: center;
@@ -2258,6 +2253,12 @@ html[lang="en"] #about .technical-card:first-child h4 {
 
   #about .technical-card-head {
     margin-bottom: 8px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #about .technical-card h4 {
+    text-align: center;
   }
 
   #about .technical-list {
