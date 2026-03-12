@@ -1829,7 +1829,13 @@ body {
   .nav-toggle {
     display: inline-flex;
     grid-column: 3;
+    grid-row: 1;
     justify-self: end;
+  }
+
+  .topbar .brand-group {
+    grid-column: 1;
+    grid-row: 1;
   }
 
   .topbar .nav {
@@ -1870,7 +1876,9 @@ body {
 
   .topbar .actions {
     grid-column: 2;
+    grid-row: 1;
     justify-self: end;
+    align-self: center;
     gap: 6px;
     min-width: 0;
     max-width: 100%;
