@@ -2204,29 +2204,22 @@ html[lang="en"] #about .technical-card:first-child h4 {
 
 #about .technical-list {
   margin: 0;
-  padding: 0;
-  list-style: none;
+  padding: 0 0 0 20px;
+  list-style: disc;
   color: var(--text);
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 8px;
-  font-size: clamp(14px, 0.9vw, 16px);
+  font-size: clamp(15px, 0.96vw, 18px);
 }
 
 #about .technical-list li {
   margin: 0;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--accent) 42%, var(--border));
-  background: color-mix(in srgb, #0f162a 84%, var(--panel));
-  color: #eaf0ff;
-  line-height: 1.25;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  line-height: 1.5;
   font-weight: 500;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
-}
-
-#about .technical-list li::marker {
-  content: "";
 }
 
 @media (max-width: 760px) {
@@ -2265,18 +2258,18 @@ html[lang="en"] #about .technical-card:first-child h4 {
   }
 
   #about .technical-card-head {
-    margin-bottom: 8px;
-    justify-content: center;
-    text-align: center;
+    margin-bottom: 10px;
+    justify-content: flex-start;
+    text-align: left;
   }
 
   #about .technical-card h4 {
-    text-align: center;
+    text-align: left;
   }
 
   #about .technical-list {
-    gap: 6px;
-    padding-left: 16px;
+    gap: 10px;
+    padding-left: 22px;
   }
 }
 
@@ -2319,11 +2312,7 @@ html[lang="en"] #about .technical-card:first-child h4 {
   #contact .contact-field label,
   #contact .form-status,
   #contact .contact-alt,
-  #contact .contact-alt-item,
-  #about .technical-skills,
-  #about .technical-card,
-  #about .technical-card-head,
-  #about .technical-list {
+  #contact .contact-alt-item {
     text-align: center;
   }
 
@@ -2342,31 +2331,61 @@ html[lang="en"] #about .technical-card:first-child h4 {
     list-style-position: inside;
   }
 
+  /* Match resume-only style for technical cards on mobile */
+  #about .technical-skills,
+  #about .technical-card,
+  #about .technical-card-head,
+  #about .technical-card h4,
+  #about .technical-list,
+  #about .technical-list li {
+    text-align: left;
+  }
+
+  #about .technical-icon {
+    display: none;
+  }
+
+  #about .technical-card-head {
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+
+  #about .technical-card h4 {
+    position: relative;
+  }
+
+  #about .technical-card h4::after {
+    content: "";
+    display: block;
+    width: 78px;
+    height: 4px;
+    margin-top: 10px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #6b7bff, #47d6ff);
+  }
+
   #about .technical-list {
-    list-style: none;
-    padding: 0;
+    list-style: disc;
+    padding-left: 22px;
     margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
+    display: grid;
+    gap: 10px;
   }
 
   #about .technical-list li {
     margin: 0;
-    padding: 6px 10px;
-    border-radius: 999px;
-    border: 1px solid color-mix(in srgb, var(--accent) 42%, var(--border));
-    background: color-mix(in srgb, #0f162a 84%, var(--panel));
-    color: #eaf0ff;
-    font-size: 12px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--text);
+    font-size: 16px;
     font-weight: 500;
-    line-height: 1.25;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
+    line-height: 1.5;
+    box-shadow: none;
   }
 
   #about .technical-list li::marker {
-    content: "";
+    content: normal;
   }
 
   #contact .contact-quick-actions {
