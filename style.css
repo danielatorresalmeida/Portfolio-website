@@ -2266,6 +2266,78 @@ html[lang="en"] #about .technical-card:first-child h4 {
   }
 }
 
+/* Mobile readability: center all page content text */
+@media (max-width: 760px) {
+  main.hero > .container,
+  .core-stack > .container,
+  .section > .container,
+  .site-footer > .container,
+  #contact .container.contact-layout {
+    width: 100%;
+    max-width: none;
+    padding-inline: 16px;
+    box-sizing: border-box;
+  }
+
+  .hero .container,
+  .core-stack .container,
+  .section > .container,
+  .site-footer .container {
+    text-align: center;
+  }
+
+  .grid.cards .card-body,
+  .grid.cards .project-summary,
+  .grid.cards .card-body h3,
+  .project-contribution,
+  .project-flow,
+  .project-proof,
+  .project-note,
+  .timeline,
+  .timeline .item,
+  .timeline .what,
+  .experience-list,
+  #contact .container.contact-layout,
+  #contact h2,
+  #contact .section-intro,
+  #contact .contact-form-card,
+  #contact .contact-field,
+  #contact .contact-field label,
+  #contact .form-status,
+  #contact .contact-alt,
+  #contact .contact-alt-item,
+  #about .technical-skills,
+  #about .technical-card,
+  #about .technical-card-head,
+  #about .technical-list {
+    text-align: center;
+  }
+
+  .grid.cards .card-body {
+    align-items: center;
+  }
+
+  .grid.cards .tags,
+  .grid.cards .links {
+    justify-content: center;
+  }
+
+  .project-flow,
+  .experience-list,
+  #about .technical-list {
+    padding-left: 0;
+    list-style-position: inside;
+  }
+
+  #contact .contact-quick-actions {
+    margin-inline: auto;
+  }
+
+  #contact .contact-form-card .btn[type="submit"] {
+    justify-self: center;
+  }
+}
+
 
 
 
