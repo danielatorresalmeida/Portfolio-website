@@ -50,32 +50,6 @@ body {
   transition: background-color .2s linear, color .2s linear, border-color .2s linear;
 }
 
-/* Header / Topbar */
-.topbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: rgba(12,14,20,.8);            /* dark glass */
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
-  transition: background-color .2s linear, border-color .2s linear, box-shadow .2s linear;
-}
-
-/* Light header only when in light theme */
-:root[data-theme="light"] .topbar {
-  background: var(--panel) !important;
-  border-bottom: 1px solid var(--border) !important;
-  box-shadow: 0 2px 6px var(--border);
-  backdrop-filter: none;
-}
-
-/* Dark theme subtle shadow */
-:root[data-theme="dark"] .topbar {
-  box-shadow: 0 2px 6px rgba(0,0,0,.35);
-}
-
 /* Cards / sections keep using theme vars */
 .card {
   background: var(--panel);
@@ -116,71 +90,6 @@ body {
   max-width: 1080px;
   margin: 0 auto;
   padding: 0 18px;
-}
-
-/* Topbar */
-.topbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: rgba(12,14,20,.8);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
-}
-:root[data-theme="light"] .topbar {
-  background: var(--panel);
-  border-bottom: 1px solid var(--border);
-  box-shadow: 0 2px 6px var(--border);
-  backdrop-filter: none;
-}
-.topbar .topbar-inner {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 0;
-  flex-wrap: wrap;
-}
-@media (min-width:720px){
-  .topbar .topbar-inner { flex-wrap: nowrap; }
-}
-
-/* Header-only styles (scoped) */
-.topbar .brand {
-  font-weight: 800;
-  letter-spacing: .2px;
-  color: var(--text);
-  text-decoration: none;
-}
-
-.topbar .nav {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-}
-
-.topbar .nav a {
-  color: var(--text);
-  text-decoration: none;
-  opacity: .95;
-}
-.topbar .nav a:hover {
-  opacity: 1;
-}
-
-/* If you keep using .pill in the header only, scope it too */
-.topbar .pill {
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 6px 10px;
-}
-
-/* Actions (Light / CV) — header only */
-.topbar .actions {
-  display: flex;
-  gap: 8px;
 }
 
 /* Buttons */
@@ -562,7 +471,7 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 10px 30px rgba(0,0,0,.18);
 }
-.card[role="link"] {
+.card[data-href] {
   cursor: pointer;
 }
 .card img {
@@ -1283,8 +1192,8 @@ html, body, .topbar, .card, .btn {
   box-shadow: 0 10px 30px rgba(0,0,0,.18);
 }
 
-/* Make the whole card show a pointer when it's clickable via role="link" */
-.card[role="link"] {
+/* Make the whole card show a pointer when it's clickable via data-href */
+.card[data-href] {
   cursor: pointer;
 }
 
@@ -1593,19 +1502,17 @@ body {
 }
 
 /* Header reorganization */
-:root[data-theme="light"] .topbar,
-:root[data-theme="dark"] .topbar {
-  background: transparent;
-  border-bottom: 0;
-  box-shadow: none;
-  backdrop-filter: none;
-}
-
 .topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   background: transparent;
   border-bottom: 0;
   box-shadow: none;
   backdrop-filter: none;
+  transition: background-color .2s linear, border-color .2s linear, box-shadow .2s linear;
 }
 
 .topbar .topbar-inner {
@@ -1630,6 +1537,7 @@ body {
   font-weight: 800;
   letter-spacing: .2px;
   color: color-mix(in srgb, var(--text) 94%, #ffffff 6%);
+  text-decoration: none;
 }
 
 .topbar .brand-group {
@@ -1671,11 +1579,14 @@ body {
 .topbar .nav {
   justify-self: end;
   display: flex;
+  align-items: center;
   gap: clamp(8px, 1.2vw, 14px);
 }
 
 .topbar .nav a {
   position: relative;
+  color: var(--text);
+  text-decoration: none;
   padding: 8px 12px;
   font-weight: 600;
   border-radius: 999px;
@@ -1874,7 +1785,8 @@ body {
     grid-row: 1;
     justify-self: end;
     align-self: center;
-    gap: 6px;
+    gap: 4px;
+    padding: 3px;
     min-width: 0;
     max-width: 100%;
     overflow-x: auto;
@@ -1888,13 +1800,15 @@ body {
   }
 
   .topbar .actions .btn {
-    padding: 8px 10px;
+    padding: 7px 8px;
+    min-height: 34px;
+    font-size: 12px;
     flex: 0 0 auto;
     white-space: nowrap;
   }
 
   .topbar .actions .btn-lang {
-    min-width: 56px;
+    min-width: 58px;
     padding-inline: 8px;
     text-align: center;
   }
@@ -1947,23 +1861,6 @@ body {
 @media (min-width: 1700px) {
   .grid.cards .card {
     grid-column: span 4;
-  }
-}
-
-@media (max-width: 860px) {
-  .topbar .actions {
-    gap: 4px;
-    padding: 3px;
-  }
-
-  .topbar .actions .btn {
-    padding: 7px 8px;
-    min-height: 34px;
-    font-size: 12px;
-  }
-
-  .topbar .actions .btn-lang {
-    min-width: 58px;
   }
 }
 
@@ -2264,12 +2161,33 @@ html[lang="en"] #about .technical-card:first-child h4 {
   }
 
   #about .technical-card h4 {
+    position: relative;
     text-align: left;
   }
 
+  #about .technical-card h4::after {
+    content: "";
+    display: block;
+    width: 78px;
+    height: 4px;
+    margin-top: 10px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #6b7bff, #47d6ff);
+  }
+
+  #about .technical-icon {
+    display: none;
+  }
+
   #about .technical-list {
+    list-style: disc;
     gap: 10px;
     padding-left: 22px;
+  }
+
+  #about .technical-list li {
+    font-size: 16px;
+    line-height: 1.5;
   }
 }
 
@@ -2329,63 +2247,6 @@ html[lang="en"] #about .technical-card:first-child h4 {
   .experience-list {
     padding-left: 0;
     list-style-position: inside;
-  }
-
-  /* Match resume-only style for technical cards on mobile */
-  #about .technical-skills,
-  #about .technical-card,
-  #about .technical-card-head,
-  #about .technical-card h4,
-  #about .technical-list,
-  #about .technical-list li {
-    text-align: left;
-  }
-
-  #about .technical-icon {
-    display: none;
-  }
-
-  #about .technical-card-head {
-    justify-content: flex-start;
-    margin-bottom: 10px;
-  }
-
-  #about .technical-card h4 {
-    position: relative;
-  }
-
-  #about .technical-card h4::after {
-    content: "";
-    display: block;
-    width: 78px;
-    height: 4px;
-    margin-top: 10px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, #6b7bff, #47d6ff);
-  }
-
-  #about .technical-list {
-    list-style: disc;
-    padding-left: 22px;
-    margin: 0;
-    display: grid;
-    gap: 10px;
-  }
-
-  #about .technical-list li {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    color: var(--text);
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.5;
-    box-shadow: none;
-  }
-
-  #about .technical-list li::marker {
-    content: normal;
   }
 
   #contact .contact-quick-actions {

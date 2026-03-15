@@ -99,7 +99,7 @@ const translations = {
       },
       {
         title: "Tools & QA",
-        items: ["Git / GitHub", "GitHub Actions", "Postman", "Python", "Supabase", "QA Testing", "API Testing"],
+        items: ["Git / GitHub", "GitHub Actions", "Postman", "Python", "Supabase", "QA Testing", "API Testing", "Selenium"],
       },
     ],
     keySkillsTitle: "Key Skills",
@@ -125,11 +125,11 @@ const translations = {
       },
       {
         title: "Responsive Portfolio",
-        bullet: "Developed a responsive portfolio interface with structured navigation, reusable sections, and GitHub Pages deployment.",
+        bullet: "Developed a responsive portfolio interface with structured navigation, reusable sections, and GitHub Pages deployment. Executed manual website test cases and automated Selenium smoke checks for key user flows.",
       },
       {
         title: "UI Components Showcase",
-        bullet: "Implemented reusable UI patterns with responsive behavior and consistent interaction states for faster frontend delivery.",
+        bullet: "Implemented reusable UI patterns with responsive behavior and consistent interaction states for faster frontend delivery. Added manual interaction/accessibility checks and Selenium smoke/regression checks on core components.",
       },
       {
         title: "API QA Test Suite",
@@ -137,19 +137,19 @@ const translations = {
       },
       {
         title: "RoboCollective.ai",
-        bullet: "Built responsive frontend sections and conversion-focused page flows in a React + Next.js codebase styled with Tailwind CSS.",
+        bullet: "Built responsive frontend sections and conversion-focused page flows in a React + Next.js codebase styled with Tailwind CSS. Ran manual cross-browser QA and Selenium smoke tests for critical pages before release.",
       },
       {
         title: "MoodChanger.ai",
-        bullet: "Built responsive product and marketing sections in a Next.js + React codebase styled with Tailwind CSS and deployed on Vercel.",
+        bullet: "Built responsive product and marketing sections in a Next.js + React codebase styled with Tailwind CSS and deployed on Vercel. Covered core journeys with manual exploratory testing and Selenium-based smoke checks.",
       },
       {
         title: "Legal Ventures Institute",
-        bullet: "Built a public-facing Next.js + React website with modular styling, clear service hierarchy, and optimized contact flow.",
+        bullet: "Built a public-facing Next.js + React website with modular styling, clear service hierarchy, and optimized contact flow. Applied manual regression testing and Selenium smoke automation for contact and navigation routes.",
       },
       {
         title: "Space Ventures Institute",
-        bullet: "Developed responsive venture-focused interfaces in a Next.js + React codebase using Tailwind CSS, deployed on Vercel.",
+        bullet: "Developed responsive venture-focused interfaces in a Next.js + React codebase using Tailwind CSS, deployed on Vercel. Validated responsive behavior manually and used Selenium smoke checks on high-traffic pages.",
       },
     ],
     coursesTitle: "Courses & Certifications",
@@ -248,7 +248,7 @@ const translations = {
       },
       {
         title: "Ferramentas e Fluxos",
-        items: ["Git / GitHub", "GitHub Actions", "Testes de QA", "Postman", "Automação com Python", "Supabase"],
+        items: ["Git / GitHub", "GitHub Actions", "Testes de QA", "Postman", "Automação com Python", "Supabase", "Selenium"],
       },
     ],
     keySkillsTitle: "Competências-chave",
@@ -272,11 +272,11 @@ const translations = {
       },
       {
         title: "Portefólio Adaptável",
-        bullet: "Desenvolvi uma interface de portefólio responsiva com navegação estruturada, secções reutilizáveis e publicação no GitHub Pages.",
+        bullet: "Desenvolvi uma interface de portefólio responsiva com navegação estruturada, secções reutilizáveis e publicação no GitHub Pages. Executei testes manuais de website e smoke checks automatizados com Selenium nos fluxos principais.",
       },
       {
         title: "Mostra de Componentes UI",
-        bullet: "Implementei padrões de UI reutilizáveis com comportamento responsivo e estados de interação consistentes para acelerar entregas frontend.",
+        bullet: "Implementei padrões de UI reutilizáveis com comportamento responsivo e estados de interação consistentes para acelerar entregas frontend. Adicionei verificações manuais de interação/acessibilidade e smoke/regression checks com Selenium.",
       },
       {
         title: "Suite de Testes de API (QA)",
@@ -284,19 +284,19 @@ const translations = {
       },
       {
         title: "RoboCollective.ai",
-        bullet: "Desenvolvi secções frontend responsivas e fluxos de página focados em conversão num código React + Next.js com Tailwind CSS.",
+        bullet: "Desenvolvi secções frontend responsivas e fluxos de página focados em conversão num código React + Next.js com Tailwind CSS. Executei QA manual cross-browser e smoke tests com Selenium nas páginas críticas.",
       },
       {
         title: "MoodChanger.ai",
-        bullet: "Construi seccoes de produto e marketing responsivas num codigo Next.js + React com Tailwind CSS e deploy na Vercel.",
+        bullet: "Construi secções de produto e marketing responsivas num código Next.js + React com Tailwind CSS e deploy na Vercel. Cobri jornadas essenciais com testes manuais exploratórios e smoke checks com Selenium.",
       },
       {
         title: "Legal Ventures Institute",
-        bullet: "Construi um website publico em Next.js + React com estilos modulares, hierarquia clara de servicos e fluxo de contacto otimizado.",
+        bullet: "Construi um website público em Next.js + React com estilos modulares, hierarquia clara de serviços e fluxo de contacto otimizado. Apliquei testes manuais de regressão e automação de smoke tests com Selenium para contacto e navegação.",
       },
       {
         title: "Space Ventures Institute",
-        bullet: "Desenvolvi interfaces responsivas para conteudo venture num codigo Next.js + React com Tailwind CSS, publicado na Vercel.",
+        bullet: "Desenvolvi interfaces responsivas para conteúdo venture num código Next.js + React com Tailwind CSS, publicado na Vercel. Validei comportamento responsivo manualmente e usei smoke checks com Selenium nas páginas de maior tráfego.",
       },
     ],
     coursesTitle: "Cursos e Certificações",

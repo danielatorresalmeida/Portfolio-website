@@ -67,7 +67,7 @@ const TRANSLATIONS = {
     "projects.portfolio.overlay": "Responsive single-page portfolio with clear navigation and project highlights.",
     "projects.portfolio.title": "Responsive Portfolio",
     "projects.portfolio.summary": "Personal portfolio built to present frontend work with clear navigation.",
-    "projects.portfolio.what": "What I did: Built a responsive single-page portfolio, structured reusable sections, and optimized readability and navigation across desktop and mobile.",
+    "projects.portfolio.what": "What I did: Built a responsive single-page portfolio, structured reusable sections, and optimized readability and navigation across desktop and mobile. Executed manual website tests (navigation, forms, responsive behavior) and automated Selenium smoke checks on key flows.",
     "projects.portfolio.problem": "<strong>Problem:</strong> Needed a clear personal site to present projects and skills professionally.",
     "projects.portfolio.solution": "<strong>Solution:</strong> Built a responsive single-page portfolio with structured navigation and GitHub Pages deployment.",
     "projects.portfolio.outcome": "<strong>Outcome:</strong> Created a faster, cleaner way for recruiters to review experience and live work.",
@@ -83,14 +83,14 @@ const TRANSLATIONS = {
     "projects.ui.overlay": "Component gallery showcasing reusable UI patterns.",
     "projects.ui.title": "UI Components Showcase",
     "projects.ui.summary": "Reusable UI patterns designed for consistent and scalable interfaces.",
-    "projects.ui.what": "What I did: Developed reusable frontend components, added responsive behavior, and refined interactive states for consistency across layouts.",
+    "projects.ui.what": "What I did: Developed reusable frontend components, added responsive behavior, and refined interactive states for consistency across layouts. Ran manual interaction and accessibility checks plus automated Selenium smoke/regression checks for core component flows.",
     "projects.ui.problem": "<strong>Problem:</strong> Product pages needed reusable UI blocks to reduce duplicated implementation work.",
     "projects.ui.solution": "<strong>Solution:</strong> Built a component showcase with modular HTML, CSS, and JavaScript patterns.",
     "projects.ui.outcome": "<strong>Outcome:</strong> Improved consistency and speed when building new interface sections.",
     "projects.mood.overlay": "Next.js wellness platform built with React, Tailwind CSS, and Vercel deployment.",
     "projects.mood.title": "MoodChanger.ai",
     "projects.mood.summary": "Next.js website for MoodChanger.ai with responsive React sections and clear product messaging.",
-    "projects.mood.what": "What I did: Built responsive product and marketing sections in a Next.js + React codebase, refining hierarchy, readability, and conversion flow.",
+    "projects.mood.what": "What I did: Built responsive product and marketing sections in a Next.js + React codebase, refining hierarchy, readability, and conversion flow. Performed manual cross-browser and mobile QA and automated Selenium smoke checks for critical user paths.",
     "projects.mood.problem": "<strong>Problem:</strong> Product information needed to be clearer and easier to scan across devices.",
     "projects.mood.solution": "<strong>Solution:</strong> Implemented responsive Next.js sections with clearer information hierarchy and user flow.",
     "projects.mood.outcome": "<strong>Outcome:</strong> Delivered a clearer interface that better supports user trust and product discovery.",
@@ -98,7 +98,7 @@ const TRANSLATIONS = {
     "projects.robo.overlay": "Next.js storefront and marketing experience with responsive product flows.",
     "projects.robo.title": "RoboCollective.ai",
     "projects.robo.summary": "Next.js-powered robotics storefront with responsive marketing and product pages.",
-    "projects.robo.what": "What I did: Built responsive frontend sections, refined information hierarchy, and optimized conversion flow in a React + Next.js environment.",
+    "projects.robo.what": "What I did: Built responsive frontend sections, refined information hierarchy, and optimized conversion flow in a React + Next.js environment. Executed manual exploratory website testing and Selenium smoke checks to reduce regressions on key pages.",
     "projects.robo.problem": "<strong>Problem:</strong> The platform needed a clear web presence to communicate product value quickly.",
     "projects.robo.solution": "<strong>Solution:</strong> Developed a responsive landing experience with structured messaging and navigation.",
     "projects.robo.outcome": "<strong>Outcome:</strong> Delivered a clearer, more modern interface aligned with product and growth goals.",
@@ -106,7 +106,7 @@ const TRANSLATIONS = {
     "projects.legal.overlay": "Next.js public site with React components, modular styling, and Vercel deployment.",
     "projects.legal.title": "Legal Ventures Institute",
     "projects.legal.summary": "Public-facing Next.js website presenting legal innovation services with clear conversion paths.",
-    "projects.legal.what": "What I did: Built responsive React sections in a Next.js codebase, improving content hierarchy, service presentation, and contact flow.",
+    "projects.legal.what": "What I did: Built responsive React sections in a Next.js codebase, improving content hierarchy, service presentation, and contact flow. Added manual regression testing plus Selenium-based smoke coverage for primary conversion routes.",
     "projects.legal.problem": "<strong>Problem:</strong> The organization needed a clear and trustworthy way to present services online.",
     "projects.legal.solution": "<strong>Solution:</strong> Structured responsive Next.js sections and improved service-to-contact navigation.",
     "projects.legal.outcome": "<strong>Outcome:</strong> Delivered a cleaner, easier-to-navigate site for prospective clients.",
@@ -114,7 +114,7 @@ const TRANSLATIONS = {
     "projects.space.overlay": "Next.js venture site with React components, Tailwind CSS, and Vercel deployment.",
     "projects.space.title": "Space Ventures Institute",
     "projects.space.summary": "Next.js website for Space Ventures Institute focused on readability and structured navigation.",
-    "projects.space.what": "What I did: Developed responsive React interfaces in a Next.js + Tailwind codebase for venture-focused content and clear navigation.",
+    "projects.space.what": "What I did: Developed responsive React interfaces in a Next.js + Tailwind codebase for venture-focused content and clear navigation. Validated releases with manual responsive QA and Selenium smoke tests across core website journeys.",
     "projects.space.problem": "<strong>Problem:</strong> Complex venture and innovation content needed better structure for users.",
     "projects.space.solution": "<strong>Solution:</strong> Built responsive Next.js layouts with clearer content sections and navigation cues.",
     "projects.space.outcome": "<strong>Outcome:</strong> Improved readability and content discoverability across screen sizes.",
@@ -151,6 +151,7 @@ const TRANSLATIONS = {
     "about.technical.tools.4": "Supabase",
     "about.technical.tools.5": "QA Testing",
     "about.technical.tools.6": "API Testing",
+    "about.technical.tools.7": "Selenium",
     "about.technical.key.heading": "Key Skills",
     "about.technical.key.0": "JavaScript",
     "about.technical.key.1": "React",
@@ -268,7 +269,7 @@ const TRANSLATIONS = {
     "projects.portfolio.overlay": "Portefólio de página única adaptável a diferentes dispositivos, com navegação clara e projetos em destaque.",
     "projects.portfolio.title": "Portefólio Adaptável",
     "projects.portfolio.summary": "Portefólio pessoal criado para apresentar trabalho frontend com navegação clara.",
-    "projects.portfolio.what": "O que fiz: Construí um portefólio single-page responsivo, organizei secções reutilizáveis e otimizei legibilidade e navegação em desktop e mobile.",
+    "projects.portfolio.what": "O que fiz: Construí um portefólio single-page responsivo, organizei secções reutilizáveis e otimizei legibilidade e navegação em desktop e mobile. Executei testes manuais de website (navegação, formulários, comportamento responsivo) e smoke tests automatizados com Selenium nos fluxos principais.",
     "projects.portfolio.problem": "<strong>Problema:</strong> Era necessário um site pessoal claro para apresentar projetos e competências de forma profissional.",
     "projects.portfolio.solution": "<strong>Solução:</strong> Construí um portefólio single-page responsivo com navegação estruturada e publicação no GitHub Pages.",
     "projects.portfolio.outcome": "<strong>Resultado:</strong> Criei uma forma mais rápida e limpa para recrutadores reverem experiência e trabalho real.",
@@ -284,14 +285,14 @@ const TRANSLATIONS = {
     "projects.ui.overlay": "Galeria de componentes com padrões de UI reutilizáveis.",
     "projects.ui.title": "Mostra de Componentes UI",
     "projects.ui.summary": "Padrões de UI reutilizáveis desenhados para interfaces consistentes e escaláveis.",
-    "projects.ui.what": "O que fiz: Desenvolvi componentes frontend reutilizáveis, adicionei comportamento responsivo e refinei estados interativos para consistência entre layouts.",
+    "projects.ui.what": "O que fiz: Desenvolvi componentes frontend reutilizáveis, adicionei comportamento responsivo e refinei estados interativos para consistência entre layouts. Realizei validações manuais de interação e acessibilidade, além de smoke/regression checks automatizados com Selenium para fluxos críticos de componentes.",
     "projects.ui.problem": "<strong>Problema:</strong> As páginas de produto precisavam de blocos de UI reutilizáveis para reduzir trabalho duplicado de implementação.",
     "projects.ui.solution": "<strong>Solução:</strong> Construí uma mostra de componentes com padrões modulares em HTML, CSS e JavaScript.",
     "projects.ui.outcome": "<strong>Resultado:</strong> Melhorei a consistência e a velocidade na criação de novas secções de interface.",
     "projects.mood.overlay": "Plataforma de bem-estar em Next.js com React, Tailwind CSS e publicação na Vercel.",
     "projects.mood.title": "MoodChanger.ai",
     "projects.mood.summary": "Website em Next.js para a MoodChanger.ai com secções React responsivas e comunicação clara do produto.",
-    "projects.mood.what": "O que fiz: Construí secções de produto e marketing responsivas num código Next.js + React, refinando hierarquia, legibilidade e fluxo de conversão.",
+    "projects.mood.what": "O que fiz: Construí secções de produto e marketing responsivas num código Next.js + React, refinando hierarquia, legibilidade e fluxo de conversão. Executei QA manual cross-browser e mobile, além de smoke checks automatizados com Selenium para jornadas críticas de utilizador.",
     "projects.mood.problem": "<strong>Problema:</strong> A informação do produto precisava de ser mais clara e mais fácil de percorrer em vários dispositivos.",
     "projects.mood.solution": "<strong>Solução:</strong> Implementei secções responsivas em Next.js com melhor hierarquia de informação e fluxo de utilizador.",
     "projects.mood.outcome": "<strong>Resultado:</strong> Entreguei uma interface mais clara que melhora confiança do utilizador e descoberta do produto.",
@@ -299,7 +300,7 @@ const TRANSLATIONS = {
     "projects.robo.overlay": "Experiência de loja e marketing em Next.js com fluxos de produto responsivos.",
     "projects.robo.title": "RoboCollective.ai",
     "projects.robo.summary": "Loja de robótica em Next.js com páginas de marketing e produto responsivas.",
-    "projects.robo.what": "O que fiz: Construí secções frontend responsivas, refinei a hierarquia de conteúdo e otimizei o fluxo de conversão num ambiente React + Next.js.",
+    "projects.robo.what": "O que fiz: Construí secções frontend responsivas, refinei a hierarquia de conteúdo e otimizei o fluxo de conversão num ambiente React + Next.js. Realizei testes manuais exploratórios de website e smoke checks com Selenium para reduzir regressões nas páginas principais.",
     "projects.robo.problem": "<strong>Problema:</strong> A plataforma precisava de uma presença web clara para comunicar rapidamente o valor do produto.",
     "projects.robo.solution": "<strong>Solução:</strong> Desenvolvi uma landing page responsiva com mensagens estruturadas e navegação clara.",
     "projects.robo.outcome": "<strong>Resultado:</strong> Entreguei uma interface mais clara e moderna, alinhada com objetivos de produto e crescimento.",
@@ -307,7 +308,7 @@ const TRANSLATIONS = {
     "projects.legal.overlay": "Website público em Next.js com componentes React, estilos modulares e publicação na Vercel.",
     "projects.legal.title": "Legal Ventures Institute",
     "projects.legal.summary": "Website público em Next.js que apresenta serviços de inovação legal com caminhos claros de conversão.",
-    "projects.legal.what": "O que fiz: Construí secções React responsivas num código Next.js, melhorando hierarquia de conteúdo, apresentação de serviços e fluxo de contacto.",
+    "projects.legal.what": "O que fiz: Construí secções React responsivas num código Next.js, melhorando hierarquia de conteúdo, apresentação de serviços e fluxo de contacto. Adicionei testes manuais de regressão e cobertura de smoke tests com Selenium nos principais caminhos de conversão.",
     "projects.legal.problem": "<strong>Problema:</strong> A organização precisava de uma forma clara e credível de apresentar serviços online.",
     "projects.legal.solution": "<strong>Solução:</strong> Estruturei secções responsivas em Next.js e melhorei a navegação entre serviços e contacto.",
     "projects.legal.outcome": "<strong>Resultado:</strong> Entreguei um site mais limpo e fácil de navegar para potenciais clientes.",
@@ -315,7 +316,7 @@ const TRANSLATIONS = {
     "projects.space.overlay": "Website venture em Next.js com componentes React, Tailwind CSS e publicação na Vercel.",
     "projects.space.title": "Space Ventures Institute",
     "projects.space.summary": "Website em Next.js para o Space Ventures Institute, focado em legibilidade e navegação estruturada.",
-    "projects.space.what": "O que fiz: Desenvolvi interfaces React responsivas num código Next.js + Tailwind para conteúdo focado em venture e navegação clara.",
+    "projects.space.what": "O que fiz: Desenvolvi interfaces React responsivas num código Next.js + Tailwind para conteúdo focado em venture e navegação clara. Validei releases com QA manual responsivo e smoke tests com Selenium nas jornadas essenciais do website.",
     "projects.space.problem": "<strong>Problema:</strong> Conteúdo complexo de venture e inovação precisava de melhor estrutura para os utilizadores.",
     "projects.space.solution": "<strong>Solução:</strong> Construí layouts responsivos em Next.js com secções de conteúdo mais claras e pistas de navegação.",
     "projects.space.outcome": "<strong>Resultado:</strong> Melhorei legibilidade e descoberta de conteúdo em diferentes tamanhos de ecrã.",
@@ -352,6 +353,7 @@ const TRANSLATIONS = {
     "about.technical.tools.4": "Supabase",
     "about.technical.tools.5": "Testes de QA",
     "about.technical.tools.6": "Testes de API",
+    "about.technical.tools.7": "Selenium",
     "about.technical.key.heading": "Competências-chave",
     "about.technical.key.0": "JavaScript",
     "about.technical.key.1": "React",
@@ -660,13 +662,10 @@ langToggle?.addEventListener("click", () => {
 
 applyTranslations(currentLanguage);
 
-// === Clickable project cards (works for .card[data-href] OR .card-link[data-href]) ===
+// === Clickable project cards (mouse only on non-interactive regions) ===
 document.querySelectorAll(".card[data-href], .card-link[data-href]").forEach((wrapper) => {
   const target = wrapper.matches(".card") ? wrapper : wrapper.querySelector(".card");
   if (!target) return;
-  target.style.cursor = "pointer";
-  if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "0");
-  if (!target.hasAttribute("role")) target.setAttribute("role", "link");
 
   const isNestedInteractiveTarget = (eventTarget) => {
     if (!(eventTarget instanceof Element)) return false;
@@ -681,13 +680,6 @@ document.querySelectorAll(".card[data-href], .card-link[data-href]").forEach((wr
 
   target.addEventListener("click", (e) => {
     if (isNestedInteractiveTarget(e.target)) return;
-    open();
-  });
-
-  target.addEventListener("keydown", (e) => {
-    if (e.key !== "Enter" && e.key !== " ") return;
-    if (isNestedInteractiveTarget(e.target)) return;
-    e.preventDefault();
     open();
   });
 });
@@ -816,6 +808,7 @@ if (dotGrid) {
     });
 
     const applyImpulse = (dot, fx, fy) => {
+      if (!Number.isFinite(fx) || !Number.isFinite(fy)) return;
       dot.vx += fx;
       dot.vy += fy;
     };
@@ -825,17 +818,23 @@ if (dotGrid) {
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
       const now = performance.now();
-      const dt = state.mouse.lastTime ? now - state.mouse.lastTime : 16;
-      const vx = ((x - state.mouse.lastX) / dt) * 1000;
-      const vy = ((y - state.mouse.lastY) / dt) * 1000;
+      const elapsed = state.mouse.lastTime ? now - state.mouse.lastTime : 16;
+      const dt = elapsed > 0 ? elapsed : 16;
+      const rawVx = ((x - state.mouse.lastX) / dt) * 1000;
+      const rawVy = ((y - state.mouse.lastY) / dt) * 1000;
+      const vx = Number.isFinite(rawVx) ? rawVx : 0;
+      const vy = Number.isFinite(rawVy) ? rawVy : 0;
       const speed = Math.hypot(vx, vy);
-      const limiter = speed > settings.maxSpeed ? settings.maxSpeed / speed : 1;
+      const limiter = speed > settings.maxSpeed && speed > 0 ? settings.maxSpeed / speed : 1;
+      const limitedVx = vx * limiter;
+      const limitedVy = vy * limiter;
+      const limitedSpeed = speed * limiter;
 
       state.mouse.x = x;
       state.mouse.y = y;
-      state.mouse.vx = vx * limiter;
-      state.mouse.vy = vy * limiter;
-      state.mouse.speed = speed * limiter;
+      state.mouse.vx = Number.isFinite(limitedVx) ? limitedVx : 0;
+      state.mouse.vy = Number.isFinite(limitedVy) ? limitedVy : 0;
+      state.mouse.speed = Number.isFinite(limitedSpeed) ? limitedSpeed : 0;
       state.mouse.lastX = x;
       state.mouse.lastY = y;
       state.mouse.lastTime = now;

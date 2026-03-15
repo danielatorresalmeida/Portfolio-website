@@ -1,7 +1,9 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
+  workflow_run:
+    workflows: [ "Run Tests" ]
+    types: [ completed ]
     branches: [ main ]
   workflow_dispatch:
 
@@ -16,6 +18,9 @@ concurrency:
 
 jobs:
   deploy:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    env:
+      DEPLOY_SHA: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -25,6 +30,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -33,7 +40,7 @@ jobs:
 
       - name: Inject version into all HTML files
         run: |
-          VERSION="${GITHUB_SHA::8}"
+          VERSION="${DEPLOY_SHA::8}"
           echo "Using version: $VERSION"
           find . -name "*.html" -print0 | xargs -0 sed -i "s/__ASSET_VERSION__/$VERSION/g"
 
