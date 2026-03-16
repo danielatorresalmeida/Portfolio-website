@@ -47,8 +47,18 @@
     },
   };
 
+  function getStoredLanguage() {
+    try {
+      return window.localStorage.getItem(LANGUAGE_KEY);
+    } catch {
+      return null;
+    }
+  }
+
   function getLanguage() {
-    return localStorage.getItem(LANGUAGE_KEY) === LANG_PT ? "pt" : "en";
+    const storedLanguage = getStoredLanguage();
+    if (storedLanguage === LANG_PT) return "pt";
+    return document.documentElement.lang === LANG_PT ? "pt" : "en";
   }
 
   function renderSupplementalInfo() {

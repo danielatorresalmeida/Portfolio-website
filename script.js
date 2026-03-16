@@ -21,6 +21,22 @@ const THEME_ICONS = {
   dark: "assets/light.png",
 };
 
+function getStoredValue(key) {
+  try {
+    return window.localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function setStoredValue(key, value) {
+  try {
+    window.localStorage.setItem(key, value);
+  } catch {
+    // Ignore blocked storage (privacy mode / restricted contexts).
+  }
+}
+
 const TRANSLATIONS = {
   [LANG_EN]: {
     "nav.projects": "Projects",
@@ -430,7 +446,7 @@ const TRANSLATIONS = {
   },
 };
 
-let currentLanguage = localStorage.getItem(LANGUAGE_KEY);
+let currentLanguage = getStoredValue(LANGUAGE_KEY);
 if (currentLanguage !== LANG_EN && currentLanguage !== LANG_PT) {
   currentLanguage = LANG_EN;
 }
@@ -489,7 +505,7 @@ function setThemeIcon(theme) {
 function applyTheme(mode) {
   const theme = normalizeTheme(mode);
   document.documentElement.setAttribute("data-theme", theme);
-  localStorage.setItem(THEME_KEY, theme);
+  setStoredValue(THEME_KEY, theme);
 
   if (themeToggle) {
     themeToggle.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
@@ -500,7 +516,7 @@ function applyTheme(mode) {
   setThemeIcon(theme);
 }
 
-const saved = localStorage.getItem(THEME_KEY);
+const saved = getStoredValue(THEME_KEY);
 const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
 const initialTheme = saved === "light" || saved === "dark" ? saved : prefersLight ? "light" : "dark";
 applyTheme(initialTheme);
@@ -618,7 +634,7 @@ toTop?.addEventListener("click", () =>
 
 function applyTranslations(language) {
   currentLanguage = language === LANG_PT ? LANG_PT : LANG_EN;
-  localStorage.setItem(LANGUAGE_KEY, currentLanguage);
+  setStoredValue(LANGUAGE_KEY, currentLanguage);
   document.documentElement.lang = currentLanguage === LANG_PT ? "pt-PT" : "en";
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {

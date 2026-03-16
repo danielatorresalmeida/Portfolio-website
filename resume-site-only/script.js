@@ -17,6 +17,22 @@ const THEME_ICONS = {
   dark: "assets/icons8-night-94.png",
 };
 
+function getStoredValue(key) {
+  try {
+    return window.localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function setStoredValue(key, value) {
+  try {
+    window.localStorage.setItem(key, value);
+  } catch {
+    // Ignore blocked storage (privacy mode / restricted contexts).
+  }
+}
+
 const CV_PDFS = {
   [LANG_EN]: "assets/Daniela-Torres-Almeida-Resume.pdf",
   [LANG_PT]: "assets/Daniela-Torres-Almeida-Resume-pt-PT.pdf",
@@ -336,7 +352,7 @@ const translations = {
 };
 
 const urlLanguage = new URLSearchParams(window.location.search).get("lang");
-let currentLanguage = urlLanguage || localStorage.getItem(LANGUAGE_KEY);
+let currentLanguage = urlLanguage || getStoredValue(LANGUAGE_KEY);
 if (currentLanguage !== LANG_EN && currentLanguage !== LANG_PT) {
   currentLanguage = LANG_EN;
 }
@@ -400,7 +416,7 @@ function updateToggleState(mode) {
 
 function applyTheme(mode) {
   document.documentElement.setAttribute("data-theme", mode);
-  localStorage.setItem(THEME_KEY, mode);
+  setStoredValue(THEME_KEY, mode);
   updateToggleState(mode);
 }
 
@@ -505,7 +521,7 @@ function renderResumeText() {
 
 function applyLanguage(language) {
   currentLanguage = language === LANG_PT ? LANG_PT : LANG_EN;
-  localStorage.setItem(LANGUAGE_KEY, currentLanguage);
+  setStoredValue(LANGUAGE_KEY, currentLanguage);
   document.documentElement.lang = currentLanguage;
 
   setText(langToggle?.querySelector(".pill-label"), t("langButton"));
@@ -531,7 +547,7 @@ function applyLanguage(language) {
   updateToggleState(document.documentElement.getAttribute("data-theme") || "dark");
 }
 
-const savedTheme = localStorage.getItem(THEME_KEY);
+const savedTheme = getStoredValue(THEME_KEY);
 if (savedTheme === "light" || savedTheme === "dark") {
   applyTheme(savedTheme);
 } else {

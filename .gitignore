@@ -1,2 +1,4 @@
 node_modules/
 coverage/
+tests/visual/artifacts/*.png
+!tests/visual/artifacts/.gitkeep
