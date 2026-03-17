@@ -889,14 +889,24 @@ body {
 }
 
 /* Selected strengths */
+#selected-strengths .container {
+  width: min(980px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  padding-inline: clamp(12px, 2.2vw, 24px);
+  box-sizing: border-box;
+}
+
 .selected-strengths-list {
   margin: 0;
   padding: 0;
   list-style: none;
   display: grid;
-  gap: 10px;
-  max-width: 900px;
-  width: min(900px, 100%);
+  gap: clamp(8px, 1.2vw, 12px);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  align-items: stretch;
+  width: 100%;
+  max-width: none;
   margin-left: auto;
   margin-right: auto;
 }
@@ -904,10 +914,19 @@ body {
   border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border));
   border-radius: 12px;
   background: color-mix(in srgb, var(--panel) 86%, transparent);
-  padding: 12px 14px;
+  padding: clamp(10px, 1.05vw, 14px) clamp(10px, 1.8vw, 18px);
+  min-height: clamp(46px, 4.8vw, 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--text);
   font-weight: 600;
+  font-size: clamp(14px, 1.05vw, 18px);
   text-align: center;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  text-wrap: pretty;
 }
 
 /* Contact */
@@ -1922,11 +1941,6 @@ body {
     min-width: 0;
   }
 
-  .selected-strengths-list li {
-    padding: 10px 12px;
-    font-size: 15px;
-  }
-
 }
 
 @media (max-width: 520px) {
@@ -1973,6 +1987,30 @@ body {
     width: 36px;
     height: 36px;
     border-radius: 9px;
+  }
+}
+
+@media (max-width: 900px) {
+  .selected-strengths-list {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .selected-strengths-list li {
+    min-height: 0;
+    font-size: clamp(13px, 3.6vw, 15px);
+  }
+}
+
+@media (max-width: 640px) {
+  #selected-strengths .container {
+    padding-inline: 12px;
+  }
+
+  .selected-strengths-list li {
+    border-radius: 10px;
+    padding: 10px 9px;
+    line-height: 1.45;
   }
 }
 
@@ -2061,9 +2099,16 @@ body {
   display: grid;
   gap: clamp(12px, 1.8vw, 18px);
   grid-template-columns: 1fr;
+  align-items: start;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 700px) {
+  #about .technical-skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
   #about .technical-skills-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -2075,6 +2120,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-width: 0;
   padding: 20px 18px;
   border-radius: 14px;
 }
@@ -2117,6 +2163,7 @@ html[lang="en"] #about .technical-card:first-child h4 {
   color: var(--text);
   line-height: 1.5;
   font-weight: 500;
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 760px) {
