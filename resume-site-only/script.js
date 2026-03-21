@@ -77,6 +77,7 @@ const translations = {
         title: "Software Development Intern - FloLabs Innovations Group",
         when: "Aug 2025 - Present",
         bullets: [
+          "Built these websites from scratch: Portfolio website and robocollective.ai.",
           "Designed and implemented 10+ UI/UX features to improve usability, clarity, and engagement using HTML, CSS, JavaScript, PHP, and TypeScript.",
           "Supported back-end development with Python (FastAPI).",
           "Assisted in QA testing and documentation to ensure product quality.",
@@ -213,11 +214,11 @@ const translations = {
       },
       {
         title: "Kitchen Management & Production (Level V) - Final 16/20",
-        when: "Escola de Hotelaria e Turismo de SetÃºbal Â· 2015 - 2016",
+        when: "Escola de Hotelaria e Turismo de Setúbal · 2015 - 2016",
       },
       {
         title: "Science & Technology Track (Biology & Geology) - Final 15/20",
-        when: "Escola SecundÃ¡ria de VergÃ­lio Ferreira Â· 2013 - 2015",
+        when: "Escola Secundária de Vergílio Ferreira · 2013 - 2015",
       },
     ],
     strengthsTitle: "Key Strengths",
@@ -233,9 +234,9 @@ const translations = {
   },
   [LANG_PT]: {
     langButton: "EN",
-    langButtonAria: "Mudar idioma para inglÃªs",
-    backHomeAria: "Voltar ao portefÃ³lio",
-    backHomeLabel: "Voltar ao portefÃ³lio",
+    langButtonAria: "Mudar idioma para inglês",
+    backHomeAria: "Voltar ao portefólio",
+    backHomeLabel: "Voltar ao portefólio",
     themeToggleLabel: "Alternar tema",
     themeSwitchToLight: "Mudar para tema claro",
     themeSwitchToDark: "Mudar para tema escuro",
@@ -244,44 +245,45 @@ const translations = {
     metaLine: META_LINE_HTML,
     objectiveTitle: "Objetivo Profissional",
     objectiveBody:
-      "Profissional em transiÃ§Ã£o, com percurso em artes e educaÃ§Ã£o musical, atualmente focada em desenvolvimento de software e garantia de qualidade. ExperiÃªncia em design de UI/UX, desenvolvimento front-end e testes de QA com Python, JavaScript e tecnologias web modernas. Elevada capacidade de adaptaÃ§Ã£o a novos desafios, colaboraÃ§Ã£o em equipas Ã¡geis e aplicaÃ§Ã£o de criatividade Ã  resoluÃ§Ã£o de problemas. Compromisso com soluÃ§Ãµes digitais centradas no utilizador e com a entrega de projetos inovadores e orientados para a qualidade.",
-    experienceTitle: "ExperiÃªncia",
+      "Profissional em transição, com percurso em artes e educação musical, atualmente focada em desenvolvimento de software e garantia de qualidade. Experiência em design de UI/UX, desenvolvimento front-end e testes de QA com Python, JavaScript e tecnologias web modernas. Elevada capacidade de adaptação a novos desafios, colaboração em equipas ágeis e aplicação de criatividade à resolução de problemas. Compromisso com soluções digitais centradas no utilizador e com a entrega de projetos inovadores e orientados para a qualidade.",
+    experienceTitle: "Experiência",
     experienceItems: [
       {
-        title: "EstagiÃ¡ria de Desenvolvimento de Software - FloLabs Innovations Group",
+        title: "Estagiária de Desenvolvimento de Software - FloLabs Innovations Group",
         when: "Ago 2025 - Presente",
         bullets: [
-          "ConceÃ§Ã£o e implementaÃ§Ã£o de mais de 10 funcionalidades de UI/UX, com melhoria de 50% no envolvimento, atravÃ©s de HTML, CSS, JavaScript, PHP e TypeScript.",
+          "Criei estes websites de raiz: Portfolio website e robocollective.ai.",
+          "Conceção e implementação de mais de 10 funcionalidades de UI/UX, com melhoria de 50% no envolvimento, através de HTML, CSS, JavaScript, PHP e TypeScript.",
           "Apoio ao desenvolvimento de back-end com Python (FastAPI).",
-          "ColaboraÃ§Ã£o em testes de QA e documentaÃ§Ã£o para assegurar a qualidade do produto.",
-          "ReduÃ§Ã£o do tempo de resposta a erros em cerca de 20% atravÃ©s de testes de QA estruturados.",
+          "Colaboração em testes de QA e documentação para assegurar a qualidade do produto.",
+          "Redução do tempo de resposta a erros em cerca de 20% através de testes de QA estruturados.",
         ],
       },
       {
-        title: "LLM Trainer (PortuguÃªs e InglÃªs) - Remoto",
+        title: "LLM Trainer (Português e Inglês) - Remoto",
         when: "Ago 2024 - Presente",
         bullets: [
-          "RevisÃ£o e correÃ§Ã£o de prompts e respostas gerados por IA.",
-          "Garantia de rigor linguÃ­stico e adequaÃ§Ã£o cultural em ambos os idiomas.",
+          "Revisão e correção de prompts e respostas gerados por IA.",
+          "Garantia de rigor linguístico e adequação cultural em ambos os idiomas.",
         ],
       },
       {
-        title: "Docente de MÃºsica (Canto, Piano, Violino e Viola) - VÃ¡rias InstituiÃ§Ãµes",
+        title: "Docente de Música (Canto, Piano, Violino e Viola) - Várias Instituições",
         when: "2018 - 2025",
         bullets: [
-          "LecionaÃ§Ã£o em mÃºltiplos instrumentos, reforÃ§ando comunicaÃ§Ã£o, adaptabilidade e trabalho em equipa aplicÃ¡veis a contextos Ã¡geis de software.",
+          "Lecionação em múltiplos instrumentos, reforçando comunicação, adaptabilidade e trabalho em equipa aplicáveis a contextos ágeis de software.",
         ],
       },
       {
-        title: "Hotelaria - FunÃ§Ãµes de Cozinha e Padaria",
+        title: "Hotelaria - Funções de Cozinha e Padaria",
         when: "2016 - 2018",
         where: "Cantinho do Avillez - Gleba Moagem e Padaria - Lagoas Park Hotel",
         bullets: [
-          "PreparaÃ§Ã£o alimentar, pastelaria e panificaÃ§Ã£o, com desenvolvimento de precisÃ£o e gestÃ£o de tempo.",
+          "Preparação alimentar, pastelaria e panificação, com desenvolvimento de precisão e gestão de tempo.",
         ],
       },
     ],
-    skillsTitle: "CompetÃªncias TÃ©cnicas",
+    skillsTitle: "Competências Técnicas",
     skillGroups: [
       {
         title: "Frontend",
@@ -317,7 +319,7 @@ const translations = {
         items: ["Java", "SQL / Design de Base de Dados", "PostgreSQL"],
       },
     ],
-    keySkillsTitle: "CompetÃªncias-chave",
+    keySkillsTitle: "Competências-chave",
     keySkills: [
       "JavaScript",
       "React",
@@ -339,12 +341,12 @@ const translations = {
         bullet: "Desenvolvi o frontend em React + TypeScript com Firebase e Google Auth, entregando um fluxo de tarefas responsivo com dados persistentes em tempo real.",
       },
       {
-        title: "PortefÃ³lio AdaptÃ¡vel",
-        bullet: "Desenvolvi uma interface de portefÃ³lio responsiva com navegaÃ§Ã£o estruturada, secÃ§Ãµes reutilizÃ¡veis e publicaÃ§Ã£o no GitHub Pages. Executei testes manuais de website e smoke checks automatizados com Selenium nos fluxos principais.",
+        title: "Portefólio Adaptável",
+        bullet: "Desenvolvi uma interface de portefólio responsiva com navegação estruturada, secções reutilizáveis e publicação no GitHub Pages. Executei testes manuais de website e smoke checks automatizados com Selenium nos fluxos principais.",
       },
       {
         title: "Mostra de Componentes UI",
-        bullet: "Implementei padrÃµes de UI reutilizÃ¡veis com comportamento responsivo e estados de interaÃ§Ã£o consistentes para acelerar entregas frontend. Adicionei verificaÃ§Ãµes manuais de interaÃ§Ã£o/acessibilidade e smoke/regression checks com Selenium.",
+        bullet: "Implementei padrões de UI reutilizáveis com comportamento responsivo e estados de interação consistentes para acelerar entregas frontend. Adicionei verificações manuais de interação/acessibilidade e smoke/regression checks com Selenium.",
       },
       {
         title: "Suite de Testes de API (QA)",
@@ -352,46 +354,46 @@ const translations = {
       },
       {
         title: "RoboCollective.ai",
-        bullet: "Desenvolvi secÃ§Ãµes frontend responsivas e fluxos de pÃ¡gina focados em conversÃ£o num cÃ³digo React + Next.js com Tailwind CSS. Executei QA manual cross-browser e smoke tests com Selenium nas pÃ¡ginas crÃ­ticas.",
+        bullet: "Desenvolvi secções frontend responsivas e fluxos de página focados em conversão num código React + Next.js com Tailwind CSS. Executei QA manual cross-browser e smoke tests com Selenium nas páginas críticas.",
       },
       {
         title: "MoodChanger.ai",
-        bullet: "Construi secÃ§Ãµes de produto e marketing responsivas num cÃ³digo Next.js + React com Tailwind CSS e deploy na Vercel. Cobri jornadas essenciais com testes manuais exploratÃ³rios e smoke checks com Selenium.",
+        bullet: "Construi secções de produto e marketing responsivas num código Next.js + React com Tailwind CSS e deploy na Vercel. Cobri jornadas essenciais com testes manuais exploratórios e smoke checks com Selenium.",
       },
       {
         title: "Legal Ventures Institute",
-        bullet: "Construi um website pÃºblico em Next.js + React com estilos modulares, hierarquia clara de serviÃ§os e fluxo de contacto otimizado. Apliquei testes manuais de regressÃ£o e automaÃ§Ã£o de smoke tests com Selenium para contacto e navegaÃ§Ã£o.",
+        bullet: "Construi um website público em Next.js + React com estilos modulares, hierarquia clara de serviços e fluxo de contacto otimizado. Apliquei testes manuais de regressão e automação de smoke tests com Selenium para contacto e navegação.",
       },
       {
         title: "Space Ventures Institute",
-        bullet: "Desenvolvi interfaces responsivas para conteÃºdo venture num cÃ³digo Next.js + React com Tailwind CSS, publicado na Vercel. Validei comportamento responsivo manualmente e usei smoke checks com Selenium nas pÃ¡ginas de maior trÃ¡fego.",
+        bullet: "Desenvolvi interfaces responsivas para conteúdo venture num código Next.js + React com Tailwind CSS, publicado na Vercel. Validei comportamento responsivo manualmente e usei smoke checks com Selenium nas páginas de maior tráfego.",
       },
       {
         title: "Mechanic Data Base",
-        bullet: "Desenhei um modelo de dados SQL normalizado para uma oficina mecÃ¢nica, ligando clientes, veÃ­culos, folhas de obra, serviÃ§os, peÃ§as e fornecedores com relaÃ§Ãµes claras de chave primÃ¡ria e estrangeira.",
+        bullet: "Desenhei um modelo de dados SQL normalizado para uma oficina mecânica, ligando clientes, veículos, folhas de obra, serviços, peças e fornecedores com relações claras de chave primária e estrangeira.",
       },
     ],
-    coursesTitle: "Cursos e CertificaÃ§Ãµes",
+    coursesTitle: "Cursos e Certificações",
     courses: [
       "Python Software Language - Programming Hub (Ago 2025)",
       "Fundamentals of Quality Assurance Engineer - Udemy (Jul 2025)",
       "Foundations of Software Testing and Validation - University of Leeds (Jul 2025)",
-      "ConceÃ§Ã£o de websites - (Fev 2026)",
+      "Conceção de websites - (Fev 2026)",
     ],
-    educationTitle: "FormaÃ§Ã£o",
+    educationTitle: "Formação",
     educationItems: [
       {
-        title: "Diploma em Viola d'Arco (8.Âº Grau) - ClassificaÃ§Ã£o Final 16/20",
+        title: "Diploma em Viola d'Arco (8.º Grau) - Classificação Final 16/20",
         when: "2006 - 2018",
-        text: "FormaÃ§Ã£o intensiva em viola d'arco, voz, coro e performance de cÃ¢mara/orquestra.",
+        text: "Formação intensiva em viola d'arco, voz, coro e performance de câmara/orquestra.",
       },
       {
-        title: "GestÃ£o e ProduÃ§Ã£o de Cozinha (NÃ­vel V) - ClassificaÃ§Ã£o Final 16/20",
-        when: "Escola de Hotelaria e Turismo de SetÃºbal Â· 2015 - 2016",
+        title: "Gestão e Produção de Cozinha (Nível V) - Classificação Final 16/20",
+        when: "Escola de Hotelaria e Turismo de Setúbal · 2015 - 2016",
       },
       {
-        title: "Curso de CiÃªncias e Tecnologias (Biologia e Geologia) - ClassificaÃ§Ã£o Final 15/20",
-        when: "Escola SecundÃ¡ria de VergÃ­lio Ferreira Â· 2013 - 2015",
+        title: "Curso de Ciências e Tecnologias (Biologia e Geologia) - Classificação Final 15/20",
+        when: "Escola Secundária de Vergílio Ferreira · 2013 - 2015",
       },
     ],
     strengthsTitle: "Pontos Fortes",
@@ -458,6 +460,17 @@ function setHTML(node, value) {
   if (node) node.innerHTML = value;
 }
 
+function asArray(value) {
+  return Array.isArray(value) ? value : [];
+}
+
+function warnCountMismatch(section, domCount, dataCount) {
+  if (domCount === dataCount) return;
+  console.warn(
+    `[resume-i18n] ${section} count mismatch: DOM has ${domCount}, translations have ${dataCount}.`
+  );
+}
+
 function updateToggleState(mode) {
   if (!themeToggle) return;
   const ariaLabel = mode === "light" ? t("themeSwitchToDark") : t("themeSwitchToLight");
@@ -485,32 +498,47 @@ function renderResumeText() {
   const experienceTitle = expCol?.querySelector("h2");
   setText(experienceTitle, t("experienceTitle"));
   const experienceItems = expCol?.querySelectorAll(".item") || [];
-  const translatedExperience = t("experienceItems");
+  const translatedExperience = asArray(t("experienceItems"));
+  warnCountMismatch("experienceItems", experienceItems.length, translatedExperience.length);
 
   experienceItems.forEach((item, index) => {
     const translated = translatedExperience[index];
-    if (!translated) return;
+    if (!translated) {
+      setText(item.querySelector("h3"), "");
+      setText(item.querySelector(".when"), "");
+      setText(item.querySelector(".where"), "");
+      item.querySelectorAll("li").forEach((bullet) => setText(bullet, ""));
+      return;
+    }
     setText(item.querySelector("h3"), translated.title);
     setText(item.querySelector(".when"), translated.when);
     if (translated.where !== undefined) setText(item.querySelector(".where"), translated.where);
     const bullets = item.querySelectorAll("li");
+    const translatedBullets = asArray(translated.bullets);
+    warnCountMismatch(`experienceItems[${index}].bullets`, bullets.length, translatedBullets.length);
     bullets.forEach((bullet, bulletIndex) => {
-      setText(bullet, translated.bullets[bulletIndex] || "");
+      setText(bullet, translatedBullets[bulletIndex] || "");
     });
   });
 
   const skillsTitle = skillsCol?.querySelector("h2");
   setText(skillsTitle, t("skillsTitle"));
   const skillCards = skillsCol?.querySelectorAll(".skill-group-card") || [];
-  const translatedSkills = t("skillGroups");
+  const translatedSkills = asArray(t("skillGroups"));
+  warnCountMismatch("skillGroups", skillCards.length, translatedSkills.length);
   skillCards.forEach((card, index) => {
     const group = translatedSkills[index];
-    if (!group) return;
+    if (!group) {
+      setText(card.querySelector("h4"), "");
+      const emptyList = card.querySelector(".skill-points");
+      if (emptyList) emptyList.innerHTML = "";
+      return;
+    }
     setText(card.querySelector("h4"), group.title);
     const list = card.querySelector(".skill-points");
     if (!list) return;
     list.innerHTML = "";
-    const items = Array.isArray(group.items) ? group.items : [];
+    const items = asArray(group.items);
     items.forEach((item) => {
       const li = document.createElement("li");
       li.textContent = item;
@@ -523,7 +551,7 @@ function renderResumeText() {
   const keySkillsWrap = skillsCol?.querySelector("#key-skills-tags");
   if (keySkillsWrap) {
     keySkillsWrap.innerHTML = "";
-    const keySkills = t("keySkills");
+    const keySkills = asArray(t("keySkills"));
     keySkills.forEach((item) => {
       const chip = document.createElement("span");
       chip.textContent = item;
@@ -534,10 +562,15 @@ function renderResumeText() {
   const projectsTitle = projectsCol?.querySelector("h2");
   setText(projectsTitle, t("projectsTitle"));
   const projectItems = projectsCol?.querySelectorAll(".item") || [];
-  const translatedProjects = t("projectItems");
+  const translatedProjects = asArray(t("projectItems"));
+  warnCountMismatch("projectItems", projectItems.length, translatedProjects.length);
   projectItems.forEach((item, index) => {
     const translated = translatedProjects[index];
-    if (!translated) return;
+    if (!translated) {
+      setText(item.querySelector("h3"), "");
+      setText(item.querySelector("li"), "");
+      return;
+    }
     setText(item.querySelector("h3"), translated.title);
     setText(item.querySelector("li"), translated.bullet);
   });
@@ -545,7 +578,8 @@ function renderResumeText() {
   const coursesTitle = coursesCol?.querySelector("h2");
   setText(coursesTitle, t("coursesTitle"));
   const courseItems = coursesCol?.querySelectorAll("li") || [];
-  const translatedCourses = t("courses");
+  const translatedCourses = asArray(t("courses"));
+  warnCountMismatch("courses", courseItems.length, translatedCourses.length);
   courseItems.forEach((item, index) => {
     const courseText = translatedCourses[index] || "";
     if (item.dataset.courseLink === WEBSITE_DESIGN_CERTIFICATE.marker) {
@@ -563,10 +597,16 @@ function renderResumeText() {
   const educationTitle = educationCol?.querySelector("h2");
   setText(educationTitle, t("educationTitle"));
   const educationItems = educationCol?.querySelectorAll(".item") || [];
-  const translatedEducation = t("educationItems");
+  const translatedEducation = asArray(t("educationItems"));
+  warnCountMismatch("educationItems", educationItems.length, translatedEducation.length);
   educationItems.forEach((item, index) => {
     const translated = translatedEducation[index];
-    if (!translated) return;
+    if (!translated) {
+      setText(item.querySelector("h3"), "");
+      setText(item.querySelector(".when"), "");
+      setText(item.querySelector("p"), "");
+      return;
+    }
     setText(item.querySelector("h3"), translated.title);
     setText(item.querySelector(".when"), translated.when);
     if (translated.text !== undefined) setText(item.querySelector("p"), translated.text);
@@ -575,7 +615,8 @@ function renderResumeText() {
   const strengthsTitle = strengthsCol?.querySelector("h2");
   setText(strengthsTitle, t("strengthsTitle"));
   const strengthItems = strengthsCol?.querySelectorAll("li") || [];
-  const translatedStrengths = t("strengths");
+  const translatedStrengths = asArray(t("strengths"));
+  warnCountMismatch("strengths", strengthItems.length, translatedStrengths.length);
   strengthItems.forEach((item, index) => {
     setHTML(item, translatedStrengths[index] || "");
   });

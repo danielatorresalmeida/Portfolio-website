@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { JSDOM } from "jsdom";
 import { describe, expect, it } from "vitest";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -103,6 +104,25 @@ function collectDataI18nKeys(htmlSource) {
   return keys;
 }
 
+function loadResumeTranslations(scriptSource) {
+  const startMarker = "const translations =";
+  const endMarker = "const urlLanguage";
+  const start = scriptSource.indexOf(startMarker);
+  if (start === -1) throw new Error("Unable to find resume translations declaration");
+  const end = scriptSource.indexOf(endMarker, start);
+  if (end === -1) throw new Error("Unable to find resume translations end marker");
+
+  const declaration = scriptSource.slice(start, end);
+  // META_LINE_HTML is referenced inside the translations object.
+  // A placeholder value is sufficient for contract tests.
+  return Function(
+    "LANG_EN",
+    "LANG_PT",
+    "META_LINE_HTML",
+    `${declaration}; return translations;`
+  )("en", "pt-PT", "");
+}
+
 describe("i18n contract", () => {
   it("ensures all data-i18n keys in index.html exist in both EN and PT translation maps", () => {
     const html = fs.readFileSync(path.join(ROOT_DIR, "index.html"), "utf8");
@@ -128,5 +148,49 @@ describe("i18n contract", () => {
     const resumeEn = extractTopLevelKeys(extractObjectBody(resumeScript, "[LANG_EN]: {"));
     const resumePt = extractTopLevelKeys(extractObjectBody(resumeScript, "[LANG_PT]: {"));
     expect(Array.from(resumeEn).sort()).toEqual(Array.from(resumePt).sort());
+  });
+
+  it("prevents mojibake artifacts in resume translations", () => {
+    const resumeScript = fs.readFileSync(path.join(ROOT_DIR, "resume-site-only", "script.js"), "utf8");
+    const enBlock = extractObjectBody(resumeScript, "[LANG_EN]: {");
+    const ptBlock = extractObjectBody(resumeScript, "[LANG_PT]: {");
+    const mojibakePattern = /[\u00C3\u00C2\uFFFD]/;
+
+    expect(enBlock).not.toMatch(mojibakePattern);
+    expect(ptBlock).not.toMatch(mojibakePattern);
+  });
+
+  it("keeps resume section item counts aligned with translation arrays", () => {
+    const resumeHtml = fs.readFileSync(path.join(ROOT_DIR, "resume-site-only", "index.html"), "utf8");
+    const resumeScript = fs.readFileSync(path.join(ROOT_DIR, "resume-site-only", "script.js"), "utf8");
+    const translations = loadResumeTranslations(resumeScript);
+    const dom = new JSDOM(resumeHtml);
+    const { document } = dom.window;
+
+    const en = translations.en;
+    const pt = translations["pt-PT"];
+
+    expect(document.querySelectorAll("#experience-col .item").length).toBe(en.experienceItems.length);
+    expect(document.querySelectorAll("#skills-col .skill-group-card").length).toBe(en.skillGroups.length);
+    expect(document.querySelectorAll("#projects-col .item").length).toBe(en.projectItems.length);
+    expect(document.querySelectorAll("#courses-col li").length).toBe(en.courses.length);
+    expect(document.querySelectorAll("#education-col .item").length).toBe(en.educationItems.length);
+    expect(document.querySelectorAll("#strengths-col li").length).toBe(en.strengths.length);
+
+    expect(en.experienceItems.length).toBe(pt.experienceItems.length);
+    expect(en.skillGroups.length).toBe(pt.skillGroups.length);
+    expect(en.projectItems.length).toBe(pt.projectItems.length);
+    expect(en.courses.length).toBe(pt.courses.length);
+    expect(en.educationItems.length).toBe(pt.educationItems.length);
+    expect(en.strengths.length).toBe(pt.strengths.length);
+
+    const experienceNodes = Array.from(document.querySelectorAll("#experience-col .item"));
+    experienceNodes.forEach((item, index) => {
+      const domBullets = item.querySelectorAll("li").length;
+      expect(domBullets).toBe(en.experienceItems[index].bullets.length);
+      expect(en.experienceItems[index].bullets.length).toBe(pt.experienceItems[index].bullets.length);
+    });
+
+    dom.window.close();
   });
 });

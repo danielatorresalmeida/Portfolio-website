@@ -102,11 +102,15 @@ describe("resume-site-only interaction flows", () => {
     const langLabel = langToggle.querySelector(".pill-label");
     const printButton = document.getElementById("print-btn");
     const introTitle = document.querySelector("#intro-section h2");
+    const skillsTitle = document.querySelector("#skills-col h2");
 
     expect(document.documentElement.lang).toBe("pt-PT");
     expect(langLabel.textContent.trim()).toBe("EN");
+    expect(langToggle.getAttribute("aria-label")).toBe("Mudar idioma para ingl\u00EAs");
     expect(printButton.getAttribute("href")).toContain("Daniela-Torres-Almeida-Resume-pt-PT.pdf");
-    expect(introTitle.textContent.trim()).not.toBe("Objective");
+    expect(introTitle.textContent.trim()).toBe("Objetivo Profissional");
+    expect(skillsTitle.textContent.trim()).toBe("Compet\u00EAncias T\u00E9cnicas");
+    expect(document.body.textContent).not.toMatch(/[\u00C3\u00C2\uFFFD]/);
 
     langToggle.click();
 
