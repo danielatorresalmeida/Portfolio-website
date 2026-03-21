@@ -188,6 +188,10 @@ const translations = {
         title: "Space Ventures Institute",
         bullet: "Developed responsive venture-focused interfaces in a Next.js + React codebase using Tailwind CSS, deployed on Vercel. Validated responsive behavior manually and used Selenium smoke checks on high-traffic pages.",
       },
+      {
+        title: "Mechanic Data Base",
+        bullet: "Designed a normalized SQL data model for a mechanic workshop, linking clients, vehicles, work sheets, services, parts, and suppliers with clear primary/foreign key relationships.",
+      },
     ],
     coursesTitle: "Courses & Certifications",
     courses: [
@@ -350,6 +354,10 @@ const translations = {
       {
         title: "Space Ventures Institute",
         bullet: "Desenvolvi interfaces responsivas para conteúdo venture num código Next.js + React com Tailwind CSS, publicado na Vercel. Validei comportamento responsivo manualmente e usei smoke checks com Selenium nas páginas de maior tráfego.",
+      },
+      {
+        title: "Mechanic Data Base",
+        bullet: "Desenhei um modelo de dados SQL normalizado para uma oficina mecânica, ligando clientes, veículos, folhas de obra, serviços, peças e fornecedores com relações claras de chave primária e estrangeira.",
       },
     ],
     coursesTitle: "Cursos e Certificações",
