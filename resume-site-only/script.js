@@ -134,6 +134,7 @@ const translations = {
         items: [
           "QA Testing",
           "API Testing",
+          "Postman",
           "Python",
           "Pytest + pytest-html reports",
           "Selenium",
@@ -155,6 +156,7 @@ const translations = {
       "Git / GitHub",
       "GitHub Actions",
       "QA Testing",
+      "Postman",
       "Selenium",
       "Java",
       "PostgreSQL",
@@ -196,6 +198,10 @@ const translations = {
       {
         title: "Mechanic Data Base",
         bullet: "Designed a normalized SQL data model for a mechanic workshop, linking clients, vehicles, work sheets, services, parts, and suppliers with clear primary/foreign key relationships.",
+      },
+      {
+        title: "Bakery Data Base",
+        bullet: "Designed a normalized SQL data model for bakery operations, linking customers, orders, products, ingredients, suppliers, and stock movements through clear primary/foreign key relationships.",
       },
     ],
     coursesTitle: "Courses & Certifications",
@@ -309,6 +315,7 @@ const translations = {
         items: [
           "Testes de QA",
           "Testes de API",
+          "Postman",
           "Python",
           "Pytest + relatorios pytest-html",
           "Selenium",
@@ -330,6 +337,7 @@ const translations = {
       "Git / GitHub",
       "GitHub Actions",
       "Testes de QA",
+      "Postman",
       "Selenium",
       "Java",
       "PostgreSQL",
@@ -371,6 +379,10 @@ const translations = {
       {
         title: "Mechanic Data Base",
         bullet: "Desenhei um modelo de dados SQL normalizado para uma oficina mecânica, ligando clientes, veículos, folhas de obra, serviços, peças e fornecedores com relações claras de chave primária e estrangeira.",
+      },
+      {
+        title: "Bakery Data Base",
+        bullet: "Desenhei um modelo de dados SQL normalizado para operações de pastelaria, ligando clientes, encomendas, produtos, ingredientes, fornecedores e movimentos de stock com relações claras de chave primária e estrangeira.",
       },
     ],
     coursesTitle: "Cursos e Certificações",
