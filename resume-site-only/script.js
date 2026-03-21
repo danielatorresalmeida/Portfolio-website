@@ -37,6 +37,10 @@ const CV_PDFS = {
   [LANG_EN]: "assets/Daniela-Torres-Almeida-Resume.pdf",
   [LANG_PT]: "assets/Daniela-Torres-Almeida-Resume-pt-PT.pdf",
 };
+const WEBSITE_DESIGN_CERTIFICATE = {
+  marker: "website-design-2026",
+  href: "../assets/Colorido%20autom%C3%A1tico2736.pdf",
+};
 
 const metaLine = document.querySelector(".identity .meta");
 const introSection = document.getElementById("intro-section");
@@ -115,7 +119,24 @@ const translations = {
       },
       {
         title: "Tools & QA",
-        items: ["Git / GitHub", "GitHub Actions", "Postman", "Python", "Supabase", "QA Testing", "API Testing", "Selenium"],
+        items: [
+          "Git / GitHub",
+          "GitHub Actions",
+          "Postman",
+          "Python",
+          "Supabase",
+          "QA Testing",
+          "API Testing",
+          "Selenium",
+          "Eclipse",
+          "IntelliJ IDEA",
+          "pgAdmin",
+          "HubSpot",
+        ],
+      },
+      {
+        title: "Backend",
+        items: ["Java"],
       },
     ],
     keySkillsTitle: "Key Skills",
@@ -264,7 +285,23 @@ const translations = {
       },
       {
         title: "Ferramentas e Fluxos",
-        items: ["Git / GitHub", "GitHub Actions", "Testes de QA", "Postman", "Automação com Python", "Supabase", "Selenium"],
+        items: [
+          "Git / GitHub",
+          "GitHub Actions",
+          "Testes de QA",
+          "Postman",
+          "Automação com Python",
+          "Supabase",
+          "Selenium",
+          "Eclipse",
+          "IntelliJ IDEA",
+          "pgAdmin",
+          "HubSpot",
+        ],
+      },
+      {
+        title: "Back-End",
+        items: ["Java"],
       },
     ],
     keySkillsTitle: "Competências-chave",
@@ -491,7 +528,17 @@ function renderResumeText() {
   const courseItems = coursesCol?.querySelectorAll("li") || [];
   const translatedCourses = t("courses");
   courseItems.forEach((item, index) => {
-    setText(item, translatedCourses[index] || "");
+    const courseText = translatedCourses[index] || "";
+    if (item.dataset.courseLink === WEBSITE_DESIGN_CERTIFICATE.marker) {
+      item.textContent = "";
+      const link = document.createElement("a");
+      link.className = "course-certificate-link";
+      link.href = WEBSITE_DESIGN_CERTIFICATE.href;
+      link.textContent = courseText;
+      item.appendChild(link);
+      return;
+    }
+    setText(item, courseText);
   });
 
   const educationTitle = educationCol?.querySelector("h2");
