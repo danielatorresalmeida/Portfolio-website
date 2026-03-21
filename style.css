@@ -2171,12 +2171,6 @@ body {
   }
 }
 
-@media (min-width: 1200px) {
-  #about .technical-skills-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
 #about .technical-card {
   background: color-mix(in srgb, var(--panel) 88%, transparent);
   border: 1px solid var(--border);
