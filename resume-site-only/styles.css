@@ -65,9 +65,8 @@ body {
 }
 
 .container {
-  max-width: none;
-  width: 65vw;
-  max-width: 65vw;
+  width: min(92vw, 1280px);
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 clamp(10px, 1.2vw, 18px);
 }
@@ -377,8 +376,8 @@ body {
   display: grid;
   gap: 18px;
   margin: 22px auto 42px;
-  width: 65vw;
-  max-width: 65vw;
+  width: min(92vw, 1280px);
+  max-width: 1280px;
 }
 
 .resume::before {
@@ -597,19 +596,9 @@ h4 {
 .skills-cards {
   display: grid;
   gap: 12px;
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 960px) {
-  .skills-cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1100px) {
-  .skills-cards {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+  /* Size by available column width, not viewport breakpoints. */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  align-items: start;
 }
 
 .skill-group-card {
@@ -617,6 +606,8 @@ h4 {
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 14px;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .skill-group-card h4 {
@@ -625,6 +616,7 @@ h4 {
   color: var(--text);
   font-size: 1rem;
   padding-bottom: 8px;
+  overflow-wrap: anywhere;
 }
 
 .skill-group-card h4::after {
@@ -644,6 +636,7 @@ ul.flat.skill-points {
 
 ul.flat.skill-points li {
   margin: 0 0 6px;
+  overflow-wrap: anywhere;
 }
 
 ul.flat.skill-points li:last-child {
@@ -690,8 +683,8 @@ ul.flat.skill-points li:last-child {
 }
 
 .footer {
-  width: 65vw;
-  max-width: 65vw;
+  width: min(92vw, 1280px);
+  max-width: 1280px;
   padding: 30px 0 42px;
   color: var(--muted);
   text-align: center;

@@ -37,10 +37,6 @@ const CV_PDFS = {
   [LANG_EN]: "assets/Daniela-Torres-Almeida-Resume.pdf",
   [LANG_PT]: "assets/Daniela-Torres-Almeida-Resume-pt-PT.pdf",
 };
-const WEBSITE_DESIGN_CERTIFICATE = {
-  marker: "website-design-2026",
-  href: "../assets/Colorido%20autom%C3%A1tico2736.pdf",
-};
 
 const metaLine = document.querySelector(".identity .meta");
 const introSection = document.getElementById("intro-section");
@@ -196,6 +192,10 @@ const translations = {
         bullet: "Developed responsive venture-focused interfaces in a Next.js + React codebase using Tailwind CSS, deployed on Vercel. Validated responsive behavior manually and used Selenium smoke checks on high-traffic pages.",
       },
       {
+        title: "TARRL",
+        bullet: "Built responsive frontend sections for the TARRL (Texas Advanced Robotics Research Lab) website, clarifying the remote-first model, research tracks, and application path for global AI and robotics candidates.",
+      },
+      {
         title: "Mechanic Data Base",
         bullet: "Designed a normalized SQL data model for a mechanic workshop, linking clients, vehicles, work sheets, services, parts, and suppliers with clear primary/foreign key relationships.",
       },
@@ -209,7 +209,8 @@ const translations = {
       "Python Software Language - Programming Hub (Aug 2025)",
       "Fundamentals of Quality Assurance Engineer - Udemy (Jul 2025)",
       "Foundations of Software Testing and Validation - University of Leeds (Jul 2025)",
-      "Website Design, February 2026",
+      "Website Design - (Feb 2026)",
+      "Java Programming - (Mar 2026)",
     ],
     educationTitle: "Education",
     educationItems: [
@@ -236,7 +237,7 @@ const translations = {
       "<strong>Backend and Data Modeling</strong> - Java fundamentals with SQL relational schema design for structured data flows.",
       "<strong>Cross-Functional Collaboration</strong> - clear communication with product, design, and engineering teams in Portuguese and English.",
     ],
-    footerMeta: "Daniela Torres Almeida - Built with HTML/CSS/JS - Hosted on GitHub Pages",
+    footerMeta: "Daniela Torres Almeida | Built with HTML, CSS, JavaScript | Hosted on GitHub Pages",
   },
   [LANG_PT]: {
     langButton: "EN",
@@ -377,6 +378,10 @@ const translations = {
         bullet: "Desenvolvi interfaces responsivas para conteúdo venture num código Next.js + React com Tailwind CSS, publicado na Vercel. Validei comportamento responsivo manualmente e usei smoke checks com Selenium nas páginas de maior tráfego.",
       },
       {
+        title: "TARRL",
+        bullet: "Construi secoes frontend responsivas para o website da TARRL (Texas Advanced Robotics Research Lab), clarificando o modelo remote-first, os research tracks e o caminho de candidatura para candidatos globais de IA e robotica.",
+      },
+      {
         title: "Mechanic Data Base",
         bullet: "Desenhei um modelo de dados SQL normalizado para uma oficina mecânica, ligando clientes, veículos, folhas de obra, serviços, peças e fornecedores com relações claras de chave primária e estrangeira.",
       },
@@ -391,6 +396,7 @@ const translations = {
       "Fundamentals of Quality Assurance Engineer - Udemy (Jul 2025)",
       "Foundations of Software Testing and Validation - University of Leeds (Jul 2025)",
       "Conceção de websites - (Fev 2026)",
+      "Programação em Java - (Mar 2026)",
     ],
     educationTitle: "Formação",
     educationItems: [
@@ -417,7 +423,7 @@ const translations = {
       "<strong>Backend e Modelacao de Dados</strong> - fundamentos de Java com design de esquemas relacionais SQL para fluxos de dados estruturados.",
       "<strong>Colaboracao Multidisciplinar</strong> - comunicacao clara com equipas de produto, design e engenharia em portugues e ingles.",
     ],
-    footerMeta: "Daniela Torres Almeida - Desenvolvido com HTML/CSS/JS - Publicado no GitHub Pages",
+    footerMeta: "Daniela Torres Almeida | Desenvolvido com HTML, CSS e JavaScript | Publicado no GitHub Pages",
   },
 };
 
@@ -594,15 +600,6 @@ function renderResumeText() {
   warnCountMismatch("courses", courseItems.length, translatedCourses.length);
   courseItems.forEach((item, index) => {
     const courseText = translatedCourses[index] || "";
-    if (item.dataset.courseLink === WEBSITE_DESIGN_CERTIFICATE.marker) {
-      item.textContent = "";
-      const link = document.createElement("a");
-      link.className = "course-certificate-link";
-      link.href = WEBSITE_DESIGN_CERTIFICATE.href;
-      link.textContent = courseText;
-      item.appendChild(link);
-      return;
-    }
     setText(item, courseText);
   });
 
