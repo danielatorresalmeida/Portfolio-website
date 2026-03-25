@@ -2165,9 +2165,20 @@ body {
 #about .technical-skills-grid {
   display: grid;
   gap: clamp(12px, 1.8vw, 18px);
-  /* Fit columns to the actual aside width (not full viewport) to prevent cramped cards. */
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  grid-template-columns: 1fr;
   align-items: stretch;
+}
+
+@media (min-width: 761px) {
+  #about .technical-skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  #about .technical-skills-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 #about .technical-card {

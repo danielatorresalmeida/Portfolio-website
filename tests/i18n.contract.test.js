@@ -123,6 +123,18 @@ function loadResumeTranslations(scriptSource) {
   )("en", "pt-PT", "");
 }
 
+function loadMainTranslations(scriptSource) {
+  const startMarker = "const TRANSLATIONS =";
+  const endMarker = "let currentLanguage";
+  const start = scriptSource.indexOf(startMarker);
+  if (start === -1) throw new Error("Unable to find main translations declaration");
+  const end = scriptSource.indexOf(endMarker, start);
+  if (end === -1) throw new Error("Unable to find main translations end marker");
+
+  const declaration = scriptSource.slice(start, end);
+  return Function("LANG_EN", "LANG_PT", `${declaration}; return TRANSLATIONS;`)("en-US", "pt-PT");
+}
+
 describe("i18n contract", () => {
   it("ensures all data-i18n keys in index.html exist in both EN and PT translation maps", () => {
     const html = fs.readFileSync(path.join(ROOT_DIR, "index.html"), "utf8");
@@ -192,5 +204,41 @@ describe("i18n contract", () => {
     });
 
     dom.window.close();
+  });
+
+  it("keeps shared portfolio and resume facts aligned", () => {
+    const portfolioHtml = fs.readFileSync(path.join(ROOT_DIR, "index.html"), "utf8");
+    const portfolioScript = fs.readFileSync(path.join(ROOT_DIR, "script.js"), "utf8");
+    const resumeHtml = fs.readFileSync(path.join(ROOT_DIR, "resume-site-only", "index.html"), "utf8");
+    const resumeScript = fs.readFileSync(path.join(ROOT_DIR, "resume-site-only", "script.js"), "utf8");
+
+    const mainTranslations = loadMainTranslations(portfolioScript);
+    const resumeTranslations = loadResumeTranslations(resumeScript);
+
+    expect(portfolioHtml).toContain('data-href="https://danielatorresalmeida.github.io/Portfolio-website/"');
+    expect(portfolioHtml).toContain('href="https://github.com/danielatorresalmeida/Portfolio-website"');
+
+    expect(mainTranslations["en-US"]["experience.role"]).toBe("Software Development Intern");
+    expect(mainTranslations["pt-PT"]["experience.role"]).toBe("Estagiaria de Desenvolvimento de Software");
+    expect(resumeTranslations.en.experienceItems[0].title).toContain("Software Development Intern");
+    expect(resumeTranslations["pt-PT"].experienceItems[0].title).toContain("Estagi");
+
+    expect(resumeHtml).toMatch(/20%/);
+    expect(resumeTranslations.en.experienceItems[0].bullets[4]).toMatch(/20%/);
+    expect(resumeTranslations["pt-PT"].experienceItems[0].bullets[4]).toMatch(/20%/);
+
+    expect(portfolioHtml).toContain('data-cv-en="./resume-site-only/assets/Daniela-Torres-Almeida-Resume.pdf"');
+    expect(portfolioHtml).toContain('data-cv-pt="./resume-site-only/assets/Daniela-Torres-Almeida-Resume-pt-PT.pdf"');
+    expect(portfolioScript).toContain('getAttribute("data-cv-en")');
+    expect(portfolioScript).toContain('getAttribute("data-cv-pt")');
+
+    const portfolioDom = new JSDOM(portfolioHtml);
+    const resumeDom = new JSDOM(resumeHtml);
+    const portfolioExperienceItems = portfolioDom.window.document.querySelectorAll("#experience .timeline .item");
+    const resumeExperienceItems = resumeDom.window.document.querySelectorAll("#experience-col .item");
+    expect(portfolioExperienceItems.length).toBe(1);
+    expect(resumeExperienceItems.length).toBeGreaterThan(portfolioExperienceItems.length);
+    portfolioDom.window.close();
+    resumeDom.window.close();
   });
 });
