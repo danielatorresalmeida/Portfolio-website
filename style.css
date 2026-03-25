@@ -2205,7 +2205,8 @@ body {
   font-size: clamp(20px, 1.55vw, 24px);
   line-height: 1.2;
   white-space: normal;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 html[lang="en"] #about .technical-card:first-child h4 {
@@ -2231,7 +2232,8 @@ html[lang="en"] #about .technical-card:first-child h4 {
   color: var(--text);
   line-height: 1.5;
   font-weight: 500;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 @media (max-width: 760px) {
