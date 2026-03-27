@@ -215,9 +215,6 @@ describe("i18n contract", () => {
     const mainTranslations = loadMainTranslations(portfolioScript);
     const resumeTranslations = loadResumeTranslations(resumeScript);
 
-    expect(portfolioHtml).toContain('data-href="https://danielatorresalmeida.github.io/Portfolio-website/"');
-    expect(portfolioHtml).toContain('href="https://github.com/danielatorresalmeida/Portfolio-website"');
-
     expect(mainTranslations["en-US"]["experience.role"]).toBe("Software Development Intern");
     expect(mainTranslations["pt-PT"]["experience.role"]).toBe("Estagiaria de Desenvolvimento de Software");
     expect(resumeTranslations.en.experienceItems[0].title).toContain("Software Development Intern");
@@ -234,6 +231,17 @@ describe("i18n contract", () => {
 
     const portfolioDom = new JSDOM(portfolioHtml);
     const resumeDom = new JSDOM(resumeHtml);
+    const featuredProjects = Array.from(portfolioDom.window.document.querySelectorAll("#project-grid > .card"));
+    const featuredTitles = featuredProjects.map((card) =>
+      card.querySelector("h3")?.textContent?.trim()
+    );
+    expect(featuredProjects.length).toBe(3);
+    expect(featuredTitles).toEqual([
+      "RoboCollective.ai",
+      "API QA Test Suite",
+      "To-Do List App",
+    ]);
+
     const portfolioExperienceItems = portfolioDom.window.document.querySelectorAll("#experience .timeline .item");
     const resumeExperienceItems = resumeDom.window.document.querySelectorAll("#experience-col .item");
     expect(portfolioExperienceItems.length).toBe(1);

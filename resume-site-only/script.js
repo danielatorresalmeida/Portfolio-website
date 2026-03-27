@@ -169,6 +169,14 @@ const translations = {
     projectsTitle: "Projects",
     projectItems: [
       {
+        title: "RoboCollective.ai",
+        bullet: "Built responsive frontend sections and conversion-focused page flows in a React + Next.js codebase styled with Tailwind CSS. Ran manual cross-browser QA and Selenium smoke tests for critical pages before release.",
+      },
+      {
+        title: "API QA Test Suite",
+        bullet: "Built automated API checks in Python + Pytest, generated pytest-html reports, and published QA outputs on GitHub Pages.",
+      },
+      {
         title: "To-Do List App",
         bullet: "Built the frontend in React + TypeScript with Firebase and Google Auth, delivering a responsive task flow with persistent real-time data.",
       },
@@ -179,14 +187,6 @@ const translations = {
       {
         title: "UI Components Showcase",
         bullet: "Implemented reusable UI patterns with responsive behavior and consistent interaction states for faster frontend delivery. Added manual interaction/accessibility checks and Selenium smoke/regression checks on core components.",
-      },
-      {
-        title: "API QA Test Suite",
-        bullet: "Built automated API checks in Python + Pytest, generated pytest-html reports, and published QA outputs on GitHub Pages.",
-      },
-      {
-        title: "RoboCollective.ai",
-        bullet: "Built responsive frontend sections and conversion-focused page flows in a React + Next.js codebase styled with Tailwind CSS. Ran manual cross-browser QA and Selenium smoke tests for critical pages before release.",
       },
       {
         title: "MoodChanger.ai",
@@ -364,6 +364,14 @@ const translations = {
     projectsTitle: "Projetos",
     projectItems: [
       {
+        title: "RoboCollective.ai",
+        bullet: "Desenvolvi secções frontend responsivas e fluxos de página focados em conversão num código React + Next.js com Tailwind CSS. Executei QA manual cross-browser e smoke tests com Selenium nas páginas críticas.",
+      },
+      {
+        title: "Suite de Testes de API (QA)",
+        bullet: "Construi verificacoes automatizadas de API em Python + Pytest, gerei relatorios pytest-html e publiquei saidas de QA no GitHub Pages.",
+      },
+      {
         title: "App de Tarefas",
         bullet: "Desenvolvi o frontend em React + TypeScript com Firebase e Google Auth, entregando um fluxo de tarefas responsivo com dados persistentes em tempo real.",
       },
@@ -374,14 +382,6 @@ const translations = {
       {
         title: "Mostra de Componentes UI",
         bullet: "Implementei padrões de UI reutilizáveis com comportamento responsivo e estados de interação consistentes para acelerar entregas frontend. Adicionei verificações manuais de interação/acessibilidade e smoke/regression checks com Selenium.",
-      },
-      {
-        title: "Suite de Testes de API (QA)",
-        bullet: "Construi verificacoes automatizadas de API em Python + Pytest, gerei relatorios pytest-html e publiquei saidas de QA no GitHub Pages.",
-      },
-      {
-        title: "RoboCollective.ai",
-        bullet: "Desenvolvi secções frontend responsivas e fluxos de página focados em conversão num código React + Next.js com Tailwind CSS. Executei QA manual cross-browser e smoke tests com Selenium nas páginas críticas.",
       },
       {
         title: "MoodChanger.ai",
