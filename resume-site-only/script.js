@@ -691,14 +691,51 @@ langToggle?.addEventListener("click", () => {
   applyLanguage(currentLanguage === LANG_PT ? LANG_EN : LANG_PT);
 });
 
+function isJsDomEnvironment() {
+  return /jsdom/i.test(window.navigator?.userAgent || "");
+}
+
+function waitForProjectImages(timeoutMs = 3000) {
+  if (isJsDomEnvironment()) return Promise.resolve();
+
+  const images = Array.from(document.querySelectorAll(".project-site-shot"));
+  if (!images.length) return Promise.resolve();
+
+  images.forEach((img) => {
+    img.loading = "eager";
+    img.decoding = "async";
+  });
+
+  const pending = images.filter((img) => !img.complete || img.naturalWidth === 0);
+  if (!pending.length) return Promise.resolve();
+
+  const waits = pending.map(
+    (img) =>
+      new Promise((resolve) => {
+        const done = () => resolve();
+        img.addEventListener("load", done, { once: true });
+        img.addEventListener("error", done, { once: true });
+      })
+  );
+
+  const timeout = new Promise((resolve) => window.setTimeout(resolve, timeoutMs));
+  return Promise.race([Promise.all(waits), timeout]);
+}
+
+function printResumeWithImages() {
+  waitForProjectImages().finally(() => {
+    window.print();
+  });
+}
+
 printButton?.addEventListener("click", () => {
-  window.print();
+  printResumeWithImages();
 });
 
 applyLanguage(currentLanguage);
 
 if (shouldAutoPrint) {
   window.setTimeout(() => {
-    window.print();
+    printResumeWithImages();
   }, 0);
 }

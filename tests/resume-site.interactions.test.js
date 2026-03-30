@@ -120,12 +120,13 @@ describe("resume-site-only interaction flows", () => {
     expect(printButton.getAttribute("aria-label")).toBe("Download CV");
   });
 
-  it("prints when CV button is clicked", () => {
+  it("prints when CV button is clicked", async () => {
     dom = bootstrapResumeApp({ url: "http://localhost/resume-site-only/" });
     const { document, print } = dom.window;
     const printButton = document.getElementById("print-btn");
 
     printButton.click();
+    await new Promise((resolve) => dom.window.setTimeout(resolve, 0));
     expect(print).toHaveBeenCalledTimes(1);
   });
 
