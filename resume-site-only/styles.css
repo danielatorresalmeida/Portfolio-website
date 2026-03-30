@@ -897,11 +897,40 @@ h4,
     print-color-adjust: exact;
   }
 
-  .topbar,
   .actions,
   #theme-toggle,
   #print-btn {
     display: none !important;
+  }
+
+  .topbar {
+    position: static !important;
+    inset: auto !important;
+    padding: 0 !important;
+    margin: 0 0 4mm !important;
+    display: block !important;
+    background: #ffffff !important;
+  }
+
+  .topbar .topbar-inner {
+    min-height: auto !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    display: block !important;
+  }
+
+  .name {
+    font-size: 18pt !important;
+  }
+
+  .meta {
+    font-size: 10pt !important;
+    color: #111111 !important;
+    margin: 1mm 0 0 !important;
   }
 
   .container,

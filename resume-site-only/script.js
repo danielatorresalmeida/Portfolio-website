@@ -33,11 +33,6 @@ function setStoredValue(key, value) {
   }
 }
 
-const CV_PDFS = {
-  [LANG_EN]: "assets/Daniela-Torres-Almeida-Resume.pdf",
-  [LANG_PT]: "assets/Daniela-Torres-Almeida-Resume-pt-PT.pdf",
-};
-
 const metaLine = document.querySelector(".identity .meta");
 const introSection = document.getElementById("intro-section");
 const expCol = document.getElementById("experience-col");
@@ -446,6 +441,7 @@ const translations = {
 };
 
 const urlLanguage = new URLSearchParams(window.location.search).get("lang");
+const shouldAutoPrint = new URLSearchParams(window.location.search).get("download") === "1";
 let currentLanguage = urlLanguage || getStoredValue(LANGUAGE_KEY);
 if (currentLanguage !== LANG_EN && currentLanguage !== LANG_PT) {
   currentLanguage = LANG_EN;
@@ -665,14 +661,7 @@ function applyLanguage(language) {
   setText(homeLinkSrOnly, t("backHomeLabel"));
   setText(themeToggleSrOnly, t("themeToggleLabel"));
 
-  if (printButton) {
-    printButton.setAttribute("aria-label", t("printAria"));
-    if (printButton.tagName === "A") {
-      const pdfHref = currentLanguage === LANG_PT ? CV_PDFS[LANG_PT] : CV_PDFS[LANG_EN];
-      printButton.setAttribute("href", pdfHref);
-      printButton.setAttribute("download", "");
-    }
-  }
+  if (printButton) printButton.setAttribute("aria-label", t("printAria"));
   setText(printLabel, t("printAria"));
   setHTML(metaLine, t("metaLine"));
 
@@ -698,4 +687,14 @@ langToggle?.addEventListener("click", () => {
   applyLanguage(currentLanguage === LANG_PT ? LANG_EN : LANG_PT);
 });
 
+printButton?.addEventListener("click", () => {
+  window.print();
+});
+
 applyLanguage(currentLanguage);
+
+if (shouldAutoPrint) {
+  window.setTimeout(() => {
+    window.print();
+  }, 0);
+}

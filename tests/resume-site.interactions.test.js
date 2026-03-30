@@ -92,7 +92,7 @@ describe("resume-site-only interaction flows", () => {
     expect(themeToggle.getAttribute("aria-label")).toBe("Switch to dark theme");
   });
 
-  it("uses URL language for initial render and toggles localized CV download", () => {
+  it("uses URL language for initial render and toggles localized labels", () => {
     dom = bootstrapResumeApp({
       prefersLight: true,
       url: "http://localhost/resume-site-only/?lang=pt-PT",
@@ -107,7 +107,8 @@ describe("resume-site-only interaction flows", () => {
     expect(document.documentElement.lang).toBe("pt-PT");
     expect(langLabel.textContent.trim()).toBe("EN");
     expect(langToggle.getAttribute("aria-label")).toBe("Mudar idioma para ingl\u00EAs");
-    expect(printButton.getAttribute("href")).toContain("Daniela-Torres-Almeida-Resume-pt-PT.pdf");
+    expect(printButton.tagName).toBe("BUTTON");
+    expect(printButton.getAttribute("aria-label")).toBe("Descarregar CV");
     expect(introTitle.textContent.trim()).toBe("Objetivo Profissional");
     expect(skillsTitle.textContent.trim()).toBe("Compet\u00EAncias T\u00E9cnicas");
     expect(document.body.textContent).not.toMatch(/[\u00C3\u00C2\uFFFD]/);
@@ -116,7 +117,25 @@ describe("resume-site-only interaction flows", () => {
 
     expect(document.documentElement.lang).toBe("en");
     expect(langLabel.textContent.trim()).toBe("PT-PT");
-    expect(printButton.getAttribute("href")).toContain("Daniela-Torres-Almeida-Resume.pdf");
+    expect(printButton.getAttribute("aria-label")).toBe("Download CV");
+  });
+
+  it("prints when CV button is clicked", () => {
+    dom = bootstrapResumeApp({ url: "http://localhost/resume-site-only/" });
+    const { document, print } = dom.window;
+    const printButton = document.getElementById("print-btn");
+
+    printButton.click();
+    expect(print).toHaveBeenCalledTimes(1);
+  });
+
+  it("auto-opens print dialog in download mode", async () => {
+    dom = bootstrapResumeApp({ url: "http://localhost/resume-site-only/?lang=en&download=1" });
+    const { print } = dom.window;
+
+    await new Promise((resolve) => dom.window.setTimeout(resolve, 0));
+    await new Promise((resolve) => dom.window.setTimeout(resolve, 0));
+    expect(print).toHaveBeenCalledTimes(1);
   });
 
   it("keeps initializing when localStorage is blocked", () => {

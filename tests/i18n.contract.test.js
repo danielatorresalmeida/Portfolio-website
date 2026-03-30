@@ -224,8 +224,8 @@ describe("i18n contract", () => {
     expect(resumeTranslations.en.experienceItems[0].bullets[4]).toMatch(/20%/);
     expect(resumeTranslations["pt-PT"].experienceItems[0].bullets[4]).toMatch(/20%/);
 
-    expect(portfolioHtml).toContain('data-cv-en="./resume-site-only/assets/Daniela-Torres-Almeida-Resume.pdf"');
-    expect(portfolioHtml).toContain('data-cv-pt="./resume-site-only/assets/Daniela-Torres-Almeida-Resume-pt-PT.pdf"');
+    expect(portfolioHtml).toContain('data-cv-en="./resume-site-only/?lang=en&download=1"');
+    expect(portfolioHtml).toContain('data-cv-pt="./resume-site-only/?lang=pt-PT&download=1"');
     expect(portfolioScript).toContain('getAttribute("data-cv-en")');
     expect(portfolioScript).toContain('getAttribute("data-cv-pt")');
 

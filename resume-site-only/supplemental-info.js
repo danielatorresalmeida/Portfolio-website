@@ -17,6 +17,7 @@
       leftTitle: "Additional Information",
       leftItems: [
         "<strong>Phone:</strong> +351 962046821.",
+        "<strong>Email:</strong> danielarosadolealtorresalmeida@gmail.com.",
         "<strong>Education:</strong> 12th Grade, Secretarial &amp; Administrative Work (Secondary Education, Level 3).",
         "<strong>Languages:</strong> Portuguese (native) and English (oral, written, reading: very good).",
         "<strong>Driver's License:</strong> Light Vehicles.",
@@ -33,6 +34,7 @@
       leftTitle: "Informação Adicional",
       leftItems: [
         "<strong>Telefone:</strong> +351 962046821.",
+        "<strong>Email:</strong> danielarosadolealtorresalmeida@gmail.com.",
         "<strong>Formação:</strong> 12.º Ano, Secretariado e Trabalho Administrativo (Ensino Secundário, Nível 3).",
         "<strong>Idiomas:</strong> Português (língua materna) e Inglês (oral, escrita e leitura: muito bom).",
         "<strong>Carta de Condução:</strong> Ligeiros.",
