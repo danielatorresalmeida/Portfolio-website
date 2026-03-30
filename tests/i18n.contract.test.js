@@ -104,6 +104,25 @@ function collectDataI18nKeys(htmlSource) {
   return keys;
 }
 
+function normalizeSkillValue(value) {
+  return String(value)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/\+/g, " plus ")
+    .replace(/\s*\/\s*/g, " / ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function collectPortfolioSkillValues(translationMap) {
+  const keys = Object.keys(translationMap).filter((key) =>
+    /^(about\.technical\.(frontend|design|tools|backend|key)\.\d+|coreStack\.\d+)$/.test(key)
+  );
+
+  return keys.map((key) => translationMap[key]).filter(Boolean);
+}
+
 function loadResumeTranslations(scriptSource) {
   const startMarker = "const translations =";
   const endMarker = "const urlLanguage";
@@ -248,5 +267,36 @@ describe("i18n contract", () => {
     expect(resumeExperienceItems.length).toBeGreaterThan(portfolioExperienceItems.length);
     portfolioDom.window.close();
     resumeDom.window.close();
+  });
+
+  it("keeps all portfolio skill items represented in resume skills", () => {
+    const portfolioScript = fs.readFileSync(path.join(ROOT_DIR, "script.js"), "utf8");
+    const resumeScript = fs.readFileSync(path.join(ROOT_DIR, "resume-site-only", "script.js"), "utf8");
+
+    const mainTranslations = loadMainTranslations(portfolioScript);
+    const resumeTranslations = loadResumeTranslations(resumeScript);
+
+    const languagePairs = [
+      { portfolio: "en-US", resume: "en" },
+      { portfolio: "pt-PT", resume: "pt-PT" },
+    ];
+
+    languagePairs.forEach(({ portfolio, resume }) => {
+      const portfolioSkills = collectPortfolioSkillValues(mainTranslations[portfolio]).map(
+        normalizeSkillValue
+      );
+      const resumeSkills = [
+        ...resumeTranslations[resume].skillGroups.flatMap((group) => group.items),
+        ...resumeTranslations[resume].keySkills,
+      ].map(normalizeSkillValue);
+      const resumeSkillSet = new Set(resumeSkills);
+
+      Array.from(new Set(portfolioSkills)).forEach((skill) => {
+        expect(
+          resumeSkillSet.has(skill),
+          `missing resume skill for ${portfolio}: ${skill}`
+        ).toBe(true);
+      });
+    });
   });
 });

@@ -142,6 +142,20 @@ describe("portfolio interaction flows", () => {
     expect(localStorage.getItem("portfolio-language")).toBe("pt-PT");
   });
 
+  it("keeps CV button download behavior aligned with selected language", () => {
+    dom = bootstrapApp();
+    const { document } = dom.window;
+    const langToggle = document.getElementById("lang-toggle");
+    const cvLink = document.getElementById("contact-cv-link");
+
+    expect(cvLink.getAttribute("href")).toBe("./resume-site-only/?lang=en&download=1");
+    expect(cvLink.getAttribute("target")).toBe("_blank");
+
+    langToggle.click();
+
+    expect(cvLink.getAttribute("href")).toBe("./resume-site-only/?lang=pt-PT&download=1");
+  });
+
   it("opens and closes the navigation menu via toggle, nav click, and Escape", () => {
     dom = bootstrapApp();
     const { document } = dom.window;
