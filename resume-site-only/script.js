@@ -118,6 +118,7 @@ const translations = {
           "Vercel",
           "Firebase",
           "Plesk",
+          "Dynadot",
         ],
       },
       {
@@ -238,7 +239,7 @@ const translations = {
     strengths: [
       "<strong>Frontend Engineering</strong> - building responsive interfaces with HTML, CSS, JavaScript, React, TypeScript, and Next.js.",
       "<strong>UI/UX Execution</strong> - turning design ideas into accessible, component-based user experiences from Figma to production.",
-      "<strong>DevOps and Deployment</strong> - using Git/GitHub, GitHub Actions, GitHub Pages, Vercel, Firebase, and Plesk for reliable releases.",
+      "<strong>DevOps and Deployment</strong> - using Git/GitHub, GitHub Actions, GitHub Pages, Vercel, Firebase, Plesk, and Dynadot for reliable releases.",
       "<strong>Platforms and Integrations</strong> - working with OpenCart, WordPress, HubSpot, FillOutForms, and Google Auth.",
       "<strong>Quality Assurance and Testing</strong> - manual QA, API testing, Selenium checks, and Pytest reporting to reduce regressions.",
       "<strong>Backend and Data Modeling</strong> - Java, Python, SQL/PostgreSQL, IntelliJ IDEA, and Eclipse for structured data workflows.",
@@ -315,6 +316,7 @@ const translations = {
           "Vercel",
           "Firebase",
           "Plesk",
+          "Dynadot",
         ],
       },
       {
@@ -435,7 +437,7 @@ const translations = {
     strengths: [
       "<strong>Engenharia Front-End</strong> - interfaces responsivas com HTML, CSS, JavaScript, React, TypeScript e Next.js.",
       "<strong>Execucao de UI/UX</strong> - transformar ideias de design em experiencias acessiveis e baseadas em componentes, de Figma a producao.",
-      "<strong>DevOps e Deployment</strong> - uso de Git/GitHub, GitHub Actions, GitHub Pages, Vercel, Firebase e Plesk para releases fiaveis.",
+      "<strong>DevOps e Deployment</strong> - uso de Git/GitHub, GitHub Actions, GitHub Pages, Vercel, Firebase, Plesk e Dynadot para releases fiaveis.",
       "<strong>Plataformas e Integracoes</strong> - trabalho com OpenCart, WordPress, HubSpot, FillOutForms e Google Auth.",
       "<strong>QA e Testes</strong> - QA manual, testes de API, verificacoes com Selenium e relatorios com Pytest para reduzir regressao.",
       "<strong>Backend e Modelacao de Dados</strong> - Java, Python, SQL/PostgreSQL, IntelliJ IDEA e Eclipse para fluxos de dados estruturados.",
