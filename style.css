@@ -1002,6 +1002,42 @@ body {
   text-wrap: pretty;
 }
 
+/* Courses */
+#courses .container {
+  width: min(980px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  padding-inline: clamp(12px, 2.2vw, 24px);
+  box-sizing: border-box;
+}
+
+.courses-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: clamp(8px, 1.2vw, 12px);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  align-items: stretch;
+  width: 100%;
+  max-width: none;
+}
+
+.courses-list li {
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--panel) 86%, transparent);
+  padding: clamp(10px, 1.05vw, 14px) clamp(10px, 1.8vw, 18px);
+  color: var(--text);
+  font-weight: 600;
+  font-size: clamp(14px, 1.02vw, 17px);
+  text-align: left;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  text-wrap: pretty;
+}
+
 /* Contact */
 #contact .container.contact-layout {
   max-width: 980px;
@@ -2104,23 +2140,27 @@ body {
 }
 
 @media (max-width: 900px) {
-  .selected-strengths-list {
+  .selected-strengths-list,
+  .courses-list {
     grid-template-columns: 1fr;
     gap: 8px;
   }
 
-  .selected-strengths-list li {
+  .selected-strengths-list li,
+  .courses-list li {
     min-height: 0;
     font-size: clamp(13px, 3.6vw, 15px);
   }
 }
 
 @media (max-width: 640px) {
-  #selected-strengths .container {
+  #selected-strengths .container,
+  #courses .container {
     padding-inline: 12px;
   }
 
-  .selected-strengths-list li {
+  .selected-strengths-list li,
+  .courses-list li {
     border-radius: 10px;
     padding: 10px 9px;
     line-height: 1.45;

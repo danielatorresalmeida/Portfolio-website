@@ -110,6 +110,16 @@ const translations = {
         items: ["Responsive Design", "Accessibility", "Wireframing", "Design Systems", "Figma"],
       },
       {
+        title: "QA & Testing",
+        items: [
+          "QA Testing",
+          "API Testing",
+          "Postman",
+          "Pytest + pytest-html reports",
+          "Selenium",
+        ],
+      },
+      {
         title: "DevOps & Deployment",
         items: [
           "Git / GitHub",
@@ -132,28 +142,28 @@ const translations = {
         ],
       },
       {
-        title: "QA & Testing",
-        items: [
-          "QA Testing",
-          "API Testing",
-          "Postman",
-          "Pytest + pytest-html reports",
-          "Selenium",
-        ],
-      },
-      {
-        title: "Backend, Data & Software Engineering",
+        title: "Java & Backend",
         items: [
           "Java",
           "Java (Fundamentals)",
           "Java Web Application Development",
           "Python",
-          "Programming & Algorithms",
-          "C/C++ Fundamentals",
+        ],
+      },
+      {
+        title: "Databases & Data Modeling",
+        items: [
           "SQL Fundamentals",
           "Database Access Technologies",
           "SQL / Database Design",
           "PostgreSQL",
+        ],
+      },
+      {
+        title: "Software Engineering Foundations",
+        items: [
+          "Programming & Algorithms",
+          "C/C++ Fundamentals",
           "Software Engineering",
           "Software Development Methodologies",
           "IntelliJ IDEA",
@@ -271,10 +281,10 @@ const translations = {
     strengths: [
       "<strong>Frontend Engineering</strong> - building responsive interfaces with HTML, CSS, JavaScript, React, TypeScript, and Next.js.",
       "<strong>UI/UX Execution</strong> - turning design ideas into accessible, component-based user experiences from Figma to production.",
-      "<strong>DevOps and Deployment</strong> - using Git/GitHub, GitHub Actions, GitHub Pages, Vercel, Firebase, Plesk, and Dynadot for reliable releases.",
-      "<strong>Platforms and Integrations</strong> - working with OpenCart, WordPress, HubSpot, FillOutForms, and Google Auth.",
       "<strong>Quality Assurance and Testing</strong> - manual QA, API testing, Selenium checks, and Pytest reporting to reduce regressions.",
-      "<strong>Backend and Data Modeling</strong> - Java, Python, SQL/PostgreSQL, IntelliJ IDEA, and Eclipse for structured data workflows.",
+      "<strong>Data and Database Engineering</strong> - applying SQL language fundamentals, database access technologies, and PostgreSQL data modeling for structured information systems.",
+      "<strong>Java and Backend Development</strong> - working with Java fundamentals, Java web application development, and Python tooling for practical backend workflows.",
+      "<strong>Software Engineering and Delivery</strong> - applying algorithms, C/C++ fundamentals, development methodologies, and project execution with Git/GitHub, GitHub Actions, and Vercel.",
     ],
     footerMeta: "Daniela Torres Almeida | Built with HTML, CSS, JavaScript | Hosted on GitHub Pages",
   },
@@ -340,6 +350,16 @@ const translations = {
         items: ["Design Responsivo", "Acessibilidade", "Wireframing", "Sistemas de Design", "Figma"],
       },
       {
+        title: "QA e Testes",
+        items: [
+          "Testes de QA",
+          "Testes de API",
+          "Postman",
+          "Pytest + relatorios pytest-html",
+          "Selenium",
+        ],
+      },
+      {
         title: "DevOps e Deployment",
         items: [
           "Git / GitHub",
@@ -352,7 +372,7 @@ const translations = {
         ],
       },
       {
-        title: "Plataformas e Integracoes",
+        title: "Plataformas e Integrações",
         items: [
           "OpenCart",
           "WordPress",
@@ -362,29 +382,28 @@ const translations = {
         ],
       },
       {
-        title: "QA e Testes",
-        items: [
-          "Testes de QA",
-          "Testes de API",
-          "Postman",
-          "Pytest + relatorios pytest-html",
-          "Selenium",
-        ],
-      },
-      {
-        title: "Backend, Dados e Engenharia de Software",
+        title: "Java e Backend",
         items: [
           "Java",
           "Java (fundamentos)",
           "Desenvolvimento de aplicações web em Java",
           "Python",
-          "Programação e algoritmos",
-          "Programação em C/C++ (fundamentos)",
+        ],
+      },
+      {
+        title: "Bases de Dados e Modelação",
+        items: [
           "Fundamentos de SQL",
           "Tecnologias de acesso a base de dados",
           "SQL / Design de Base de Dados",
-          "Design de base de dados SQL",
           "PostgreSQL",
+        ],
+      },
+      {
+        title: "Fundamentos de Engenharia de Software",
+        items: [
+          "Programação e algoritmos",
+          "Programação em C/C++ (fundamentos)",
           "Engenharia de software",
           "Metodologias de desenvolvimento de software",
           "IntelliJ IDEA",
@@ -501,11 +520,11 @@ const translations = {
     strengthsTitle: "Pontos Fortes",
     strengths: [
       "<strong>Engenharia Front-End</strong> - interfaces responsivas com HTML, CSS, JavaScript, React, TypeScript e Next.js.",
-      "<strong>Execucao de UI/UX</strong> - transformar ideias de design em experiencias acessiveis e baseadas em componentes, de Figma a producao.",
-      "<strong>DevOps e Deployment</strong> - uso de Git/GitHub, GitHub Actions, GitHub Pages, Vercel, Firebase, Plesk e Dynadot para releases fiaveis.",
-      "<strong>Plataformas e Integracoes</strong> - trabalho com OpenCart, WordPress, HubSpot, FillOutForms e Google Auth.",
-      "<strong>QA e Testes</strong> - QA manual, testes de API, verificacoes com Selenium e relatorios com Pytest para reduzir regressao.",
-      "<strong>Backend e Modelacao de Dados</strong> - Java, Python, SQL/PostgreSQL, IntelliJ IDEA e Eclipse para fluxos de dados estruturados.",
+      "<strong>Execução de UI/UX</strong> - transformar ideias de design em experiências acessíveis e baseadas em componentes, de Figma a produção.",
+      "<strong>QA e Testes</strong> - QA manual, testes de API, verificações com Selenium e relatórios com Pytest para reduzir regressão.",
+      "<strong>Engenharia de Dados e Bases de Dados</strong> - aplicar fundamentos de SQL, tecnologias de acesso a base de dados e modelação em PostgreSQL para sistemas de informação estruturados.",
+      "<strong>Desenvolvimento Java e Backend</strong> - trabalhar com fundamentos de Java, desenvolvimento web em Java e ferramentas Python para fluxos backend práticos.",
+      "<strong>Engenharia de Software e Entrega</strong> - aplicar algoritmos, fundamentos de C/C++, metodologias de desenvolvimento e execução de projetos com Git/GitHub, GitHub Actions e Vercel.",
     ],
     footerMeta: "Daniela Torres Almeida | Desenvolvido com HTML, CSS e JavaScript | Publicado no GitHub Pages",
   },

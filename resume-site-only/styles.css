@@ -606,10 +606,9 @@ h4 {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1360px) {
   .skills-cards {
-    /* Keep 2 columns in the half-width resume layout to avoid cramped cards. */
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -653,6 +652,8 @@ ul.flat.skill-points li {
   overflow-wrap: normal;
   word-break: normal;
   hyphens: none;
+  font-size: clamp(13px, 0.78vw, 15px);
+  line-height: 1.48;
 }
 
 ul.flat.skill-points li:last-child {

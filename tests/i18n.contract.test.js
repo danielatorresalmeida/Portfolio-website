@@ -117,7 +117,7 @@ function normalizeSkillValue(value) {
 
 function collectPortfolioSkillValues(translationMap) {
   const keys = Object.keys(translationMap).filter((key) =>
-    /^(about\.technical\.(frontend|design|tools|backend|key)\.\d+|coreStack\.\d+)$/.test(key)
+    /^(about\.technical\.(frontend|design|tools|backend|java|data|se|key)\.\d+|coreStack\.\d+)$/.test(key)
   );
 
   return keys.map((key) => translationMap[key]).filter(Boolean);
