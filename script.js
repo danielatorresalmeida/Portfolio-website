@@ -720,6 +720,8 @@ function setNavMenu(open) {
   topbar.classList.toggle("menu-open", isOpen);
   navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
   navToggle.setAttribute("aria-label", isOpen ? t("nav.menu.close") : t("nav.menu.open"));
+  // Recompute fixed-header offset whenever mobile menu expands/collapses.
+  requestAnimationFrame(syncTopbarOffset);
 }
 
 navToggle?.addEventListener("click", () => {
