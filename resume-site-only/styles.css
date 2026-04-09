@@ -527,6 +527,9 @@ h4 {
 .projects-grid .project-site-shot {
   width: 100%;
   max-width: none;
+  height: clamp(180px, 22vw, 300px);
+  object-fit: cover;
+  object-position: center top;
 }
 
 .certifications-card .flat {
@@ -1056,6 +1059,8 @@ h4,
   .project-site-shot {
     width: 100% !important;
     max-width: none !important;
+    height: auto !important;
+    object-fit: contain !important;
     border: 1px solid var(--print-border) !important;
     border-radius: 8px !important;
     box-shadow: none !important;

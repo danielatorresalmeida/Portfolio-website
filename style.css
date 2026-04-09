@@ -510,6 +510,7 @@ body {
   position: relative;
   overflow: hidden;
   aspect-ratio: 5 / 3;
+  height: clamp(180px, 20vw, 300px);
 }
 .card-media img {
   width: 100%;
