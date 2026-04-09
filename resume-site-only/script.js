@@ -547,7 +547,10 @@ function t(key) {
   return translations[currentLanguage]?.[key] || translations[LANG_EN][key] || "";
 }
 
-const ORPHAN_TEXT_SELECTOR = ".resume p, .resume li, .resume .when, .resume .where";
+// Keep orphan control for narrative text, but avoid skill bullets where forced non-breaking
+// can clip long labels inside compact cards.
+const ORPHAN_TEXT_SELECTOR =
+  ".resume p, .resume .when, .resume .where, #experience-col li, #projects-col li, #courses-col li, #strengths-col li";
 
 function tightenTrailingWords(element) {
   const walker = document.createTreeWalker(
