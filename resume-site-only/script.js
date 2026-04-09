@@ -206,6 +206,10 @@ const translations = {
         bullet: "Built responsive frontend sections and conversion-focused page flows in a React + Next.js codebase styled with Tailwind CSS. Ran manual cross-browser QA and Selenium smoke tests for critical pages before release.",
       },
       {
+        title: "CAIPO.ai",
+        bullet: "Built and refined responsive frontend sections to communicate CAIPO's wearable and developer-kit offerings with clearer hierarchy and stronger conversion-oriented user flow.",
+      },
+      {
         title: "API QA Test Suite",
         bullet: "Built automated API checks in Python + Pytest, generated pytest-html reports, and published QA outputs on GitHub Pages.",
       },
@@ -447,6 +451,10 @@ const translations = {
       {
         title: "RoboCollective.ai",
         bullet: "Desenvolvi secções frontend responsivas e fluxos de página focados em conversão num código React + Next.js com Tailwind CSS. Executei QA manual cross-browser e smoke tests com Selenium nas páginas críticas.",
+      },
+      {
+        title: "CAIPO.ai",
+        bullet: "Construí e refinei secções frontend responsivas para comunicar as ofertas wearable e developer kit da CAIPO com hierarquia mais clara e um fluxo de utilizador mais orientado à conversão.",
       },
       {
         title: "Suite de Testes de API (QA)",
