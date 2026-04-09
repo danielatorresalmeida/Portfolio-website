@@ -254,10 +254,9 @@ describe("i18n contract", () => {
     const featuredTitles = featuredProjects.map((card) =>
       card.querySelector("h3")?.textContent?.trim()
     );
-    expect(featuredProjects.length).toBe(4);
+    expect(featuredProjects.length).toBe(3);
     expect(featuredTitles).toEqual([
       "RoboCollective.ai",
-      "CAIPO.ai",
       "API QA Test Suite",
       "To-Do List App",
     ]);
