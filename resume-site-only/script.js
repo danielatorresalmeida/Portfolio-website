@@ -104,7 +104,7 @@ const translations = {
     skillGroups: [
       {
         title: "Frontend",
-        items: ["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "Responsive Web Design", "REST API Integration"],
+        items: ["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "React", "Responsive Web Design", "REST API Integration"],
       },
       {
         title: "Design / UI",
@@ -136,6 +136,7 @@ const translations = {
       "JavaScript",
       "TypeScript",
       "Angular",
+      "React",
       "Responsive Web Design",
       "UI/UX Design",
       "Figma",
@@ -248,7 +249,7 @@ const translations = {
     skillGroups: [
       {
         title: "Frontend",
-        items: ["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "Design Web Responsivo", "Integracao com REST API"],
+        items: ["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "React", "Design Web Responsivo", "Integracao com REST API"],
       },
       {
         title: "Design / UI",
@@ -437,7 +438,7 @@ const translations = {
 translations[LANG_EN].skillGroups = [
   {
     title: "Frontend",
-    items: ["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "Responsive Web Design", "REST API Integration"],
+    items: ["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "React", "Responsive Web Design", "REST API Integration"],
   },
   {
     title: "Design / UI",
@@ -458,6 +459,7 @@ translations[LANG_EN].keySkills = [
   "JavaScript",
   "TypeScript",
   "Angular",
+  "React",
   "Responsive Web Design",
   "UI/UX Design",
   "Figma",
@@ -509,7 +511,7 @@ translations[LANG_PT].skillsTitle = "Stack Tecnica Principal";
 translations[LANG_PT].skillGroups = [
   {
     title: "Frontend",
-    items: ["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "Design Web Responsivo", "Integracao com REST API"],
+    items: ["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "React", "Design Web Responsivo", "Integracao com REST API"],
   },
   {
     title: "Design / UI",
@@ -530,6 +532,7 @@ translations[LANG_PT].keySkills = [
   "JavaScript",
   "TypeScript",
   "Angular",
+  "React",
   "Design Web Responsivo",
   "Design UI/UX",
   "Figma",
