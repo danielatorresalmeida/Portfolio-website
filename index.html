@@ -130,13 +130,29 @@
   <!-- Projects -->
   <section id="projects" class="section">
     <div class="container">
-      <h2 data-i18n="projects.heading">Selected Projects</h2>
+      <h2 data-i18n="projects.heading">Featured Projects</h2>
       <p class="section-intro" data-i18n="projects.intro">
-        Current practical projects that show programming foundations, Angular frontend work, UI/UX thinking, and a testing mindset.
+        A focused mix of current learning projects and completed practical work for junior frontend, software development, and QA/testing roles.
       </p>
 
       <div class="grid cards" id="project-grid">
-        <!-- CARD 1: Tic-Tac-Toe Game in C -->
+        <!-- CARD 1: NextPath Angular Dashboard -->
+        <article class="card project-text-card" aria-labelledby="project-card-title-nextpath">
+          <div class="card-body">
+            <p class="project-status" data-i18n="projects.nextpath.status">In progress</p>
+            <p class="project-summary" data-i18n="projects.nextpath.summary">Angular dashboard concept for organizing people, projects, Agile work, and growth paths.</p>
+            <h3 id="project-card-title-nextpath" data-i18n="projects.nextpath.title">NextPath Angular Dashboard</h3>
+            <p class="project-contribution" data-i18n="projects.nextpath.what">An Angular internal dashboard concept for an IT company to manage developers, projects, Agile tasks, and internal growth programs. The dashboard is designed to help teams organize developer profiles, project allocation, task progress, and professional development paths.</p>
+            <ul class="project-flow">
+              <li data-i18n-html="projects.nextpath.focus"><strong>Focus:</strong> Component structure, data organization, dashboard UI, and responsive layout.</li>
+              <li data-i18n-html="projects.nextpath.learning"><strong>Learning:</strong> Angular, TypeScript, UI/UX, frontend development, and clearer information architecture.</li>
+            </ul>
+            <p class="project-proof" data-i18n="projects.nextpath.proof">Skills shown: Angular, TypeScript, UI/UX, dashboard design, component structure, frontend development, data organization, responsive layout.</p>
+            <div class="tags"><span>Angular</span><span>TypeScript</span><span>UI/UX</span><span>Dashboard Design</span><span>Responsive Layout</span></div>
+          </div>
+        </article>
+
+        <!-- CARD 2: Tic-Tac-Toe Game in C -->
         <article class="card project-text-card" aria-labelledby="project-card-title-tictactoe">
           <div class="card-body">
             <p class="project-status" data-i18n="projects.tictactoe.status">Currently finishing</p>
@@ -152,21 +168,124 @@
           </div>
         </article>
 
-        <!-- CARD 2: NextPath Angular Dashboard -->
-        <article class="card project-text-card" aria-labelledby="project-card-title-nextpath">
+        <!-- CARD 3: API QA Test Suite -->
+        <article id="project-qa" class="card"
+                 data-href="https://danielatorresalmeida.github.io/api-qa-test-suite/assets/reports/api-qa/"
+                 tabindex="0"
+                 aria-labelledby="project-card-title-qa">
+          <div class="card-media">
+            <img
+              src="assets/API_QA_TEST_SUITE.png"
+              alt="API QA test suite preview"
+              width="720" height="480"
+              loading="lazy" decoding="async" />
+            <div class="card-overlay">
+              <p data-i18n="projects.qa.overlay">Python + Pytest API automation with validation workflows and CI-ready reporting.</p>
+            </div>
+          </div>
           <div class="card-body">
-            <p class="project-status" data-i18n="projects.nextpath.status">In progress</p>
-            <p class="project-summary" data-i18n="projects.nextpath.summary">Angular dashboard concept for organizing people, projects, Agile work, and growth paths.</p>
-            <h3 id="project-card-title-nextpath" data-i18n="projects.nextpath.title">NextPath Angular Dashboard</h3>
-            <p class="project-contribution" data-i18n="projects.nextpath.what">An Angular internal dashboard concept for an IT company to manage developers, projects, Agile tasks, and internal growth programs. The dashboard is designed to help teams organize developer profiles, project allocation, task progress, and professional development paths.</p>
+            <p class="project-summary" data-i18n="projects.qa.summary">QA automation suite for API regression detection with readable, shareable test evidence.</p>
+            <h3 id="project-card-title-qa" data-i18n="projects.qa.title">API QA Test Suite</h3>
+            <p class="project-contribution" data-i18n="projects.qa.what">What I did: Built Python-based API validation workflows, covering status, schema, and business-rule checks with publishable pytest-html reports.</p>
             <ul class="project-flow">
-              <li data-i18n-html="projects.nextpath.focus"><strong>Focus:</strong> Component structure, data organization, dashboard UI, and responsive layout.</li>
-              <li data-i18n-html="projects.nextpath.learning"><strong>Learning:</strong> Angular, TypeScript, UI/UX, frontend development, and clearer information architecture.</li>
+              <li data-i18n-html="projects.qa.problem"><strong>Problem:</strong> Manual API checks were slow and inconsistent before releases.</li>
+              <li data-i18n-html="projects.qa.solution"><strong>Solution:</strong> Created a reusable Python + Pytest suite with structured assertions and report generation.</li>
+              <li data-i18n-html="projects.qa.outcome"><strong>Outcome:</strong> Reduced verification time and improved confidence in API quality.</li>
             </ul>
-            <p class="project-proof" data-i18n="projects.nextpath.proof">Skills shown: Angular, TypeScript, UI/UX, dashboard design, component structure, frontend development, data organization, responsive layout.</p>
-            <div class="tags"><span>Angular</span><span>TypeScript</span><span>UI/UX</span><span>Dashboard Design</span><span>Responsive Layout</span></div>
+            <p class="project-proof" data-i18n="projects.qa.proof">Stack: Python, Pytest, pytest-html, REST API basics, GitHub Pages.</p>
+            <div class="tags"><span>REST API Basics</span><span>Python</span><span>Pytest</span><span>pytest-html</span><span>GitHub Pages</span></div>
+            <div class="links">
+              <a href="https://danielatorresalmeida.github.io/api-qa-test-suite/assets/reports/api-qa/"
+                 target="_blank" rel="noopener" class="live-label btn btn-ghost" data-i18n="projects.actions.live">Live</a>
+              <a href="https://github.com/danielatorresalmeida/api-qa-test-suite"
+                 target="_blank" rel="noopener" class="btn btn-light" data-i18n="projects.actions.code">Code</a>
+            </div>
           </div>
         </article>
+
+        <!-- CARD 4: Responsive Portfolio -->
+        <article class="card"
+                 data-href="https://danielatorresalmeida.github.io/Portfolio-website/"
+                 tabindex="0"
+                 aria-labelledby="project-card-title-portfolio">
+          <div class="card-media">
+            <img
+              src="assets/project-portfolio.2025-11-05.png"
+              alt="Responsive portfolio website screenshot"
+              width="720" height="480"
+              loading="lazy" decoding="async" />
+            <div class="card-overlay">
+              <p data-i18n="projects.portfolio.overlay">Responsive single-page portfolio with clear navigation and project highlights.</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="project-summary" data-i18n="projects.portfolio.summary">Personal portfolio built to present frontend work with clear navigation.</p>
+            <h3 id="project-card-title-portfolio" data-i18n="projects.portfolio.title">Responsive Portfolio</h3>
+            <p class="project-contribution" data-i18n="projects.portfolio.what">What I did: Built a responsive single-page portfolio, structured reusable sections, and optimized readability and navigation across desktop and mobile. Executed manual website tests and automated Selenium smoke checks on key flows.</p>
+            <ul class="project-flow">
+              <li data-i18n-html="projects.portfolio.problem"><strong>Problem:</strong> Needed a clear personal site to present projects and skills professionally.</li>
+              <li data-i18n-html="projects.portfolio.solution"><strong>Solution:</strong> Built a responsive single-page portfolio with structured navigation and GitHub Pages deployment.</li>
+              <li data-i18n-html="projects.portfolio.outcome"><strong>Outcome:</strong> Created a faster, cleaner way for recruiters to review experience and live work.</li>
+            </ul>
+            <p class="project-proof" data-i18n="projects.portfolio.proof">Built with reusable sections and a mobile-first layout.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>GitHub Pages</span><span>Manual QA</span></div>
+            <div class="links">
+              <a href="https://danielatorresalmeida.github.io/Portfolio-website/"
+                 target="_blank" rel="noopener" class="live-label btn btn-ghost" data-i18n="projects.actions.live">Live</a>
+              <a href="https://github.com/danielatorresalmeida/Portfolio-website"
+                 target="_blank" rel="noopener" class="btn btn-light" data-i18n="projects.actions.code">Code</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="other-projects" aria-labelledby="other-projects-title">
+        <h3 id="other-projects-title" data-i18n="projects.other.heading">Other Projects</h3>
+        <p class="other-projects-intro" data-i18n="projects.other.intro">
+          Additional work kept visible for role-specific conversations and deeper portfolio review.
+        </p>
+        <ul class="other-projects-list">
+          <li>
+            <a class="other-project-link" href="https://robocollective.ai/" target="_blank" rel="noopener" data-i18n="projects.other.robo">RoboCollective.ai</a>
+            <span data-i18n="projects.other.robo.note">Live product website contribution in a React/Next.js environment.</span>
+          </li>
+          <li>
+            <a class="other-project-link" href="https://danielatorresalmeida.github.io/ui-components/" target="_blank" rel="noopener" data-i18n="projects.other.ui">UI Components Showcase</a>
+            <span data-i18n="projects.other.ui.note">Reusable UI patterns with responsive HTML, CSS, and JavaScript.</span>
+          </li>
+          <li>
+            <span class="other-project-link" data-i18n="projects.other.todo">To-Do List App</span>
+            <span data-i18n="projects.other.todo.note">React + TypeScript task workflow with Firebase and Google Auth.</span>
+          </li>
+          <li>
+            <a class="other-project-link" href="https://moodchanger.ai/" target="_blank" rel="noopener" data-i18n="projects.other.mood">MoodChanger.ai</a>
+            <span data-i18n="projects.other.mood.note">Responsive product and marketing sections in a Next.js site.</span>
+          </li>
+          <li>
+            <a class="other-project-link" href="https://www.legalethicsventuresinstitute.com/" target="_blank" rel="noopener" data-i18n="projects.other.legal">Legal Ventures Institute</a>
+            <span data-i18n="projects.other.legal.note">Public-facing Next.js website with service presentation and contact flow.</span>
+          </li>
+          <li>
+            <a class="other-project-link" href="https://www.spaceventuresinstitute.com/" target="_blank" rel="noopener" data-i18n="projects.other.space">Space Ventures Institute</a>
+            <span data-i18n="projects.other.space.note">Responsive venture-focused website sections and navigation.</span>
+          </li>
+          <li>
+            <a class="other-project-link" href="https://www.caipo.ai/" target="_blank" rel="noopener" data-i18n="projects.other.caipo">CAIPO.ai</a>
+            <span data-i18n="projects.other.caipo.note">Frontend sections for wearable and developer kit product communication.</span>
+          </li>
+          <li>
+            <a class="other-project-link" href="https://www.tarrl.org/" target="_blank" rel="noopener" data-i18n="projects.other.tarrl">TARRL</a>
+            <span data-i18n="projects.other.tarrl.note">Remote-first research lab website with clear program and application content.</span>
+          </li>
+          <li>
+            <span class="other-project-link" data-i18n="projects.other.mechanic">Mechanic Data Base</span>
+            <span data-i18n="projects.other.mechanic.note">Relational SQL model for workshop clients, vehicles, services, and parts.</span>
+          </li>
+          <li>
+            <span class="other-project-link" data-i18n="projects.other.bakery">Bakery Data Base</span>
+            <span data-i18n="projects.other.bakery.note">Relational SQL model for bakery orders, products, ingredients, and stock.</span>
+          </li>
+        </ul>
       </div>
     </div>
   </section>

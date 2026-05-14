@@ -101,8 +101,8 @@ const TRANSLATIONS = {
     "coreStack.14": "Manual Testing",
     "coreStack.15": "Debugging",
     "coreStack.16": "Attention to Usability and Detail",
-    "projects.heading": "Selected Projects",
-    "projects.intro": "Current practical projects that show programming foundations, Angular frontend work, UI/UX thinking, and a testing mindset.",
+    "projects.heading": "Featured Projects",
+    "projects.intro": "A focused mix of current learning projects and completed practical work for junior frontend, software development, and QA/testing roles.",
     "projects.tictactoe.status": "Currently finishing",
     "projects.tictactoe.title": "Tic-Tac-Toe Game in C",
     "projects.tictactoe.summary": "Console-based C project focused on programming logic and structured problem-solving.",
@@ -215,16 +215,28 @@ const TRANSLATIONS = {
     "projects.actions.viewSite": "View site",
     "projects.privateRepoNote": "Private repository. Frontend contribution available on request.",
     "projects.other.heading": "Other Projects",
-    "projects.other.intro": "Additional work available for role-specific discussions.",
+    "projects.other.intro": "Additional work kept visible for role-specific conversations and deeper portfolio review.",
     "projects.other.responsive": "Responsive Portfolio",
+    "projects.other.robo": "RoboCollective.ai",
+    "projects.other.robo.note": "Live product website contribution in a React/Next.js environment.",
     "projects.other.mood": "MoodChanger.ai",
+    "projects.other.mood.note": "Responsive product and marketing sections in a Next.js site.",
     "projects.other.legal": "Legal Ventures Institute",
+    "projects.other.legal.note": "Public-facing Next.js website with service presentation and contact flow.",
     "projects.other.ui": "UI Components Showcase",
+    "projects.other.ui.note": "Reusable UI patterns with responsive HTML, CSS, and JavaScript.",
     "projects.other.space": "Space Ventures Institute",
+    "projects.other.space.note": "Responsive venture-focused website sections and navigation.",
     "projects.other.caipo": "CAIPO.ai",
+    "projects.other.caipo.note": "Frontend sections for wearable and developer kit product communication.",
     "projects.other.tarrl": "TARRL",
+    "projects.other.tarrl.note": "Remote-first research lab website with clear program and application content.",
+    "projects.other.todo": "To-Do List App",
+    "projects.other.todo.note": "React + TypeScript task workflow with Firebase and Google Auth.",
     "projects.other.mechanic": "Mechanic Data Base",
+    "projects.other.mechanic.note": "Relational SQL model for workshop clients, vehicles, services, and parts.",
     "projects.other.bakery": "Bakery Data Base",
+    "projects.other.bakery.note": "Relational SQL model for bakery orders, products, ingredients, and stock.",
     "about.eyebrow": "Profile",
     "about.heading": "About",
     "about.p1": "Junior software development candidate transitioning from arts and music education into IT. I am focused on frontend development, web development, UI/UX, and QA/testing, and I am actively building practical projects while strengthening my technical foundations.",
@@ -423,8 +435,8 @@ const TRANSLATIONS = {
     "coreStack.14": "Testes manuais",
     "coreStack.15": "Debugging",
     "coreStack.16": "Usabilidade e detalhe",
-    "projects.heading": "Projetos Selecionados",
-    "projects.intro": "Projetos praticos atuais que mostram bases de programacao, frontend em Angular, pensamento UI/UX e mentalidade de testes.",
+    "projects.heading": "Projetos em Destaque",
+    "projects.intro": "Uma selecao focada de projetos em desenvolvimento e trabalho pratico concluido para funcoes junior em frontend, desenvolvimento de software e QA/testes.",
     "projects.tictactoe.status": "A terminar",
     "projects.tictactoe.title": "Jogo do Galo em C",
     "projects.tictactoe.summary": "Projeto de consola em C focado em logica de programacao e resolucao estruturada de problemas.",
@@ -537,16 +549,28 @@ const TRANSLATIONS = {
     "projects.actions.viewSite": "Ver site",
     "projects.privateRepoNote": "Repositório privado. Contribuição frontend disponível mediante pedido.",
     "projects.other.heading": "Outros Projetos",
-    "projects.other.intro": "Trabalho adicional disponivel para conversas especificas da funcao.",
+    "projects.other.intro": "Trabalho adicional mantido visivel para conversas especificas da funcao e analise mais detalhada do portefolio.",
     "projects.other.responsive": "Portfolio Responsivo",
+    "projects.other.robo": "RoboCollective.ai",
+    "projects.other.robo.note": "Contribuicao para website de produto em ambiente React/Next.js.",
     "projects.other.mood": "MoodChanger.ai",
+    "projects.other.mood.note": "Seccoes responsivas de produto e marketing num site Next.js.",
     "projects.other.legal": "Legal Ventures Institute",
+    "projects.other.legal.note": "Website publico em Next.js com apresentacao de servicos e fluxo de contacto.",
     "projects.other.ui": "Mostruario de Componentes UI",
+    "projects.other.ui.note": "Padroes de UI reutilizaveis com HTML, CSS e JavaScript responsivos.",
     "projects.other.space": "Space Ventures Institute",
+    "projects.other.space.note": "Seccoes e navegacao responsivas para website orientado a venture.",
     "projects.other.caipo": "CAIPO.ai",
+    "projects.other.caipo.note": "Seccoes frontend para comunicar produto wearable e developer kit.",
     "projects.other.tarrl": "TARRL",
+    "projects.other.tarrl.note": "Website de laboratorio remote-first com conteudo claro sobre programa e candidaturas.",
+    "projects.other.todo": "App de Tarefas",
+    "projects.other.todo.note": "Fluxo de tarefas em React + TypeScript com Firebase e Google Auth.",
     "projects.other.mechanic": "Base de Dados de Oficina",
+    "projects.other.mechanic.note": "Modelo SQL relacional para clientes, veiculos, servicos e pecas de oficina.",
     "projects.other.bakery": "Base de Dados de Padaria",
+    "projects.other.bakery.note": "Modelo SQL relacional para encomendas, produtos, ingredientes e stock de padaria.",
     "about.eyebrow": "Perfil",
     "about.heading": "Sobre",
     "about.p1": "Candidata junior em desenvolvimento de software em transicao das artes e educacao musical para IT. Estou focada em frontend, desenvolvimento web, UI/UX e QA/testes, e continuo a construir projetos praticos enquanto reforco bases tecnicas.",
@@ -691,7 +715,7 @@ if (currentLanguage !== LANG_EN && currentLanguage !== LANG_PT) {
 }
 
 function t(key) {
-  return TRANSLATIONS[currentLanguage]?.[key] || TRANSLATIONS[LANG_EN][key] || key;
+  return TRANSLATIONS[currentLanguage]?.[key] ?? TRANSLATIONS[LANG_EN]?.[key] ?? "";
 }
 
 const ORPHAN_TEXT_SELECTOR = ".hero p, .hero li, .section p, .section li, .section .when, .section .where";
@@ -881,19 +905,25 @@ function applyTranslations(language) {
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
     if (!key) return;
-    el.textContent = t(key);
+    const value = t(key);
+    if (!value) return;
+    el.textContent = value;
   });
 
   document.querySelectorAll("[data-i18n-html]").forEach((el) => {
     const key = el.getAttribute("data-i18n-html");
     if (!key) return;
-    el.innerHTML = t(key);
+    const value = t(key);
+    if (!value) return;
+    el.innerHTML = value;
   });
 
   document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
     const key = el.getAttribute("data-i18n-placeholder");
     if (!key) return;
-    el.setAttribute("placeholder", t(key));
+    const value = t(key);
+    if (!value) return;
+    el.setAttribute("placeholder", value);
   });
 
   if (contactCvLink) {

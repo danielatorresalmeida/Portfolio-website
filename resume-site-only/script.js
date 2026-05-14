@@ -38,6 +38,7 @@ const introSection = document.getElementById("intro-section");
 const expCol = document.getElementById("experience-col");
 const skillsCol = document.getElementById("skills-col");
 const projectsCol = document.getElementById("projects-col");
+const moreProjectsCol = document.getElementById("more-projects-col");
 const coursesCol = document.getElementById("courses-col");
 const educationCol = document.getElementById("education-col");
 const strengthsCol = document.getElementById("strengths-col");
@@ -464,7 +465,15 @@ translations[LANG_EN].keySkills = [
   "Git / GitHub",
   "Manual Testing",
 ];
+translations[LANG_EN].projectsTitle = "Relevant Projects";
+translations[LANG_EN].projectsIntro = "Short CV highlights. More detail is available on the portfolio.";
 translations[LANG_EN].projectItems = [
+  {
+    title: "NextPath Angular Dashboard",
+    status: "In progress",
+    bullet:
+      "An Angular internal dashboard concept for an IT company to manage developers, projects, Agile tasks, and internal growth programs. Skills shown: Angular, TypeScript, UI/UX, dashboard design, component structure, frontend development, data organization, and responsive layout.",
+  },
   {
     title: "Tic-Tac-Toe Game in C",
     status: "Currently finishing",
@@ -472,11 +481,25 @@ translations[LANG_EN].projectItems = [
       "A console-based Tic-Tac-Toe game developed in C, focused on programming logic, condition checking, user interaction, loops, functions, and structured problem-solving. Skills shown: C, logic, terminal interaction, functions, loops, conditionals, and debugging.",
   },
   {
-    title: "NextPath Angular Dashboard",
-    status: "In progress",
+    title: "API QA Test Suite",
+    status: "Completed practical project",
     bullet:
-      "An Angular internal dashboard concept for an IT company to manage developers, projects, Agile tasks, and internal growth programs. Skills shown: Angular, TypeScript, UI/UX, dashboard design, component structure, frontend development, data organization, and responsive layout.",
+      "Python + Pytest API validation suite covering status checks, schema expectations, business-rule checks, and readable pytest-html reports. Skills shown: REST API basics, Python, QA concepts, debugging, and test evidence.",
   },
+  {
+    title: "Responsive Portfolio",
+    status: "Published project",
+    bullet:
+      "Responsive portfolio and resume website built with HTML, CSS, and JavaScript, focused on clear navigation, recruiter-friendly structure, GitHub Pages deployment, and manual link/responsive checks.",
+  },
+];
+translations[LANG_EN].moreProjectsTitle = "More Projects";
+translations[LANG_EN].moreProjectItems = [
+  "<strong>RoboCollective.ai:</strong> Live product website contribution in a React/Next.js environment.",
+  "<strong>UI Components Showcase:</strong> Reusable UI patterns with responsive HTML, CSS, and JavaScript.",
+  "<strong>To-Do List App:</strong> React + TypeScript task workflow with Firebase and Google Auth.",
+  "<strong>Mechanic Data Base:</strong> Relational SQL model for workshop clients, vehicles, services, and parts.",
+  "<strong>Bakery Data Base:</strong> Relational SQL model for bakery orders, products, ingredients, and stock.",
 ];
 
 translations[LANG_PT].objectiveTitle = "Resumo Profissional";
@@ -514,8 +537,15 @@ translations[LANG_PT].keySkills = [
   "Git / GitHub",
   "Testes manuais",
 ];
-translations[LANG_PT].projectsTitle = "Destaques de Projetos Atuais";
+translations[LANG_PT].projectsTitle = "Projetos Relevantes";
+translations[LANG_PT].projectsIntro = "Destaques curtos para CV. Ha mais detalhe disponivel no portfolio.";
 translations[LANG_PT].projectItems = [
+  {
+    title: "NextPath Angular Dashboard",
+    status: "Em progresso",
+    bullet:
+      "Conceito de dashboard interno em Angular para uma empresa de IT gerir developers, projetos, tarefas Agile e programas internos de crescimento. Competencias: Angular, TypeScript, UI/UX, design de dashboard, estrutura de componentes, frontend, organizacao de dados e layout responsivo.",
+  },
   {
     title: "Jogo do Galo em C",
     status: "A terminar",
@@ -523,11 +553,25 @@ translations[LANG_PT].projectItems = [
       "Jogo do Galo em consola desenvolvido em C, focado em logica de programacao, verificacao de condicoes, interacao com o utilizador, ciclos, funcoes e resolucao estruturada de problemas. Competencias: C, logica, interacao no terminal, funcoes, ciclos, condicionais e debugging.",
   },
   {
-    title: "NextPath Angular Dashboard",
-    status: "Em progresso",
+    title: "Suite de Testes de API (QA)",
+    status: "Projeto pratico concluido",
     bullet:
-      "Conceito de dashboard interno em Angular para uma empresa de IT gerir developers, projetos, tarefas Agile e programas internos de crescimento. Competencias: Angular, TypeScript, UI/UX, design de dashboard, estrutura de componentes, frontend, organizacao de dados e layout responsivo.",
+      "Suite de validacao de API em Python + Pytest com verificacoes de status, expectativas de schema, regras de negocio e relatorios pytest-html legiveis. Competencias: bases de REST API, Python, conceitos de QA, debugging e evidencia de testes.",
   },
+  {
+    title: "Portfolio Responsivo",
+    status: "Projeto publicado",
+    bullet:
+      "Website responsivo de portfolio e CV criado com HTML, CSS e JavaScript, focado em navegacao clara, estrutura facil para recrutadores, publicacao no GitHub Pages e verificacoes manuais de links/responsividade.",
+  },
+];
+translations[LANG_PT].moreProjectsTitle = "Mais Projetos";
+translations[LANG_PT].moreProjectItems = [
+  "<strong>RoboCollective.ai:</strong> Contribuicao para website de produto em ambiente React/Next.js.",
+  "<strong>Mostruario de Componentes UI:</strong> Padroes de UI reutilizaveis com HTML, CSS e JavaScript responsivos.",
+  "<strong>App de Tarefas:</strong> Fluxo de tarefas em React + TypeScript com Firebase e Google Auth.",
+  "<strong>Base de Dados de Oficina:</strong> Modelo SQL relacional para clientes, veiculos, servicos e pecas de oficina.",
+  "<strong>Base de Dados de Padaria:</strong> Modelo SQL relacional para encomendas, produtos, ingredientes e stock de padaria.",
 ];
 translations[LANG_PT].strengths = [
   "<strong>Desenvolvimento Frontend</strong> - criar interfaces responsivas com HTML, CSS, JavaScript, pensamento UI/UX e estrutura limpa.",
@@ -551,7 +595,7 @@ function t(key) {
 // Keep orphan control for narrative text, but avoid skill bullets where forced non-breaking
 // can clip long labels inside compact cards.
 const ORPHAN_TEXT_SELECTOR =
-  ".resume p, .resume .when, .resume .where, #experience-col li, #projects-col li, #courses-col li, #strengths-col li";
+  ".resume p, .resume .when, .resume .where, #experience-col li, #projects-col li, #more-projects-col li, #courses-col li, #strengths-col li";
 
 function tightenTrailingWords(element) {
   const walker = document.createTreeWalker(
@@ -693,6 +737,8 @@ function renderResumeText() {
 
   const projectsTitle = projectsCol?.querySelector("h2");
   setText(projectsTitle, t("projectsTitle"));
+  const projectsIntro = projectsCol?.querySelector(".resume-projects-note");
+  setText(projectsIntro, t("projectsIntro"));
   const projectItems = projectsCol?.querySelectorAll(".item") || [];
   const translatedProjects = asArray(t("projectItems"));
   warnCountMismatch("projectItems", projectItems.length, translatedProjects.length);
@@ -707,6 +753,15 @@ function renderResumeText() {
     setText(item.querySelector("h3"), translated.title);
     setText(item.querySelector(".project-status"), translated.status || "");
     setText(item.querySelector("li"), translated.bullet);
+  });
+
+  const moreProjectsTitle = moreProjectsCol?.querySelector("h2");
+  setText(moreProjectsTitle, t("moreProjectsTitle"));
+  const moreProjectItems = moreProjectsCol?.querySelectorAll("li") || [];
+  const translatedMoreProjects = asArray(t("moreProjectItems"));
+  warnCountMismatch("moreProjectItems", moreProjectItems.length, translatedMoreProjects.length);
+  moreProjectItems.forEach((item, index) => {
+    setHTML(item, translatedMoreProjects[index] || "");
   });
 
   const coursesTitle = coursesCol?.querySelector("h2");

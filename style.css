@@ -696,25 +696,38 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 10px;
+}
+.other-projects-list li {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+  padding: 12px;
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--border));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--panel) 76%, transparent);
+  text-align: left;
 }
 .other-project-link {
   display: inline-block;
-  padding: 7px 11px;
-  border: 1px solid color-mix(in srgb, var(--accent) 34%, var(--border));
-  border-radius: 999px;
+  width: fit-content;
   text-decoration: none;
   color: var(--text);
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 700;
   line-height: 1.2;
-  background: color-mix(in srgb, var(--panel) 75%, transparent);
-  transition: border-color .2s ease, transform .2s ease;
+  transition: color .2s ease, transform .2s ease;
+}
+.other-projects-list span:not(.other-project-link) {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
 }
 .other-project-link:hover,
 .other-project-link:focus-visible {
-  border-color: var(--accent);
+  color: var(--accent);
   transform: translateY(-1px);
 }
 

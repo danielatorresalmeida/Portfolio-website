@@ -202,6 +202,7 @@ describe("i18n contract", () => {
     expect(document.querySelectorAll("#experience-col .item").length).toBe(en.experienceItems.length);
     expect(document.querySelectorAll("#skills-col .skill-group-card").length).toBe(en.skillGroups.length);
     expect(document.querySelectorAll("#projects-col .item").length).toBe(en.projectItems.length);
+    expect(document.querySelectorAll("#more-projects-col li").length).toBe(en.moreProjectItems.length);
     expect(document.querySelectorAll("#courses-col li").length).toBe(en.courses.length);
     expect(document.querySelectorAll("#education-col .item").length).toBe(en.educationItems.length);
     expect(document.querySelectorAll("#strengths-col li").length).toBe(en.strengths.length);
@@ -209,6 +210,7 @@ describe("i18n contract", () => {
     expect(en.experienceItems.length).toBe(pt.experienceItems.length);
     expect(en.skillGroups.length).toBe(pt.skillGroups.length);
     expect(en.projectItems.length).toBe(pt.projectItems.length);
+    expect(en.moreProjectItems.length).toBe(pt.moreProjectItems.length);
     expect(en.courses.length).toBe(pt.courses.length);
     expect(en.educationItems.length).toBe(pt.educationItems.length);
     expect(en.strengths.length).toBe(pt.strengths.length);
@@ -252,10 +254,12 @@ describe("i18n contract", () => {
     const featuredTitles = featuredProjects.map((card) =>
       card.querySelector("h3")?.textContent?.trim()
     );
-    expect(featuredProjects.length).toBe(2);
+    expect(featuredProjects.length).toBe(4);
     expect(featuredTitles).toEqual([
-      "Tic-Tac-Toe Game in C",
       "NextPath Angular Dashboard",
+      "Tic-Tac-Toe Game in C",
+      "API QA Test Suite",
+      "Responsive Portfolio",
     ]);
 
     const portfolioExperienceItems = portfolioDom.window.document.querySelectorAll("#experience .timeline .item");
