@@ -524,6 +524,21 @@ h4 {
   border-top: 0;
 }
 
+.project-status {
+  display: inline-flex;
+  width: fit-content;
+  margin: 0.2rem 0 0.35rem;
+  padding: 4px 9px;
+  border: 1px solid color-mix(in srgb, var(--accent) 42%, var(--border));
+  border-radius: 999px;
+  color: var(--text);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
 .projects-grid .project-site-shot {
   width: 100%;
   max-width: none;

@@ -178,22 +178,20 @@ describe("portfolio interaction flows", () => {
     expect(topbar.classList.contains("menu-open")).toBe(false);
   });
 
-  it("opens card URL only when non-interactive card regions are clicked", () => {
+  it("keeps in-progress project cards informational", () => {
     dom = bootstrapApp();
     const { document, open } = dom.window;
-    const firstCard = document.querySelector(".card[data-href]");
-    const liveLink = firstCard.querySelector(".links a");
+    const firstCard = document.querySelector("#project-grid > .card");
 
     firstCard.dispatchEvent(new dom.window.MouseEvent("click", { bubbles: true }));
-    expect(open).toHaveBeenCalledTimes(1);
-    expect(open).toHaveBeenLastCalledWith(firstCard.getAttribute("data-href"), "_blank", "noopener");
-
-    open.mockClear();
-
-    liveLink.dispatchEvent(new dom.window.MouseEvent("click", { bubbles: true }));
     expect(open).not.toHaveBeenCalled();
 
     firstCard.dispatchEvent(new dom.window.KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
+    expect(open).not.toHaveBeenCalled();
+
+    const spaceEvent = new dom.window.KeyboardEvent("keydown", { key: " ", bubbles: true, cancelable: true });
+    firstCard.dispatchEvent(spaceEvent);
+    expect(spaceEvent.defaultPrevented).toBe(false);
     expect(open).not.toHaveBeenCalled();
   });
 

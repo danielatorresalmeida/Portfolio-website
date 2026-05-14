@@ -116,9 +116,7 @@ function normalizeSkillValue(value) {
 }
 
 function collectPortfolioSkillValues(translationMap) {
-  const keys = Object.keys(translationMap).filter((key) =>
-    /^(about\.technical\.(frontend|design|tools|backend|java|data|se|key)\.\d+|coreStack\.\d+)$/.test(key)
-  );
+  const keys = Object.keys(translationMap).filter((key) => /^coreStack\.\d+$/.test(key));
 
   return keys.map((key) => translationMap[key]).filter(Boolean);
 }
@@ -254,11 +252,10 @@ describe("i18n contract", () => {
     const featuredTitles = featuredProjects.map((card) =>
       card.querySelector("h3")?.textContent?.trim()
     );
-    expect(featuredProjects.length).toBe(3);
+    expect(featuredProjects.length).toBe(2);
     expect(featuredTitles).toEqual([
-      "RoboCollective.ai",
-      "API QA Test Suite",
-      "To-Do List App",
+      "Tic-Tac-Toe Game in C",
+      "NextPath Angular Dashboard",
     ]);
 
     const portfolioExperienceItems = portfolioDom.window.document.querySelectorAll("#experience .timeline .item");

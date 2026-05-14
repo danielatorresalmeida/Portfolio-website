@@ -59,16 +59,16 @@ const translations = {
     printAria: "Download CV",
     printLabel: "CV",
     metaLine: META_LINE_HTML,
-    objectiveTitle: "Objective",
+    objectiveTitle: "Professional Summary",
     objectiveBody:
-      "Frontend developer with a background in arts and music education, now focused on building responsive, accessible, and user-centered web interfaces. Experienced in React, JavaScript, TypeScript, UI/UX design, and QA testing. Strong at translating design concepts into clean, maintainable frontend implementations in collaborative environments.",
+      "Junior software development candidate with a background in arts and music education, now focused on frontend development, web development, UI/UX, and QA/testing. Experienced in building practical projects using HTML, CSS, JavaScript, TypeScript, Angular, Git, and design tools such as Figma. I bring creativity, attention to detail, adaptability, and a strong interest in building user-centered digital solutions.",
     experienceTitle: "Experience",
     experienceItems: [
       {
         title: "Software Development Intern - FloLabs Innovations Group",
         when: "Aug 2025 - Present",
         bullets: [
-          "Built the Portfolio website and robocollective.ai from scratch, taking both projects from concept to live release.",
+          'Built both websites from scratch, from concept to live release: <a href="https://danielatorresalmeida.github.io/Portfolio-website/" target="_blank" rel="noopener">Portfolio website</a>; <a href="https://robocollective.ai/" target="_blank" rel="noopener">robocollective.ai</a>',
           "Delivered 10+ UI/UX improvements across HTML, CSS, JavaScript, PHP, and TypeScript.",
           "Supported back-end development with Python (FastAPI).",
           "Contributed to QA testing and documentation to strengthen release quality.",
@@ -99,155 +99,60 @@ const translations = {
         ],
       },
     ],
-    skillsTitle: "Technical Skills",
+    skillsTitle: "Core Technical Stack",
     skillGroups: [
       {
         title: "Frontend",
-        items: ["HTML5", "CSS3", "JavaScript", "React", "TypeScript", "Next.js"],
+        items: ["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "Responsive Web Design", "REST API Integration"],
       },
       {
-        title: "UI/UX",
-        items: ["Responsive Design", "Accessibility", "Wireframing", "Design Systems", "Figma"],
+        title: "Design / UI",
+        items: ["UI/UX Design", "Figma", "User-centered Interfaces"],
       },
       {
         title: "QA & Testing",
         items: [
-          "QA Testing",
-          "API Testing",
-          "Postman",
-          "Pytest + pytest-html reports",
-          "Selenium",
+          "QA Concepts",
+          "Manual Testing",
+          "Debugging",
+          "Attention to Usability and Detail",
         ],
       },
       {
-        title: "DevOps & Deployment",
+        title: "Programming / Foundations",
         items: [
-          "Git / GitHub",
-          "GitHub Actions",
-          "GitHub Pages",
-          "Vercel",
-          "Firebase",
-          "Plesk",
-          "Dynadot",
-        ],
-      },
-      {
-        title: "Platforms & Integrations",
-        items: [
-          "OpenCart",
-          "WordPress",
-          "HubSpot",
-          "FillOutForms",
-          "Google Auth",
-        ],
-      },
-      {
-        title: "Java & Backend",
-        items: [
+          "C",
           "Java",
-          "Java (Fundamentals)",
-          "Java Web Application Development",
-          "Python / FastAPI",
-        ],
-      },
-      {
-        title: "Databases & Data Modeling",
-        items: [
-          "SQL Fundamentals",
-          "Database Access Technologies",
-          "SQL / Database Design",
-          "PostgreSQL",
-        ],
-      },
-      {
-        title: "Software Engineering Foundations",
-        items: [
-          "Programming & Algorithms",
-          "C/C++ Fundamentals",
-          "Software Engineering",
-          "Software Development Methodologies",
-          "IntelliJ IDEA",
-          "Eclipse",
+          "Python Basics",
+          "Git / GitHub",
         ],
       },
     ],
     keySkillsTitle: "Key Skills",
     keySkills: [
-      "React",
-      "Next.js",
-      "TypeScript",
+      "HTML",
+      "CSS",
       "JavaScript",
+      "TypeScript",
+      "Angular",
+      "Responsive Web Design",
       "UI/UX Design",
-      "Accessibility",
-      "QA Testing",
-      "API Testing",
+      "Figma",
+      "REST API Integration",
       "Git / GitHub",
-      "GitHub Actions",
-      "Vercel",
-      "Firebase",
-      "Python",
-      "Python / FastAPI",
-      "FastAPI",
-      "Pytest",
-      "Java Web Application Development",
-      "SQL Fundamentals",
-      "Database Access Technologies",
-      "SQL/PostgreSQL",
-      "Algorithms",
-      "C/C++",
-      "Software Engineering",
-      "Software Development Methodologies",
-      "WordPress",
+      "Manual Testing",
     ],
-    projectsTitle: "Projects",
+    projectsTitle: "Current Project Highlights",
     projectItems: [
       {
-        title: "RoboCollective.ai",
-        bullet: "Built responsive frontend sections and conversion-focused page flows in a React + Next.js codebase styled with Tailwind CSS. Ran manual cross-browser QA and Selenium smoke tests for critical pages before release.",
+        title: "Tic-Tac-Toe Game in C",
+        status: "Currently finishing",
+        bullet: "A console-based Tic-Tac-Toe game developed in C, focused on programming logic, condition checking, user interaction, loops, functions, and structured problem-solving. Skills shown: C, logic, terminal interaction, functions, loops, conditionals, and debugging.",
       },
       {
-        title: "CAIPO.ai",
-        bullet: "Built and refined responsive frontend sections to communicate CAIPO's wearable and developer-kit offerings with clearer hierarchy and stronger conversion-oriented user flow.",
-      },
-      {
-        title: "API QA Test Suite",
-        bullet: "Built automated API checks in Python + Pytest, generated pytest-html reports, and published QA outputs on GitHub Pages.",
-      },
-      {
-        title: "To-Do List App",
-        bullet: "Built the frontend in React + TypeScript with Firebase and Google Auth, delivering a responsive task flow with persistent real-time data.",
-      },
-      {
-        title: "Responsive Portfolio",
-        bullet: "Developed a responsive portfolio interface with structured navigation, reusable sections, and GitHub Pages deployment. Executed manual website test cases and automated Selenium smoke checks for key user flows.",
-      },
-      {
-        title: "UI Components Showcase",
-        bullet: "Implemented reusable UI patterns with responsive behavior and consistent interaction states for faster frontend delivery. Added manual interaction/accessibility checks and Selenium smoke/regression checks on core components.",
-      },
-      {
-        title: "MoodChanger.ai",
-        bullet: "Built responsive product and marketing sections in a Next.js + React codebase styled with Tailwind CSS and deployed on Vercel. Covered core journeys with manual exploratory testing and Selenium-based smoke checks.",
-      },
-      {
-        title: "Legal Ventures Institute",
-        bullet: "Built a public-facing Next.js + React website with modular styling, clear service hierarchy, and optimized contact flow. Applied manual regression testing and Selenium smoke automation for contact and navigation routes.",
-      },
-      {
-        title: "Space Ventures Institute",
-        bullet: "Developed responsive venture-focused interfaces in a Next.js + React codebase using Tailwind CSS, deployed on Vercel. Validated responsive behavior manually and used Selenium smoke checks on high-traffic pages.",
-      },
-      {
-        title: "TARRL",
-        bullet: "Built responsive frontend sections for the TARRL (Texas Advanced Robotics Research Lab) website, clarifying the remote-first model, research tracks, and application path for global AI and robotics candidates.",
-      },
-      {
-        title: "Mechanic Data Base",
-        bullet: "Designed a normalized SQL data model for a mechanic workshop, linking clients, vehicles, work sheets, services, parts, and suppliers with clear primary/foreign key relationships.",
-      },
-      {
-        title: "Bakery Data Base",
-        bullet: "Designed a normalized SQL data model for bakery operations, linking customers, orders, products, ingredients, suppliers, and stock movements through clear primary/foreign key relationships.",
+        title: "NextPath Angular Dashboard",
+        status: "In progress",
+        bullet: "An Angular internal dashboard concept for an IT company to manage developers, projects, Agile tasks, and internal growth programs. Skills shown: Angular, TypeScript, UI/UX, dashboard design, component structure, frontend development, data organization, and responsive layout.",
       },
     ],
     coursesTitle: "Courses & Certifications",
@@ -279,14 +184,13 @@ const translations = {
     ],
     strengthsTitle: "Key Strengths",
     strengths: [
-      "<strong>Frontend Engineering</strong> - delivering accessible, responsive interfaces with HTML, CSS, JavaScript, React, TypeScript, and Next.js.",
-      "<strong>UI/UX Execution</strong> - taking product ideas from Figma to production through accessible, component-based user experiences.",
-      "<strong>Quality Assurance and Testing</strong> - reducing regressions through manual QA, API validation, Selenium checks, and Pytest reporting.",
-      "<strong>Data and Database Engineering</strong> - applying SQL fundamentals, database access technologies, relational modeling, and PostgreSQL.",
-      "<strong>Java and Backend Development</strong> - using Java fundamentals, Java web application development, and Python/FastAPI for practical backend workflows.",
-      "<strong>Software Engineering and Delivery</strong> - applying algorithms, C/C++ fundamentals, development methodologies, and release workflows with Git/GitHub, GitHub Actions, and Vercel.",
+      "<strong>Frontend Development</strong> - building responsive interfaces with HTML, CSS, JavaScript, UI/UX thinking, and clean structure.",
+      "<strong>UI/UX Execution</strong> - turning product ideas into accessible, user-centered layouts and consistent interaction states.",
+      "<strong>Modern Frontend Learning</strong> - deepening Vue.js, REST API basics, component-based thinking, and Git/GitHub workflows.",
+      "<strong>Quality Assurance</strong> - using manual QA, API validation basics, and clear bug tracking to improve release confidence.",
+      "<strong>Collaboration</strong> - communicating clearly, solving problems, and learning quickly in multidisciplinary environments.",
     ],
-    footerMeta: "Daniela Torres Almeida | Built with HTML, CSS, JavaScript | Hosted on GitHub Pages",
+    footerMeta: "Daniela Almeida | Built with HTML, CSS, JavaScript | Hosted on GitHub Pages",
   },
   [LANG_PT]: {
     langButton: "EN",
@@ -299,16 +203,16 @@ const translations = {
     printAria: "Descarregar CV",
     printLabel: "CV",
     metaLine: META_LINE_HTML,
-    objectiveTitle: "Objetivo Profissional",
+    objectiveTitle: "Resumo Profissional",
     objectiveBody:
-      "Profissional em transição, com percurso em artes e educação musical, atualmente focada em desenvolvimento de software e garantia de qualidade. Experiência em design de UI/UX, desenvolvimento front-end e testes de QA com Python, JavaScript e tecnologias web modernas. Elevada capacidade de adaptação a novos desafios, colaboração em equipas ágeis e aplicação de criatividade à resolução de problemas. Compromisso com soluções digitais centradas no utilizador e com a entrega de projetos inovadores e orientados para a qualidade.",
+      "Candidata junior em desenvolvimento de software, com percurso em artes e educacao musical, agora focada em frontend, desenvolvimento web, UI/UX e QA/testes. Experiencia em projetos praticos com HTML, CSS, JavaScript, TypeScript, Angular, Git e ferramentas de design como Figma. Trago criatividade, atencao ao detalhe, adaptabilidade e forte interesse em criar solucoes digitais centradas no utilizador.",
     experienceTitle: "Experiência",
     experienceItems: [
       {
         title: "Estagiária de Desenvolvimento de Software - FloLabs Innovations Group",
         when: "Ago 2025 - Presente",
         bullets: [
-          "Desenvolvi o Portfolio website e o robocollective.ai de raiz, levando ambos os projetos do conceito a publicacao.",
+          'Desenvolvi ambos os websites de raiz, do conceito à publicação: <a href="https://danielatorresalmeida.github.io/Portfolio-website/" target="_blank" rel="noopener">Portfolio website</a>; <a href="https://robocollective.ai/" target="_blank" rel="noopener">robocollective.ai</a>',
           "Entreguei mais de 10 melhorias de UI/UX com HTML, CSS, JavaScript, PHP e TypeScript.",
           "Apoio ao desenvolvimento de back-end com Python (FastAPI).",
           "Contribui para testes de QA e documentacao para reforcar a qualidade das releases.",
@@ -339,36 +243,35 @@ const translations = {
         ],
       },
     ],
-    skillsTitle: "Competências Técnicas",
+    skillsTitle: "Stack Tecnica Principal",
     skillGroups: [
       {
         title: "Frontend",
-        items: ["HTML5", "CSS3", "JavaScript", "React", "TypeScript", "Next.js"],
+        items: ["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "Design Web Responsivo", "Integracao com REST API"],
       },
       {
-        title: "UI/UX",
-        items: ["Design Responsivo", "Acessibilidade", "Wireframing", "Sistemas de Design", "Figma"],
+        title: "Design / UI",
+        items: ["Design UI/UX", "Figma", "Interfaces centradas no utilizador"],
       },
       {
         title: "QA e Testes",
         items: [
-          "Testes de QA",
-          "Testes de API",
-          "Postman",
-          "Pytest + relatorios pytest-html",
-          "Selenium",
+          "Conceitos de QA",
+          "Testes manuais",
+          "Debugging",
+          "Usabilidade e detalhe",
         ],
       },
       {
-        title: "DevOps e Deployment",
+        title: "Ferramentas e Workflow",
         items: [
           "Git / GitHub",
           "GitHub Actions",
           "GitHub Pages",
           "Vercel",
           "Firebase",
-          "Plesk",
-          "Dynadot",
+          "React / Next.js",
+          "Bases de Codigo Limpo",
         ],
       },
       {
@@ -446,7 +349,7 @@ const translations = {
         bullet: "Desenvolvi secções frontend responsivas e fluxos de página focados em conversão num código React + Next.js com Tailwind CSS. Executei QA manual cross-browser e smoke tests com Selenium nas páginas críticas.",
       },
       {
-        title: "CAIPO.ai",
+        title: "Mostra de Componentes UI",
         bullet: "Construí e refinei secções frontend responsivas para comunicar as ofertas wearable e developer kit da CAIPO com hierarquia mais clara e um fluxo de utilizador mais orientado à conversão.",
       },
       {
@@ -526,9 +429,113 @@ const translations = {
       "<strong>Desenvolvimento Java e Backend</strong> - usar fundamentos de Java, desenvolvimento web em Java e Python/FastAPI em fluxos backend práticos.",
       "<strong>Engenharia de Software e Entrega</strong> - aplicar algoritmos, fundamentos de C/C++, metodologias de desenvolvimento e workflows de release com Git/GitHub, GitHub Actions e Vercel.",
     ],
-    footerMeta: "Daniela Torres Almeida | Desenvolvido com HTML, CSS e JavaScript | Publicado no GitHub Pages",
+    footerMeta: "Daniela Almeida | Desenvolvido com HTML, CSS e JavaScript | Publicado no GitHub Pages",
   },
 };
+
+translations[LANG_EN].skillGroups = [
+  {
+    title: "Frontend",
+    items: ["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "Responsive Web Design", "REST API Integration"],
+  },
+  {
+    title: "Design / UI",
+    items: ["UI/UX Design", "Figma", "User-centered Interfaces"],
+  },
+  {
+    title: "QA & Testing",
+    items: ["QA Concepts", "Manual Testing", "Debugging", "Attention to Usability and Detail"],
+  },
+  {
+    title: "Programming / Foundations",
+    items: ["C", "Java", "Python Basics", "Git / GitHub"],
+  },
+];
+translations[LANG_EN].keySkills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TypeScript",
+  "Angular",
+  "Responsive Web Design",
+  "UI/UX Design",
+  "Figma",
+  "REST API Integration",
+  "Git / GitHub",
+  "Manual Testing",
+];
+translations[LANG_EN].projectItems = [
+  {
+    title: "Tic-Tac-Toe Game in C",
+    status: "Currently finishing",
+    bullet:
+      "A console-based Tic-Tac-Toe game developed in C, focused on programming logic, condition checking, user interaction, loops, functions, and structured problem-solving. Skills shown: C, logic, terminal interaction, functions, loops, conditionals, and debugging.",
+  },
+  {
+    title: "NextPath Angular Dashboard",
+    status: "In progress",
+    bullet:
+      "An Angular internal dashboard concept for an IT company to manage developers, projects, Agile tasks, and internal growth programs. Skills shown: Angular, TypeScript, UI/UX, dashboard design, component structure, frontend development, data organization, and responsive layout.",
+  },
+];
+
+translations[LANG_PT].objectiveTitle = "Resumo Profissional";
+translations[LANG_PT].objectiveBody =
+  "Candidata junior em desenvolvimento de software, com percurso em artes e educacao musical, agora focada em frontend, desenvolvimento web, UI/UX e QA/testes. Experiencia em projetos praticos com HTML, CSS, JavaScript, TypeScript, Angular, Git e ferramentas de design como Figma. Trago criatividade, atencao ao detalhe, adaptabilidade e forte interesse em criar solucoes digitais centradas no utilizador.";
+translations[LANG_PT].skillsTitle = "Stack Tecnica Principal";
+translations[LANG_PT].skillGroups = [
+  {
+    title: "Frontend",
+    items: ["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "Design Web Responsivo", "Integracao com REST API"],
+  },
+  {
+    title: "Design / UI",
+    items: ["Design UI/UX", "Figma", "Interfaces centradas no utilizador"],
+  },
+  {
+    title: "QA e Testes",
+    items: ["Conceitos de QA", "Testes manuais", "Debugging", "Usabilidade e detalhe"],
+  },
+  {
+    title: "Programacao / Bases",
+    items: ["C", "Java", "Bases de Python", "Git / GitHub"],
+  },
+];
+translations[LANG_PT].keySkills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TypeScript",
+  "Angular",
+  "Design Web Responsivo",
+  "Design UI/UX",
+  "Figma",
+  "Integracao com REST API",
+  "Git / GitHub",
+  "Testes manuais",
+];
+translations[LANG_PT].projectsTitle = "Destaques de Projetos Atuais";
+translations[LANG_PT].projectItems = [
+  {
+    title: "Jogo do Galo em C",
+    status: "A terminar",
+    bullet:
+      "Jogo do Galo em consola desenvolvido em C, focado em logica de programacao, verificacao de condicoes, interacao com o utilizador, ciclos, funcoes e resolucao estruturada de problemas. Competencias: C, logica, interacao no terminal, funcoes, ciclos, condicionais e debugging.",
+  },
+  {
+    title: "NextPath Angular Dashboard",
+    status: "Em progresso",
+    bullet:
+      "Conceito de dashboard interno em Angular para uma empresa de IT gerir developers, projetos, tarefas Agile e programas internos de crescimento. Competencias: Angular, TypeScript, UI/UX, design de dashboard, estrutura de componentes, frontend, organizacao de dados e layout responsivo.",
+  },
+];
+translations[LANG_PT].strengths = [
+  "<strong>Desenvolvimento Frontend</strong> - criar interfaces responsivas com HTML, CSS, JavaScript, pensamento UI/UX e estrutura limpa.",
+  "<strong>Execucao de UI/UX</strong> - transformar ideias de produto em layouts acessiveis, centrados no utilizador e com estados de interacao consistentes.",
+  "<strong>Aprendizagem Frontend Moderna</strong> - aprofundar Vue.js, bases de REST API, pensamento baseado em componentes e workflows com Git/GitHub.",
+  "<strong>Garantia de Qualidade</strong> - usar QA manual, bases de validacao de API e rastreio claro de bugs para reforcar confianca na release.",
+  "<strong>Colaboracao</strong> - comunicar com clareza, resolver problemas e aprender rapidamente em contextos multidisciplinares.",
+];
 
 const urlLanguage = new URLSearchParams(window.location.search).get("lang");
 const shouldAutoPrint = new URLSearchParams(window.location.search).get("download") === "1";
@@ -632,7 +639,7 @@ function renderResumeText() {
       setText(item.querySelector("h3"), "");
       setText(item.querySelector(".when"), "");
       setText(item.querySelector(".where"), "");
-      item.querySelectorAll("li").forEach((bullet) => setText(bullet, ""));
+      item.querySelectorAll("li").forEach((bullet) => setHTML(bullet, ""));
       return;
     }
     setText(item.querySelector("h3"), translated.title);
@@ -642,7 +649,7 @@ function renderResumeText() {
     const translatedBullets = asArray(translated.bullets);
     warnCountMismatch(`experienceItems[${index}].bullets`, bullets.length, translatedBullets.length);
     bullets.forEach((bullet, bulletIndex) => {
-      setText(bullet, translatedBullets[bulletIndex] || "");
+      setHTML(bullet, translatedBullets[bulletIndex] || "");
     });
   });
 
@@ -693,10 +700,12 @@ function renderResumeText() {
     const translated = translatedProjects[index];
     if (!translated) {
       setText(item.querySelector("h3"), "");
+      setText(item.querySelector(".project-status"), "");
       setText(item.querySelector("li"), "");
       return;
     }
     setText(item.querySelector("h3"), translated.title);
+    setText(item.querySelector(".project-status"), translated.status || "");
     setText(item.querySelector("li"), translated.bullet);
   });
 

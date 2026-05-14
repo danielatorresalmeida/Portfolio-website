@@ -109,8 +109,8 @@ describe("resume-site-only interaction flows", () => {
     expect(langToggle.getAttribute("aria-label")).toBe("Mudar idioma para ingl\u00EAs");
     expect(printButton.tagName).toBe("BUTTON");
     expect(printButton.getAttribute("aria-label")).toBe("Descarregar CV");
-    expect(introTitle.textContent.trim()).toBe("Objetivo Profissional");
-    expect(skillsTitle.textContent.trim()).toBe("Compet\u00EAncias T\u00E9cnicas");
+    expect(introTitle.textContent.trim()).toBe("Resumo Profissional");
+    expect(skillsTitle.textContent.trim()).toBe("Stack Tecnica Principal");
     expect(document.body.textContent).not.toMatch(/[\u00C3\u00C2\uFFFD]/);
 
     langToggle.click();
@@ -153,6 +153,16 @@ describe("resume-site-only interaction flows", () => {
 
     langToggle.click();
     expect(document.documentElement.lang).toBe("pt-PT");
+  });
+
+  it("keeps outbound links in the first experience bullet after i18n render", () => {
+    dom = bootstrapResumeApp({ url: "http://localhost/resume-site-only/?lang=en" });
+    const { document } = dom.window;
+    const firstBullet = document.querySelector("#experience-col .item:first-of-type li");
+    const anchors = firstBullet.querySelectorAll("a[href]");
+    expect(anchors.length).toBe(2);
+    expect(anchors[0].getAttribute("href")).toBe("https://danielatorresalmeida.github.io/Portfolio-website/");
+    expect(anchors[1].getAttribute("href")).toBe("https://robocollective.ai/");
   });
 
   it("updates supplemental-info content when language changes", async () => {
