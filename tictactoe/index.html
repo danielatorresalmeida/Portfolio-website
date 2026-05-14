@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Playable web demo and portfolio page for a modular Tic Tac Toe / Jogo do Galo project written in C.">
+  <title>Tic Tac Toe / Jogo do Galo in C</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#game" aria-label="Tic Tac Toe web demo">
+      <img src="assets/mark.svg" alt="" width="44" height="44">
+      <span>Tic Tac Toe / Jogo do Galo</span>
+    </a>
+    <nav aria-label="Page sections">
+      <a href="#game">Play</a>
+      <a href="#project">Project</a>
+      <a href="#source">Source</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="game" class="game-shell" aria-labelledby="game-title">
+      <div class="game-panel">
+        <div class="panel-heading">
+          <p class="eyebrow">Browser demo</p>
+          <h1 id="game-title">Play the web version</h1>
+          <p class="summary">A portfolio-friendly version of the C console game, using the same accessible color idea: pink X, blue O, green wins, yellow warnings.</p>
+        </div>
+
+        <div class="controls" aria-label="Game settings">
+          <label>
+            Mode
+            <select id="mode">
+              <option value="pvp">Player vs Player</option>
+              <option value="pvc">Player vs Computer</option>
+            </select>
+          </label>
+          <label>
+            Board
+            <select id="size"></select>
+          </label>
+          <label>
+            Win rule
+            <select id="winLength"></select>
+          </label>
+          <label>
+            Difficulty
+            <select id="difficulty">
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </label>
+          <button id="newGame" type="button">New game</button>
+        </div>
+      </div>
+
+      <div class="board-area">
+        <div class="status-row">
+          <p id="status" class="status" aria-live="polite"></p>
+          <p id="score" class="score"></p>
+        </div>
+        <div id="board" class="board" role="grid" aria-label="Tic Tac Toe board"></div>
+      </div>
+    </section>
+
+    <section id="project" class="project-section" aria-labelledby="project-title">
+      <div>
+        <p class="eyebrow">Original C project</p>
+        <h2 id="project-title">A modular terminal game built in C</h2>
+        <p>The full C version includes configurable board sizes, custom win rules, save/load, undo, replay, computer difficulties, rankings, automatic tests, and 4-player or 8-player tournaments.</p>
+      </div>
+      <ul class="feature-grid" aria-label="Project highlights">
+        <li>Multiple `.c` modules and a shared header</li>
+        <li>Colorblind-friendly terminal palette</li>
+        <li>Computer AI with easy, medium, and hard modes</li>
+        <li>Ranking, replay, save/load, and tournament output</li>
+      </ul>
+    </section>
+
+    <section id="source" class="publish-section" aria-labelledby="source-title">
+      <div>
+        <p class="eyebrow">Source code</p>
+        <h2 id="source-title">See the original C project</h2>
+        <p>The browser demo is included for quick portfolio review. The original modular C source is available in this portfolio repository under <strong>tictactoe/source</strong>.</p>
+      </div>
+      <div class="command-box" aria-label="Useful commands">
+        <code>cd tictactoe/source</code>
+        <code>mingw32-make clean</code>
+        <code>mingw32-make</code>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

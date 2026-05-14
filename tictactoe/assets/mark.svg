@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Tic Tac Toe mark</title>
+  <desc id="desc">A violet board with pink X and blue O symbols.</desc>
+  <rect width="160" height="160" rx="24" fill="#1f1f29"/>
+  <path d="M56 24v112M104 24v112M24 56h112M24 104h112" stroke="#8b8b96" stroke-width="8" stroke-linecap="round"/>
+  <path d="M35 34l26 26M61 34L35 60" stroke="#ff66c4" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="80" cy="80" r="18" fill="none" stroke="#22a7ff" stroke-width="9"/>
+  <path d="M101 101l25 25M126 101l-25 25" stroke="#ff66c4" stroke-width="9" stroke-linecap="round"/>
+</svg>
