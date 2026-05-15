@@ -148,8 +148,8 @@ const translations = {
     projectItems: [
       {
         title: "Tic-Tac-Toe Game in C",
-        status: "Currently finishing",
-        bullet: "A console-based Tic-Tac-Toe game developed in C, focused on programming logic, condition checking, user interaction, loops, functions, and structured problem-solving. Skills shown: C, logic, terminal interaction, functions, loops, conditionals, and debugging.",
+        status: "Terminal C project",
+        bullet: "A modular terminal-based Tic-Tac-Toe game built in C with multiple board sizes, AI difficulty levels, tournaments, save/load, undo, replay, ranking, automatic tests, and colorblind-friendly terminal colors.",
       },
       {
         title: "NextPath Angular Dashboard",
@@ -478,9 +478,9 @@ translations[LANG_EN].projectItems = [
   },
   {
     title: "Tic-Tac-Toe Game in C",
-    status: "Currently finishing",
+    status: "Terminal C project",
     bullet:
-      "A console-based Tic-Tac-Toe game developed in C, focused on programming logic, condition checking, user interaction, loops, functions, and structured problem-solving. Skills shown: C, logic, terminal interaction, functions, loops, conditionals, and debugging.",
+      "A modular terminal-based Tic-Tac-Toe game built in C with multiple board sizes, AI difficulty levels, tournaments, save/load, undo, replay, ranking, automatic tests, and colorblind-friendly terminal colors.",
   },
   {
     title: "API QA Test Suite",
@@ -551,9 +551,9 @@ translations[LANG_PT].projectItems = [
   },
   {
     title: "Jogo do Galo em C",
-    status: "A terminar",
+    status: "Projeto de terminal em C",
     bullet:
-      "Jogo do Galo em consola desenvolvido em C, focado em logica de programacao, verificacao de condicoes, interacao com o utilizador, ciclos, funcoes e resolucao estruturada de problemas. Competencias: C, logica, interacao no terminal, funcoes, ciclos, condicionais e debugging.",
+      "Jogo do Galo em terminal, modular, desenvolvido em C com multiplos tamanhos de tabuleiro, niveis de dificuldade de IA, torneios, gravar/carregar, undo, replay, ranking, testes automaticos e cores de terminal amigaveis para daltonismo.",
   },
   {
     title: "Suite de Testes de API (QA)",
