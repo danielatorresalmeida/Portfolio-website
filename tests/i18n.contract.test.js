@@ -257,7 +257,7 @@ describe("i18n contract", () => {
     expect(featuredProjects.length).toBe(4);
     expect(featuredTitles).toEqual([
       "NextPath Angular Dashboard",
-      "Tic-Tac-Toe Game in C",
+      "Tic Tac Toe / Jogo do Galo in C",
       "API QA Test Suite",
       "Responsive Portfolio",
     ]);
