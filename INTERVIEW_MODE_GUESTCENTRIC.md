@@ -1,5 +1,9 @@
 # Interview Mode: Guestcentric
 
+Guestcentric links for interview use:
+- Portfolio: `https://danielatorresalmeida.github.io/Portfolio-website/guestcentric-web-designer/`
+- Resume/CV: `https://danielatorresalmeida.github.io/Portfolio-website/guestcentric-web-designer/resume/`
+
 ## Top 3 Projects to Present
 1. NextPath Angular Dashboard (featured case study)
 2. Responsive Portfolio Website
@@ -32,3 +36,10 @@ Show current artifacts and explain concrete next steps already identified (desig
 
 3. Broad profile
 Frame breadth as useful for Guestcentric: design decisions are made with browser implementation and usability in mind, not isolated visual mockups.
+
+## Questions To Ask Guestcentric
+1. Which parts of the website journey are currently the highest priority for redesign (homepage, room pages, booking flow, or post-booking touchpoints)?
+2. How do design and frontend teams currently collaborate from Figma to implementation and QA?
+3. Are there existing design-system rules (components, spacing, typography) I should follow first, or is part of the role to help formalize them?
+4. Which performance and usability indicators matter most for this role (for example: booking-flow drop-off, mobile usability, or page clarity)?
+5. In the first 60-90 days, what outcomes would define a strong start for the person in this position?
