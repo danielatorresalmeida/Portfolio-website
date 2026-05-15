@@ -39,6 +39,7 @@ const expCol = document.getElementById("experience-col");
 const skillsCol = document.getElementById("skills-col");
 const projectsCol = document.getElementById("projects-col");
 const moreProjectsCol = document.getElementById("more-projects-col");
+const projectCatalogCol = document.getElementById("project-catalog-col");
 const coursesCol = document.getElementById("courses-col");
 const educationCol = document.getElementById("education-col");
 const strengthsCol = document.getElementById("strengths-col");
@@ -165,6 +166,7 @@ const translations = {
       "Programming Foundations: Python Software Language - Programming Hub (Aug 2025)",
       "Programming Foundations: Programming - Algorithms (Apr 2026)",
       "Java Development: Java Programming (Mar 2026)",
+      "Java Development: Java Language Fundamentals (May 2026)",
       "Databases: SQL Language Fundamentals (Mar 2026)",
       "Databases: Database Access Technologies (Apr 2026)",
     ],
@@ -403,6 +405,7 @@ const translations = {
       "Fundamentos de Programação: Linguagem de Programação Python - Programming Hub (Ago 2025)",
       "Fundamentos de Programação: Programação - Algoritmos (Abr 2026)",
       "Desenvolvimento Java: Programação em Java (Mar 2026)",
+      "Desenvolvimento Java: Fundamentos de linguagem JAVA (Mai 2026)",
       "Bases de Dados: Fundamentos da linguagem SQL (Mar 2026)",
       "Bases de Dados: Tecnologias de acesso a base de dados (Abr 2026)",
     ],
@@ -510,6 +513,39 @@ translations[LANG_EN].moreProjectItems = [
   "<strong>Mechanic Data Base:</strong> Relational SQL model for workshop clients, vehicles, services, and parts.",
   "<strong>Bakery Data Base:</strong> Relational SQL model for bakery orders, products, ingredients, and stock.",
 ];
+translations[LANG_EN].projectCatalogTitle = "All Projects by Category / Language / Tools";
+translations[LANG_EN].projectCatalogIntro = "Complete project list grouped by category, with main language/tool and supporting technologies.";
+translations[LANG_EN].projectCatalogGroups = [
+  {
+    title: "Frontend and UI/UX Projects",
+    items: [
+      "<strong>NextPath Angular Dashboard</strong> - Category: dashboard UI/frontend. Main language/tool: Angular + TypeScript. Secondary tools: UI/UX, responsive layout. What it proves: component-based interface structure.",
+      "<strong>Responsive Portfolio</strong> - Category: personal web interface. Main language/tool: HTML/CSS/JavaScript. Secondary tools: accessibility basics, responsive design. What it proves: design-to-code delivery and cross-device consistency.",
+      "<strong>UI Components Showcase</strong> - Category: reusable interface patterns. Main language/tool: HTML/CSS/JavaScript. Secondary tools: component reuse, interaction states. What it proves: scalable frontend organization.",
+      "<strong>RoboCollective.ai</strong> - Category: product website contribution. Main language/tool: React/Next.js. Secondary tools: UI hierarchy, content flow. What it proves: production-oriented frontend collaboration.",
+      "<strong>To-Do List App</strong> - Category: workflow web app. Main language/tool: React + TypeScript. Secondary tools: Firebase, Google Auth. What it proves: stateful frontend flows and integration basics.",
+    ],
+  },
+  {
+    title: "QA and Testing Projects",
+    items: [
+      "<strong>API QA Test Suite</strong> - Category: API validation. Main language/tool: Python + Pytest. Secondary tools: REST checks, pytest-html reports. What it proves: testing discipline, debugging, and evidence-driven QA.",
+    ],
+  },
+  {
+    title: "Programming Logic Projects",
+    items: [
+      "<strong>Tic-Tac-Toe Game in C</strong> - Category: structured programming/game logic. Main language/tool: C. Secondary tools: modular architecture, AI difficulty logic, save/load flows. What it proves: algorithmic reasoning and clean function design.",
+    ],
+  },
+  {
+    title: "Database Modeling Projects",
+    items: [
+      "<strong>Mechanic Data Base</strong> - Category: relational data modeling. Main language/tool: SQL. Secondary tools: normalization, primary/foreign key mapping. What it proves: schema design for service workflows.",
+      "<strong>Bakery Data Base</strong> - Category: relational data modeling. Main language/tool: SQL. Secondary tools: order, ingredient, and stock relationships. What it proves: business-oriented data structure planning.",
+    ],
+  },
+];
 
 translations[LANG_PT].objectiveTitle = "Resumo Profissional";
 translations[LANG_PT].objectiveBody =
@@ -588,6 +624,39 @@ translations[LANG_PT].moreProjectItems = [
   "<strong>Base de Dados de Oficina:</strong> Modelo SQL relacional para clientes, veiculos, servicos e pecas de oficina.",
   "<strong>Base de Dados de Padaria:</strong> Modelo SQL relacional para encomendas, produtos, ingredientes e stock de padaria.",
 ];
+translations[LANG_PT].projectCatalogTitle = "Todos os Projetos por Categoria / Linguagem / Ferramentas";
+translations[LANG_PT].projectCatalogIntro = "Lista completa de projetos agrupada por categoria, com linguagem/ferramenta principal e tecnologias de suporte.";
+translations[LANG_PT].projectCatalogGroups = [
+  {
+    title: "Projetos de Frontend e UI/UX",
+    items: [
+      "<strong>NextPath Angular Dashboard</strong> - Categoria: dashboard UI/frontend. Linguagem/ferramenta principal: Angular + TypeScript. Ferramentas secundarias: UI/UX, layout responsivo. O que prova: estrutura de interface orientada a componentes.",
+      "<strong>Portfolio Responsivo</strong> - Categoria: interface web pessoal. Linguagem/ferramenta principal: HTML/CSS/JavaScript. Ferramentas secundarias: bases de acessibilidade, design responsivo. O que prova: entrega design-to-code e consistencia em varios dispositivos.",
+      "<strong>Mostruario de Componentes UI</strong> - Categoria: padroes de interface reutilizaveis. Linguagem/ferramenta principal: HTML/CSS/JavaScript. Ferramentas secundarias: reutilizacao de componentes, estados de interacao. O que prova: organizacao frontend escalavel.",
+      "<strong>RoboCollective.ai</strong> - Categoria: contribuicao em website de produto. Linguagem/ferramenta principal: React/Next.js. Ferramentas secundarias: hierarquia de UI, fluxo de conteudo. O que prova: colaboracao frontend em ambiente de producao.",
+      "<strong>App de Tarefas</strong> - Categoria: app web de fluxo de trabalho. Linguagem/ferramenta principal: React + TypeScript. Ferramentas secundarias: Firebase, Google Auth. O que prova: fluxos frontend com estado e bases de integracao.",
+    ],
+  },
+  {
+    title: "Projetos de QA e Testes",
+    items: [
+      "<strong>Suite de Testes de API (QA)</strong> - Categoria: validacao de API. Linguagem/ferramenta principal: Python + Pytest. Ferramentas secundarias: verificacoes REST, relatorios pytest-html. O que prova: disciplina de testes, debugging e QA com evidencia.",
+    ],
+  },
+  {
+    title: "Projetos de Logica de Programacao",
+    items: [
+      "<strong>Jogo do Galo em C</strong> - Categoria: programacao estruturada/logica de jogo. Linguagem/ferramenta principal: C. Ferramentas secundarias: arquitetura modular, logica de dificuldade de IA, fluxos gravar/carregar. O que prova: raciocinio algoritmico e desenho limpo de funcoes.",
+    ],
+  },
+  {
+    title: "Projetos de Modelacao de Base de Dados",
+    items: [
+      "<strong>Base de Dados de Oficina</strong> - Categoria: modelacao relacional. Linguagem/ferramenta principal: SQL. Ferramentas secundarias: normalizacao, mapeamento de chaves primaria/estrangeira. O que prova: desenho de schema para fluxos de servico.",
+      "<strong>Base de Dados de Padaria</strong> - Categoria: modelacao relacional. Linguagem/ferramenta principal: SQL. Ferramentas secundarias: relacoes de encomendas, ingredientes e stock. O que prova: planeamento de estrutura de dados orientada ao negocio.",
+    ],
+  },
+];
 translations[LANG_PT].strengths = [
   "<strong>Design orientado ao browser</strong> - transformar ideias em interfaces claras, responsivas e viaveis para implementacao real.",
   "<strong>Execucao UI/UX</strong> - aplicar hierarquia visual, layout, e consistencia para reduzir friccao nas jornadas do utilizador.",
@@ -610,7 +679,7 @@ function t(key) {
 // Keep orphan control for narrative text, but avoid skill bullets where forced non-breaking
 // can clip long labels inside compact cards.
 const ORPHAN_TEXT_SELECTOR =
-  ".resume p, .resume .when, .resume .where, #experience-col li, #projects-col li, #more-projects-col li, #courses-col li, #strengths-col li";
+  ".resume p, .resume .when, .resume .where, #experience-col li, #projects-col li, #more-projects-col li, #project-catalog-col li, #courses-col li, #strengths-col li";
 
 function tightenTrailingWords(element) {
   const walker = document.createTreeWalker(
@@ -778,6 +847,34 @@ function renderResumeText() {
   moreProjectItems.forEach((item, index) => {
     setHTML(item, translatedMoreProjects[index] || "");
   });
+
+  const projectCatalogTitle = projectCatalogCol?.querySelector("h2");
+  setText(projectCatalogTitle, t("projectCatalogTitle"));
+  const projectCatalogIntro = projectCatalogCol?.querySelector(".project-catalog-note");
+  setText(projectCatalogIntro, t("projectCatalogIntro"));
+  const projectCatalogGroupsWrap = projectCatalogCol?.querySelector(".project-catalog-groups");
+  if (projectCatalogGroupsWrap) {
+    projectCatalogGroupsWrap.innerHTML = "";
+    const translatedCatalogGroups = asArray(t("projectCatalogGroups"));
+    translatedCatalogGroups.forEach((group) => {
+      const groupCard = document.createElement("article");
+      groupCard.className = "project-catalog-group";
+      const heading = document.createElement("h3");
+      heading.textContent = group?.title || "";
+      groupCard.appendChild(heading);
+
+      const list = document.createElement("ul");
+      list.className = "flat compact-projects-list";
+      const items = asArray(group?.items);
+      items.forEach((entry) => {
+        const li = document.createElement("li");
+        setHTML(li, entry || "");
+        list.appendChild(li);
+      });
+      groupCard.appendChild(list);
+      projectCatalogGroupsWrap.appendChild(groupCard);
+    });
+  }
 
   const coursesTitle = coursesCol?.querySelector("h2");
   setText(coursesTitle, t("coursesTitle"));
