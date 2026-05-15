@@ -24,8 +24,8 @@
       ],
       rightTitle: "Preferred Roles & Availability",
       rightItems: [
-        "<strong>Preferred Roles:</strong> Junior Web Designer, UI/UX Designer, and frontend-focused web roles where design decisions need to work in the browser.",
-        "<strong>Availability:</strong> Available for interviews and open to hybrid opportunities in Lisbon or remote collaboration.",
+        "<strong>Preferred Roles:</strong> Junior Frontend Developer, Junior Web Developer, Junior Software Developer, QA Tester / Junior QA, and UI/UX-focused frontend roles.",
+        "<strong>Availability:</strong> Available for interviews and open to remote or hybrid opportunities.",
         "<strong>Opportunity Type:</strong> Open to discussing permanent or contract opportunities depending on the fit.",
         "<strong>Level:</strong> Junior / entry-level candidate with practical project experience and strong motivation to keep improving.",
       ],
@@ -41,8 +41,8 @@
       ],
       rightTitle: "Funções Preferidas e Disponibilidade",
       rightItems: [
-        "<strong>Funções preferidas:</strong> Junior Web Designer, UI/UX Designer e funções web com foco frontend onde as decisões de design precisam de funcionar no browser.",
-        "<strong>Disponibilidade:</strong> disponível para entrevistas e aberta a oportunidades híbridas em Lisboa ou colaboração remota.",
+        "<strong>Funções preferidas:</strong> Junior Frontend Developer, Junior Web Developer, Junior Software Developer, QA Tester / Junior QA e funções frontend com foco em UI/UX.",
+        "<strong>Disponibilidade:</strong> disponível para entrevistas e aberta a oportunidades remotas ou híbridas.",
         "<strong>Tipo de oportunidade:</strong> aberta a oportunidades permanentes ou contrato, dependendo do enquadramento.",
         "<strong>Nível:</strong> candidata junior / entry-level com experiência prática em projetos e forte motivação para continuar a evoluir.",
       ],

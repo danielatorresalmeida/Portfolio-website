@@ -257,9 +257,9 @@ describe("i18n contract", () => {
     expect(featuredProjects.length).toBe(4);
     expect(featuredTitles).toEqual([
       "NextPath Angular Dashboard",
-      "Tic Tac Toe / Jogo do Galo in C",
-      "API QA Test Suite",
       "Responsive Portfolio",
+      "API QA Test Suite",
+      "Tic Tac Toe / Jogo do Galo in C",
     ]);
 
     const portfolioExperienceItems = portfolioDom.window.document.querySelectorAll("#experience .timeline .item");

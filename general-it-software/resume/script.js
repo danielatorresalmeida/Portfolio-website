@@ -69,7 +69,7 @@ const translations = {
         title: "Software Development Intern - FloLabs Innovations Group",
         when: "Aug 2025 - Present",
         bullets: [
-          'Built both websites from scratch, from concept to live release: <a href="https://danielatorresalmeida.github.io/Portfolio-website/" target="_blank" rel="noopener">Portfolio website</a>; <a href="https://robocollective.ai/" target="_blank" rel="noopener">robocollective.ai</a>',
+          'Built both websites from scratch, from concept to live release: <a href="https://danielatorresalmeida.github.io/Portfolio-website/general-it-software/" target="_blank" rel="noopener">Portfolio website</a>; <a href="https://robocollective.ai/" target="_blank" rel="noopener">robocollective.ai</a>',
           "Delivered 10+ UI/UX improvements across HTML, CSS, JavaScript, PHP, and TypeScript.",
           "Supported back-end development with Python (FastAPI).",
           "Contributed to QA testing and documentation to strengthen release quality.",
@@ -214,7 +214,7 @@ const translations = {
         title: "Estagiária de Desenvolvimento de Software - FloLabs Innovations Group",
         when: "Ago 2025 - Presente",
         bullets: [
-          'Desenvolvi ambos os websites de raiz, do conceito à publicação: <a href="https://danielatorresalmeida.github.io/Portfolio-website/" target="_blank" rel="noopener">Portfolio website</a>; <a href="https://robocollective.ai/" target="_blank" rel="noopener">robocollective.ai</a>',
+          'Desenvolvi ambos os websites de raiz, do conceito à publicação: <a href="https://danielatorresalmeida.github.io/Portfolio-website/general-it-software/" target="_blank" rel="noopener">Portfolio website</a>; <a href="https://robocollective.ai/" target="_blank" rel="noopener">robocollective.ai</a>',
           "Entreguei mais de 10 melhorias de UI/UX com HTML, CSS, JavaScript, PHP e TypeScript.",
           "Apoio ao desenvolvimento de back-end com Python (FastAPI).",
           "Contribui para testes de QA e documentacao para reforcar a qualidade das releases.",
@@ -435,59 +435,52 @@ const translations = {
   },
 };
 
-translations[LANG_EN].objectiveBody =
-  "Junior UI/UX and frontend-focused web designer with a background in arts and music education, now building practical web interfaces with Figma, HTML, CSS, JavaScript, and TypeScript. I care about visual hierarchy, responsive behavior, accessibility basics, and design decisions that work in the browser.";
 translations[LANG_EN].skillGroups = [
   {
-    title: "Design",
-    items: ["Figma", "UI Design", "UI/UX Design", "UX Thinking", "Wireframing", "Prototyping", "Design Systems", "Responsive Layouts", "Responsive Web Design"],
-  },
-  {
     title: "Frontend",
-    items: ["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "React", "Git / GitHub", "REST API Integration"],
+    items: ["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "React", "Responsive Web Design", "REST API Integration"],
   },
   {
-    title: "Practical Strengths",
-    items: ["Accessibility Basics", "Component Thinking", "Layout Implementation", "Cross-device Testing", "QA Concepts", "Manual Testing", "Debugging", "Attention to Usability and Detail", "Collaboration"],
+    title: "Design / UI",
+    items: ["UI/UX Design", "Figma", "User-centered Interfaces"],
+  },
+  {
+    title: "QA & Testing",
+    items: ["QA Concepts", "Manual Testing", "Debugging", "Attention to Usability and Detail"],
   },
   {
     title: "Programming / Foundations",
-    items: ["C", "Java", "Python Basics"],
+    items: ["C", "Java", "Python Basics", "Git / GitHub"],
   },
 ];
 translations[LANG_EN].keySkills = [
-  "Figma",
-  "UI Design",
-  "UI/UX Design",
-  "UX Thinking",
   "HTML",
   "CSS",
   "JavaScript",
   "TypeScript",
   "Angular",
   "React",
-  "Responsive Layouts",
   "Responsive Web Design",
+  "UI/UX Design",
+  "Figma",
   "REST API Integration",
   "Git / GitHub",
-  "Accessibility Basics",
-  "QA Concepts",
   "Manual Testing",
 ];
-translations[LANG_EN].projectsTitle = "Selected Projects";
-translations[LANG_EN].projectsIntro = "Short CV highlights aligned with UI/UX and frontend implementation. More detail is available on the portfolio.";
+translations[LANG_EN].projectsTitle = "Relevant Projects";
+translations[LANG_EN].projectsIntro = "Short CV highlights. More detail is available on the portfolio.";
 translations[LANG_EN].projectItems = [
   {
     title: "NextPath Angular Dashboard",
-    status: "Featured case study (in progress)",
+    status: "In progress",
     bullet:
-      "Angular dashboard concept focused on layout clarity, visual hierarchy, and reusable UI structure for teams managing developers, projects, and Agile tasks. Skills shown: Figma-to-frontend thinking, Angular component structure, TypeScript, and responsive planning.",
+      "An Angular internal dashboard concept for an IT company to manage developers, projects, Agile tasks, and internal growth programs. Skills shown: Angular, TypeScript, UI/UX, dashboard design, component structure, frontend development, data organization, and responsive layout.",
   },
   {
-    title: "Responsive Portfolio",
-    status: "Published project",
+    title: "Tic-Tac-Toe Game in C",
+    status: "Terminal C project",
     bullet:
-      "Responsive portfolio and CV website built with HTML, CSS, and JavaScript, focused on clear navigation, hierarchy, and recruiter-friendly scanning across desktop and mobile.",
+      "A modular terminal-based Tic-Tac-Toe game built in C with multiple board sizes, AI difficulty levels, tournaments, save/load, undo, replay, ranking, automatic tests, and colorblind-friendly terminal colors.",
   },
   {
     title: "API QA Test Suite",
@@ -496,10 +489,10 @@ translations[LANG_EN].projectItems = [
       "Python + Pytest API validation suite covering status checks, schema expectations, business-rule checks, and readable pytest-html reports. Skills shown: REST API basics, Python, QA concepts, debugging, and test evidence.",
   },
   {
-    title: "Tic-Tac-Toe Game in C",
-    status: "Terminal C project",
+    title: "Responsive Portfolio",
+    status: "Published project",
     bullet:
-      "Modular terminal game in C with board variations, AI difficulty, tournaments, and save/load logic. It is kept as a programming-logic project supporting structured problem solving.",
+      "Responsive portfolio and resume website built with HTML, CSS, and JavaScript, focused on clear navigation, recruiter-friendly structure, GitHub Pages deployment, and manual link/responsive checks.",
   },
 ];
 translations[LANG_EN].moreProjectsTitle = "More Projects";
@@ -513,59 +506,54 @@ translations[LANG_EN].moreProjectItems = [
 
 translations[LANG_PT].objectiveTitle = "Resumo Profissional";
 translations[LANG_PT].objectiveBody =
-  "Web designer junior focada em UI/UX e frontend, com percurso em artes e educacao musical, atualmente a desenvolver interfaces web praticas com Figma, HTML, CSS, JavaScript e TypeScript. Dou prioridade a hierarquia visual, comportamento responsivo, bases de acessibilidade e decisoes de design que funcionam no browser.";
+  "Candidata junior em desenvolvimento de software, com percurso em artes e educacao musical, agora focada em frontend, desenvolvimento web, UI/UX e QA/testes. Experiencia em projetos praticos com HTML, CSS, JavaScript, TypeScript, Angular, Git e ferramentas de design como Figma. Trago criatividade, atencao ao detalhe, adaptabilidade e forte interesse em criar solucoes digitais centradas no utilizador.";
 translations[LANG_PT].skillsTitle = "Stack Tecnica Principal";
 translations[LANG_PT].skillGroups = [
   {
-    title: "Design",
-    items: ["Figma", "Design UI", "Design UI/UX", "Pensamento UX", "Wireframing", "Prototipagem", "Design Systems", "Layouts Responsivos", "Design Web Responsivo"],
-  },
-  {
     title: "Frontend",
-    items: ["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "React", "Git / GitHub", "Integracao com REST API"],
+    items: ["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "React", "Design Web Responsivo", "Integracao com REST API"],
   },
   {
-    title: "Forcas Praticas",
-    items: ["Bases de Acessibilidade", "Pensamento por Componentes", "Implementacao de Layout", "Testes em Varios Dispositivos", "Conceitos de QA", "Testes manuais", "Debugging", "Usabilidade e detalhe", "Colaboracao"],
+    title: "Design / UI",
+    items: ["Design UI/UX", "Figma", "Interfaces centradas no utilizador"],
+  },
+  {
+    title: "QA e Testes",
+    items: ["Conceitos de QA", "Testes manuais", "Debugging", "Usabilidade e detalhe"],
   },
   {
     title: "Programacao / Bases",
-    items: ["C", "Java", "Bases de Python"],
+    items: ["C", "Java", "Bases de Python", "Git / GitHub"],
   },
 ];
 translations[LANG_PT].keySkills = [
-  "Figma",
-  "Design UI",
-  "Design UI/UX",
-  "Pensamento UX",
   "HTML",
   "CSS",
   "JavaScript",
   "TypeScript",
   "Angular",
   "React",
-  "Layouts Responsivos",
   "Design Web Responsivo",
+  "Design UI/UX",
+  "Figma",
   "Integracao com REST API",
   "Git / GitHub",
-  "Bases de Acessibilidade",
-  "Conceitos de QA",
   "Testes manuais",
 ];
-translations[LANG_PT].projectsTitle = "Projetos Selecionados";
-translations[LANG_PT].projectsIntro = "Destaques curtos para CV alinhados com UI/UX e implementacao frontend. Ha mais detalhe disponivel no portfolio.";
+translations[LANG_PT].projectsTitle = "Projetos Relevantes";
+translations[LANG_PT].projectsIntro = "Destaques curtos para CV. Ha mais detalhe disponivel no portfolio.";
 translations[LANG_PT].projectItems = [
   {
     title: "NextPath Angular Dashboard",
-    status: "Caso de estudo em destaque (em progresso)",
+    status: "Em progresso",
     bullet:
-      "Conceito de dashboard em Angular focado em clareza de layout, hierarquia visual e estrutura de UI reutilizavel para equipas que gerem developers, projetos e tarefas Agile. Competencias: pensamento Figma-to-frontend, estrutura de componentes Angular, TypeScript e planeamento responsivo.",
+      "Conceito de dashboard interno em Angular para uma empresa de IT gerir developers, projetos, tarefas Agile e programas internos de crescimento. Competencias: Angular, TypeScript, UI/UX, design de dashboard, estrutura de componentes, frontend, organizacao de dados e layout responsivo.",
   },
   {
-    title: "Portfolio Responsivo",
-    status: "Projeto publicado",
+    title: "Jogo do Galo em C",
+    status: "Projeto de terminal em C",
     bullet:
-      "Website responsivo de portfolio e CV criado com HTML, CSS e JavaScript, focado em navegacao clara, hierarquia visual e leitura simples para recrutadores em desktop e mobile.",
+      "Jogo do Galo em terminal, modular, desenvolvido em C com multiplos tamanhos de tabuleiro, niveis de dificuldade de IA, torneios, gravar/carregar, undo, replay, ranking, testes automaticos e cores de terminal amigaveis para daltonismo.",
   },
   {
     title: "Suite de Testes de API (QA)",
@@ -574,10 +562,10 @@ translations[LANG_PT].projectItems = [
       "Suite de validacao de API em Python + Pytest com verificacoes de status, expectativas de schema, regras de negocio e relatorios pytest-html legiveis. Competencias: bases de REST API, Python, conceitos de QA, debugging e evidencia de testes.",
   },
   {
-    title: "Jogo do Galo em C",
-    status: "Projeto de terminal em C",
+    title: "Portfolio Responsivo",
+    status: "Projeto publicado",
     bullet:
-      "Jogo modular de terminal em C com variacoes de tabuleiro, dificuldade de IA, torneios e logica de gravar/carregar. Mantem-se como projeto de logica de programacao e resolucao estruturada de problemas.",
+      "Website responsivo de portfolio e CV criado com HTML, CSS e JavaScript, focado em navegacao clara, estrutura facil para recrutadores, publicacao no GitHub Pages e verificacoes manuais de links/responsividade.",
   },
 ];
 translations[LANG_PT].moreProjectsTitle = "Mais Projetos";
@@ -589,11 +577,11 @@ translations[LANG_PT].moreProjectItems = [
   "<strong>Base de Dados de Padaria:</strong> Modelo SQL relacional para encomendas, produtos, ingredientes e stock de padaria.",
 ];
 translations[LANG_PT].strengths = [
-  "<strong>Design orientado ao browser</strong> - transformar ideias em interfaces claras, responsivas e viaveis para implementacao real.",
-  "<strong>Execucao UI/UX</strong> - aplicar hierarquia visual, layout, e consistencia para reduzir friccao nas jornadas do utilizador.",
-  "<strong>Frontend pratico</strong> - implementar com HTML, CSS, JavaScript e TypeScript mantendo qualidade visual em varios dispositivos.",
-  "<strong>Qualidade e validacao</strong> - usar QA manual e testes de API para reforcar confianca antes de release.",
-  "<strong>Colaboracao</strong> - comunicar com clareza, ajustar-se rapidamente e trabalhar bem com equipas multidisciplinares.",
+  "<strong>Desenvolvimento Frontend</strong> - criar interfaces responsivas com HTML, CSS, JavaScript, pensamento UI/UX e estrutura limpa.",
+  "<strong>Execucao de UI/UX</strong> - transformar ideias de produto em layouts acessiveis, centrados no utilizador e com estados de interacao consistentes.",
+  "<strong>Aprendizagem Frontend Moderna</strong> - aprofundar Vue.js, bases de REST API, pensamento baseado em componentes e workflows com Git/GitHub.",
+  "<strong>Garantia de Qualidade</strong> - usar QA manual, bases de validacao de API e rastreio claro de bugs para reforcar confianca na release.",
+  "<strong>Colaboracao</strong> - comunicar com clareza, resolver problemas e aprender rapidamente em contextos multidisciplinares.",
 ];
 
 const urlLanguage = new URLSearchParams(window.location.search).get("lang");
@@ -907,3 +895,4 @@ if (shouldAutoPrint) {
     printResumeWithImages();
   }, 0);
 }
+
