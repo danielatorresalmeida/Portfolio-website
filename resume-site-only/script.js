@@ -157,7 +157,7 @@ const translations = {
       {
         title: "NextPath Angular Dashboard",
         status: "In progress",
-        bullet: "An Angular internal dashboard concept for an IT company to manage developers, projects, Agile tasks, and internal growth programs. Skills shown: Angular, TypeScript, UI/UX, dashboard design, component structure, frontend development, data organization, and responsive layout.",
+        bullet: "An Angular internal dashboard concept for an IT company to manage developers, projects, Agile tasks, and internal growth programs. The dashboard is designed to help teams organize developer profiles, project allocation, task progress, and professional development paths. Skills shown: Angular, TypeScript, UI/UX, dashboard design, component structure, frontend development, data organization, and responsive layout.",
       },
     ],
     coursesTitle: "Courses & Certifications",
@@ -484,9 +484,9 @@ translations[LANG_EN].projectsIntro = "Short CV highlights aligned with UI/UX an
 translations[LANG_EN].projectItems = [
   {
     title: "NextPath Angular Dashboard",
-    status: "Featured case study (in progress)",
+    status: "In progress",
     bullet:
-      "Angular dashboard concept focused on layout clarity, visual hierarchy, and reusable UI structure for teams managing developers, projects, and Agile tasks. Skills shown: Figma-to-frontend thinking, Angular component structure, TypeScript, and responsive planning.",
+      "An Angular internal dashboard concept for an IT company to manage developers, projects, Agile tasks, and internal growth programs. The dashboard is designed to help teams organize developer profiles, project allocation, task progress, and professional development paths. Skills shown: Angular, TypeScript, UI/UX, dashboard design, component structure, frontend development, data organization, and responsive layout.",
   },
   {
     title: "Responsive Portfolio",
@@ -595,9 +595,9 @@ translations[LANG_PT].projectsIntro = "Destaques curtos para CV alinhados com UI
 translations[LANG_PT].projectItems = [
   {
     title: "NextPath Angular Dashboard",
-    status: "Caso de estudo em destaque (em progresso)",
+    status: "Em progresso",
     bullet:
-      "Conceito de dashboard em Angular focado em clareza de layout, hierarquia visual e estrutura de UI reutilizavel para equipas que gerem developers, projetos e tarefas Agile. Competencias: pensamento Figma-to-frontend, estrutura de componentes Angular, TypeScript e planeamento responsivo.",
+      "Conceito de dashboard interno em Angular para uma empresa de IT gerir developers, projetos, tarefas Agile e programas internos de crescimento. O dashboard foi desenhado para ajudar equipas a organizar perfis de developers, alocacao a projetos, progresso de tarefas e percursos de desenvolvimento profissional. Competencias: Angular, TypeScript, UI/UX, design de dashboard, estrutura de componentes, frontend, organizacao de dados, layout responsivo.",
   },
   {
     title: "Portfolio Responsivo",

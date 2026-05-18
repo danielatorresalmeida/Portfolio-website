@@ -154,7 +154,7 @@ const translations = {
       {
         title: "NextPath Angular Dashboard",
         status: "In progress",
-        bullet: "An Angular internal dashboard concept for an IT company to manage developers, projects, Agile tasks, and internal growth programs. Skills shown: Angular, TypeScript, UI/UX, dashboard design, component structure, frontend development, data organization, and responsive layout.",
+        bullet: "An Angular internal dashboard concept for an IT company to manage developers, projects, Agile tasks, and internal growth programs. The dashboard is designed to help teams organize developer profiles, project allocation, task progress, and professional development paths. Skills shown: Angular, TypeScript, UI/UX, dashboard design, component structure, frontend development, data organization, and responsive layout.",
       },
     ],
     coursesTitle: "Courses & Certifications",
@@ -474,7 +474,7 @@ translations[LANG_EN].projectItems = [
     title: "NextPath Angular Dashboard",
     status: "In progress",
     bullet:
-      "An Angular internal dashboard concept for an IT company to manage developers, projects, Agile tasks, and internal growth programs. Skills shown: Angular, TypeScript, UI/UX, dashboard design, component structure, frontend development, data organization, and responsive layout.",
+      "An Angular internal dashboard concept for an IT company to manage developers, projects, Agile tasks, and internal growth programs. The dashboard is designed to help teams organize developer profiles, project allocation, task progress, and professional development paths. Skills shown: Angular, TypeScript, UI/UX, dashboard design, component structure, frontend development, data organization, and responsive layout.",
   },
   {
     title: "Tic-Tac-Toe Game in C",
