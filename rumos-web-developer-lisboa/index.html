@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daniela Torres Almeida | Junior Web Developer Portfolio (Lisbon Hybrid)</title>
+  <meta name="description" content="Portfolio and resume of Daniela Torres Almeida, junior web developer candidate focused on frontend development, JavaScript/TypeScript, UI/UX, and QA collaboration for hybrid roles in Lisbon." />
+  <meta property="og:site_name" content="Daniela Torres Almeida Portfolio" />
+  <meta property="og:title" content="Daniela Torres Almeida | Junior Web Developer Portfolio (Lisbon Hybrid)" />
+  <meta property="og:description" content="Portfolio and resume of Daniela Torres Almeida, junior web developer candidate focused on frontend development, JavaScript/TypeScript, UI/UX, and QA collaboration for hybrid roles in Lisbon." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://danielatorresalmeida.github.io/Portfolio-website/rumos-web-developer-lisboa/" />
+  <meta property="og:image" content="https://danielatorresalmeida.github.io/Portfolio-website/assets/logo_portfolio.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="511" />
+  <meta property="og:image:height" content="675" />
+  <meta property="og:image:alt" content="Daniela Torres Almeida portfolio logo icon" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Daniela Torres Almeida | Junior Web Developer Portfolio (Lisbon Hybrid)" />
+  <meta name="twitter:description" content="Portfolio and resume of Daniela Torres Almeida, junior web developer candidate focused on frontend development, JavaScript/TypeScript, UI/UX, and QA collaboration for hybrid roles in Lisbon." />
+  <meta name="twitter:image" content="https://danielatorresalmeida.github.io/Portfolio-website/assets/logo_portfolio.png" />
+  <meta name="twitter:image:alt" content="Daniela Torres Almeida portfolio logo icon" />
+  <link rel="preload" href="style.css?v=__ASSET_VERSION__" as="style" />
+  <link rel="stylesheet" href="style.css?v=__ASSET_VERSION__" />
+  <link rel="icon" href="../assets/logo_portfolio.png" />
+</head>
+<body>
+  <!-- Top navigation -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand-group">
+        <a class="brand-linkedin" href="https://www.linkedin.com/in/daniela-torres-almeida-945884205/" target="_blank" rel="noopener" aria-label="Open LinkedIn profile">
+          <svg class="brand-linkedin-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M22.23 0H1.77A1.77 1.77 0 0 0 0 1.77v20.46C0 23.2.8 24 1.77 24h20.46A1.77 1.77 0 0 0 24 22.23V1.77A1.77 1.77 0 0 0 22.23 0ZM7.12 20.45H3.56V9h3.56v11.45ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm15.11 13.02H16.9v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29Z"></path>
+          </svg>
+        </a>
+        <a class="brand" href="#home">Daniela</a>
+      </div>
+      <button id="nav-toggle" class="nav-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Open navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="main-nav" class="nav" aria-label="Main">
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#experience" data-i18n="nav.experience">Experience</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="actions">
+        <a href="./resume/" class="btn btn-light" data-i18n="topbar.cv">CV</a>
+        <a href="https://github.com/danielatorresalmeida" target="_blank" rel="noopener" class="btn btn-ghost" data-i18n="topbar.github">GitHub</a>
+        <button id="lang-toggle" class="btn btn-ghost btn-lang" type="button" aria-label="Switch language to European Portuguese">PT-PT</button>
+        <button id="theme-toggle" class="btn btn-theme" type="button" aria-label="Switch theme" aria-pressed="false">
+          <img id="theme-icon" class="theme-icon" src="../assets/light.png" alt="" width="20" height="20" aria-hidden="true" />
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="home" class="hero">
+    <div class="dot-grid" aria-hidden="true">
+      <div class="dot-grid__wrap">
+        <canvas class="dot-grid__canvas"></canvas>
+      </div>
+    </div>
+    <div class="container hero-inner">
+      <p class="kicker" data-i18n="hero.kicker">Portfolio</p>
+      <h1 data-i18n-html="hero.title">Hi, I'm <span class="accent">Daniela Torres Almeida</span></h1>
+      <p class="lead" data-i18n="hero.lead">
+        Junior software development candidate exploring IT opportunities, especially junior frontend, software development, web development, and QA/testing roles. I bring a background in arts and music education, plus creativity, attention to detail, adaptability, and practical project experience.
+      </p>
+      <div class="cta">
+        <a class="btn btn-light" href="#projects" data-i18n="hero.cta.work">View Projects</a>
+        <a class="btn btn-ghost" href="./resume/" data-i18n="hero.cta.resume">View Resume</a>
+        <a class="btn btn-ghost" href="#contact" data-i18n="hero.cta.contact">Contact Me</a>
+      </div>
+      <ul class="hero-highlights" aria-label="Portfolio highlights">
+        <li>
+          <strong data-i18n="hero.highlights.0.title">Junior IT focus</strong>
+          <span data-i18n="hero.highlights.0.text">Open to junior frontend, web development, software development, and QA/testing roles.</span>
+        </li>
+        <li>
+          <strong data-i18n="hero.highlights.1.title">User-centered mindset</strong>
+          <span data-i18n="hero.highlights.1.text">Translating design ideas into clear layouts, useful flows, and accessible interactions.</span>
+        </li>
+        <li>
+          <strong data-i18n="hero.highlights.2.title">Building in public</strong>
+          <span data-i18n="hero.highlights.2.text">Currently finishing practical projects in C and Angular while improving my frontend and testing workflow.</span>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+  <section class="core-stack" aria-labelledby="core-stack-heading">
+    <div class="container">
+      <h2 id="core-stack-heading" data-i18n="coreStack.heading">Core Technical Stack</h2>
+      <p class="core-stack-note" data-i18n="coreStack.note">Junior level, actively building real projects and improving through practical work.</p>
+      <div class="core-stack-grid" aria-label="Core technical stack grouped by category">
+        <article class="core-stack-card">
+          <h3 data-i18n="coreStack.frontend.title">Frontend</h3>
+          <div class="core-stack-tags">
+            <span data-i18n="coreStack.frontend.0">HTML</span>
+            <span data-i18n="coreStack.frontend.1">CSS</span>
+            <span data-i18n="coreStack.frontend.2">JavaScript</span>
+            <span data-i18n="coreStack.frontend.3">TypeScript</span>
+            <span data-i18n="coreStack.frontend.4">Angular</span>
+            <span data-i18n="coreStack.frontend.5">React</span>
+            <span data-i18n="coreStack.frontend.6">Responsive Web Design</span>
+            <span data-i18n="coreStack.frontend.7">REST API Integration</span>
+          </div>
+        </article>
+        <article class="core-stack-card">
+          <h3 data-i18n="coreStack.design.title">Design / UI</h3>
+          <div class="core-stack-tags">
+            <span data-i18n="coreStack.design.0">UI/UX Design</span>
+            <span data-i18n="coreStack.design.1">Figma</span>
+            <span data-i18n="coreStack.design.2">User-centered Interfaces</span>
+          </div>
+        </article>
+        <article class="core-stack-card">
+          <h3 data-i18n="coreStack.programming.title">Programming / Foundations</h3>
+          <div class="core-stack-tags">
+            <span data-i18n="coreStack.programming.0">C</span>
+            <span data-i18n="coreStack.programming.1">Java</span>
+            <span data-i18n="coreStack.programming.2">Python Basics</span>
+            <span data-i18n="coreStack.programming.3">Git / GitHub</span>
+          </div>
+        </article>
+        <article class="core-stack-card">
+          <h3 data-i18n="coreStack.qa.title">QA / Testing</h3>
+          <div class="core-stack-tags">
+            <span data-i18n="coreStack.qa.0">QA Concepts</span>
+            <span data-i18n="coreStack.qa.1">Manual Testing</span>
+            <span data-i18n="coreStack.qa.2">Debugging</span>
+            <span data-i18n="coreStack.qa.3">Attention to Usability and Detail</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 data-i18n="projects.heading">Featured Projects</h2>
+      <p class="section-intro" data-i18n="projects.intro">
+        A focused mix of current learning projects and completed practical work for junior frontend, software development, and QA/testing roles.
+      </p>
+
+      <div class="grid cards" id="project-grid">
+        <!-- CARD 1: NextPath Angular Dashboard -->
+        <article class="card project-text-card" aria-labelledby="project-card-title-nextpath">
+          <div class="card-body">
+            <p class="project-status" data-i18n="projects.nextpath.status">In progress</p>
+            <p class="project-summary" data-i18n="projects.nextpath.summary">Angular dashboard concept for organizing people, projects, Agile work, and growth paths.</p>
+            <h3 id="project-card-title-nextpath" data-i18n="projects.nextpath.title">NextPath Angular Dashboard</h3>
+            <p class="project-contribution" data-i18n="projects.nextpath.what">An Angular internal dashboard concept for an IT company to manage developers, projects, Agile tasks, and internal growth programs. The dashboard is designed to help teams organize developer profiles, project allocation, task progress, and professional development paths.</p>
+            <ul class="project-flow">
+              <li data-i18n-html="projects.nextpath.focus"><strong>Focus:</strong> Component structure, data organization, dashboard UI, and responsive layout.</li>
+              <li data-i18n-html="projects.nextpath.learning"><strong>Learning:</strong> Angular, TypeScript, UI/UX, frontend development, and clearer information architecture.</li>
+            </ul>
+            <p class="project-proof" data-i18n="projects.nextpath.proof">Skills shown: Angular, TypeScript, UI/UX, dashboard design, component structure, frontend development, data organization, responsive layout.</p>
+            <div class="tags"><span>Angular</span><span>TypeScript</span><span>UI/UX</span><span>Dashboard Design</span><span>Responsive Layout</span></div>
+          </div>
+        </article>
+
+        <!-- CARD 2: Tic Tac Toe / Jogo do Galo in C -->
+        <article class="card"
+                 data-href="https://danielatorresalmeida.github.io/TicTacToe/"
+                 tabindex="0"
+                 aria-labelledby="project-card-title-tictactoe">
+          <div class="card-media">
+            <img
+              src="../assets/Draw_TicTacToe.png"
+              alt="Screenshot or visual preview of the Tic Tac Toe C terminal project"
+              width="457" height="452"
+              loading="lazy" decoding="async" />
+            <div class="card-overlay">
+              <p data-i18n="projects.tictactoe.overlay">Terminal gameplay preview with color-coded board states and tournament-ready match flow.</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="project-status" data-i18n="projects.tictactoe.status">Terminal C project</p>
+            <p class="project-summary" data-i18n="projects.tictactoe.summary">Modular terminal game with AI, tournaments, and testing workflows.</p>
+            <h3 id="project-card-title-tictactoe" data-i18n="projects.tictactoe.title">Tic Tac Toe / Jogo do Galo in C</h3>
+            <p class="project-contribution" data-i18n="projects.tictactoe.what">A modular terminal-based Tic Tac Toe game built in C with multiple board sizes, AI difficulty levels, tournaments, save/load, undo, replay, ranking, automatic tests, and colorblind-friendly terminal colors.</p>
+            <ul class="project-flow">
+              <li data-i18n-html="projects.tictactoe.logic"><strong>Main features:</strong> Multiple board sizes, AI difficulty levels, tournaments, save/load, undo, replay, ranking, and automatic tests.</li>
+              <li data-i18n-html="projects.tictactoe.learning"><strong>Tech stack:</strong> C, Makefile, MSYS2, GCC, Modular Programming.</li>
+            </ul>
+            <p class="project-proof" data-i18n="projects.tictactoe.proof">Tech stack: C, Makefile, MSYS2, GCC, Modular Programming.</p>
+            <div class="tags"><span>C</span><span>Makefile</span><span>MSYS2</span><span>GCC</span><span>Modular Programming</span></div>
+            <div class="links">
+              <a href="https://danielatorresalmeida.github.io/TicTacToe/"
+                 target="_blank" rel="noopener" class="live-label btn btn-ghost" data-i18n="projects.actions.live">Live</a>
+              <a href="https://github.com/danielatorresalmeida/TicTacToe"
+                 target="_blank" rel="noopener" class="btn btn-light" data-i18n="projects.actions.code">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 3: API QA Test Suite -->
+        <article id="project-qa" class="card"
+                 data-href="https://danielatorresalmeida.github.io/api-qa-test-suite/assets/reports/api-qa/"
+                 tabindex="0"
+                 aria-labelledby="project-card-title-qa">
+          <div class="card-media">
+            <img
+              src="../assets/API_QA_TEST_SUITE.png"
+              alt="API QA test suite preview"
+              width="720" height="480"
+              loading="lazy" decoding="async" />
+            <div class="card-overlay">
+              <p data-i18n="projects.qa.overlay">Python + Pytest API automation with validation workflows and CI-ready reporting.</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="project-summary" data-i18n="projects.qa.summary">QA automation suite for API regression detection with readable, shareable test evidence.</p>
+            <h3 id="project-card-title-qa" data-i18n="projects.qa.title">API QA Test Suite</h3>
+            <p class="project-contribution" data-i18n="projects.qa.what">What I did: Built Python-based API validation workflows, covering status, schema, and business-rule checks with publishable pytest-html reports.</p>
+            <ul class="project-flow">
+              <li data-i18n-html="projects.qa.problem"><strong>Problem:</strong> Manual API checks were slow and inconsistent before releases.</li>
+              <li data-i18n-html="projects.qa.solution"><strong>Solution:</strong> Created a reusable Python + Pytest suite with structured assertions and report generation.</li>
+              <li data-i18n-html="projects.qa.outcome"><strong>Outcome:</strong> Reduced verification time and improved confidence in API quality.</li>
+            </ul>
+            <p class="project-proof" data-i18n="projects.qa.proof">Stack: Python, Pytest, pytest-html, REST API basics, GitHub Pages.</p>
+            <div class="tags"><span>REST API Basics</span><span>Python</span><span>Pytest</span><span>pytest-html</span><span>GitHub Pages</span></div>
+            <div class="links">
+              <a href="https://danielatorresalmeida.github.io/api-qa-test-suite/assets/reports/api-qa/"
+                 target="_blank" rel="noopener" class="live-label btn btn-ghost" data-i18n="projects.actions.live">Live</a>
+              <a href="https://github.com/danielatorresalmeida/api-qa-test-suite"
+                 target="_blank" rel="noopener" class="btn btn-light" data-i18n="projects.actions.code">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 4: Responsive Portfolio -->
+        <article class="card"
+                 data-href="https://danielatorresalmeida.github.io/Portfolio-website/rumos-web-developer-lisboa/"
+                 tabindex="0"
+                 aria-labelledby="project-card-title-portfolio">
+          <div class="card-media">
+            <img
+              src="../assets/project-portfolio.2026-05-14.png"
+              alt="Responsive portfolio website screenshot"
+              width="720" height="480"
+              loading="lazy" decoding="async" />
+            <div class="card-overlay">
+              <p data-i18n="projects.portfolio.overlay">Responsive single-page portfolio with clear navigation and project highlights.</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="project-summary" data-i18n="projects.portfolio.summary">Personal portfolio built to present frontend work with clear navigation.</p>
+            <h3 id="project-card-title-portfolio" data-i18n="projects.portfolio.title">Responsive Portfolio</h3>
+            <p class="project-contribution" data-i18n="projects.portfolio.what">What I did: Built a responsive single-page portfolio, structured reusable sections, and optimized readability and navigation across desktop and mobile. Executed manual website tests and automated Selenium smoke checks on key flows.</p>
+            <ul class="project-flow">
+              <li data-i18n-html="projects.portfolio.problem"><strong>Problem:</strong> Needed a clear personal site to present projects and skills professionally.</li>
+              <li data-i18n-html="projects.portfolio.solution"><strong>Solution:</strong> Built a responsive single-page portfolio with structured navigation and GitHub Pages deployment.</li>
+              <li data-i18n-html="projects.portfolio.outcome"><strong>Outcome:</strong> Created a faster, cleaner way for recruiters to review experience and live work.</li>
+            </ul>
+            <p class="project-proof" data-i18n="projects.portfolio.proof">Built with reusable sections and a mobile-first layout.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>GitHub Pages</span><span>Manual QA</span></div>
+            <div class="links">
+              <a href="https://danielatorresalmeida.github.io/Portfolio-website/rumos-web-developer-lisboa/"
+                 target="_blank" rel="noopener" class="live-label btn btn-ghost" data-i18n="projects.actions.live">Live</a>
+              <a href="https://github.com/danielatorresalmeida/Portfolio-website"
+                 target="_blank" rel="noopener" class="btn btn-light" data-i18n="projects.actions.code">Code</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="other-projects" aria-labelledby="other-projects-title">
+        <h3 id="other-projects-title" data-i18n="projects.other.heading">Other Projects</h3>
+        <p class="other-projects-intro" data-i18n="projects.other.intro">
+          Additional work kept visible for role-specific conversations and deeper portfolio review.
+        </p>
+        <ul class="other-projects-list">
+          <li>
+            <a class="other-project-link" href="https://robocollective.ai/" target="_blank" rel="noopener" data-i18n="projects.other.robo">RoboCollective.ai</a>
+            <span data-i18n="projects.other.robo.note">Live product website contribution in a React/Next.js environment.</span>
+          </li>
+          <li>
+            <a class="other-project-link" href="https://danielatorresalmeida.github.io/ui-components/" target="_blank" rel="noopener" data-i18n="projects.other.ui">UI Components Showcase</a>
+            <span data-i18n="projects.other.ui.note">Reusable UI patterns with responsive HTML, CSS, and JavaScript.</span>
+          </li>
+          <li>
+            <span class="other-project-link" data-i18n="projects.other.todo">To-Do List App</span>
+            <span data-i18n="projects.other.todo.note">React + TypeScript task workflow with Firebase and Google Auth.</span>
+          </li>
+          <li>
+            <a class="other-project-link" href="https://moodchanger.ai/" target="_blank" rel="noopener" data-i18n="projects.other.mood">MoodChanger.ai</a>
+            <span data-i18n="projects.other.mood.note">Responsive product and marketing sections in a Next.js site.</span>
+          </li>
+          <li>
+            <a class="other-project-link" href="https://www.legalethicsventuresinstitute.com/" target="_blank" rel="noopener" data-i18n="projects.other.legal">Legal Ventures Institute</a>
+            <span data-i18n="projects.other.legal.note">Public-facing Next.js website with service presentation and contact flow.</span>
+          </li>
+          <li>
+            <a class="other-project-link" href="https://www.spaceventuresinstitute.com/" target="_blank" rel="noopener" data-i18n="projects.other.space">Space Ventures Institute</a>
+            <span data-i18n="projects.other.space.note">Responsive venture-focused website sections and navigation.</span>
+          </li>
+          <li>
+            <a class="other-project-link" href="https://www.caipo.ai/" target="_blank" rel="noopener" data-i18n="projects.other.caipo">CAIPO.ai</a>
+            <span data-i18n="projects.other.caipo.note">Frontend sections for wearable and developer kit product communication.</span>
+          </li>
+          <li>
+            <a class="other-project-link" href="https://www.tarrl.org/" target="_blank" rel="noopener" data-i18n="projects.other.tarrl">TARRL</a>
+            <span data-i18n="projects.other.tarrl.note">Remote-first research lab website with clear program and application content.</span>
+          </li>
+          <li>
+            <span class="other-project-link" data-i18n="projects.other.mechanic">Mechanic Data Base</span>
+            <span data-i18n="projects.other.mechanic.note">Relational SQL model for workshop clients, vehicles, services, and parts.</span>
+          </li>
+          <li>
+            <span class="other-project-link" data-i18n="projects.other.bakery">Bakery Data Base</span>
+            <span data-i18n="projects.other.bakery.note">Relational SQL model for bakery orders, products, ingredients, and stock.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section alt">
+    <div class="container two-col">
+      <div class="about">
+        <div class="about-profile">
+          <p class="about-eyebrow" data-i18n="about.eyebrow">Profile</p>
+          <img class="about-photo" src="../assets/Imagem%20WhatsApp%20.jpg" alt="Daniela Almeida portrait"
+               width="160" height="160" loading="lazy" decoding="async" />
+          <div class="about-summary">
+            <h2 data-i18n="about.heading">About</h2>
+            <p data-i18n="about.p1">
+              Junior software development candidate transitioning from arts and music education into IT. I am focused on frontend development, web development, UI/UX, and QA/testing, and I am actively building practical projects while strengthening my technical foundations.
+            </p>
+          </div>
+        </div>
+      </div>
+      <aside class="card technical-skills" aria-labelledby="technical-skills-heading">
+        <h3 id="technical-skills-heading" data-i18n="about.technical.heading">Technical Skills</h3>
+
+        <div class="technical-skills-grid">
+          <article class="technical-card">
+            <div class="technical-card-head">
+              <span class="technical-icon" aria-hidden="true">FE</span>
+              <h4 data-i18n="about.technical.frontend.title">Frontend</h4>
+            </div>
+            <ul class="technical-list">
+              <li data-i18n="about.technical.frontend.0">HTML5</li>
+              <li data-i18n="about.technical.frontend.1">CSS3</li>
+              <li data-i18n="about.technical.frontend.2">JavaScript</li>
+              <li data-i18n="about.technical.frontend.3">Responsive Web Design</li>
+              <li data-i18n="about.technical.frontend.4">TypeScript</li>
+              <li data-i18n="about.technical.frontend.5">Angular</li>
+              <li data-i18n="about.technical.frontend.6">React</li>
+              <li data-i18n="about.technical.frontend.7">REST API Integration</li>
+            </ul>
+          </article>
+
+          <article class="technical-card">
+            <div class="technical-card-head">
+              <span class="technical-icon" aria-hidden="true">UX</span>
+              <h4 data-i18n="about.technical.design.title">UI/UX</h4>
+            </div>
+            <ul class="technical-list">
+              <li data-i18n="about.technical.design.0">UI/UX Design</li>
+              <li data-i18n="about.technical.design.1">Figma</li>
+              <li data-i18n="about.technical.design.2">User-centered Interfaces</li>
+            </ul>
+          </article>
+
+          <article class="technical-card">
+            <div class="technical-card-head">
+              <span class="technical-icon" aria-hidden="true">QA</span>
+              <h4 data-i18n="about.technical.qa.title">QA &amp; Testing</h4>
+            </div>
+            <ul class="technical-list">
+              <li data-i18n="about.technical.tools.5">QA Concepts</li>
+              <li data-i18n="about.technical.tools.6">Manual Testing</li>
+              <li data-i18n="about.technical.tools.8">Debugging</li>
+              <li data-i18n="about.technical.tools.9">Attention to Usability and Detail</li>
+            </ul>
+          </article>
+
+          <article class="technical-card">
+            <div class="technical-card-head">
+              <span class="technical-icon" aria-hidden="true">DV</span>
+              <h4 data-i18n="about.technical.tools.title">Tools &amp; Workflow</h4>
+            </div>
+            <ul class="technical-list">
+              <li data-i18n="about.technical.tools.0">Git / GitHub</li>
+              <li data-i18n="about.technical.tools.1">GitHub Pages</li>
+              <li data-i18n="about.technical.tools.2">GitHub Actions</li>
+            </ul>
+          </article>
+
+          <article class="technical-card">
+            <div class="technical-card-head">
+              <span class="technical-icon" aria-hidden="true">PI</span>
+              <h4 data-i18n="about.technical.platforms.title">Platforms &amp; Integrations</h4>
+            </div>
+            <ul class="technical-list">
+              <li data-i18n="about.technical.tools.12">OpenCart</li>
+              <li data-i18n="about.technical.tools.16">WordPress</li>
+              <li data-i18n="about.technical.tools.13">HubSpot</li>
+              <li data-i18n="about.technical.tools.14">FillOutForms</li>
+              <li data-i18n="about.technical.tools.4">Google Auth</li>
+            </ul>
+          </article>
+
+          <article class="technical-card">
+            <div class="technical-card-head">
+              <span class="technical-icon" aria-hidden="true">JB</span>
+              <h4 data-i18n="about.technical.java.title">Programming Foundations</h4>
+            </div>
+            <ul class="technical-list">
+              <li data-i18n="about.technical.java.0">Java</li>
+              <li data-i18n="about.technical.java.1">C</li>
+              <li data-i18n="about.technical.java.2">Python Basics</li>
+              <li data-i18n="about.technical.java.3">Programming Logic</li>
+            </ul>
+          </article>
+
+          <article class="technical-card">
+            <div class="technical-card-head">
+              <span class="technical-icon" aria-hidden="true">DB</span>
+              <h4 data-i18n="about.technical.data.title">Databases &amp; Data Modeling</h4>
+            </div>
+            <ul class="technical-list">
+              <li data-i18n="about.technical.data.0">SQL Fundamentals</li>
+              <li data-i18n="about.technical.data.1">Database Access Technologies</li>
+              <li data-i18n="about.technical.data.2">SQL / Database Design</li>
+              <li data-i18n="about.technical.data.3">PostgreSQL</li>
+            </ul>
+          </article>
+
+          <article class="technical-card">
+            <div class="technical-card-head">
+              <span class="technical-icon" aria-hidden="true">SE</span>
+              <h4 data-i18n="about.technical.se.title">Software Engineering Foundations</h4>
+            </div>
+            <ul class="technical-list">
+              <li data-i18n="about.technical.se.0">Programming &amp; Algorithms</li>
+              <li data-i18n="about.technical.se.1">C/C++ Fundamentals</li>
+              <li data-i18n="about.technical.se.2">Software Engineering</li>
+              <li data-i18n="about.technical.se.3">Software Development Methodologies</li>
+              <li data-i18n="about.technical.se.4">IntelliJ IDEA</li>
+              <li data-i18n="about.technical.se.5">Eclipse</li>
+            </ul>
+          </article>
+
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="selected-strengths" class="section">
+    <div class="container">
+      <h2 data-i18n="strengths.heading">Selected Strengths</h2>
+      <ul class="selected-strengths-list">
+        <li data-i18n="strengths.0">Frontend development with HTML5, CSS3, JavaScript, and responsive layouts for clear, accessible interfaces.</li>
+        <li data-i18n="strengths.1">UI/UX execution from structure to implementation, with attention to usability, visual consistency, and interaction states.</li>
+        <li data-i18n="strengths.2">Vue.js as an active learning focus, supported by component-based thinking from practical frontend work.</li>
+        <li data-i18n="strengths.3">REST API basics, QA testing, and careful validation habits that help catch issues before release.</li>
+        <li data-i18n="strengths.4">Collaboration, problem solving, and clear communication from multidisciplinary work and career transition experience.</li>
+        <li data-i18n="strengths.5">Git/GitHub, GitHub Pages, and Vercel workflows for organizing, publishing, and maintaining web projects.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="courses" class="section">
+    <div class="container">
+      <h2 data-i18n="courses.heading">Courses &amp; Certifications</h2>
+      <p class="section-intro" data-i18n="courses.intro">Recent coursework organized by learning track: QA, web foundations, programming, Java, and databases.</p>
+      <ul class="courses-list">
+        <li data-i18n="courses.0">QA &amp; Testing: Fundamentals of Quality Assurance Engineer - Udemy (Jul 2025)</li>
+        <li data-i18n="courses.1">QA &amp; Testing: Foundations of Software Testing and Validation - University of Leeds (Jul 2025)</li>
+        <li data-i18n="courses.2">Web Foundations: Website Design (Feb 2026)</li>
+        <li data-i18n="courses.3">Programming Foundations: Python Software Language - Programming Hub (Aug 2025)</li>
+        <li data-i18n="courses.4">Programming Foundations: Programming - Algorithms (Apr 2026)</li>
+        <li data-i18n="courses.5">Java Development: Java Programming (Mar 2026)</li>
+        <li data-i18n="courses.6">Databases: SQL Language Fundamentals (Mar 2026)</li>
+        <li data-i18n="courses.7">Databases: Database Access Technologies (Apr 2026)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 data-i18n="experience.heading">Experience</h2>
+      <p class="section-intro" data-i18n="experience.intro">
+        Practical product experience across UI/UX, frontend development, QA, and collaboration in multidisciplinary teams.
+      </p>
+      <div class="timeline">
+        <div class="item">
+          <div class="when" data-i18n="experience.when">Aug 2025 - Present | Remote</div>
+          <div class="what">
+            <strong data-i18n="experience.role">Software Development Intern</strong>
+            <div class="experience-org" data-i18n="experience.org">FloLabs Innovations Group</div>
+            <a class="experience-link" href="https://www.flolabsinnovations.com/"
+               target="_blank" rel="noopener">flolabsinnovations.com</a>
+            <p data-i18n="experience.p1">
+              Built the Portfolio website and robocollective.ai from scratch, taking both projects from concept to live release.
+            </p>
+            <p data-i18n="experience.p2">
+              Delivered 10+ UI/UX improvements across HTML, CSS, JavaScript, PHP, and TypeScript, supported REST/API-related backend tasks, and reduced bug turnaround time by around 20% through structured QA.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section alt">
+    <div class="container contact-layout">
+      <div class="contact-main">
+        <h2 data-i18n="contact.heading">Contact</h2>
+        <p class="section-intro" data-i18n="contact.intro">
+          Hiring for a junior frontend or Vue-oriented web development role? Let's discuss how I can support your team.
+        </p>
+        <div class="contact-quick-actions" aria-label="Contact quick actions">
+          <a class="btn btn-light" href="mailto:danielarosadolealtorresalmeida@gmail.com" data-i18n="contact.actions.email">Email</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/daniela-torres-almeida-945884205/" target="_blank" rel="noopener" data-i18n="contact.actions.linkedin">LinkedIn</a>
+          <a id="contact-cv-link"
+             class="btn btn-ghost"
+             href="./resume/?lang=en&download=1"
+             data-cv-en="./resume/?lang=en&download=1"
+             data-cv-pt="./resume/?lang=pt-PT&download=1"
+             target="_blank"
+             rel="noopener"
+             data-i18n="contact.actions.cv">Download CV</a>
+        </div>
+      </div>
+
+      <form class="contact contact-form-card" id="contact-form" name="contact" action="https://formspree.io/f/xdkynkgr" method="POST">
+        <div class="contact-field">
+          <label for="contact-name" data-i18n="contact.form.label.name">Name</label>
+          <input id="contact-name" type="text" name="name" placeholder="Your name" data-i18n-placeholder="contact.form.name" required />
+        </div>
+        <div class="contact-field">
+          <label for="contact-email" data-i18n="contact.form.label.email">Email</label>
+          <input id="contact-email" type="email" name="_replyto" placeholder="you@example.com" data-i18n-placeholder="contact.form.email" required />
+        </div>
+        <div class="contact-field">
+          <label for="contact-message" data-i18n="contact.form.label.message">Message</label>
+          <textarea id="contact-message" name="message" rows="6" placeholder="Share the role, team, timeline, and what you need support with." data-i18n-placeholder="contact.form.message" required></textarea>
+        </div>
+        <button class="btn btn-light" type="submit" data-i18n="contact.form.send">Send Message</button>
+        <p id="contact-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="contact-alt" aria-label="Alternative contact details">
+        <p class="contact-alt-item">
+          <span data-i18n="contact.preferEmail">Prefer email?</span>
+          <a class="chip" href="mailto:danielarosadolealtorresalmeida@gmail.com">
+            danielarosadolealtorresalmeida@gmail.com
+          </a>
+        </p>
+        <p class="contact-alt-item">
+          <span data-i18n="contact.preferWhatsapp">Prefer WhatsApp?</span>
+          <a class="chip" href="https://wa.me/351962046821?text=Hi%20Daniela%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer" aria-label="Open WhatsApp chat at +351 962 046 821">
+            <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.5 0 .17 5.34.17 11.9c0 2.1.55 4.16 1.6 5.97L0 24l6.3-1.65a11.9 11.9 0 0 0 5.77 1.47h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.47-8.44Zm-8.45 18.33h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.64-.24-.37a9.84 9.84 0 0 1 1.52-12.3 9.84 9.84 0 0 1 16.8 6.96c0 5.43-4.42 9.86-9.86 9.86Zm5.41-7.37c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.8-1.49-1.78-1.66-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.23-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01s-.52.07-.8.37c-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.27.5 1.7.64.71.23 1.35.2 1.86.12.57-.08 1.77-.72 2.02-1.42.25-.69.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35Z"></path>
+            </svg>
+            <span>+351 962 046 821</span>
+          </a>
+        </p>
+        <p class="contact-alt-item">
+          <span data-i18n="contact.alt.github">GitHub</span>
+          <a class="contact-inline-link chip" href="https://github.com/danielatorresalmeida" target="_blank" rel="noopener" data-i18n="contact.github">GitHub</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="#home" data-i18n="footer.home">Home</a>
+        <a href="#projects" data-i18n="footer.projects">Projects</a>
+        <a href="#about" data-i18n="footer.about">About</a>
+        <a href="#experience" data-i18n="footer.experience">Experience</a>
+        <a href="#contact" data-i18n="footer.contact">Contact</a>
+      </div>
+      <p><span data-year></span> <span data-i18n="footer.meta">Daniela Almeida | Built with HTML, CSS, JavaScript | Hosted on GitHub Pages</span></p>
+    </div>
+  </footer>
+
+  <button id="to-top" class="to-top" aria-label="Back to top"></button>
+  <script src="script.js?v=__ASSET_VERSION__" defer></script>
+</body>
+</html>
+

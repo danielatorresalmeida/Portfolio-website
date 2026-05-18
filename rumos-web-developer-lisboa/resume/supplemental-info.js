@@ -2,7 +2,6 @@
   const LANGUAGE_KEY = "resume-language";
   const LANG_PT = "pt-PT";
 
-  // Optional block: if this section does not exist, skip all setup.
   const section = document.getElementById("supplemental-info");
   if (!section) return;
 
@@ -25,8 +24,8 @@
       ],
       rightTitle: "Preferred Roles & Availability",
       rightItems: [
-        "<strong>Preferred Roles:</strong> Junior Web Designer, UI/UX Designer, and frontend-focused web roles where design decisions need to work in the browser.",
-        "<strong>Availability:</strong> Available for interviews and open to hybrid opportunities in Lisbon or remote collaboration.",
+        "<strong>Preferred Roles:</strong> Junior Web Developer and Junior Frontend Developer roles, especially with HTML, CSS, JavaScript/TypeScript, responsive UI, and QA collaboration.",
+        "<strong>Availability:</strong> Available for interviews and available for hybrid work in Lisbon.",
         "<strong>Opportunity Type:</strong> Open to discussing permanent or contract opportunities depending on the fit.",
         "<strong>Level:</strong> Junior / entry-level candidate with practical project experience and strong motivation to keep improving.",
       ],
@@ -42,15 +41,14 @@
       ],
       rightTitle: "Funções Preferidas e Disponibilidade",
       rightItems: [
-        "<strong>Funções preferidas:</strong> Junior Web Designer, UI/UX Designer e funções web com foco frontend onde as decisões de design precisam de funcionar no browser.",
-        "<strong>Disponibilidade:</strong> disponível para entrevistas e aberta a oportunidades híbridas em Lisboa ou colaboração remota.",
+        "<strong>Funções preferidas:</strong> Junior Web Developer e Junior Frontend Developer, com foco em HTML, CSS, JavaScript/TypeScript, interfaces responsivas e colaboracao com QA.",
+        "<strong>Disponibilidade:</strong> disponivel para entrevistas e para modelo hibrido em Lisboa.",
         "<strong>Tipo de oportunidade:</strong> aberta a oportunidades permanentes ou contrato, dependendo do enquadramento.",
         "<strong>Nível:</strong> candidata junior / entry-level com experiência prática em projetos e forte motivação para continuar a evoluir.",
       ],
     },
   };
 
-  // Safe storage read for restricted/privacy browser contexts.
   function getStoredLanguage() {
     try {
       return window.localStorage.getItem(LANGUAGE_KEY);
@@ -59,14 +57,12 @@
     }
   }
 
-  // Prefer stored language and fall back to the document language.
   function getLanguage() {
     const storedLanguage = getStoredLanguage();
     if (storedLanguage === LANG_PT) return "pt";
     return document.documentElement.lang === LANG_PT ? "pt" : "en";
   }
 
-  // Render headings and list items for the active language.
   function renderSupplementalInfo() {
     const lang = getLanguage();
     const t = translations[lang];
@@ -84,7 +80,6 @@
   }
 
   renderSupplementalInfo();
-  // Let the resume script finish switching language, then refresh this block.
   langToggle?.addEventListener("click", () => {
     setTimeout(renderSupplementalInfo, 0);
   });

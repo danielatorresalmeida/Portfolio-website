@@ -1,4 +1,4 @@
-Ôªø// Footer year
+// Footer year
 const yearValue = new Date().getFullYear();
 document.querySelectorAll("[data-year]").forEach((yearEl) => {
   yearEl.textContent = yearValue;
@@ -18,11 +18,10 @@ const contactCvLink = document.getElementById("contact-cv-link");
 
 const THEME_ICONS = {
   // Keep this mapping explicit because legacy file names are inverted.
-  light: "assets/dark.png",
-  dark: "assets/light.png",
+  light: "../assets/dark.png",
+  dark: "../assets/light.png",
 };
 
-// Safe browser-storage read that will not crash in restricted contexts.
 function getStoredValue(key) {
   try {
     return window.localStorage.getItem(key);
@@ -31,7 +30,6 @@ function getStoredValue(key) {
   }
 }
 
-// Safe browser-storage write that fails silently when blocked.
 function setStoredValue(key, value) {
   try {
     window.localStorage.setItem(key, value);
@@ -51,19 +49,19 @@ const TRANSLATIONS = {
     "topbar.cv": "CV",
     "topbar.github": "GitHub",
     "hero.kicker": "Portfolio",
-    "hero.title": "Portfolio <span class=\"accent\">Project Showcase</span>",
-    "hero.lead": "A collection of frontend, software, UI/UX, and QA-focused projects showing my work across HTML, CSS, JavaScript, TypeScript, Angular, C, Java, Figma, and testing concepts.",
+    "hero.title": "Hi, I'm <span class=\"accent\">Daniela Torres Almeida</span>",
+    "hero.lead": "Junior web developer candidate focused on frontend and web development, open to hybrid opportunities in Lisbon. I bring a background in arts and music education, plus creativity, attention to detail, adaptability, and practical project experience.",
     "hero.cta.work": "View Projects",
-    "hero.cta.resume": "Role-Specific Versions",
+    "hero.cta.resume": "View Resume",
     "hero.cta.contact": "Contact Me",
-    "hero.highlights.0.title": "Project library",
-    "hero.highlights.0.text": "Each project is labeled by primary tools, supporting technologies, and practical outcomes.",
-    "hero.highlights.1.title": "Cross-skill evidence",
-    "hero.highlights.1.text": "The showcase combines web UI, programming logic, and QA/testing work in one place.",
-    "hero.highlights.2.title": "Role-ready versions",
-    "hero.highlights.2.text": "Separate saved versions are available for General IT/Software opportunities and Guestcentric.",
-    "coreStack.heading": "Core Skills Across Frontend, Software, UI/UX, and QA",
-    "coreStack.note": "Broad project showcase view: technical foundations, interface delivery, and practical validation habits.",
+    "hero.highlights.0.title": "Junior IT focus",
+    "hero.highlights.0.text": "Open to Junior Web Developer and Junior Frontend Developer roles in Lisbon, especially hybrid teams.",
+    "hero.highlights.1.title": "User-centered mindset",
+    "hero.highlights.1.text": "Translating design ideas into clear layouts, useful flows, and accessible interactions.",
+    "hero.highlights.2.title": "Building in public",
+    "hero.highlights.2.text": "Currently finishing practical projects in C and Angular while improving my frontend and testing workflow.",
+    "coreStack.heading": "Core Technical Stack",
+    "coreStack.note": "Junior level, actively building real projects and improving through practical work.",
     "coreStack.frontend.title": "Frontend",
     "coreStack.frontend.0": "HTML",
     "coreStack.frontend.1": "CSS",
@@ -71,23 +69,12 @@ const TRANSLATIONS = {
     "coreStack.frontend.3": "TypeScript",
     "coreStack.frontend.4": "Angular",
     "coreStack.frontend.5": "React",
-    "coreStack.frontend.6": "Git / GitHub",
+    "coreStack.frontend.6": "Responsive Web Design",
     "coreStack.frontend.7": "REST API Integration",
-    "coreStack.design.title": "Design",
-    "coreStack.design.0": "Figma",
-    "coreStack.design.1": "UI Design",
-    "coreStack.design.2": "UX Thinking",
-    "coreStack.design.3": "Wireframing",
-    "coreStack.design.4": "Prototyping",
-    "coreStack.design.5": "Design Systems",
-    "coreStack.design.6": "Responsive Layouts",
-    "coreStack.practical.title": "Practical Strengths",
-    "coreStack.practical.0": "Accessibility Basics",
-    "coreStack.practical.1": "Component Thinking",
-    "coreStack.practical.2": "Layout Implementation",
-    "coreStack.practical.3": "Cross-device Testing",
-    "coreStack.practical.4": "Collaboration",
-    "coreStack.practical.5": "QA/Testing Concepts",
+    "coreStack.design.title": "Design / UI",
+    "coreStack.design.0": "UI/UX Design",
+    "coreStack.design.1": "Figma",
+    "coreStack.design.2": "User-centered Interfaces",
     "coreStack.programming.title": "Programming / Foundations",
     "coreStack.programming.0": "C",
     "coreStack.programming.1": "Java",
@@ -116,44 +103,23 @@ const TRANSLATIONS = {
     "coreStack.15": "Manual Testing",
     "coreStack.16": "Debugging",
     "coreStack.17": "Attention to Usability and Detail",
-    "projects.heading": "Project Showcase",
-    "projects.intro": "A broad project library showing languages, tools, and practical skills across web UI, software logic, and QA/testing workflows.",
-    "projects.featured.eyebrow": "Project library highlight",
-    "projects.featured.title": "NextPath Angular Dashboard",
-    "projects.featured.overview": "<strong>Overview:</strong> Dashboard concept to organize developers, projects, and growth paths in one clear interface.",
-    "projects.featured.problem": "<strong>Problem:</strong> Content and task flows needed clearer hierarchy so teams can scan and act faster.",
-    "projects.featured.role": "<strong>My role:</strong> Defined layout structure, component blocks, and information grouping for a more usable dashboard.",
-    "projects.featured.design": "<strong>Design decisions:</strong> Prioritized navigation clarity, readable spacing, and section grouping around user tasks.",
-    "projects.featured.implementation": "<strong>Frontend decisions:</strong> Built with Angular component thinking so design choices map directly to reusable UI pieces.",
-    "projects.featured.result": "<strong>Current result:</strong> In-progress concept that demonstrates design-to-code reasoning and responsive layout planning.",
-    "projects.featured.next": "<strong>What I would improve next:</strong> Formalize spacing, typography, and component rules into a tighter design system in Figma.",
+    "projects.heading": "Featured Projects",
+    "projects.intro": "A focused mix of practical web development work and QA-backed delivery relevant to junior Web Developer roles.",
     "projects.tictactoe.overlay": "Terminal gameplay preview with color-coded board states and tournament-ready match flow.",
     "projects.tictactoe.status": "Terminal C project",
     "projects.tictactoe.title": "Tic Tac Toe / Jogo do Galo in C",
     "projects.tictactoe.summary": "Modular terminal game with AI, tournaments, and testing workflows.",
     "projects.tictactoe.what": "A modular terminal-based Tic Tac Toe game built in C with multiple board sizes, AI difficulty levels, tournaments, save/load, undo, replay, ranking, automatic tests, and colorblind-friendly terminal colors.",
-    "projects.tictactoe.mainTool": "<strong>Main tool:</strong> C",
-    "projects.tictactoe.secondary": "<strong>Also uses:</strong> Structured programming, game-state logic, AI difficulty control, automated tests.",
-    "projects.tictactoe.demonstrates": "<strong>What it demonstrates:</strong> Programming fundamentals, condition handling, modular architecture, and terminal user interaction.",
     "projects.tictactoe.logic": "<strong>Main features:</strong> Multiple board sizes, AI difficulty levels, tournaments, save/load, undo, replay, ranking, and automatic tests.",
     "projects.tictactoe.learning": "<strong>Tech stack:</strong> C, Makefile, MSYS2, GCC, Modular Programming.",
     "projects.tictactoe.proof": "Tech stack: C, Makefile, MSYS2, GCC, Modular Programming.",
     "projects.nextpath.status": "In progress",
     "projects.nextpath.title": "NextPath Angular Dashboard",
-    "projects.nextpath.summary": "Angular dashboard concept focused on layout clarity, reusable components, and responsive information flow.",
-    "projects.nextpath.what": "An Angular internal dashboard concept for an IT company to manage developers, projects, Agile tasks, and internal growth programs. I focused on structuring the interface around usability, scannability, and real implementation constraints.",
-    "projects.nextpath.mainTool": "<strong>Main tool:</strong> Angular",
-    "projects.nextpath.secondary": "<strong>Also uses:</strong> TypeScript, UI/UX, dashboard structure, responsive layout planning.",
-    "projects.nextpath.demonstrates": "<strong>What it demonstrates:</strong> Component-based frontend organization, internal tool layout logic, and user-flow clarity.",
+    "projects.nextpath.summary": "Angular dashboard concept for organizing people, projects, Agile work, and growth paths.",
+    "projects.nextpath.what": "An Angular internal dashboard concept for an IT company to manage developers, projects, Agile tasks, and internal growth programs. The dashboard is designed to help teams organize developer profiles, project allocation, task progress, and professional development paths.",
     "projects.nextpath.focus": "<strong>Focus:</strong> Component structure, data organization, dashboard UI, and responsive layout.",
     "projects.nextpath.learning": "<strong>Learning:</strong> Angular, TypeScript, UI/UX, frontend development, and clearer information architecture.",
-    "projects.nextpath.problem": "<strong>Problem:</strong> Dashboard content and actions were hard to scan quickly.",
-    "projects.nextpath.role": "<strong>My role:</strong> Organized page hierarchy, grouped user tasks, and defined reusable section patterns.",
-    "projects.nextpath.design": "<strong>Design decisions:</strong> Emphasized spacing, visual hierarchy, and cleaner section transitions.",
-    "projects.nextpath.implementation": "<strong>Frontend decisions:</strong> Structured the UI with Angular component thinking and responsive behavior in mind.",
-    "projects.nextpath.outcome": "<strong>Outcome:</strong> In-progress concept that better communicates priorities and reduces navigation friction.",
-    "projects.nextpath.next": "<strong>Next step:</strong> Refine a reusable design-system layer in Figma (typography, spacing, and component states).",
-    "projects.nextpath.proof": "Tools: Figma, Angular, TypeScript, responsive layout planning, component structure.",
+    "projects.nextpath.proof": "Skills shown: Angular, TypeScript, UI/UX, dashboard design, component structure, frontend development, data organization, responsive layout.",
     "projects.todo.overlay": "React + TypeScript app with Firebase auth and persistent real-time task management.",
     "projects.todo.title": "To-Do List App",
     "projects.todo.summary": "Independent frontend build showing clean UI decisions and practical feature implementation.",
@@ -164,29 +130,18 @@ const TRANSLATIONS = {
     "projects.todo.proof": "Stack: React, TypeScript, Firebase, Google Auth, Vite.",
     "projects.todo.description": "React + TypeScript to-do app using Firebase and Google Auth.",
     "projects.portfolio.overlay": "Responsive single-page portfolio with clear navigation and project highlights.",
-    "projects.portfolio.status": "Published project",
     "projects.portfolio.title": "Responsive Portfolio",
     "projects.portfolio.summary": "Personal portfolio built to present frontend work with clear navigation.",
-    "projects.portfolio.what": "What I did: Built a responsive single-page portfolio, structured reusable sections, and optimized readability and navigation across desktop and mobile. Executed manual website tests and automated Selenium smoke checks on key flows.",
-    "projects.portfolio.mainTool": "<strong>Main tool:</strong> HTML/CSS",
-    "projects.portfolio.secondary": "<strong>Also uses:</strong> JavaScript, responsive design, semantic structure, manual QA checks.",
-    "projects.portfolio.demonstrates": "<strong>What it demonstrates:</strong> Frontend implementation, design-to-code execution, and recruiter-friendly content architecture.",
+    "projects.portfolio.what": "What I did: Built a responsive single-page portfolio, structured reusable sections, and optimized readability and navigation across desktop and mobile. Executed manual website tests (navigation, forms, responsive behavior) and automated Selenium smoke checks on key flows.",
     "projects.portfolio.problem": "<strong>Problem:</strong> Needed a clear personal site to present projects and skills professionally.",
-    "projects.portfolio.role": "<strong>My role:</strong> Planned structure, wrote content hierarchy, designed interactions, and implemented frontend.",
-    "projects.portfolio.design": "<strong>Design decisions:</strong> Clear section rhythm, trust-building layout, and consistent CTA placement.",
-    "projects.portfolio.implementation": "<strong>Frontend decisions:</strong> Mobile-first HTML/CSS, reusable section blocks, and bilingual-friendly content hooks.",
     "projects.portfolio.solution": "<strong>Solution:</strong> Built a responsive single-page portfolio with structured navigation and GitHub Pages deployment.",
-    "projects.portfolio.outcome": "<strong>Outcome:</strong> Created a cleaner way for recruiters to review experience and live work.",
-    "projects.portfolio.next": "<strong>Next step:</strong> Expand component and spacing rules into a documented design system layer.",
+    "projects.portfolio.outcome": "<strong>Outcome:</strong> Created a faster, cleaner way for recruiters to review experience and live work.",
     "projects.portfolio.proof": "Built with reusable sections and a mobile-first layout.",
     "projects.meta.default": "Daniela Almeida | Built with HTML/CSS/JS | GitHub Pages",
     "projects.qa.overlay": "Python + Pytest API automation with validation workflows and CI-ready reporting.",
     "projects.qa.title": "API QA Test Suite",
     "projects.qa.summary": "QA automation suite for API regression detection with readable, shareable test evidence.",
     "projects.qa.what": "What I did: Built Python-based API validation workflows, covering status, schema, and business-rule checks with publishable pytest-html reports.",
-    "projects.qa.mainTool": "<strong>Main tool:</strong> Python",
-    "projects.qa.secondary": "<strong>Also uses:</strong> Pytest, pytest-html, REST API basics, reporting workflow.",
-    "projects.qa.demonstrates": "<strong>What it demonstrates:</strong> QA/testing mindset, structured validation, and evidence-driven quality checks.",
     "projects.qa.problem": "<strong>Problem:</strong> Manual API checks were slow and inconsistent before releases.",
     "projects.qa.solution": "<strong>Solution:</strong> Created a reusable Python + Pytest suite with structured assertions and report generation.",
     "projects.qa.outcome": "<strong>Outcome:</strong> Reduced verification time and improved confidence in API quality.",
@@ -286,36 +241,10 @@ const TRANSLATIONS = {
     "projects.other.mechanic.note": "Relational SQL model for workshop clients, vehicles, services, and parts.",
     "projects.other.bakery": "Bakery Data Base",
     "projects.other.bakery.note": "Relational SQL model for bakery orders, products, ingredients, and stock.",
-    "skillsMap.heading": "Skills By Project",
-    "skillsMap.intro": "A quick map from technical skills to concrete project evidence.",
-    "skillsMap.frontend.title": "Frontend and UI",
-    "skillsMap.frontend.0": "<strong>Angular:</strong> NextPath Angular Dashboard",
-    "skillsMap.frontend.1": "<strong>HTML/CSS:</strong> Responsive Portfolio, UI Components Showcase",
-    "skillsMap.frontend.2": "<strong>JavaScript/TypeScript:</strong> Portfolio interactions, NextPath concept, To-Do App context",
-    "skillsMap.frontend.3": "<strong>Responsive design:</strong> Portfolio and multi-device UI sections",
-    "skillsMap.design.title": "Design and UX",
-    "skillsMap.design.0": "<strong>Figma/UI/UX:</strong> NextPath planning, portfolio structure, component-oriented layout choices",
-    "skillsMap.design.1": "<strong>Visual hierarchy:</strong> Dashboard sections and recruiter-oriented portfolio content flow",
-    "skillsMap.design.2": "<strong>Accessibility basics:</strong> Semantic structure, keyboard-ready interactions, contrast-aware UI decisions",
-    "skillsMap.software.title": "Software and QA",
-    "skillsMap.software.0": "<strong>C:</strong> Tic-Tac-Toe (modular game logic, conditions, state handling)",
-    "skillsMap.software.1": "<strong>Java:</strong> Listed in technical foundations and coursework",
-    "skillsMap.software.2": "<strong>Python basics/QA:</strong> API QA Test Suite with validation and reporting",
-    "skillsMap.software.3": "<strong>REST API integration concepts:</strong> API QA validation and frontend project context",
-    "roleVersions.heading": "Role-Specific Portfolio Versions",
-    "roleVersions.intro": "Use the broad main showcase by default, and these saved versions when a role-specific emphasis is useful.",
-    "roleVersions.general.title": "General IT / Software Opportunities",
-    "roleVersions.general.desc": "Focused on junior frontend, software development, web development, and QA/testing opportunities.",
-    "roleVersions.general.portfolio": "Open portfolio version",
-    "roleVersions.general.resume": "Open matching resume",
-    "roleVersions.guestcentric.title": "Guestcentric Web Designer Version",
-    "roleVersions.guestcentric.desc": "Focused on UI/UX, Figma, HTML/CSS, responsive design, and browser-ready frontend delivery.",
-    "roleVersions.guestcentric.portfolio": "Open portfolio version",
-    "roleVersions.guestcentric.resume": "Open matching resume",
     "about.eyebrow": "Profile",
     "about.heading": "About",
-    "about.p1": "I come from a creative background in arts and music education and transitioned into UI/UX and frontend work. I enjoy building interfaces that are visually clear, practical, and easy to use.",
-    "about.p2": "My focus is visual hierarchy, responsive layout, accessibility basics, and design-system thinking, while collaborating with developers so design decisions stay browser-ready.",
+    "about.p1": "Junior web developer candidate transitioning from arts and music education into IT. I am focused on frontend development, web development, UI/UX, and QA/testing, and I am actively building practical projects while strengthening my technical foundations.",
+    "about.p2": "Delivered web projects end-to-end, from interface design and development to QA validation and production release.",
     "about.technical.heading": "Technical Skills",
     "about.technical.frontend.title": "Frontend",
     "about.technical.frontend.0": "HTML",
@@ -412,14 +341,14 @@ const TRANSLATIONS = {
     "courses.6": "Databases: SQL Language Fundamentals (Mar 2026)",
     "courses.7": "Databases: Database Access Technologies (Apr 2026)",
     "experience.heading": "Experience",
-    "experience.intro": "Practical product experience across UI/UX, frontend development, QA, and collaboration in multidisciplinary teams.",
+    "experience.intro": "Practical product experience across frontend development, UI/UX, QA, and collaboration in multidisciplinary teams, including delivery in remote and hybrid contexts.",
     "experience.when": "Aug 2025 - Present | Remote",
     "experience.role": "Software Development Intern",
     "experience.org": "FloLabs Innovations Group",
     "experience.p1": "Built the Portfolio website and robocollective.ai from scratch, taking both projects from concept to live release.",
     "experience.p2": "Delivered 10+ UI/UX improvements across HTML, CSS, JavaScript, PHP, and TypeScript, supported REST/API-related backend tasks, and reduced bug turnaround time by around 20% through structured QA.",
     "contact.heading": "Contact",
-    "contact.intro": "I'm open to junior frontend, software, UI/UX, and QA-influenced opportunities where practical implementation and usability both matter.",
+    "contact.intro": "Hiring for a Junior Web Developer role in Lisbon (hybrid)? Let's discuss how I can support your team.",
     "contact.actions.email": "Email",
     "contact.actions.linkedin": "LinkedIn",
     "contact.actions.cv": "Download CV",
@@ -452,26 +381,26 @@ const TRANSLATIONS = {
   [LANG_PT]: {
     "nav.projects": "Projetos",
     "nav.about": "Sobre",
-    "nav.experience": "Experi√™ncia",
+    "nav.experience": "ExperiÍncia",
     "nav.contact": "Contacto",
-    "nav.menu.open": "Abrir navega√ß√£o",
-    "nav.menu.close": "Fechar navega√ß√£o",
+    "nav.menu.open": "Abrir navegaÁ„o",
+    "nav.menu.close": "Fechar navegaÁ„o",
     "topbar.cv": "CV",
     "topbar.github": "GitHub",
-    "hero.kicker": "Portef√≥lio",
-    "hero.title": "Portfolio <span class=\"accent\">Project Showcase</span>",
-    "hero.lead": "Uma colecao de projetos de frontend, software, UI/UX e QA, mostrando trabalho em HTML, CSS, JavaScript, TypeScript, Angular, C, Java, Figma e conceitos de testes.",
+    "hero.kicker": "PortefÛlio",
+    "hero.title": "Ol·, sou a <span class=\"accent\">Daniela Torres Almeida</span>",
+    "hero.lead": "Candidata junior a Web Developer, focada em frontend e desenvolvimento web, aberta a oportunidades em Lisboa em regime hibrido. Trago um percurso em artes e educacao musical, criatividade, atencao ao detalhe, adaptabilidade e experiencia pratica em projetos.",
     "hero.cta.work": "Ver projetos",
-    "hero.cta.resume": "Versoes por funcao",
+    "hero.cta.resume": "Ver CV",
     "hero.cta.contact": "Contactar",
-    "hero.highlights.0.title": "Biblioteca de projetos",
-    "hero.highlights.0.text": "Cada projeto indica ferramenta principal, tecnologias de apoio e resultados praticos.",
-    "hero.highlights.1.title": "Evidencia transversal",
-    "hero.highlights.1.text": "O showcase junta UI web, logica de programacao e trabalho de QA/testes num unico espaco.",
-    "hero.highlights.2.title": "Versoes por contexto",
-    "hero.highlights.2.text": "Existem versoes guardadas para oportunidades gerais de IT/Software e para a Guestcentric.",
-    "coreStack.heading": "Competencias-Chave em Frontend, Software, UI/UX e QA",
-    "coreStack.note": "Visao ampla do portefolio: bases tecnicas, entrega de interface e habitos praticos de validacao.",
+    "hero.highlights.0.title": "Foco junior em IT",
+    "hero.highlights.0.text": "Aberta a funcoes junior de Web Developer e Frontend Developer em Lisboa, especialmente em regime hibrido.",
+    "hero.highlights.1.title": "Mentalidade centrada no utilizador",
+    "hero.highlights.1.text": "Transformacao de ideias de design em layouts claros, fluxos uteis e interacoes acessiveis.",
+    "hero.highlights.2.title": "Projetos em evolucao",
+    "hero.highlights.2.text": "A terminar projetos praticos em C e Angular enquanto melhoro workflows frontend e de testes.",
+    "coreStack.heading": "Stack Tecnica Principal",
+    "coreStack.note": "Nivel junior, com desenvolvimento ativo de projetos reais e melhoria continua atraves de trabalho pratico.",
     "coreStack.frontend.title": "Frontend",
     "coreStack.frontend.0": "HTML",
     "coreStack.frontend.1": "CSS",
@@ -479,23 +408,12 @@ const TRANSLATIONS = {
     "coreStack.frontend.3": "TypeScript",
     "coreStack.frontend.4": "Angular",
     "coreStack.frontend.5": "React",
-    "coreStack.frontend.6": "Git / GitHub",
+    "coreStack.frontend.6": "Design Web Responsivo",
     "coreStack.frontend.7": "Integracao com REST API",
-    "coreStack.design.title": "Design",
-    "coreStack.design.0": "Figma",
-    "coreStack.design.1": "Design UI",
-    "coreStack.design.2": "Pensamento UX",
-    "coreStack.design.3": "Wireframing",
-    "coreStack.design.4": "Prototipagem",
-    "coreStack.design.5": "Design Systems",
-    "coreStack.design.6": "Layouts Responsivos",
-    "coreStack.practical.title": "Forcas Praticas",
-    "coreStack.practical.0": "Bases de Acessibilidade",
-    "coreStack.practical.1": "Pensamento por Componentes",
-    "coreStack.practical.2": "Implementacao de Layout",
-    "coreStack.practical.3": "Testes em Varios Dispositivos",
-    "coreStack.practical.4": "Colaboracao",
-    "coreStack.practical.5": "Conceitos de QA/Testes",
+    "coreStack.design.title": "Design / UI",
+    "coreStack.design.0": "Design UI/UX",
+    "coreStack.design.1": "Figma",
+    "coreStack.design.2": "Interfaces centradas no utilizador",
     "coreStack.programming.title": "Programacao / Bases",
     "coreStack.programming.0": "C",
     "coreStack.programming.1": "Java",
@@ -524,44 +442,23 @@ const TRANSLATIONS = {
     "coreStack.15": "Testes manuais",
     "coreStack.16": "Debugging",
     "coreStack.17": "Usabilidade e detalhe",
-    "projects.heading": "Project Showcase",
-    "projects.intro": "Uma biblioteca de projetos com linguagens, ferramentas e competencias praticas em UI web, logica de software e fluxos de QA/testes.",
-    "projects.featured.eyebrow": "Destaque da biblioteca",
-    "projects.featured.title": "NextPath Angular Dashboard",
-    "projects.featured.overview": "<strong>Visao geral:</strong> Conceito de dashboard para organizar developers, projetos e percursos de crescimento numa interface clara.",
-    "projects.featured.problem": "<strong>Problema:</strong> O conteudo e os fluxos de tarefa precisavam de melhor hierarquia para facilitar leitura e acao rapida.",
-    "projects.featured.role": "<strong>O meu papel:</strong> Defini estrutura de layout, blocos de componente e agrupamento de informacao para melhorar a usabilidade.",
-    "projects.featured.design": "<strong>Decisoes de design:</strong> Priorizei clareza de navegacao, espacamento legivel e seccoes organizadas por tarefa do utilizador.",
-    "projects.featured.implementation": "<strong>Decisoes de implementacao:</strong> Estruturei com pensamento de componentes Angular para ligar design e reutilizacao no frontend.",
-    "projects.featured.result": "<strong>Resultado atual:</strong> Conceito em progresso que demonstra raciocinio design-to-code e planeamento responsivo.",
-    "projects.featured.next": "<strong>Melhoria seguinte:</strong> Formalizar regras de espacamento, tipografia e componentes num design system mais consistente em Figma.",
+    "projects.heading": "Projetos em Destaque",
+    "projects.intro": "Uma selecao focada de projetos praticos de desenvolvimento web e entrega com QA, relevante para funcoes junior de Web Developer.",
     "projects.tictactoe.overlay": "Preview de terminal com tabuleiro colorido e fluxo pronto para partidas e torneios.",
     "projects.tictactoe.status": "Projeto de terminal em C",
     "projects.tictactoe.title": "Tic Tac Toe / Jogo do Galo in C",
     "projects.tictactoe.summary": "Jogo modular de terminal com IA, torneios e fluxos de teste.",
     "projects.tictactoe.what": "Jogo do Galo em terminal, modular, desenvolvido em C com multiplos tamanhos de tabuleiro, niveis de dificuldade de IA, torneios, gravar/carregar, undo, replay, ranking, testes automaticos e cores de terminal amigaveis para daltonismo.",
-    "projects.tictactoe.mainTool": "<strong>Ferramenta principal:</strong> C",
-    "projects.tictactoe.secondary": "<strong>Tambem usa:</strong> Programacao estruturada, logica de estado do jogo, controlo de dificuldade de IA e testes automaticos.",
-    "projects.tictactoe.demonstrates": "<strong>O que demonstra:</strong> Fundamentos de programacao, condicoes, arquitetura modular e interacao em terminal.",
     "projects.tictactoe.logic": "<strong>Funcionalidades principais:</strong> Multiplos tamanhos de tabuleiro, dificuldade de IA, torneios, gravar/carregar, undo, replay, ranking e testes automaticos.",
     "projects.tictactoe.learning": "<strong>Stack:</strong> C, Makefile, MSYS2, GCC, Programacao Modular.",
     "projects.tictactoe.proof": "Stack: C, Makefile, MSYS2, GCC, Programacao Modular.",
     "projects.nextpath.status": "Em progresso",
     "projects.nextpath.title": "NextPath Angular Dashboard",
-    "projects.nextpath.summary": "Conceito de dashboard em Angular focado em clareza de layout, componentes reutilizaveis e fluxo responsivo de informacao.",
-    "projects.nextpath.what": "Conceito de dashboard interno em Angular para uma empresa de IT gerir developers, projetos, tarefas Agile e programas internos de crescimento. Foquei-me em estruturar a interface para usabilidade, leitura rapida e limites reais de implementacao.",
-    "projects.nextpath.mainTool": "<strong>Ferramenta principal:</strong> Angular",
-    "projects.nextpath.secondary": "<strong>Tambem usa:</strong> TypeScript, UI/UX, estrutura de dashboard e planeamento de layout responsivo.",
-    "projects.nextpath.demonstrates": "<strong>O que demonstra:</strong> Organizacao frontend por componentes, logica de layout para ferramenta interna e clareza de fluxo do utilizador.",
+    "projects.nextpath.summary": "Conceito de dashboard em Angular para organizar pessoas, projetos, trabalho Agile e percursos de crescimento.",
+    "projects.nextpath.what": "Conceito de dashboard interno em Angular para uma empresa de IT gerir developers, projetos, tarefas Agile e programas internos de crescimento. O dashboard foi desenhado para ajudar equipas a organizar perfis de developers, alocacao a projetos, progresso de tarefas e percursos de desenvolvimento profissional.",
     "projects.nextpath.focus": "<strong>Foco:</strong> Estrutura de componentes, organizacao de dados, UI de dashboard e layout responsivo.",
     "projects.nextpath.learning": "<strong>Aprendizagem:</strong> Angular, TypeScript, UI/UX, desenvolvimento frontend e arquitetura de informacao mais clara.",
-    "projects.nextpath.problem": "<strong>Problema:</strong> Conteudo e acoes do dashboard eram dificeis de analisar rapidamente.",
-    "projects.nextpath.role": "<strong>O meu papel:</strong> Organizei hierarquia da pagina, agrupei tarefas do utilizador e defini padroes de secao reutilizaveis.",
-    "projects.nextpath.design": "<strong>Decisoes de design:</strong> Reforcei espacamento, hierarquia visual e transicoes mais limpas entre seccoes.",
-    "projects.nextpath.implementation": "<strong>Decisoes de implementacao:</strong> Estruturei a UI com pensamento de componentes Angular e comportamento responsivo.",
-    "projects.nextpath.outcome": "<strong>Resultado:</strong> Conceito em progresso que comunica melhor prioridades e reduz friccao de navegacao.",
-    "projects.nextpath.next": "<strong>Passo seguinte:</strong> Refinar camada de design system em Figma (tipografia, espacamento e estados de componente).",
-    "projects.nextpath.proof": "Ferramentas: Figma, Angular, TypeScript, planeamento de layout responsivo e estrutura de componentes.",
+    "projects.nextpath.proof": "Competencias: Angular, TypeScript, UI/UX, design de dashboard, estrutura de componentes, frontend, organizacao de dados, layout responsivo.",
     "projects.todo.overlay": "Aplicacao em React + TypeScript com autenticacao Firebase e gestao de tarefas persistente em tempo real.",
     "projects.todo.title": "App de Tarefas",
     "projects.todo.summary": "Projeto frontend independente com UI limpa e implementacao pratica de funcionalidades.",
@@ -570,75 +467,64 @@ const TRANSLATIONS = {
     "projects.todo.solution": "<strong>Solucao:</strong> Desenvolvi uma aplicacao responsiva em React + TypeScript com login Google seguro e dados persistentes no Firebase.",
     "projects.todo.outcome": "<strong>Resultado:</strong> Entreguei um projeto polido que demonstra ownership, execucao e UX em nivel de producao.",
     "projects.todo.proof": "Stack: React, TypeScript, Firebase, Google Auth, Vite.",
-    "projects.todo.description": "Aplica√ß√£o de tarefas em React + TypeScript com Firebase e autentica√ß√£o Google.",
-    "projects.portfolio.overlay": "Portef√≥lio de p√°gina √∫nica adapt√°vel a diferentes dispositivos, com navega√ß√£o clara e projetos em destaque.",
-    "projects.portfolio.status": "Projeto publicado",
-    "projects.portfolio.title": "Portef√≥lio Adapt√°vel",
-    "projects.portfolio.summary": "Portef√≥lio pessoal criado para apresentar trabalho frontend com navega√ß√£o clara.",
-    "projects.portfolio.what": "O que fiz: Constru√≠ um portef√≥lio single-page responsivo, organizei sec√ß√µes reutiliz√°veis e otimizei legibilidade e navega√ß√£o em desktop e mobile. Executei testes manuais de website (navega√ß√£o, formul√°rios, comportamento responsivo) e smoke tests automatizados com Selenium nos fluxos principais.",
-    "projects.portfolio.mainTool": "<strong>Ferramenta principal:</strong> HTML/CSS",
-    "projects.portfolio.secondary": "<strong>Tambem usa:</strong> JavaScript, design responsivo, estrutura semantica e verificacoes manuais de QA.",
-    "projects.portfolio.demonstrates": "<strong>O que demonstra:</strong> Implementacao frontend, execucao design-to-code e arquitetura de conteudo orientada para recrutadores.",
-    "projects.portfolio.problem": "<strong>Problema:</strong> Era necess√°rio um site pessoal claro para apresentar projetos e compet√™ncias de forma profissional.",
-    "projects.portfolio.role": "<strong>O meu papel:</strong> Planeei estrutura, defini hierarquia de conteudo, desenhei interacoes e implementei o frontend.",
-    "projects.portfolio.design": "<strong>Decisoes de design:</strong> Ritmo claro de seccoes, layout de confianca e CTAs consistentes.",
-    "projects.portfolio.implementation": "<strong>Decisoes de implementacao:</strong> HTML/CSS mobile-first, blocos reutilizaveis e hooks de conteudo bilingue.",
-    "projects.portfolio.solution": "<strong>Solu√ß√£o:</strong> Constru√≠ um portef√≥lio single-page responsivo com navega√ß√£o estruturada e publica√ß√£o no GitHub Pages.",
-    "projects.portfolio.outcome": "<strong>Resultado:</strong> Criei uma forma mais limpa para recrutadores reverem experiencia e trabalho real.",
-    "projects.portfolio.next": "<strong>Passo seguinte:</strong> Expandir regras de componentes e espacamento para uma camada documentada de design system.",
-    "projects.portfolio.proof": "Constru√≠do com sec√ß√µes reutiliz√°veis e abordagem mobile-first.",
+    "projects.todo.description": "AplicaÁ„o de tarefas em React + TypeScript com Firebase e autenticaÁ„o Google.",
+    "projects.portfolio.overlay": "PortefÛlio de p·gina ˙nica adapt·vel a diferentes dispositivos, com navegaÁ„o clara e projetos em destaque.",
+    "projects.portfolio.title": "PortefÛlio Adapt·vel",
+    "projects.portfolio.summary": "PortefÛlio pessoal criado para apresentar trabalho frontend com navegaÁ„o clara.",
+    "projects.portfolio.what": "O que fiz: ConstruÌ um portefÛlio single-page responsivo, organizei secÁıes reutiliz·veis e otimizei legibilidade e navegaÁ„o em desktop e mobile. Executei testes manuais de website (navegaÁ„o, formul·rios, comportamento responsivo) e smoke tests automatizados com Selenium nos fluxos principais.",
+    "projects.portfolio.problem": "<strong>Problema:</strong> Era necess·rio um site pessoal claro para apresentar projetos e competÍncias de forma profissional.",
+    "projects.portfolio.solution": "<strong>SoluÁ„o:</strong> ConstruÌ um portefÛlio single-page responsivo com navegaÁ„o estruturada e publicaÁ„o no GitHub Pages.",
+    "projects.portfolio.outcome": "<strong>Resultado:</strong> Criei uma forma mais r·pida e limpa para recrutadores reverem experiÍncia e trabalho real.",
+    "projects.portfolio.proof": "ConstruÌdo com secÁıes reutiliz·veis e abordagem mobile-first.",
     "projects.meta.default": "Daniela Almeida | Desenvolvido com HTML/CSS/JS | GitHub Pages",
     "projects.qa.overlay": "Automacao de API em Python + Pytest com fluxos de validacao e reporting pronto para CI.",
     "projects.qa.title": "Suite de Testes de API (QA)",
-    "projects.qa.summary": "Suite de automacao QA para detetar regress√µes de API com evidencia de testes legivel e partilhavel.",
+    "projects.qa.summary": "Suite de automacao QA para detetar regressıes de API com evidencia de testes legivel e partilhavel.",
     "projects.qa.what": "O que fiz: Construi fluxos de validacao de API em Python para status, schema e regras de negocio, com relatorios pytest-html publicaveis.",
-    "projects.qa.mainTool": "<strong>Ferramenta principal:</strong> Python",
-    "projects.qa.secondary": "<strong>Tambem usa:</strong> Pytest, pytest-html, bases de REST API e fluxo de reporting.",
-    "projects.qa.demonstrates": "<strong>O que demonstra:</strong> Mentalidade de QA/testes, validacao estruturada e controlo de qualidade com evidencia.",
     "projects.qa.problem": "<strong>Problema:</strong> As verificacoes manuais de API eram lentas e inconsistentes antes das releases.",
     "projects.qa.solution": "<strong>Solucao:</strong> Criei uma suite reutilizavel em Python + Pytest com assertions estruturadas e geracao de relatorios.",
     "projects.qa.outcome": "<strong>Resultado:</strong> Reduzi o tempo de verificacao e aumentei a confianca na qualidade da API.",
     "projects.qa.proof": "Stack: Python, Pytest, pytest-html, bases de REST API, GitHub Pages.",
-    "projects.ui.overlay": "Galeria de componentes com padr√µes de UI reutiliz√°veis.",
+    "projects.ui.overlay": "Galeria de componentes com padrıes de UI reutiliz·veis.",
     "projects.ui.title": "Mostra de Componentes UI",
-    "projects.ui.summary": "Padr√µes de UI reutiliz√°veis desenhados para interfaces consistentes e escal√°veis.",
-    "projects.ui.what": "O que fiz: Desenvolvi componentes frontend reutiliz√°veis, adicionei comportamento responsivo e refinei estados interativos para consist√™ncia entre layouts.",
-    "projects.ui.problem": "<strong>Problema:</strong> As p√°ginas de produto precisavam de blocos de UI reutiliz√°veis para reduzir trabalho duplicado de implementa√ß√£o.",
-    "projects.ui.solution": "<strong>Solu√ß√£o:</strong> Constru√≠ uma mostra de componentes com padr√µes modulares em HTML, CSS e JavaScript.",
-    "projects.ui.outcome": "<strong>Resultado:</strong> Melhorei a consist√™ncia e a velocidade na cria√ß√£o de novas sec√ß√µes de interface.",
+    "projects.ui.summary": "Padrıes de UI reutiliz·veis desenhados para interfaces consistentes e escal·veis.",
+    "projects.ui.what": "O que fiz: Desenvolvi componentes frontend reutiliz·veis, adicionei comportamento responsivo e refinei estados interativos para consistÍncia entre layouts.",
+    "projects.ui.problem": "<strong>Problema:</strong> As p·ginas de produto precisavam de blocos de UI reutiliz·veis para reduzir trabalho duplicado de implementaÁ„o.",
+    "projects.ui.solution": "<strong>SoluÁ„o:</strong> ConstruÌ uma mostra de componentes com padrıes modulares em HTML, CSS e JavaScript.",
+    "projects.ui.outcome": "<strong>Resultado:</strong> Melhorei a consistÍncia e a velocidade na criaÁ„o de novas secÁıes de interface.",
     "projects.ui.proof": "Stack: HTML5, CSS3, JavaScript, UI/UX, design responsivo.",
-    "projects.mood.overlay": "Plataforma de bem-estar em Next.js com React, Tailwind CSS e publica√ß√£o na Vercel.",
+    "projects.mood.overlay": "Plataforma de bem-estar em Next.js com React, Tailwind CSS e publicaÁ„o na Vercel.",
     "projects.mood.title": "MoodChanger.ai",
-    "projects.mood.summary": "Website em Next.js para a MoodChanger.ai com sec√ß√µes React responsivas e comunica√ß√£o clara do produto.",
-    "projects.mood.what": "O que fiz: Constru√≠ sec√ß√µes de produto e marketing responsivas num c√≥digo Next.js + React, refinando hierarquia, legibilidade e fluxo de convers√£o. Executei QA manual cross-browser e mobile, al√©m de smoke checks automatizados com Selenium para jornadas cr√≠ticas de utilizador.",
-    "projects.mood.problem": "<strong>Problema:</strong> A informa√ß√£o do produto precisava de ser mais clara e mais f√°cil de percorrer em v√°rios dispositivos.",
-    "projects.mood.solution": "<strong>Solu√ß√£o:</strong> Implementei sec√ß√µes responsivas em Next.js com melhor hierarquia de informa√ß√£o e fluxo de utilizador.",
-    "projects.mood.outcome": "<strong>Resultado:</strong> Entreguei uma interface mais clara que melhora confian√ßa do utilizador e descoberta do produto.",
+    "projects.mood.summary": "Website em Next.js para a MoodChanger.ai com secÁıes React responsivas e comunicaÁ„o clara do produto.",
+    "projects.mood.what": "O que fiz: ConstruÌ secÁıes de produto e marketing responsivas num cÛdigo Next.js + React, refinando hierarquia, legibilidade e fluxo de convers„o. Executei QA manual cross-browser e mobile, alÈm de smoke checks automatizados com Selenium para jornadas crÌticas de utilizador.",
+    "projects.mood.problem": "<strong>Problema:</strong> A informaÁ„o do produto precisava de ser mais clara e mais f·cil de percorrer em v·rios dispositivos.",
+    "projects.mood.solution": "<strong>SoluÁ„o:</strong> Implementei secÁıes responsivas em Next.js com melhor hierarquia de informaÁ„o e fluxo de utilizador.",
+    "projects.mood.outcome": "<strong>Resultado:</strong> Entreguei uma interface mais clara que melhora confianÁa do utilizador e descoberta do produto.",
     "projects.mood.description": "Tecnologias usadas no site atual: Next.js (React), Tailwind CSS e alojamento na Vercel.",
     "projects.robo.overlay": "Website de produto em Next.js publicado em producao com UX responsiva e estrutura orientada a conversao.",
     "projects.robo.title": "RoboCollective.ai",
     "projects.robo.summary": "Projeto React/Next.js em producao que demonstra colaboracao real, entrega responsiva e prontidao para release.",
-    "projects.robo.what": "O que fiz: Constru√≠ e refinei sec√ß√µes frontend responsivas num ambiente de produto real, em colaboracao com stakeholders e validacao de fluxos criticos antes da release.",
+    "projects.robo.what": "O que fiz: ConstruÌ e refinei secÁıes frontend responsivas num ambiente de produto real, em colaboracao com stakeholders e validacao de fluxos criticos antes da release.",
     "projects.robo.problem": "<strong>Problema:</strong> A plataforma precisava de uma experiencia web credivel para comunicar valor de produto rapidamente.",
     "projects.robo.solution": "<strong>Solucao:</strong> Implementei fluxos de marketing e produto responsivos em Next.js com hierarquia e CTAs mais claros.",
     "projects.robo.outcome": "<strong>Resultado:</strong> Publiquei paginas prontas para producao que melhoraram a clareza e suportaram objetivos de negocio.",
     "projects.robo.proof": "Stack: Next.js, React, Tailwind CSS, Vercel.",
     "projects.robo.description": "Tecnologias usadas no site atual: Next.js (React), Tailwind CSS e alojamento na Vercel.",
-    "projects.legal.overlay": "Website p√∫blico em Next.js com componentes React, estilos modulares e publica√ß√£o na Vercel.",
+    "projects.legal.overlay": "Website p˙blico em Next.js com componentes React, estilos modulares e publicaÁ„o na Vercel.",
     "projects.legal.title": "Legal Ventures Institute",
-    "projects.legal.summary": "Website p√∫blico em Next.js que apresenta servi√ßos de inova√ß√£o legal com caminhos claros de convers√£o.",
-    "projects.legal.what": "O que fiz: Constru√≠ sec√ß√µes React responsivas num c√≥digo Next.js, melhorando hierarquia de conte√∫do, apresenta√ß√£o de servi√ßos e fluxo de contacto. Adicionei testes manuais de regress√£o e cobertura de smoke tests com Selenium nos principais caminhos de convers√£o.",
-    "projects.legal.problem": "<strong>Problema:</strong> A organiza√ß√£o precisava de uma forma clara e cred√≠vel de apresentar servi√ßos online.",
-    "projects.legal.solution": "<strong>Solu√ß√£o:</strong> Estruturei sec√ß√µes responsivas em Next.js e melhorei a navega√ß√£o entre servi√ßos e contacto.",
-    "projects.legal.outcome": "<strong>Resultado:</strong> Entreguei um site mais limpo e f√°cil de navegar para potenciais clientes.",
+    "projects.legal.summary": "Website p˙blico em Next.js que apresenta serviÁos de inovaÁ„o legal com caminhos claros de convers„o.",
+    "projects.legal.what": "O que fiz: ConstruÌ secÁıes React responsivas num cÛdigo Next.js, melhorando hierarquia de conte˙do, apresentaÁ„o de serviÁos e fluxo de contacto. Adicionei testes manuais de regress„o e cobertura de smoke tests com Selenium nos principais caminhos de convers„o.",
+    "projects.legal.problem": "<strong>Problema:</strong> A organizaÁ„o precisava de uma forma clara e credÌvel de apresentar serviÁos online.",
+    "projects.legal.solution": "<strong>SoluÁ„o:</strong> Estruturei secÁıes responsivas em Next.js e melhorei a navegaÁ„o entre serviÁos e contacto.",
+    "projects.legal.outcome": "<strong>Resultado:</strong> Entreguei um site mais limpo e f·cil de navegar para potenciais clientes.",
     "projects.legal.description": "Tecnologias usadas no site atual: Next.js (React), CSS Modules e alojamento na Vercel.",
-    "projects.space.overlay": "Website venture em Next.js com componentes React, Tailwind CSS e publica√ß√£o na Vercel.",
+    "projects.space.overlay": "Website venture em Next.js com componentes React, Tailwind CSS e publicaÁ„o na Vercel.",
     "projects.space.title": "Space Ventures Institute",
-    "projects.space.summary": "Website em Next.js para o Space Ventures Institute, focado em legibilidade e navega√ß√£o estruturada.",
-    "projects.space.what": "O que fiz: Desenvolvi interfaces React responsivas num c√≥digo Next.js + Tailwind para conte√∫do focado em venture e navega√ß√£o clara. Validei releases com QA manual responsivo e smoke tests com Selenium nas jornadas essenciais do website.",
-    "projects.space.problem": "<strong>Problema:</strong> Conte√∫do complexo de venture e inova√ß√£o precisava de melhor estrutura para os utilizadores.",
-    "projects.space.solution": "<strong>Solu√ß√£o:</strong> Constru√≠ layouts responsivos em Next.js com sec√ß√µes de conte√∫do mais claras e pistas de navega√ß√£o.",
-    "projects.space.outcome": "<strong>Resultado:</strong> Melhorei legibilidade e descoberta de conte√∫do em diferentes tamanhos de ecr√£.",
+    "projects.space.summary": "Website em Next.js para o Space Ventures Institute, focado em legibilidade e navegaÁ„o estruturada.",
+    "projects.space.what": "O que fiz: Desenvolvi interfaces React responsivas num cÛdigo Next.js + Tailwind para conte˙do focado em venture e navegaÁ„o clara. Validei releases com QA manual responsivo e smoke tests com Selenium nas jornadas essenciais do website.",
+    "projects.space.problem": "<strong>Problema:</strong> Conte˙do complexo de venture e inovaÁ„o precisava de melhor estrutura para os utilizadores.",
+    "projects.space.solution": "<strong>SoluÁ„o:</strong> ConstruÌ layouts responsivos em Next.js com secÁıes de conte˙do mais claras e pistas de navegaÁ„o.",
+    "projects.space.outcome": "<strong>Resultado:</strong> Melhorei legibilidade e descoberta de conte˙do em diferentes tamanhos de ecr„.",
     "projects.space.description": "Tecnologias usadas no site atual: Next.js (React), Tailwind CSS e alojamento na Vercel.",
     "projects.tarrl.overlay": "Laboratorio remoto-first de Embodied AI e venture playground para colaboracao aberta em robotica.",
     "projects.tarrl.title": "TARRL",
@@ -648,29 +534,29 @@ const TRANSLATIONS = {
     "projects.tarrl.solution": "<strong>Solucao:</strong> Criei uma experiencia web remote-first clara, explicando o modelo open-source, para quem e e como candidatar-se.",
     "projects.tarrl.outcome": "<strong>Resultado:</strong> Entreguei uma presenca digital mais forte que ajuda investigadores qualificados a entender rapidamente o programa e agir.",
     "projects.tarrl.description": "Foco do site: Embodied AI, robotica open-source e colaboracao remote-first.",
-    "projects.mechanic.overlay": "Modelo de base de dados relacional para oficina mec√¢nica com fluxo de clientes, ve√≠culos, servi√ßos e pe√ßas.",
+    "projects.mechanic.overlay": "Modelo de base de dados relacional para oficina mec‚nica com fluxo de clientes, veÌculos, serviÁos e peÁas.",
     "projects.mechanic.title": "Mechanic Data Base",
-    "projects.mechanic.summary": "Projeto de esquema de base de dados desenhado para organizar opera√ß√µes de oficina, hist√≥rico de servi√ßos e gest√£o de pe√ßas/fornecedores.",
-    "projects.mechanic.what": "O que fiz: Modelei o esquema relacional completo, defini restri√ß√µes de chave prim√°ria e estrangeira, e mapeei rela√ß√µes entre entidades para manter consistentes os dados de clientes, ve√≠culos, folhas de obra e invent√°rio.",
-    "projects.mechanic.problem": "<strong>Problema:</strong> Os dados da oficina estavam distribu√≠dos por registos desconectados, dificultando o controlo de servi√ßos e pe√ßas.",
-    "projects.mechanic.solution": "<strong>Solu√ß√£o:</strong> Desenhei um esquema SQL normalizado com tabelas ligadas para clientes, ve√≠culos, folhas de obra, servi√ßos, mec√¢nicos e fornecedores.",
-    "projects.mechanic.outcome": "<strong>Resultado:</strong> Criei uma estrutura de dados clara e escal√°vel que melhora a rastreabilidade do hist√≥rico de manuten√ß√£o, stock e pre√ßos de servi√ßo.",
-    "projects.mechanic.description": "Diagrama ER e modelo relacional para gest√£o de dados de uma oficina mec√¢nica.",
+    "projects.mechanic.summary": "Projeto de esquema de base de dados desenhado para organizar operaÁıes de oficina, histÛrico de serviÁos e gest„o de peÁas/fornecedores.",
+    "projects.mechanic.what": "O que fiz: Modelei o esquema relacional completo, defini restriÁıes de chave prim·ria e estrangeira, e mapeei relaÁıes entre entidades para manter consistentes os dados de clientes, veÌculos, folhas de obra e invent·rio.",
+    "projects.mechanic.problem": "<strong>Problema:</strong> Os dados da oficina estavam distribuÌdos por registos desconectados, dificultando o controlo de serviÁos e peÁas.",
+    "projects.mechanic.solution": "<strong>SoluÁ„o:</strong> Desenhei um esquema SQL normalizado com tabelas ligadas para clientes, veÌculos, folhas de obra, serviÁos, mec‚nicos e fornecedores.",
+    "projects.mechanic.outcome": "<strong>Resultado:</strong> Criei uma estrutura de dados clara e escal·vel que melhora a rastreabilidade do histÛrico de manutenÁ„o, stock e preÁos de serviÁo.",
+    "projects.mechanic.description": "Diagrama ER e modelo relacional para gest„o de dados de uma oficina mec‚nica.",
     "projects.bakery.overlay": "Modelo de base de dados relacional para pastelaria com fluxo de clientes, encomendas, produtos, ingredientes e stock.",
     "projects.bakery.title": "Bakery Data Base",
-    "projects.bakery.summary": "Projeto de esquema de base de dados para opera√ß√µes de pastelaria, ligando clientes, encomendas, produtos, receitas e invent√°rio.",
-    "projects.bakery.what": "O que fiz: Desenhei o esquema relacional, defini restri√ß√µes de chave prim√°ria e estrangeira, e mapeei rela√ß√µes entre encomenda e produ√ß√£o para manter consistentes os dados da pastelaria.",
+    "projects.bakery.summary": "Projeto de esquema de base de dados para operaÁıes de pastelaria, ligando clientes, encomendas, produtos, receitas e invent·rio.",
+    "projects.bakery.what": "O que fiz: Desenhei o esquema relacional, defini restriÁıes de chave prim·ria e estrangeira, e mapeei relaÁıes entre encomenda e produÁ„o para manter consistentes os dados da pastelaria.",
     "projects.bakery.problem": "<strong>Problema:</strong> Vendas, receitas e registos de stock da pastelaria estavam desconectados, dificultando a rastreabilidade.",
-    "projects.bakery.solution": "<strong>Solu√ß√£o:</strong> Constru√≠ um esquema SQL normalizado que liga clientes, encomendas, produtos, ingredientes, fornecedores e movimentos de invent√°rio.",
-    "projects.bakery.outcome": "<strong>Resultado:</strong> Entreguei um modelo de dados claro que melhora o acompanhamento operacional, o planeamento e os relat√≥rios dos fluxos da pastelaria.",
-    "projects.bakery.description": "Diagrama ER e modelo relacional para opera√ß√µes de pastelaria e fluxo de invent√°rio.",
+    "projects.bakery.solution": "<strong>SoluÁ„o:</strong> ConstruÌ um esquema SQL normalizado que liga clientes, encomendas, produtos, ingredientes, fornecedores e movimentos de invent·rio.",
+    "projects.bakery.outcome": "<strong>Resultado:</strong> Entreguei um modelo de dados claro que melhora o acompanhamento operacional, o planeamento e os relatÛrios dos fluxos da pastelaria.",
+    "projects.bakery.description": "Diagrama ER e modelo relacional para operaÁıes de pastelaria e fluxo de invent·rio.",
     "projects.actions.live": "Online",
-    "projects.actions.code": "C√≥digo",
-    "projects.actions.viewCode": "Ver C√≥digo",
-    "projects.actions.codeRequest": "C√≥digo mediante pedido",
-    "projects.actions.demo": "Demonstra√ß√£o",
+    "projects.actions.code": "CÛdigo",
+    "projects.actions.viewCode": "Ver CÛdigo",
+    "projects.actions.codeRequest": "CÛdigo mediante pedido",
+    "projects.actions.demo": "DemonstraÁ„o",
     "projects.actions.viewSite": "Ver site",
-    "projects.privateRepoNote": "Reposit√≥rio privado. Contribui√ß√£o frontend dispon√≠vel mediante pedido.",
+    "projects.privateRepoNote": "RepositÛrio privado. ContribuiÁ„o frontend disponÌvel mediante pedido.",
     "projects.other.heading": "Outros Projetos",
     "projects.other.intro": "Trabalho adicional mantido visivel para conversas especificas da funcao e analise mais detalhada do portefolio.",
     "projects.other.responsive": "Portfolio Responsivo",
@@ -694,37 +580,11 @@ const TRANSLATIONS = {
     "projects.other.mechanic.note": "Modelo SQL relacional para clientes, veiculos, servicos e pecas de oficina.",
     "projects.other.bakery": "Base de Dados de Padaria",
     "projects.other.bakery.note": "Modelo SQL relacional para encomendas, produtos, ingredientes e stock de padaria.",
-    "skillsMap.heading": "Competencias por Projeto",
-    "skillsMap.intro": "Mapa rapido entre competencias tecnicas e evidencia concreta em projetos.",
-    "skillsMap.frontend.title": "Frontend e UI",
-    "skillsMap.frontend.0": "<strong>Angular:</strong> NextPath Angular Dashboard",
-    "skillsMap.frontend.1": "<strong>HTML/CSS:</strong> Portefolio Responsivo, Mostruario de Componentes UI",
-    "skillsMap.frontend.2": "<strong>JavaScript/TypeScript:</strong> Interacoes do portefolio, conceito NextPath, contexto da App de Tarefas",
-    "skillsMap.frontend.3": "<strong>Design responsivo:</strong> Portefolio e seccoes UI para multiplos dispositivos",
-    "skillsMap.design.title": "Design e UX",
-    "skillsMap.design.0": "<strong>Figma/UI/UX:</strong> Planeamento NextPath, estrutura do portefolio, decisoes de layout orientadas por componentes",
-    "skillsMap.design.1": "<strong>Hierarquia visual:</strong> Seccoes de dashboard e fluxo de conteudo orientado para recrutadores",
-    "skillsMap.design.2": "<strong>Bases de acessibilidade:</strong> Estrutura semantica, interacoes por teclado e decisoes de contraste",
-    "skillsMap.software.title": "Software e QA",
-    "skillsMap.software.0": "<strong>C:</strong> Tic-Tac-Toe (logica modular, condicoes, estado do jogo)",
-    "skillsMap.software.1": "<strong>Java:</strong> Indicado nas bases tecnicas e no percurso de formacao",
-    "skillsMap.software.2": "<strong>Bases de Python/QA:</strong> API QA Test Suite com validacao e reporting",
-    "skillsMap.software.3": "<strong>Conceitos de integracao REST API:</strong> Validacao de API em QA e contexto de projetos frontend",
-    "roleVersions.heading": "Versoes de Portfolio por Funcao",
-    "roleVersions.intro": "Use este showcase principal por defeito e recorra a estas versoes guardadas quando for util um foco especifico.",
-    "roleVersions.general.title": "Oportunidades Gerais de IT / Software",
-    "roleVersions.general.desc": "Foco em oportunidades de junior frontend, desenvolvimento de software, desenvolvimento web e QA/testes.",
-    "roleVersions.general.portfolio": "Abrir versao do portfolio",
-    "roleVersions.general.resume": "Abrir CV correspondente",
-    "roleVersions.guestcentric.title": "Versao Guestcentric Web Designer",
-    "roleVersions.guestcentric.desc": "Foco em UI/UX, Figma, HTML/CSS, design responsivo e entrega frontend pronta para browser.",
-    "roleVersions.guestcentric.portfolio": "Abrir versao do portfolio",
-    "roleVersions.guestcentric.resume": "Abrir CV correspondente",
     "about.eyebrow": "Perfil",
     "about.heading": "Sobre",
-    "about.p1": "Venho de um percurso criativo em artes e educacao musical e transitei para UI/UX e frontend. Gosto de construir interfaces visualmente claras, praticas e faceis de usar.",
-    "about.p2": "Foco-me em hierarquia visual, layout responsivo, bases de acessibilidade e pensamento de design system, colaborando com developers para manter decisoes prontas para browser.",
-    "about.technical.heading": "Compet√™ncias T√©cnicas",
+    "about.p1": "Candidata junior a Web Developer em transicao das artes e educacao musical para IT. Estou focada em frontend, desenvolvimento web, UI/UX e QA/testes, e continuo a construir projetos praticos enquanto reforco bases tecnicas.",
+    "about.p2": "Entreguei projetos web de ponta a ponta, desde design e desenvolvimento atÈ validaÁ„o em QA e publicaÁ„o em produÁ„o.",
+    "about.technical.heading": "CompetÍncias TÈcnicas",
     "about.technical.frontend.title": "Frontend",
     "about.technical.frontend.0": "HTML",
     "about.technical.frontend.1": "CSS",
@@ -739,7 +599,7 @@ const TRANSLATIONS = {
     "about.technical.design.1": "Figma",
     "about.technical.design.2": "Interfaces centradas no utilizador",
     "about.technical.tools.title": "Ferramentas e Workflow",
-    "about.technical.platforms.title": "Plataformas e Integra√ß√µes",
+    "about.technical.platforms.title": "Plataformas e IntegraÁıes",
     "about.technical.tools.0": "Git / GitHub",
     "about.technical.tools.1": "GitHub Pages",
     "about.technical.tools.2": "GitHub Actions",
@@ -764,14 +624,14 @@ const TRANSLATIONS = {
     "about.technical.java.1": "C",
     "about.technical.java.2": "Bases de Python",
     "about.technical.java.3": "Logica de programacao",
-    "about.technical.data.title": "Bases de Dados e Modela√ß√£o",
+    "about.technical.data.title": "Bases de Dados e ModelaÁ„o",
     "about.technical.data.0": "Fundamentos de SQL",
     "about.technical.data.1": "Tecnologias de acesso a base de dados",
     "about.technical.data.2": "SQL / Design de Base de Dados",
     "about.technical.data.3": "PostgreSQL",
     "about.technical.se.title": "Fundamentos de Engenharia de Software",
-    "about.technical.se.0": "Programa√ß√£o e algoritmos",
-    "about.technical.se.1": "Programa√ß√£o em C/C++ (fundamentos)",
+    "about.technical.se.0": "ProgramaÁ„o e algoritmos",
+    "about.technical.se.1": "ProgramaÁ„o em C/C++ (fundamentos)",
     "about.technical.se.2": "Engenharia de software",
     "about.technical.se.3": "Metodologias de desenvolvimento de software",
     "about.technical.se.4": "IntelliJ IDEA",
@@ -783,7 +643,7 @@ const TRANSLATIONS = {
     "about.technical.backend.2": "PostgreSQL",
     "about.technical.backend.3": "IntelliJ IDEA",
     "about.technical.backend.4": "Eclipse",
-    "about.technical.key.heading": "Compet√™ncias-chave",
+    "about.technical.key.heading": "CompetÍncias-chave",
     "about.technical.key.0": "HTML5",
     "about.technical.key.1": "CSS3",
     "about.technical.key.2": "JavaScript",
@@ -794,13 +654,13 @@ const TRANSLATIONS = {
     "about.technical.key.7": "Git / GitHub",
     "about.technical.key.8": "Testes de QA",
     "about.technical.key.9": "Pensamento baseado em componentes",
-    "about.skills.heading": "Compet√™ncias",
+    "about.skills.heading": "CompetÍncias",
     "about.skills.0": "Design UI/UX",
     "about.skills.1": "Desenvolvimento Front-End",
     "about.skills.2": "Garantia de Qualidade",
-    "about.skills.3": "Integra√ß√£o de APIs",
-    "about.skills.4": "Colabora√ß√£o e M√©todos √Ågeis",
-    "about.skills.5": "Automa√ß√£o de fluxos de trabalho",
+    "about.skills.3": "IntegraÁ„o de APIs",
+    "about.skills.4": "ColaboraÁ„o e MÈtodos ¡geis",
+    "about.skills.5": "AutomaÁ„o de fluxos de trabalho",
     "about.toolbox": "Ferramentas",
     "strengths.heading": "Pontos Fortes Selecionados",
     "strengths.0": "Desenvolvimento frontend com HTML5, CSS3, JavaScript e layouts responsivos para interfaces claras e acessiveis.",
@@ -809,25 +669,25 @@ const TRANSLATIONS = {
     "strengths.3": "Bases de REST API, testes de QA e habitos de validacao cuidadosa que ajudam a detetar problemas antes da release.",
     "strengths.4": "Colaboracao, resolucao de problemas e comunicacao clara a partir de trabalho multidisciplinar e transicao de carreira.",
     "strengths.5": "Git/GitHub, GitHub Pages e Vercel para organizar, publicar e manter projetos web.",
-    "courses.heading": "Cursos e Certifica√ß√µes",
-    "courses.intro": "Forma√ß√£o recente organizada por trilhos de aprendizagem: QA, fundamentos web, programa√ß√£o, Java e bases de dados.",
+    "courses.heading": "Cursos e CertificaÁıes",
+    "courses.intro": "FormaÁ„o recente organizada por trilhos de aprendizagem: QA, fundamentos web, programaÁ„o, Java e bases de dados.",
     "courses.0": "QA e Testes: Fundamentos de Engenharia de Garantia da Qualidade - Udemy (Jul 2025)",
-    "courses.1": "QA e Testes: Fundamentos de Testes e Valida√ß√£o de Software - University of Leeds (Jul 2025)",
-    "courses.2": "Fundamentos Web: Conce√ß√£o de websites (Fev 2026)",
-    "courses.3": "Fundamentos de Programa√ß√£o: Linguagem de Programa√ß√£o Python - Programming Hub (Ago 2025)",
-    "courses.4": "Fundamentos de Programa√ß√£o: Programa√ß√£o - Algoritmos (Abr 2026)",
-    "courses.5": "Desenvolvimento Java: Programa√ß√£o em Java (Mar 2026)",
+    "courses.1": "QA e Testes: Fundamentos de Testes e ValidaÁ„o de Software - University of Leeds (Jul 2025)",
+    "courses.2": "Fundamentos Web: ConceÁ„o de websites (Fev 2026)",
+    "courses.3": "Fundamentos de ProgramaÁ„o: Linguagem de ProgramaÁ„o Python - Programming Hub (Ago 2025)",
+    "courses.4": "Fundamentos de ProgramaÁ„o: ProgramaÁ„o - Algoritmos (Abr 2026)",
+    "courses.5": "Desenvolvimento Java: ProgramaÁ„o em Java (Mar 2026)",
     "courses.6": "Bases de Dados: Fundamentos da linguagem SQL (Mar 2026)",
     "courses.7": "Bases de Dados: Tecnologias de acesso a base de dados (Abr 2026)",
-    "experience.heading": "Experi√™ncia",
-    "experience.intro": "Experiencia pratica em produto, cruzando UI/UX, desenvolvimento frontend, QA e colaboracao em equipas multidisciplinares.",
+    "experience.heading": "ExperiÍncia",
+    "experience.intro": "Experiencia pratica em produto, cruzando frontend, UI/UX, QA e colaboracao em equipas multidisciplinares, com entregas em contexto remoto e hibrido.",
     "experience.when": "Ago 2025 - Presente | Remoto",
     "experience.role": "Estagiaria de Desenvolvimento de Software",
     "experience.org": "FloLabs Innovations Group",
     "experience.p1": "Desenvolvi o Portfolio website e o robocollective.ai de raiz, levando ambos os projetos do conceito a publicacao.",
     "experience.p2": "Entreguei mais de 10 melhorias de UI/UX com HTML, CSS, JavaScript, PHP e TypeScript, apoiei tarefas backend relacionadas com REST/API e reduzi o tempo de resposta a erros em cerca de 20% com QA estruturado.",
     "contact.heading": "Contacto",
-    "contact.intro": "Estou aberta a oportunidades junior em frontend, software, UI/UX e contextos com QA, onde implementacao pratica e usabilidade contam em conjunto.",
+    "contact.intro": "Esta a contratar para uma funcao junior de Web Developer em Lisboa (hibrido)? Vamos conversar sobre como posso contribuir para a sua equipa.",
     "contact.actions.email": "Email",
     "contact.actions.linkedin": "LinkedIn",
     "contact.actions.cv": "Descarregar CV",
@@ -845,17 +705,17 @@ const TRANSLATIONS = {
     "contact.status.sending": "A enviar...",
     "contact.status.success": "Mensagem enviada com sucesso.",
     "contact.status.error": "Ocorreu um erro. Tente novamente ou contacte por email.",
-    "footer.home": "In√≠cio",
+    "footer.home": "InÌcio",
     "footer.projects": "Projetos",
     "footer.about": "Sobre",
-    "footer.experience": "Experi√™ncia",
+    "footer.experience": "ExperiÍncia",
     "footer.contact": "Contacto",
     "footer.meta": "Daniela Almeida | Desenvolvido com HTML, CSS e JavaScript | Publicado no GitHub Pages",
     "theme.switchToLight": "Mudar para tema claro",
     "theme.switchToDark": "Mudar para tema escuro",
     "toTop.label": "Topo",
     "toTop.aria": "Voltar ao topo",
-    "lang.next.aria": "Mudar idioma para ingl√™s",
+    "lang.next.aria": "Mudar idioma para inglÍs",
   },
 };
 
@@ -864,14 +724,12 @@ if (currentLanguage !== LANG_EN && currentLanguage !== LANG_PT) {
   currentLanguage = LANG_EN;
 }
 
-// Lookup helper with English fallback.
 function t(key) {
   return TRANSLATIONS[currentLanguage]?.[key] ?? TRANSLATIONS[LANG_EN]?.[key] ?? "";
 }
 
 const ORPHAN_TEXT_SELECTOR = ".hero p, .hero li, .section p, .section li, .section .when, .section .where";
 
-// Keep the last two words together to avoid lonely trailing words.
 function tightenTrailingWords(element) {
   const walker = document.createTreeWalker(
     element,
@@ -903,24 +761,20 @@ function applyOrphanControl() {
   });
 }
 
-// Keep the theme toggle label aligned with the current theme state.
 function setThemeToggleAria(theme) {
   if (!themeToggle) return;
   themeToggle.setAttribute("aria-label", theme === "dark" ? t("theme.switchToLight") : t("theme.switchToDark"));
 }
 
-// Normalize unknown values to a valid theme.
 function normalizeTheme(value) {
   return value === "light" ? "light" : "dark";
 }
 
-// Swap the theme icon file for light/dark mode.
 function setThemeIcon(theme) {
   if (!themeIcon) return;
   themeIcon.src = theme === "dark" ? THEME_ICONS.dark : THEME_ICONS.light;
 }
 
-// Apply theme to the page and sync all toggle states.
 function applyTheme(mode) {
   const theme = normalizeTheme(mode);
   document.documentElement.setAttribute("data-theme", theme);
@@ -956,7 +810,6 @@ const syncTopbarOffset = () => {
 syncTopbarOffset();
 window.addEventListener("resize", syncTopbarOffset);
 
-// Control mobile navigation open/close state and related ARIA attributes.
 function setNavMenu(open) {
   if (!topbar || !navToggle) return;
   const isOpen = Boolean(open);
@@ -1001,7 +854,6 @@ const navTargets = navLinks
   })
   .filter(Boolean);
 
-// Mark the active navigation link for the current section.
 function setActiveNavLink(activeId) {
   navLinks.forEach((link) => {
     const href = link.getAttribute("href");
@@ -1012,7 +864,6 @@ function setActiveNavLink(activeId) {
   });
 }
 
-// Highlight the nav item that matches the section currently in view.
 function updateActiveNavLink() {
   if (!topbar || !navTargets.length) return;
   const doc = document.documentElement;
@@ -1056,30 +907,32 @@ toTop?.addEventListener("click", () =>
   window.scrollTo({ top: 0, behavior: "smooth" })
 );
 
-// Reuse one translation pass for text, HTML, and placeholders.
-function applyI18nAttribute(attributeName, applyValue) {
-  document.querySelectorAll(`[${attributeName}]`).forEach((el) => {
-    const key = el.getAttribute(attributeName);
-    if (!key) return;
-    const value = t(key);
-    if (!value) return;
-    applyValue(el, value);
-  });
-}
-
-// Apply all localized labels and content for the selected language.
 function applyTranslations(language) {
   currentLanguage = language === LANG_PT ? LANG_PT : LANG_EN;
   setStoredValue(LANGUAGE_KEY, currentLanguage);
   document.documentElement.lang = currentLanguage === LANG_PT ? "pt-PT" : "en";
 
-  applyI18nAttribute("data-i18n", (el, value) => {
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    if (!key) return;
+    const value = t(key);
+    if (!value) return;
     el.textContent = value;
   });
-  applyI18nAttribute("data-i18n-html", (el, value) => {
+
+  document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-html");
+    if (!key) return;
+    const value = t(key);
+    if (!value) return;
     el.innerHTML = value;
   });
-  applyI18nAttribute("data-i18n-placeholder", (el, value) => {
+
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-placeholder");
+    if (!key) return;
+    const value = t(key);
+    if (!value) return;
     el.setAttribute("placeholder", value);
   });
 
@@ -1458,3 +1311,4 @@ if (sections.length && !prefersReducedMotion && "IntersectionObserver" in window
   // Fallback: keep sections visible when reveal animation cannot run.
   sections.forEach((section) => section.classList.add("visible"));
 }
+
