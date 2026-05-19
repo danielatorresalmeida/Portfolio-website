@@ -5,12 +5,12 @@ Guestcentric links for interview use:
 - Resume/CV: `https://danielatorresalmeida.github.io/Portfolio-website/guestcentric-web-designer/resume/`
 
 ## Top 3 Projects to Present
-1. NextPath Angular Dashboard (featured case study)
+1. DevFlow Hub (featured case study)
 2. Responsive Portfolio Website
 3. API QA Test Suite
 
 ## 60-Second Pitch per Project
-1. NextPath Angular Dashboard
+1. DevFlow Hub
 I built an Angular dashboard concept to organize developers, projects, and Agile tasks more clearly. The main problem was scannability: users needed to understand priorities faster. I focused on hierarchy, layout grouping, and reusable component structure so design decisions map directly to frontend implementation. It is still in progress, and my next step is formalizing spacing, typography, and component rules into a stronger Figma design system.
 
 2. Responsive Portfolio Website
@@ -24,7 +24,7 @@ I built a Python + Pytest suite for API checks (status, schema, and business rul
 
 ## Weak Points Interviewers May Challenge
 1. Junior level and limited years of direct web design role experience.
-2. Some projects are still in progress, especially NextPath.
+2. Some projects are still in progress, especially DevFlow Hub.
 3. Mixed profile (UI/UX, frontend, QA, software) may look broad.
 
 ## Honest Response Strategy

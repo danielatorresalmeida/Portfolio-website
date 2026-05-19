@@ -152,9 +152,9 @@ const translations = {
         bullet: "A modular terminal-based Tic-Tac-Toe game built in C with multiple board sizes, AI difficulty levels, tournaments, save/load, undo, replay, ranking, automatic tests, and colorblind-friendly terminal colors.",
       },
       {
-        title: "NextPath Angular Dashboard",
+        title: "DevFlow Hub",
         status: "In progress",
-        bullet: "An Angular internal dashboard concept for an IT company to manage developers, projects, Agile tasks, and internal growth programs. The dashboard is designed to help teams organize developer profiles, project allocation, task progress, and professional development paths. Skills shown: Angular, TypeScript, UI/UX, dashboard design, component structure, frontend development, data organization, and responsive layout.",
+        bullet: "DevFlow Hub is a full-stack web application for managing developers, projects, Agile tasks, and internal growth programs. It connects a React + TypeScript + Vite frontend to a Java + Spring Boot REST API with PostgreSQL data persistence. Skills shown: React, TypeScript, Vite, Java, Spring Boot, REST API, PostgreSQL, full-stack architecture.",
       },
     ],
     coursesTitle: "Courses & Certifications",
@@ -471,10 +471,10 @@ translations[LANG_EN].projectsTitle = "Relevant Projects";
 translations[LANG_EN].projectsIntro = "Short CV highlights tailored to a Junior Web Developer role in Lisbon (hybrid). More detail is available on the portfolio.";
 translations[LANG_EN].projectItems = [
   {
-    title: "NextPath Angular Dashboard",
+    title: "DevFlow Hub",
     status: "In progress",
     bullet:
-      "An Angular internal dashboard concept for an IT company to manage developers, projects, Agile tasks, and internal growth programs. The dashboard is designed to help teams organize developer profiles, project allocation, task progress, and professional development paths. Skills shown: Angular, TypeScript, UI/UX, dashboard design, component structure, frontend development, data organization, and responsive layout.",
+      "DevFlow Hub is a full-stack web application for managing developers, projects, Agile tasks, and internal growth programs. It connects a React + TypeScript + Vite frontend to a Java + Spring Boot REST API with PostgreSQL data persistence. Skills shown: React, TypeScript, Vite, Java, Spring Boot, REST API, PostgreSQL, full-stack architecture.",
   },
   {
     title: "Tic-Tac-Toe Game in C",
@@ -544,10 +544,10 @@ translations[LANG_PT].projectsTitle = "Projetos Relevantes";
 translations[LANG_PT].projectsIntro = "Destaques curtos para CV, alinhados a uma funcao junior de Web Developer em Lisboa (hibrido). Ha mais detalhe disponivel no portfolio.";
 translations[LANG_PT].projectItems = [
   {
-    title: "NextPath Angular Dashboard",
+    title: "DevFlow Hub",
     status: "Em progresso",
     bullet:
-      "Conceito de dashboard interno em Angular para uma empresa de IT gerir developers, projetos, tarefas Agile e programas internos de crescimento. Competencias: Angular, TypeScript, UI/UX, design de dashboard, estrutura de componentes, frontend, organizacao de dados e layout responsivo.",
+      "O DevFlow Hub e uma aplicacao web full-stack para gerir developers, projetos, tarefas Agile e programas internos de crescimento. Liga um frontend em React + TypeScript + Vite a uma API REST em Java + Spring Boot com persistencia de dados em PostgreSQL. Competencias: React, TypeScript, Vite, Java, Spring Boot, API REST, PostgreSQL, arquitetura full-stack.",
   },
   {
     title: "Jogo do Galo em C",

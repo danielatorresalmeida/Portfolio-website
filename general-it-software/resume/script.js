@@ -153,9 +153,9 @@ const translations = {
         bullet: "A modular terminal-based Tic-Tac-Toe game built in C with multiple board sizes, AI difficulty levels, tournaments, save/load, undo, replay, ranking, automatic tests, and colorblind-friendly terminal colors.",
       },
       {
-        title: "NextPath Angular Dashboard",
+        title: "DevFlow Hub",
         status: "In progress",
-        bullet: "An Angular internal dashboard concept for an IT company to manage developers, projects, Agile tasks, and internal growth programs. The dashboard is designed to help teams organize developer profiles, project allocation, task progress, and professional development paths. Skills shown: Angular, TypeScript, UI/UX, dashboard design, component structure, frontend development, data organization, and responsive layout.",
+        bullet: "DevFlow Hub is a full-stack web application for managing developers, projects, Agile tasks, and internal growth programs. It connects a React + TypeScript + Vite frontend to a Java + Spring Boot REST API with PostgreSQL data persistence. Skills shown: React, TypeScript, Vite, Java, Spring Boot, REST API, PostgreSQL, full-stack architecture.",
       },
     ],
     coursesTitle: "Courses & Certifications",
@@ -474,10 +474,10 @@ translations[LANG_EN].projectsTitle = "Relevant Projects";
 translations[LANG_EN].projectsIntro = "Short CV highlights. More detail is available on the portfolio.";
 translations[LANG_EN].projectItems = [
   {
-    title: "NextPath Angular Dashboard",
+    title: "DevFlow Hub",
     status: "In progress",
     bullet:
-      "An Angular internal dashboard concept for an IT company to manage developers, projects, Agile tasks, and internal growth programs. The dashboard is designed to help teams organize developer profiles, project allocation, task progress, and professional development paths. Skills shown: Angular, TypeScript, UI/UX, dashboard design, component structure, frontend development, data organization, and responsive layout.",
+      "DevFlow Hub is a full-stack web application for managing developers, projects, Agile tasks, and internal growth programs. It connects a React + TypeScript + Vite frontend to a Java + Spring Boot REST API with PostgreSQL data persistence. Skills shown: React, TypeScript, Vite, Java, Spring Boot, REST API, PostgreSQL, full-stack architecture.",
   },
   {
     title: "Tic-Tac-Toe Game in C",
@@ -512,7 +512,7 @@ translations[LANG_EN].projectCatalogGroups = [
   {
     title: "Frontend and UI/UX Projects",
     items: [
-      "<strong>NextPath Angular Dashboard</strong> - Category: dashboard UI/frontend. Main language/tool: Angular + TypeScript. Secondary tools: UI/UX, responsive layout. What it proves: component-based interface structure.",
+      "<strong>DevFlow Hub</strong> - Category: full-stack web application. Main stack: React + TypeScript + Vite (frontend), Java + Spring Boot (backend), PostgreSQL. What it proves: end-to-end architecture and API-driven workflow.",
       "<strong>Responsive Portfolio</strong> - Category: personal web interface. Main language/tool: HTML/CSS/JavaScript. Secondary tools: accessibility basics, responsive design. What it proves: design-to-code delivery and cross-device consistency.",
       "<strong>UI Components Showcase</strong> - Category: reusable interface patterns. Main language/tool: HTML/CSS/JavaScript. Secondary tools: component reuse, interaction states. What it proves: scalable frontend organization.",
       "<strong>RoboCollective.ai</strong> - Category: product website contribution. Main language/tool: React/Next.js. Secondary tools: UI hierarchy, content flow. What it proves: production-oriented frontend collaboration.",
@@ -580,10 +580,10 @@ translations[LANG_PT].projectsTitle = "Projetos Relevantes";
 translations[LANG_PT].projectsIntro = "Destaques curtos para CV. Ha mais detalhe disponivel no portfolio.";
 translations[LANG_PT].projectItems = [
   {
-    title: "NextPath Angular Dashboard",
+    title: "DevFlow Hub",
     status: "Em progresso",
     bullet:
-      "Conceito de dashboard interno em Angular para uma empresa de IT gerir developers, projetos, tarefas Agile e programas internos de crescimento. Competencias: Angular, TypeScript, UI/UX, design de dashboard, estrutura de componentes, frontend, organizacao de dados e layout responsivo.",
+      "O DevFlow Hub e uma aplicacao web full-stack para gerir developers, projetos, tarefas Agile e programas internos de crescimento. Liga um frontend em React + TypeScript + Vite a uma API REST em Java + Spring Boot com persistencia de dados em PostgreSQL. Competencias: React, TypeScript, Vite, Java, Spring Boot, API REST, PostgreSQL, arquitetura full-stack.",
   },
   {
     title: "Jogo do Galo em C",
@@ -618,7 +618,7 @@ translations[LANG_PT].projectCatalogGroups = [
   {
     title: "Projetos de Frontend e UI/UX",
     items: [
-      "<strong>NextPath Angular Dashboard</strong> - Categoria: dashboard UI/frontend. Linguagem/ferramenta principal: Angular + TypeScript. Ferramentas secundarias: UI/UX, layout responsivo. O que prova: estrutura de interface orientada a componentes.",
+      "<strong>DevFlow Hub</strong> - Categoria: aplicacao web full-stack. Stack principal: React + TypeScript + Vite (frontend), Java + Spring Boot (backend), PostgreSQL. O que prova: arquitetura end-to-end e fluxo orientado por API.",
       "<strong>Portfolio Responsivo</strong> - Categoria: interface web pessoal. Linguagem/ferramenta principal: HTML/CSS/JavaScript. Ferramentas secundarias: bases de acessibilidade, design responsivo. O que prova: entrega design-to-code e consistencia em varios dispositivos.",
       "<strong>Mostruario de Componentes UI</strong> - Categoria: padroes de interface reutilizaveis. Linguagem/ferramenta principal: HTML/CSS/JavaScript. Ferramentas secundarias: reutilizacao de componentes, estados de interacao. O que prova: organizacao frontend escalavel.",
       "<strong>RoboCollective.ai</strong> - Categoria: contribuicao em website de produto. Linguagem/ferramenta principal: React/Next.js. Ferramentas secundarias: hierarquia de UI, fluxo de conteudo. O que prova: colaboracao frontend em ambiente de producao.",
