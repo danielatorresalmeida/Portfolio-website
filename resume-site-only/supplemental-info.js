@@ -25,9 +25,9 @@
       ],
       rightTitle: "Preferred Roles & Availability",
       rightItems: [
-        "<strong>Preferred Roles:</strong> Credit Manager / Credit Analyst roles (including Reorganiza), with strong focus on client support, risk awareness, and process quality.",
-        "<strong>Availability:</strong> Available for interviews and currently exploring new opportunities in Lisbon (hybrid/on-site) or remote collaboration.",
-        "<strong>Opportunity Type:</strong> Open to permanent or contract opportunities, depending on scope and fit.",
+        "<strong>Preferred Roles:</strong> Credit Manager / Credit Analyst roles, with strong focus on client support, risk awareness, and process quality.",
+        "<strong>Availability:</strong> Available for interviews and currently exploring new opportunities in Lisbon (hybrid/on-site).",
+        "<strong>Opportunity Type:</strong> Available for permanent opportunities or contract-based projects, depending on the role profile, collaboration context, and conditions presented.",
         "<strong>Profile Level:</strong> Multidisciplinary professional with transferable experience in analysis, communication, and operational rigor.",
       ],
     },
@@ -42,10 +42,10 @@
       ],
       rightTitle: "Funções Preferidas e Disponibilidade",
       rightItems: [
-        "<strong>Funções preferidas:</strong> Gestora de Credito / Analista de Credito (incluindo Reorganiza), com foco em apoio ao cliente, sensibilidade a risco e qualidade de processo.",
-        "<strong>Disponibilidade:</strong> disponivel para entrevistas e atualmente a explorar novas oportunidades em Lisboa (hibrido/presencial) ou colaboracao remota.",
-        "<strong>Tipo de oportunidade:</strong> aberta a oportunidades permanentes ou contrato, dependendo do enquadramento.",
-        "<strong>Perfil:</strong> profissional multidisciplinar com experiencia transversal em analise, comunicacao e rigor operacional.",
+        "<strong>Funções preferidas:</strong> Gestora de Crédito / Analista de Crédito, com foco em apoio ao cliente, sensibilidade a risco e qualidade de processo.",
+        "<strong>Disponibilidade:</strong> disponível para entrevistas e atualmente a explorar novas oportunidades em Lisboa (híbrido/presencial).",
+        "<strong>Tipo de oportunidade:</strong> Disponível para integrar oportunidades permanentes ou projetos em regime de contrato, conforme o perfil da função, o contexto da colaboração e as condições apresentadas.",
+        "<strong>Perfil:</strong> profissional multidisciplinar com experiência transversal em análise, comunicação e rigor operacional.",
       ],
     },
   };
