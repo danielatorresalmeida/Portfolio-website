@@ -551,8 +551,8 @@ translations[LANG_EN].projectCatalogGroups = [
 
 translations[LANG_PT].objectiveTitle = "Resumo Profissional";
 translations[LANG_PT].objectiveBody =
-  "Web designer júnior focada em UI/UX e frontend, com percurso em artes e educação musical, atualmente a desenvolver interfaces web práticas com Figma, HTML, CSS, JavaScript e TypeScript. Dou prioridade à hierarquia visual, comportamento responsivo, bases de acessibilidade e decisões de design que funcionam no browser.";
-translations[LANG_PT].skillsTitle = "Stack Técnica Principal";
+  "Web designer junior focada em UI/UX e frontend, com percurso em artes e educacao musical, atualmente a desenvolver interfaces web praticas com Figma, HTML, CSS, JavaScript e TypeScript. Dou prioridade a hierarquia visual, comportamento responsivo, bases de acessibilidade e decisoes de design que funcionam no browser.";
+translations[LANG_PT].skillsTitle = "Stack Tecnica Principal";
 translations[LANG_PT].skillGroups = [
   {
     title: "Design",
@@ -560,14 +560,14 @@ translations[LANG_PT].skillGroups = [
   },
   {
     title: "Frontend",
-    items: ["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "React", "Git / GitHub", "Integração com REST API"],
+    items: ["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "React", "Git / GitHub", "Integracao com REST API"],
   },
   {
-    title: "Forças Práticas",
-    items: ["Bases de Acessibilidade", "Pensamento por Componentes", "Implementação de Layout", "Testes em Vários Dispositivos", "Conceitos de QA", "Testes manuais", "Debugging", "Usabilidade e detalhe", "Colaboração"],
+    title: "Forcas Praticas",
+    items: ["Bases de Acessibilidade", "Pensamento por Componentes", "Implementacao de Layout", "Testes em Varios Dispositivos", "Conceitos de QA", "Testes manuais", "Debugging", "Usabilidade e detalhe", "Colaboracao"],
   },
   {
-    title: "Programação / Bases",
+    title: "Programacao / Bases",
     items: ["C", "Java", "Bases de Python"],
   },
 ];
@@ -584,46 +584,46 @@ translations[LANG_PT].keySkills = [
   "React",
   "Layouts Responsivos",
   "Design Web Responsivo",
-  "Integração com REST API",
+  "Integracao com REST API",
   "Git / GitHub",
   "Bases de Acessibilidade",
   "Conceitos de QA",
   "Testes manuais",
 ];
 translations[LANG_PT].projectsTitle = "Projetos Selecionados";
-translations[LANG_PT].projectsIntro = "Destaques curtos para CV alinhados com UI/UX e implementação frontend. Há mais detalhe disponível no portefólio.";
+translations[LANG_PT].projectsIntro = "Destaques curtos para CV alinhados com UI/UX e implementacao frontend. Ha mais detalhe disponivel no portfolio.";
 translations[LANG_PT].projectItems = [
   {
     title: "DevFlow Hub",
     status: "Em progresso",
     bullet:
-      "O DevFlow Hub é uma aplicação web full-stack para gerir developers, projetos, tarefas Agile e programas internos de crescimento. Liga um frontend em React + TypeScript + Vite a uma API REST em Java + Spring Boot com persistência de dados em PostgreSQL. Competências: React, TypeScript, Vite, Java, Spring Boot, API REST, PostgreSQL, arquitetura full-stack.",
+      "O DevFlow Hub e uma aplicacao web full-stack para gerir developers, projetos, tarefas Agile e programas internos de crescimento. Liga um frontend em React + TypeScript + Vite a uma API REST em Java + Spring Boot com persistencia de dados em PostgreSQL. Competencias: React, TypeScript, Vite, Java, Spring Boot, API REST, PostgreSQL, arquitetura full-stack.",
   },
   {
-    title: "Portefólio Responsivo",
+    title: "Portfolio Responsivo",
     status: "Projeto publicado",
     bullet:
-      "Website responsivo de portefólio e CV criado com HTML, CSS e JavaScript, focado em navegação clara, hierarquia visual e leitura simples para recrutadores em desktop e mobile.",
+      "Website responsivo de portfolio e CV criado com HTML, CSS e JavaScript, focado em navegacao clara, hierarquia visual e leitura simples para recrutadores em desktop e mobile.",
   },
   {
     title: "Suite de Testes de API (QA)",
-    status: "Projeto prático concluído",
+    status: "Projeto pratico concluido",
     bullet:
-      "Suite de validação de API em Python + Pytest com verificações de status, expectativas de schema, regras de negócio e relatórios pytest-html legíveis. Competências: bases de REST API, Python, conceitos de QA, debugging e evidência de testes.",
+      "Suite de validacao de API em Python + Pytest com verificacoes de status, expectativas de schema, regras de negocio e relatorios pytest-html legiveis. Competencias: bases de REST API, Python, conceitos de QA, debugging e evidencia de testes.",
   },
   {
     title: "Jogo do Galo em C",
     status: "Projeto de terminal em C",
     bullet:
-      "Jogo modular de terminal em C com variações de tabuleiro, dificuldade de IA, torneios e lógica de gravar/carregar. Mantém-se como projeto de lógica de programação e resolução estruturada de problemas.",
+      "Jogo modular de terminal em C com variacoes de tabuleiro, dificuldade de IA, torneios e logica de gravar/carregar. Mantem-se como projeto de logica de programacao e resolucao estruturada de problemas.",
   },
 ];
 translations[LANG_PT].moreProjectsTitle = "Mais Projetos";
 translations[LANG_PT].moreProjectItems = [
-  "<strong>RoboCollective.ai:</strong> Contribuição para website de produto em ambiente React/Next.js.",
-  "<strong>Mostruário de Componentes UI:</strong> Padrões de UI reutilizáveis com HTML, CSS e JavaScript responsivos.",
+  "<strong>RoboCollective.ai:</strong> Contribuicao para website de produto em ambiente React/Next.js.",
+  "<strong>Mostruario de Componentes UI:</strong> Padroes de UI reutilizaveis com HTML, CSS e JavaScript responsivos.",
   "<strong>App de Tarefas:</strong> Fluxo de tarefas em React + TypeScript com Firebase e Google Auth.",
-  "<strong>Base de Dados de Oficina:</strong> Modelo SQL relacional para clientes, veículos, serviços e peças de oficina.",
+  "<strong>Base de Dados de Oficina:</strong> Modelo SQL relacional para clientes, veiculos, servicos e pecas de oficina.",
   "<strong>Base de Dados de Padaria:</strong> Modelo SQL relacional para encomendas, produtos, ingredientes e stock de padaria.",
 ];
 translations[LANG_PT].projectCatalogTitle = "Todos os Projetos por Categoria / Linguagem / Ferramentas";
@@ -632,224 +632,39 @@ translations[LANG_PT].projectCatalogGroups = [
   {
     title: "Projetos de Frontend e UI/UX",
     items: [
-      "<strong>DevFlow Hub</strong> - Categoria: aplicação web full-stack. Stack principal: React + TypeScript + Vite (frontend), Java + Spring Boot (backend), PostgreSQL. O que prova: arquitetura end-to-end e fluxo orientado por API.",
-      "<strong>Portefólio Responsivo</strong> - Categoria: interface web pessoal. Linguagem/ferramenta principal: HTML/CSS/JavaScript. Ferramentas secundárias: bases de acessibilidade, design responsivo. O que prova: entrega design-to-code e consistência em vários dispositivos.",
-      "<strong>Mostruário de Componentes UI</strong> - Categoria: padrões de interface reutilizáveis. Linguagem/ferramenta principal: HTML/CSS/JavaScript. Ferramentas secundárias: reutilização de componentes, estados de interação. O que prova: organização frontend escalável.",
-      "<strong>RoboCollective.ai</strong> - Categoria: contribuição em website de produto. Linguagem/ferramenta principal: React/Next.js. Ferramentas secundárias: hierarquia de UI, fluxo de conteúdo. O que prova: colaboração frontend em ambiente de produção.",
-      "<strong>App de Tarefas</strong> - Categoria: app web de fluxo de trabalho. Linguagem/ferramenta principal: React + TypeScript. Ferramentas secundárias: Firebase, Google Auth. O que prova: fluxos frontend com estado e bases de integração.",
+      "<strong>DevFlow Hub</strong> - Categoria: aplicacao web full-stack. Stack principal: React + TypeScript + Vite (frontend), Java + Spring Boot (backend), PostgreSQL. O que prova: arquitetura end-to-end e fluxo orientado por API.",
+      "<strong>Portfolio Responsivo</strong> - Categoria: interface web pessoal. Linguagem/ferramenta principal: HTML/CSS/JavaScript. Ferramentas secundarias: bases de acessibilidade, design responsivo. O que prova: entrega design-to-code e consistencia em varios dispositivos.",
+      "<strong>Mostruario de Componentes UI</strong> - Categoria: padroes de interface reutilizaveis. Linguagem/ferramenta principal: HTML/CSS/JavaScript. Ferramentas secundarias: reutilizacao de componentes, estados de interacao. O que prova: organizacao frontend escalavel.",
+      "<strong>RoboCollective.ai</strong> - Categoria: contribuicao em website de produto. Linguagem/ferramenta principal: React/Next.js. Ferramentas secundarias: hierarquia de UI, fluxo de conteudo. O que prova: colaboracao frontend em ambiente de producao.",
+      "<strong>App de Tarefas</strong> - Categoria: app web de fluxo de trabalho. Linguagem/ferramenta principal: React + TypeScript. Ferramentas secundarias: Firebase, Google Auth. O que prova: fluxos frontend com estado e bases de integracao.",
     ],
   },
   {
     title: "Projetos de QA e Testes",
     items: [
-      "<strong>Suite de Testes de API (QA)</strong> - Categoria: validação de API. Linguagem/ferramenta principal: Python + Pytest. Ferramentas secundárias: verificações REST, relatórios pytest-html. O que prova: disciplina de testes, debugging e QA com evidência.",
+      "<strong>Suite de Testes de API (QA)</strong> - Categoria: validacao de API. Linguagem/ferramenta principal: Python + Pytest. Ferramentas secundarias: verificacoes REST, relatorios pytest-html. O que prova: disciplina de testes, debugging e QA com evidencia.",
     ],
   },
   {
-    title: "Projetos de Lógica de Programação",
+    title: "Projetos de Logica de Programacao",
     items: [
-      "<strong>Jogo do Galo em C</strong> - Categoria: programação estruturada/lógica de jogo. Linguagem/ferramenta principal: C. Ferramentas secundárias: arquitetura modular, lógica de dificuldade de IA, fluxos gravar/carregar. O que prova: raciocínio algorítmico e desenho limpo de funções.",
+      "<strong>Jogo do Galo em C</strong> - Categoria: programacao estruturada/logica de jogo. Linguagem/ferramenta principal: C. Ferramentas secundarias: arquitetura modular, logica de dificuldade de IA, fluxos gravar/carregar. O que prova: raciocinio algoritmico e desenho limpo de funcoes.",
     ],
   },
   {
-    title: "Projetos de Modelação de Base de Dados",
+    title: "Projetos de Modelacao de Base de Dados",
     items: [
-      "<strong>Base de Dados de Oficina</strong> - Categoria: modelação relacional. Linguagem/ferramenta principal: SQL. Ferramentas secundárias: normalização, mapeamento de chaves primária/estrangeira. O que prova: desenho de schema para fluxos de serviço.",
-      "<strong>Base de Dados de Padaria</strong> - Categoria: modelação relacional. Linguagem/ferramenta principal: SQL. Ferramentas secundárias: relações de encomendas, ingredientes e stock. O que prova: planeamento de estrutura de dados orientada ao negócio.",
+      "<strong>Base de Dados de Oficina</strong> - Categoria: modelacao relacional. Linguagem/ferramenta principal: SQL. Ferramentas secundarias: normalizacao, mapeamento de chaves primaria/estrangeira. O que prova: desenho de schema para fluxos de servico.",
+      "<strong>Base de Dados de Padaria</strong> - Categoria: modelacao relacional. Linguagem/ferramenta principal: SQL. Ferramentas secundarias: relacoes de encomendas, ingredientes e stock. O que prova: planeamento de estrutura de dados orientada ao negocio.",
     ],
   },
 ];
 translations[LANG_PT].strengths = [
-  "<strong>Design orientado ao browser</strong> - transformar ideias em interfaces claras, responsivas e viáveis para implementação real.",
-  "<strong>Execução UI/UX</strong> - aplicar hierarquia visual, layout e consistência para reduzir fricção nas jornadas do utilizador.",
-  "<strong>Frontend prático</strong> - implementar com HTML, CSS, JavaScript e TypeScript mantendo qualidade visual em vários dispositivos.",
-  "<strong>Qualidade e validação</strong> - usar QA manual e testes de API para reforçar confiança antes de release.",
-  "<strong>Colaboração</strong> - comunicar com clareza, ajustar-se rapidamente e trabalhar bem com equipas multidisciplinares.",
-];
-
-// Role-targeted variant for Reorganiza: Credit Manager profile.
-translations[LANG_EN].objectiveTitle = "Professional Summary";
-translations[LANG_EN].objectiveBody =
-  "Professional with multidisciplinary experience in client-facing roles, process discipline, and quality-focused analysis, currently exploring new opportunities in Credit Management, including Credit Manager roles such as Reorganiza. I bring strong communication, attention to detail, and consistency in documentation, prioritization, and decision support.";
-translations[LANG_EN].experienceTitle = "Relevant Experience";
-translations[LANG_EN].experienceItems = [
-  {
-    title: "Software Development Intern - FloLabs Innovations Group",
-    when: "Aug 2025 - Present",
-    bullets: [
-      "Managed structured task flows and status follow-up, keeping priorities and deadlines clear.",
-      "Consolidated information from different sources to support evidence-based decisions.",
-      "Documented workflows and edge cases with consistency and traceability.",
-      "Contributed to quality checks and issue triage, improving response time by around 20%.",
-      "Collaborated with technical and non-technical stakeholders in a fast-paced environment.",
-    ],
-  },
-  {
-    title: "Sales Associate",
-    when: "Jul 2025 - Present · 11 mos",
-    where: "DeskAmigo · Self-employed · Lisbon, Portugal · Hybrid",
-    bullets: [
-      "Client-facing support in sales workflows, with focus on communication clarity and response follow-up.",
-      "Contributed to opportunity tracking, organization of commercial information, and day-to-day team coordination.",
-    ],
-  },
-  {
-    title: "LLM Trainer (Portuguese & English) - Remote",
-    when: "Aug 2024 - Present",
-    bullets: [
-      "Reviewed high volumes of written content against quality criteria and policy rules.",
-      "Applied consistent judgment, attention to detail, and clear rationale in corrections.",
-    ],
-  },
-  {
-    title: "Music Educator (Voice, Piano, Violin, Viola) - Various Institutions",
-    when: "2018 - 2025",
-    bullets: [
-      "Managed long-term learner progress through structured planning, trust-based communication, and individualized follow-up.",
-    ],
-  },
-  {
-    title: "Hospitality - Cook & Baker Roles",
-    when: "2016 - 2018",
-    where: "Cantinho do Avillez - Gleba Moagem e Padaria - Lagoas Park Hotel",
-    bullets: [
-      "Worked in high-pressure service environments with strict timing, precision, and close team coordination.",
-    ],
-  },
-];
-translations[LANG_EN].skillsTitle = "Core Skills for Credit Management";
-translations[LANG_EN].skillGroups = [
-  {
-    title: "Credit and Risk Mindset",
-    items: ["Analytical Thinking", "Data Interpretation", "Decision Support", "Affordability Awareness", "Attention to Detail"],
-  },
-  {
-    title: "Client Communication",
-    items: ["Active Listening", "Expectation Management", "Clear Written Communication", "Empathy and Professionalism", "Negotiation Orientation"],
-  },
-  {
-    title: "Process and Compliance",
-    items: ["Structured Documentation", "Policy Adherence", "Quality Control", "Confidentiality", "Consistency"],
-  },
-  {
-    title: "Operational Discipline",
-    items: ["Prioritization", "Time Management", "Follow-through", "Problem Solving", "Cross-team Collaboration"],
-  },
-];
-translations[LANG_EN].keySkillsTitle = "Key Skills";
-translations[LANG_EN].keySkills = [
-  "Credit Analysis Mindset",
-  "Risk Awareness",
-  "Client Communication",
-  "Negotiation Orientation",
-  "Documentation Rigor",
-  "Data Interpretation",
-  "Quality Control",
-  "Policy Adherence",
-  "Prioritization",
-  "Time Management",
-  "Problem Solving",
-  "Collaboration",
-];
-translations[LANG_EN].strengthsTitle = "Transferable Strengths";
-translations[LANG_EN].strengths = [
-  "<strong>Analytical discipline</strong> - evaluate information carefully and support decisions with clear reasoning.",
-  "<strong>Client-centered communication</strong> - explain options clearly, listen actively, and maintain trust in sensitive conversations.",
-  "<strong>Process consistency</strong> - follow structured workflows, document clearly, and maintain quality under deadlines.",
-  "<strong>Operational reliability</strong> - prioritize effectively, track details, and deliver with consistency in fast-paced contexts.",
-  "<strong>Adaptability</strong> - transition quickly across domains while keeping focus on measurable outcomes.",
-];
-
-translations[LANG_PT].objectiveTitle = "Resumo Profissional";
-translations[LANG_PT].objectiveBody =
-  "Profissional com experiência multidisciplinar em funções de contacto com cliente, rigor de processos e análise orientada à qualidade, atualmente a explorar novas oportunidades na área de Gestão de Crédito, incluindo a posição de Gestora de Crédito na Reorganiza. Trago comunicação clara, atenção ao detalhe e consistência em documentação, priorização e suporte à decisão.";
-translations[LANG_PT].experienceTitle = "Experiência Relevante";
-translations[LANG_PT].experienceItems = [
-  {
-    title: "Estagiária de Desenvolvimento de Software - FloLabs Innovations Group",
-    when: "Ago 2025 - Presente",
-    bullets: [
-      "Gestão de fluxos estruturados de tarefas e acompanhamento de estado, mantendo prioridades e prazos claros.",
-      "Consolidação de informação de várias fontes para apoiar decisões baseadas em evidência.",
-      "Documentação de processos e casos limite com consistência e rastreabilidade.",
-      "Contributo para controlo de qualidade e triagem de incidentes, melhorando o tempo de resposta em cerca de 20%.",
-      "Colaboração com equipas técnicas e não técnicas em contexto de ritmo elevado.",
-    ],
-  },
-  {
-    title: "Sales Associate",
-    when: "Jul 2025 - Presente · 11 meses",
-    where: "DeskAmigo · Trabalhadora independente · Lisboa, Portugal · Híbrido",
-    bullets: [
-      "Apoio direto em fluxos comerciais com contacto ao cliente, foco em comunicação clara e acompanhamento de respostas.",
-      "Contributo para acompanhamento de oportunidades, organização de informação comercial e coordenação diária com a equipa.",
-    ],
-  },
-  {
-    title: "LLM Trainer (Português e Inglês) - Remoto",
-    when: "Ago 2024 - Presente",
-    bullets: [
-      "Revisão de grandes volumes de conteúdo escrito face a critérios de qualidade e regras de política.",
-      "Aplicação de critério consistente, atenção ao detalhe e justificação clara nas correções.",
-    ],
-  },
-  {
-    title: "Docente de Música (Canto, Piano, Violino e Viola) - Várias Instituições",
-    when: "2018 - 2025",
-    bullets: [
-      "Gestão de progressão de longo prazo com planeamento estruturado, comunicação de confiança e acompanhamento individual.",
-    ],
-  },
-  {
-    title: "Hotelaria - Funções de Cozinha e Padaria",
-    when: "2016 - 2018",
-    where: "Cantinho do Avillez - Gleba Moagem e Padaria - Lagoas Park Hotel",
-    bullets: [
-      "Trabalho em ambientes de alta pressão com prazos rigorosos, precisão e coordenação próxima em equipa.",
-    ],
-  },
-];
-translations[LANG_PT].skillsTitle = "Competências-Chave para Gestão de Crédito";
-translations[LANG_PT].skillGroups = [
-  {
-    title: "Mentalidade de Crédito e Risco",
-    items: ["Pensamento Analítico", "Interpretação de Dados", "Suporte à Decisão", "Sensibilidade a Risco", "Atenção ao Detalhe"],
-  },
-  {
-    title: "Comunicação com Cliente",
-    items: ["Escuta Ativa", "Gestão de Expectativas", "Comunicação Escrita Clara", "Empatia e Profissionalismo", "Orientação para Negociação"],
-  },
-  {
-    title: "Processos e Conformidade",
-    items: ["Documentação Estruturada", "Cumprimento de Políticas", "Controlo de Qualidade", "Confidencialidade", "Consistência"],
-  },
-  {
-    title: "Disciplina Operacional",
-    items: ["Priorização", "Gestão de Tempo", "Follow-up", "Resolução de Problemas", "Colaboração Entre Equipas"],
-  },
-];
-translations[LANG_PT].keySkillsTitle = "Competências-Chave";
-translations[LANG_PT].keySkills = [
-  "Mentalidade de Análise de Crédito",
-  "Sensibilidade a Risco",
-  "Comunicação com Cliente",
-  "Orientação para Negociação",
-  "Rigor de Documentação",
-  "Interpretação de Dados",
-  "Controlo de Qualidade",
-  "Cumprimento de Políticas",
-  "Priorização",
-  "Gestão de Tempo",
-  "Resolução de Problemas",
-  "Colaboração",
-];
-translations[LANG_PT].strengthsTitle = "Pontos Fortes Transversais";
-translations[LANG_PT].strengths = [
-  "<strong>Disciplina analítica</strong> - avaliar informação com rigor e apoiar decisões com raciocínio claro.",
-  "<strong>Comunicação centrada no cliente</strong> - explicar opções com clareza, ouvir ativamente e manter confiança em conversas sensíveis.",
-  "<strong>Consistência de processo</strong> - seguir fluxos estruturados, documentar com clareza e manter qualidade sob prazos.",
-  "<strong>Fiabilidade operacional</strong> - priorizar com eficácia, acompanhar detalhes e entregar com consistência em contextos exigentes.",
-  "<strong>Adaptabilidade</strong> - transitar rapidamente entre áreas mantendo foco em resultados mensuráveis.",
+  "<strong>Design orientado ao browser</strong> - transformar ideias em interfaces claras, responsivas e viaveis para implementacao real.",
+  "<strong>Execucao UI/UX</strong> - aplicar hierarquia visual, layout, e consistencia para reduzir friccao nas jornadas do utilizador.",
+  "<strong>Frontend pratico</strong> - implementar com HTML, CSS, JavaScript e TypeScript mantendo qualidade visual em varios dispositivos.",
+  "<strong>Qualidade e validacao</strong> - usar QA manual e testes de API para reforcar confianca antes de release.",
+  "<strong>Colaboracao</strong> - comunicar com clareza, ajustar-se rapidamente e trabalhar bem com equipas multidisciplinares.",
 ];
 
 const urlLanguage = new URLSearchParams(window.location.search).get("lang");
