@@ -667,6 +667,173 @@ translations[LANG_PT].strengths = [
   "<strong>Colaboracao</strong> - comunicar com clareza, ajustar-se rapidamente e trabalhar bem com equipas multidisciplinares.",
 ];
 
+// Role-targeted variant for Reorganiza: Credit Manager profile.
+translations[LANG_EN].objectiveTitle = "Professional Summary";
+translations[LANG_EN].objectiveBody =
+  "Professional with multidisciplinary experience in client-facing roles, process discipline, and quality-focused analysis, currently exploring new opportunities in Credit Management, including Credit Manager roles such as Reorganiza. I bring strong communication, attention to detail, and consistency in documentation, prioritization, and decision support.";
+translations[LANG_EN].experienceTitle = "Relevant Experience";
+translations[LANG_EN].experienceItems = [
+  {
+    title: "Software Development Intern - FloLabs Innovations Group",
+    when: "Aug 2025 - Present",
+    bullets: [
+      "Managed structured task flows and status follow-up, keeping priorities and deadlines clear.",
+      "Consolidated information from different sources to support evidence-based decisions.",
+      "Documented workflows and edge cases with consistency and traceability.",
+      "Contributed to quality checks and issue triage, improving response time by around 20%.",
+      "Collaborated with technical and non-technical stakeholders in a fast-paced environment.",
+    ],
+  },
+  {
+    title: "LLM Trainer (Portuguese & English) - Remote",
+    when: "Aug 2024 - Present",
+    bullets: [
+      "Reviewed high volumes of written content against quality criteria and policy rules.",
+      "Applied consistent judgment, attention to detail, and clear rationale in corrections.",
+    ],
+  },
+  {
+    title: "Music Educator (Voice, Piano, Violin, Viola) - Various Institutions",
+    when: "2018 - 2025",
+    bullets: [
+      "Managed long-term learner progress through structured planning, trust-based communication, and individualized follow-up.",
+    ],
+  },
+  {
+    title: "Hospitality - Cook & Baker Roles",
+    when: "2016 - 2018",
+    where: "Cantinho do Avillez - Gleba Moagem e Padaria - Lagoas Park Hotel",
+    bullets: [
+      "Worked in high-pressure service environments with strict timing, precision, and close team coordination.",
+    ],
+  },
+];
+translations[LANG_EN].skillsTitle = "Core Skills for Credit Management";
+translations[LANG_EN].skillGroups = [
+  {
+    title: "Credit and Risk Mindset",
+    items: ["Analytical Thinking", "Data Interpretation", "Decision Support", "Affordability Awareness", "Attention to Detail"],
+  },
+  {
+    title: "Client Communication",
+    items: ["Active Listening", "Expectation Management", "Clear Written Communication", "Empathy and Professionalism", "Negotiation Orientation"],
+  },
+  {
+    title: "Process and Compliance",
+    items: ["Structured Documentation", "Policy Adherence", "Quality Control", "Confidentiality", "Consistency"],
+  },
+  {
+    title: "Operational Discipline",
+    items: ["Prioritization", "Time Management", "Follow-through", "Problem Solving", "Cross-team Collaboration"],
+  },
+];
+translations[LANG_EN].keySkillsTitle = "Key Skills";
+translations[LANG_EN].keySkills = [
+  "Credit Analysis Mindset",
+  "Risk Awareness",
+  "Client Communication",
+  "Negotiation Orientation",
+  "Documentation Rigor",
+  "Data Interpretation",
+  "Quality Control",
+  "Policy Adherence",
+  "Prioritization",
+  "Time Management",
+  "Problem Solving",
+  "Collaboration",
+];
+translations[LANG_EN].strengthsTitle = "Transferable Strengths";
+translations[LANG_EN].strengths = [
+  "<strong>Analytical discipline</strong> - evaluate information carefully and support decisions with clear reasoning.",
+  "<strong>Client-centered communication</strong> - explain options clearly, listen actively, and maintain trust in sensitive conversations.",
+  "<strong>Process consistency</strong> - follow structured workflows, document clearly, and maintain quality under deadlines.",
+  "<strong>Operational reliability</strong> - prioritize effectively, track details, and deliver with consistency in fast-paced contexts.",
+  "<strong>Adaptability</strong> - transition quickly across domains while keeping focus on measurable outcomes.",
+];
+
+translations[LANG_PT].objectiveTitle = "Resumo Profissional";
+translations[LANG_PT].objectiveBody =
+  "Profissional com experiencia multidisciplinar em funcoes de contacto com cliente, rigor de processos e analise orientada a qualidade, atualmente a explorar novas oportunidades na area de Gestao de Credito, incluindo a posicao de Gestora de Credito na Reorganiza. Trago comunicacao clara, atencao ao detalhe e consistencia em documentacao, priorizacao e suporte a decisao.";
+translations[LANG_PT].experienceTitle = "Experiencia Relevante";
+translations[LANG_PT].experienceItems = [
+  {
+    title: "Estagiaria de Desenvolvimento de Software - FloLabs Innovations Group",
+    when: "Ago 2025 - Presente",
+    bullets: [
+      "Gestao de fluxos estruturados de tarefas e acompanhamento de estado, mantendo prioridades e prazos claros.",
+      "Consolidacao de informacao de varias fontes para apoiar decisoes baseadas em evidencia.",
+      "Documentacao de processos e casos limite com consistencia e rastreabilidade.",
+      "Contributo para controlo de qualidade e triagem de incidentes, melhorando o tempo de resposta em cerca de 20%.",
+      "Colaboracao com equipas tecnicas e nao tecnicas em contexto de ritmo elevado.",
+    ],
+  },
+  {
+    title: "LLM Trainer (Portugues e Ingles) - Remoto",
+    when: "Ago 2024 - Presente",
+    bullets: [
+      "Revisao de grandes volumes de conteudo escrito face a criterios de qualidade e regras de politica.",
+      "Aplicacao de criterio consistente, atencao ao detalhe e justificacao clara nas correcoes.",
+    ],
+  },
+  {
+    title: "Docente de Musica (Canto, Piano, Violino e Viola) - Varias Instituicoes",
+    when: "2018 - 2025",
+    bullets: [
+      "Gestao de progressao de longo prazo com planeamento estruturado, comunicacao de confianca e acompanhamento individual.",
+    ],
+  },
+  {
+    title: "Hotelaria - Funcoes de Cozinha e Padaria",
+    when: "2016 - 2018",
+    where: "Cantinho do Avillez - Gleba Moagem e Padaria - Lagoas Park Hotel",
+    bullets: [
+      "Trabalho em ambientes de alta pressao com prazos rigorosos, precisao e coordenacao proxima em equipa.",
+    ],
+  },
+];
+translations[LANG_PT].skillsTitle = "Competencias-Chave para Gestao de Credito";
+translations[LANG_PT].skillGroups = [
+  {
+    title: "Mentalidade de Credito e Risco",
+    items: ["Pensamento Analitico", "Interpretacao de Dados", "Suporte a Decisao", "Sensibilidade a Risco", "Atencao ao Detalhe"],
+  },
+  {
+    title: "Comunicacao com Cliente",
+    items: ["Escuta Ativa", "Gestao de Expectativas", "Comunicacao Escrita Clara", "Empatia e Profissionalismo", "Orientacao para Negociacao"],
+  },
+  {
+    title: "Processos e Conformidade",
+    items: ["Documentacao Estruturada", "Cumprimento de Politicas", "Controlo de Qualidade", "Confidencialidade", "Consistencia"],
+  },
+  {
+    title: "Disciplina Operacional",
+    items: ["Priorizacao", "Gestao de Tempo", "Follow-up", "Resolucao de Problemas", "Colaboracao Entre Equipas"],
+  },
+];
+translations[LANG_PT].keySkillsTitle = "Competencias-Chave";
+translations[LANG_PT].keySkills = [
+  "Mentalidade de Analise de Credito",
+  "Sensibilidade a Risco",
+  "Comunicacao com Cliente",
+  "Orientacao para Negociacao",
+  "Rigor de Documentacao",
+  "Interpretacao de Dados",
+  "Controlo de Qualidade",
+  "Cumprimento de Politicas",
+  "Priorizacao",
+  "Gestao de Tempo",
+  "Resolucao de Problemas",
+  "Colaboracao",
+];
+translations[LANG_PT].strengthsTitle = "Pontos Fortes Transversais";
+translations[LANG_PT].strengths = [
+  "<strong>Disciplina analitica</strong> - avaliar informacao com rigor e apoiar decisoes com raciocinio claro.",
+  "<strong>Comunicacao centrada no cliente</strong> - explicar opcoes com clareza, ouvir ativamente e manter confianca em conversas sensiveis.",
+  "<strong>Consistencia de processo</strong> - seguir fluxos estruturados, documentar com clareza e manter qualidade sob prazos.",
+  "<strong>Fiabilidade operacional</strong> - priorizar com eficacia, acompanhar detalhes e entregar com consistencia em contextos exigentes.",
+  "<strong>Adaptabilidade</strong> - transitar rapidamente entre areas mantendo foco em resultados mensuraveis.",
+];
+
 const urlLanguage = new URLSearchParams(window.location.search).get("lang");
 const shouldAutoPrint = new URLSearchParams(window.location.search).get("download") === "1";
 let currentLanguage = urlLanguage || getStoredValue(LANGUAGE_KEY);

@@ -25,10 +25,10 @@
       ],
       rightTitle: "Preferred Roles & Availability",
       rightItems: [
-        "<strong>Preferred Roles:</strong> Junior Web Designer, UI/UX Designer, and frontend-focused web roles where design decisions need to work in the browser.",
-        "<strong>Availability:</strong> Available for interviews and open to hybrid opportunities in Lisbon or remote collaboration.",
-        "<strong>Opportunity Type:</strong> Open to discussing permanent or contract opportunities depending on the fit.",
-        "<strong>Level:</strong> Junior / entry-level candidate with practical project experience and strong motivation to keep improving.",
+        "<strong>Preferred Roles:</strong> Credit Manager / Credit Analyst roles (including Reorganiza), with strong focus on client support, risk awareness, and process quality.",
+        "<strong>Availability:</strong> Available for interviews and currently exploring new opportunities in Lisbon (hybrid/on-site) or remote collaboration.",
+        "<strong>Opportunity Type:</strong> Open to permanent or contract opportunities, depending on scope and fit.",
+        "<strong>Profile Level:</strong> Multidisciplinary professional with transferable experience in analysis, communication, and operational rigor.",
       ],
     },
     pt: {
@@ -42,10 +42,10 @@
       ],
       rightTitle: "Funções Preferidas e Disponibilidade",
       rightItems: [
-        "<strong>Funções preferidas:</strong> Junior Web Designer, UI/UX Designer e funções web com foco frontend onde as decisões de design precisam de funcionar no browser.",
-        "<strong>Disponibilidade:</strong> disponível para entrevistas e aberta a oportunidades híbridas em Lisboa ou colaboração remota.",
+        "<strong>Funções preferidas:</strong> Gestora de Credito / Analista de Credito (incluindo Reorganiza), com foco em apoio ao cliente, sensibilidade a risco e qualidade de processo.",
+        "<strong>Disponibilidade:</strong> disponivel para entrevistas e atualmente a explorar novas oportunidades em Lisboa (hibrido/presencial) ou colaboracao remota.",
         "<strong>Tipo de oportunidade:</strong> aberta a oportunidades permanentes ou contrato, dependendo do enquadramento.",
-        "<strong>Nível:</strong> candidata junior / entry-level com experiência prática em projetos e forte motivação para continuar a evoluir.",
+        "<strong>Perfil:</strong> profissional multidisciplinar com experiencia transversal em analise, comunicacao e rigor operacional.",
       ],
     },
   };
