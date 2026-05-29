@@ -59,6 +59,19 @@
           </p>
         </div>
         <div class="actions">
+          <button
+            id="print-btn"
+            class="pill-btn solid icon-only"
+            type="button"
+            aria-label="Descarregar CV"
+          >
+            <span class="sr-only">Descarregar CV</span>
+            <svg class="download-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 4v11"></path>
+              <path d="m7 11 5 5 5-5"></path>
+              <path d="M5 20h14"></path>
+            </svg>
+          </button>
           <button id="theme-toggle" class="pill-btn ghost" type="button" aria-label="Alternar tema"></button>
           <a class="pill-btn ghost" href="./index.html?lang=pt-PT">Ver CV Geral</a>
         </div>
@@ -178,7 +191,8 @@
     (function () {
       const THEME_KEY = "resume-theme";
       const themeToggle = document.getElementById("theme-toggle");
-      if (!themeToggle) return;
+      const printButton = document.getElementById("print-btn");
+      const shouldAutoPrint = new URLSearchParams(window.location.search).get("download") === "1";
 
       function getTheme() {
         return document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
@@ -201,10 +215,24 @@
         updateToggleLabel(theme);
       }
 
-      updateToggleLabel(getTheme());
-      themeToggle.addEventListener("click", function () {
-        applyTheme(getTheme() === "light" ? "dark" : "light");
-      });
+      if (themeToggle) {
+        updateToggleLabel(getTheme());
+        themeToggle.addEventListener("click", function () {
+          applyTheme(getTheme() === "light" ? "dark" : "light");
+        });
+      }
+
+      if (printButton) {
+        printButton.addEventListener("click", function () {
+          window.print();
+        });
+      }
+
+      if (shouldAutoPrint) {
+        window.setTimeout(function () {
+          window.print();
+        }, 0);
+      }
     })();
   </script>
 </body>
