@@ -22,6 +22,25 @@
     name="twitter:description"
     content="Percurso profissional e experiência transversal com foco no cliente, rigor de processo e acompanhamento."
   />
+  <script>
+    (function () {
+      const THEME_KEY = "resume-theme";
+      try {
+        const storedTheme = window.localStorage.getItem(THEME_KEY);
+        if (storedTheme === "light" || storedTheme === "dark") {
+          document.documentElement.setAttribute("data-theme", storedTheme);
+          return;
+        }
+      } catch (_) {
+        // Ignore storage access errors in restricted browser contexts.
+      }
+
+      const prefersLight =
+        typeof window.matchMedia === "function" &&
+        window.matchMedia("(prefers-color-scheme: light)").matches;
+      document.documentElement.setAttribute("data-theme", prefersLight ? "light" : "dark");
+    })();
+  </script>
   <link rel="preload" href="styles.css?v=__ASSET_VERSION__" as="style" />
   <link rel="stylesheet" href="styles.css?v=__ASSET_VERSION__" />
   <link rel="icon" href="../assets/logo_portfolio.png" />
@@ -40,6 +59,7 @@
           </p>
         </div>
         <div class="actions">
+          <button id="theme-toggle" class="pill-btn ghost" type="button" aria-label="Alternar tema"></button>
           <a class="pill-btn ghost" href="./index.html?lang=pt-PT">Ver CV Geral</a>
         </div>
       </div>
@@ -153,5 +173,39 @@
   <footer class="container footer">
     <p>&copy; 2026 Daniela Almeida</p>
   </footer>
+
+  <script>
+    (function () {
+      const THEME_KEY = "resume-theme";
+      const themeToggle = document.getElementById("theme-toggle");
+      if (!themeToggle) return;
+
+      function getTheme() {
+        return document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+      }
+
+      function updateToggleLabel(theme) {
+        const nextModeLabel = theme === "light" ? "Dark Mode" : "Light Mode";
+        themeToggle.textContent = nextModeLabel;
+        themeToggle.setAttribute("aria-label", nextModeLabel);
+        themeToggle.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+      }
+
+      function applyTheme(theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+        try {
+          window.localStorage.setItem(THEME_KEY, theme);
+        } catch (_) {
+          // Ignore storage access errors in restricted browser contexts.
+        }
+        updateToggleLabel(theme);
+      }
+
+      updateToggleLabel(getTheme());
+      themeToggle.addEventListener("click", function () {
+        applyTheme(getTheme() === "light" ? "dark" : "light");
+      });
+    })();
+  </script>
 </body>
 </html>
