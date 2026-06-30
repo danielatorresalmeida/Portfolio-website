@@ -2074,6 +2074,47 @@ body {
   }
 }
 
+.role-version-grid {
+  align-items: stretch;
+}
+
+.role-version-grid .role-version-card {
+  min-height: 100%;
+}
+
+.role-version-grid .card-body {
+  gap: 12px;
+}
+
+.role-version-grid .card p {
+  flex: 1;
+}
+
+.role-version-grid .links {
+  width: 100%;
+}
+
+.role-version-grid .links > * {
+  flex: 1 1 150px;
+  min-width: 0;
+}
+
+@media (min-width: 1180px) {
+  .grid.cards.role-version-grid .role-version-card {
+    grid-column: span 4;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1179px) {
+  .grid.cards.role-version-grid .role-version-card {
+    grid-column: span 6;
+  }
+
+  .grid.cards.role-version-grid .role-version-card:last-child {
+    grid-column: 4 / span 6;
+  }
+}
+
 @media (max-width: 760px) {
   :root {
     --section-title-size: clamp(26px, 8vw, 34px);
