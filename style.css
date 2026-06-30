@@ -2099,19 +2099,9 @@ body {
   min-width: 0;
 }
 
-@media (min-width: 1180px) {
-  .grid.cards.role-version-grid .role-version-card {
-    grid-column: span 4;
-  }
-}
-
-@media (min-width: 700px) and (max-width: 1179px) {
+@media (min-width: 700px) {
   .grid.cards.role-version-grid .role-version-card {
     grid-column: span 6;
-  }
-
-  .grid.cards.role-version-grid .role-version-card:last-child {
-    grid-column: 4 / span 6;
   }
 }
 

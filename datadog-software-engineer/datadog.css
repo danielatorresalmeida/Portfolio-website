@@ -1,0 +1,298 @@
+body.datadog-page {
+  padding-top: 0;
+  background:
+    radial-gradient(circle at top left, rgba(var(--accent-rgb), .16), transparent 34rem),
+    radial-gradient(circle at 85% 8%, rgba(125, 80, 255, .14), transparent 28rem),
+    var(--bg);
+}
+
+.dd-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.dd-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px 0;
+}
+
+.dd-brand {
+  color: var(--text);
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.dd-nav-links,
+.dd-actions,
+.dd-tags,
+.dd-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dd-nav-links {
+  justify-content: flex-end;
+}
+
+.dd-nav-links a,
+.dd-inline-link {
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.dd-nav-links a:hover,
+.dd-inline-link:hover {
+  color: var(--accent);
+}
+
+.dd-hero {
+  padding: clamp(56px, 9vw, 104px) 0 clamp(34px, 6vw, 72px);
+}
+
+.dd-kicker,
+.dd-note {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.dd-hero h1,
+.dd-section h2 {
+  margin: 0;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+.dd-hero h1 {
+  max-width: 900px;
+  font-size: clamp(42px, 7vw, 82px);
+  line-height: 1;
+}
+
+.dd-lead {
+  max-width: 860px;
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.65;
+}
+
+.dd-actions {
+  margin-top: 26px;
+}
+
+.dd-section {
+  padding: clamp(34px, 6vw, 68px) 0;
+}
+
+.dd-section-header {
+  max-width: 780px;
+  margin-bottom: 22px;
+}
+
+.dd-section h2 {
+  font-size: clamp(28px, 4vw, 48px);
+}
+
+.dd-section-header p,
+.dd-card p,
+.dd-card li,
+.dd-resume-line {
+  color: var(--muted);
+}
+
+.dd-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+
+.dd-card {
+  grid-column: span 12;
+  padding: 22px;
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--panel) 94%, var(--accent) 6%), var(--panel));
+  border: 1px solid color-mix(in srgb, var(--border) 76%, var(--accent) 24%);
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, .16);
+}
+
+.dd-card h3 {
+  margin: 0 0 10px;
+  color: var(--text);
+  font-size: 20px;
+}
+
+.dd-card p {
+  margin: 0;
+}
+
+.dd-list {
+  margin: 12px 0 0;
+  padding-left: 18px;
+}
+
+.dd-list li + li {
+  margin-top: 8px;
+}
+
+.dd-tags {
+  margin-top: 16px;
+}
+
+.dd-tags span,
+.dd-target {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border: 1px solid color-mix(in srgb, var(--accent) 38%, var(--border));
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: var(--text);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.dd-target {
+  margin: 0 0 18px;
+}
+
+.dd-callout {
+  padding: clamp(24px, 5vw, 40px);
+  background:
+    linear-gradient(135deg, rgba(var(--accent-rgb), .22), rgba(120, 82, 255, .14)),
+    var(--panel);
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--border));
+  border-radius: 24px;
+}
+
+.dd-callout h2,
+.dd-callout p {
+  max-width: 780px;
+}
+
+.dd-callout p {
+  color: var(--muted);
+}
+
+.dd-resume-header {
+  padding: 42px 0 24px;
+}
+
+.dd-resume-title {
+  display: grid;
+  gap: 8px;
+}
+
+.dd-resume-title h1 {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.05;
+}
+
+.dd-resume-main {
+  padding-bottom: 52px;
+}
+
+.dd-resume-section {
+  margin-top: 16px;
+}
+
+.dd-resume-section h2 {
+  margin: 0 0 14px;
+  color: var(--text);
+  font-size: 24px;
+}
+
+.dd-resume-section h3 {
+  margin: 0;
+}
+
+.dd-resume-meta {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.dd-resume-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, .85fr);
+  gap: 16px;
+}
+
+.dd-stack {
+  display: grid;
+  gap: 16px;
+}
+
+.dd-footer {
+  padding: 30px 0;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+@media (min-width: 760px) {
+  .dd-card.span-4 {
+    grid-column: span 4;
+  }
+
+  .dd-card.span-6 {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 760px) {
+  .dd-shell {
+    width: min(100% - 28px, 640px);
+  }
+
+  .dd-nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .dd-nav-links {
+    justify-content: flex-start;
+  }
+
+  .dd-card {
+    padding: 18px;
+  }
+
+  .dd-resume-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  body.datadog-page {
+    background: #fff;
+    color: #111;
+  }
+
+  .dd-nav,
+  .dd-actions,
+  .dd-footer {
+    display: none;
+  }
+
+  .dd-shell {
+    width: 100%;
+  }
+
+  .dd-card,
+  .dd-callout {
+    border-color: #ddd;
+    box-shadow: none;
+  }
+}

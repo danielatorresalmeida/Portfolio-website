@@ -44,6 +44,18 @@
   - Practical project evidence with recruiter-friendly portfolio and CV flow
 - Status: Saved role-specific version
 
+## 5) Datadog Software Engineer - Early Career Version (Saved)
+- Audience: Datadog application / Software Engineer - Early Career
+- Role: Software Engineer - Early Career, Lisbon
+- Portfolio link: `https://danielatorresalmeida.github.io/Portfolio-website/datadog-software-engineer/`
+- Resume/CV link: `https://danielatorresalmeida.github.io/Portfolio-website/resume-datadog/`
+- Focus:
+  - Frontend-focused software developer positioning with broader software engineering awareness
+  - React, TypeScript, JavaScript, Next.js, responsive UI, accessibility, and UI/UX
+  - QA testing, API testing, REST API integration, debugging, and reliability habits
+  - Developer-facing product interest and willingness to grow in production-scale environments
+- Status: Saved role-specific version
+
 ## Which Link To Send
 - Main broad showcase: `https://danielatorresalmeida.github.io/Portfolio-website/`
 - General IT/software recruiters (Bruno): `https://danielatorresalmeida.github.io/Portfolio-website/general-it-software/`
@@ -52,6 +64,8 @@
 - Guestcentric resume: `https://danielatorresalmeida.github.io/Portfolio-website/guestcentric-web-designer/resume/`
 - Rumos Web Developer portfolio: `https://danielatorresalmeida.github.io/Portfolio-website/rumos-web-developer-lisboa/`
 - Rumos Web Developer resume: `https://danielatorresalmeida.github.io/Portfolio-website/rumos-web-developer-lisboa/resume/`
+- Datadog Software Engineer portfolio: `https://danielatorresalmeida.github.io/Portfolio-website/datadog-software-engineer/`
+- Datadog Software Engineer resume: `https://danielatorresalmeida.github.io/Portfolio-website/resume-datadog/`
 
 ## Routing and Deployment Notes
 - Static GitHub Pages deployment from repository root via `.github/workflows/deploy.yml`.
@@ -63,3 +77,5 @@
   - `guestcentric-web-designer/resume/`
   - `rumos-web-developer-lisboa/`
   - `rumos-web-developer-lisboa/resume/`
+  - `datadog-software-engineer/`
+  - `resume-datadog/`
