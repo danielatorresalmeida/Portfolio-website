@@ -40,6 +40,7 @@ body.datadog-page {
 }
 
 .dd-nav-links a,
+.dd-nav-links button,
 .dd-inline-link {
   color: var(--text);
   font-weight: 700;
@@ -47,8 +48,21 @@ body.datadog-page {
 }
 
 .dd-nav-links a:hover,
+.dd-nav-links button:hover,
 .dd-inline-link:hover {
   color: var(--accent);
+}
+
+.dd-download-btn {
+  cursor: pointer;
+  font: inherit;
+}
+
+.dd-nav-links .dd-download-btn {
+  min-height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1;
 }
 
 .dd-hero {

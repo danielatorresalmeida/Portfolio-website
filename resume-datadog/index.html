@@ -20,6 +20,7 @@
       <a href="#projects">Projects</a>
       <a href="#training">Training</a>
       <a href="../">Main portfolio</a>
+      <button class="btn btn-light dd-download-btn" type="button" data-print-cv>Download CV</button>
     </nav>
   </header>
 
@@ -175,6 +176,7 @@
       <h2>Related links</h2>
       <p>This CV is paired with a focused Datadog portfolio route and does not replace the main CV.</p>
       <div class="dd-actions">
+        <button class="btn btn-light dd-download-btn" type="button" data-print-cv>Download CV</button>
         <a class="btn btn-light" href="../datadog-software-engineer/">Datadog portfolio</a>
         <a class="btn btn-ghost" href="../resume-site-only/">Main CV</a>
         <a class="btn btn-ghost" href="../">Main portfolio</a>
@@ -187,5 +189,20 @@
       <p>2026 Daniela Almeida | Tailored CV route for Datadog Software Engineer - Early Career.</p>
     </div>
   </footer>
+  <script>
+    const shouldAutoPrintDatadogCv = new URLSearchParams(window.location.search).get("download") === "1";
+
+    function downloadDatadogCv() {
+      window.print();
+    }
+
+    document.querySelectorAll("[data-print-cv]").forEach((button) => {
+      button.addEventListener("click", downloadDatadogCv);
+    });
+
+    if (shouldAutoPrintDatadogCv) {
+      window.setTimeout(downloadDatadogCv, 0);
+    }
+  </script>
 </body>
 </html>
