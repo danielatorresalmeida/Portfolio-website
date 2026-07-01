@@ -56,6 +56,17 @@
   - Developer-facing product interest and willingness to grow in production-scale environments
 - Status: Saved role-specific version
 
+## 6) Laranjazen IEFP Web and Multimedia Programmer Version (Saved)
+- Audience: Cláudia Borlido / LARANJAZEN & BRANDING AGENCY, LDA.
+- Role: Programador Web e de Multimédia, IEFP offer nº 589420303, Mafra
+- Portfolio/CV link: `https://danielatorresalmeida.github.io/Portfolio-website/laranjazen-589420303/`
+- Focus:
+  - Web development, HTML, CSS, JavaScript, TypeScript, React, and responsive implementation
+  - UI/UX, visual hierarchy, website creation and improvement, and web content presentation
+  - Website maintenance, Git/GitHub, GitHub Pages, Vercel, QA habits, and debugging
+  - Organization, autonomy, and willingness to keep learning through practical projects and recent coursework
+- Status: Saved offer-specific version
+
 ## Which Link To Send
 - Main broad showcase: `https://danielatorresalmeida.github.io/Portfolio-website/`
 - General IT/software recruiters (Bruno): `https://danielatorresalmeida.github.io/Portfolio-website/general-it-software/`
@@ -66,6 +77,7 @@
 - Rumos Web Developer resume: `https://danielatorresalmeida.github.io/Portfolio-website/rumos-web-developer-lisboa/resume/`
 - Datadog Software Engineer portfolio: `https://danielatorresalmeida.github.io/Portfolio-website/datadog-software-engineer/`
 - Datadog Software Engineer resume: `https://danielatorresalmeida.github.io/Portfolio-website/resume-datadog/`
+- Laranjazen IEFP 589420303 portfolio/CV: `https://danielatorresalmeida.github.io/Portfolio-website/laranjazen-589420303/`
 
 ## Routing and Deployment Notes
 - Static GitHub Pages deployment from repository root via `.github/workflows/deploy.yml`.
@@ -79,3 +91,4 @@
   - `rumos-web-developer-lisboa/resume/`
   - `datadog-software-engineer/`
   - `resume-datadog/`
+  - `laranjazen-589420303/`
