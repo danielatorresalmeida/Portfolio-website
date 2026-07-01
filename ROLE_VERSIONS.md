@@ -92,3 +92,8 @@
   - `datadog-software-engineer/`
   - `resume-datadog/`
   - `laranjazen-589420303/`
+  - `programador-software-crm-salesforce/`
+
+## Latest Added Version
+- IEFP Software Programmer CRM/Salesforce portfolio/CV: `https://danielatorresalmeida.github.io/Portfolio-website/programador-software-crm-salesforce/`
+- Focus: software development, web development, CRM/Salesforce learning interest, databases, integrations, code organization, QA habits, teamwork, and English communication.
