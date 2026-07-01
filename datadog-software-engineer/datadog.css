@@ -149,6 +149,22 @@ body.datadog-page {
   margin: 0;
 }
 
+.dd-card-media,
+.dd-project-shot {
+  display: block;
+  width: 100%;
+  height: clamp(180px, 22vw, 280px);
+  margin-bottom: 16px;
+  object-fit: cover;
+  object-position: center top;
+  border: 1px solid color-mix(in srgb, var(--border) 76%, var(--accent) 24%);
+  border-radius: 14px;
+}
+
+.dd-project-shot {
+  margin-top: 12px;
+}
+
 .dd-list {
   margin: 12px 0 0;
   padding-left: 18px;
