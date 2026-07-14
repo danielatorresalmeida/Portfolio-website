@@ -254,12 +254,14 @@ describe("i18n contract", () => {
     const featuredTitles = featuredProjects.map((card) =>
       card.querySelector("h3")?.textContent?.trim()
     );
-    expect(featuredProjects.length).toBe(4);
+    expect(featuredProjects.length).toBe(6);
     expect(featuredTitles).toEqual([
       "DevFlow Hub",
+      "Clínica Médica",
       "Responsive Portfolio",
       "API QA Test Suite",
       "Tic Tac Toe / Jogo do Galo in C",
+      "Penguin Fishing Game",
     ]);
 
     const portfolioExperienceItems = portfolioDom.window.document.querySelectorAll("#experience .timeline .item");
