@@ -12,6 +12,10 @@
   --yt-accent-2: #83a9ff;
   --yt-line: #293a4d;
   --yt-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+  --accent-rgb: 112, 215, 183;
+  --accent-strong: #087f64;
+  --dot-grid-color: rgba(112, 215, 183, 0.16);
+  --dot-grid-active: rgba(112, 215, 183, 0.72);
   --bg: var(--yt-bg);
   --panel: var(--yt-panel);
   --text: var(--yt-text);
@@ -30,6 +34,10 @@
   --yt-accent-2: #315fc4;
   --yt-line: #cfdae5;
   --yt-shadow: 0 16px 40px rgba(27, 52, 78, 0.12);
+  --accent-rgb: 8, 127, 100;
+  --accent-strong: #065f4c;
+  --dot-grid-color: rgba(8, 127, 100, 0.13);
+  --dot-grid-active: rgba(8, 127, 100, 0.58);
 }
 
 * {
@@ -634,6 +642,136 @@ body:has(.resume) .resume h1,
 body:has(.resume) .resume h3,
 body:has(.resume) .resume strong {
   color: var(--yt-text) !important;
+}
+
+/*
+ * Legacy colour removal
+ * Older pages used hard-coded violet and electric-blue accents outside the
+ * shared custom properties. Normalize every remaining interactive/detail
+ * state to the Ytech green and neutral palette.
+ */
+body:not(.datadog-page) .experience-link,
+body:not(.datadog-page) .text-link,
+body:not(.datadog-page) .section a:not(.btn):not(.pill-btn):not(.chip),
+body:not(.datadog-page) .resume a:not(.pill-btn):not(.chip),
+body:not(.datadog-page) .contact-inline-link,
+body:not(.datadog-page) .project-body a:not(.btn),
+body:not(.datadog-page) .links a:not(.btn) {
+  color: var(--yt-accent) !important;
+  border-color: color-mix(in srgb, var(--yt-accent) 55%, transparent) !important;
+}
+
+body:not(.datadog-page) .experience-link:hover,
+body:not(.datadog-page) .text-link:hover,
+body:not(.datadog-page) .section a:not(.btn):not(.pill-btn):not(.chip):hover,
+body:not(.datadog-page) .resume a:not(.pill-btn):not(.chip):hover {
+  color: color-mix(in srgb, var(--yt-accent) 82%, var(--yt-text)) !important;
+  border-color: var(--yt-accent) !important;
+}
+
+body:not(.datadog-page) .skill-card h3::after,
+body:not(.datadog-page) .resume h2::after,
+body:not(.datadog-page) .project-card::before,
+body:not(.datadog-page) .card::before,
+body:not(.datadog-page) .progress-fill,
+body:not(.datadog-page) .strength-meter span {
+  background: var(--yt-accent) !important;
+  background-image: none !important;
+}
+
+body:not(.datadog-page) .theme-toggle,
+body:not(.datadog-page) #theme-toggle,
+body:not(.datadog-page) .theme-icon-button,
+body:not(.datadog-page) .name-linkedin,
+body:not(.datadog-page) .brand-linkedin {
+  color: var(--yt-text) !important;
+  border-color: var(--yt-line) !important;
+  background: var(--yt-panel) !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+body:not(.datadog-page) .theme-toggle:hover,
+body:not(.datadog-page) #theme-toggle:hover,
+body:not(.datadog-page) .theme-icon-button:hover,
+body:not(.datadog-page) .name-linkedin:hover,
+body:not(.datadog-page) .brand-linkedin:hover {
+  color: var(--yt-accent) !important;
+  border-color: var(--yt-accent) !important;
+}
+
+body:not(.datadog-page) .project-status,
+body:not(.datadog-page) .section-kicker,
+body:not(.datadog-page) .kicker,
+body:not(.datadog-page) .eyebrow,
+body:not(.datadog-page) .experience-date,
+body:not(.datadog-page) .course-category {
+  color: var(--yt-accent) !important;
+}
+
+body:not(.datadog-page) .tag,
+body:not(.datadog-page) .tags span,
+body:not(.datadog-page) .skill,
+body:not(.datadog-page) .skills span,
+body:not(.datadog-page) .project-proof,
+body:not(.datadog-page) .status-badge {
+  color: var(--yt-text) !important;
+  border-color: var(--yt-line) !important;
+  background: var(--yt-panel-2) !important;
+  background-image: none !important;
+}
+
+body:not(.datadog-page) .contact-card,
+body:not(.datadog-page) .contact-item,
+body:not(.datadog-page) .contact-panel,
+body:not(.datadog-page) .cta-panel,
+body:not(.datadog-page) .featured-case-study {
+  border-color: var(--yt-line) !important;
+  background: var(--yt-panel) !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+body.datadog-page {
+  --accent-rgb: 112, 215, 183;
+}
+
+body.datadog-page .dd-note,
+body.datadog-page .dd-kicker,
+body.datadog-page a:not(.btn) {
+  color: var(--yt-accent);
+}
+
+body:not(.datadog-page) .footer-links a,
+body:not(.datadog-page) footer a:not(.btn) {
+  color: var(--yt-accent) !important;
+  border-color: color-mix(in srgb, var(--yt-accent) 55%, transparent) !important;
+}
+
+body:not(.datadog-page) .footer-links a:hover,
+body:not(.datadog-page) footer a:not(.btn):hover {
+  color: color-mix(in srgb, var(--yt-accent) 82%, var(--yt-text)) !important;
+  border-color: var(--yt-accent) !important;
+}
+
+body:not(.datadog-page) .footer-links a::before,
+body:not(.datadog-page) .footer-links a::after,
+body:not(.datadog-page) footer a::before,
+body:not(.datadog-page) footer a::after,
+body:has(.resume) .resume h4::before,
+body:has(.resume) .resume h4::after {
+  border-color: var(--yt-accent) !important;
+  background: var(--yt-accent) !important;
+  background-image: none !important;
+}
+
+body:not(.datadog-page) .nav a::before,
+body:not(.datadog-page) .nav a::after,
+body:not(.datadog-page) .topbar nav a::before,
+body:not(.datadog-page) .topbar nav a::after {
+  border-color: var(--yt-accent) !important;
+  background: var(--yt-accent) !important;
+  background-image: none !important;
 }
 
 @media (max-width: 820px) {
