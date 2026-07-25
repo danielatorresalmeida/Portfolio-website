@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daniela Torres Almeida | Full-Stack Java and React Portfolio</title>
+  <meta name="description" content="A focused portfolio showing Daniela Torres Almeida's practical work with Java, Spring Boot, React, TypeScript, PostgreSQL, REST APIs, authentication, and software testing." />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="googlebot" content="noindex, nofollow, noarchive" />
+  <meta property="og:title" content="Daniela Torres Almeida | Java and React Portfolio for Ytech" />
+  <meta property="og:description" content="A recruiter-focused overview of Daniela's DevFlowHub work across Java, Spring Boot, React, PostgreSQL, API security, testing, and full-stack delivery." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://danielatorresalmeida.github.io/Portfolio-website/ytech-fullstack-java-react/" />
+  <meta name="theme-color" content="#101722" />
+  <link rel="icon" href="../assets/logo_portfolio.png" />
+  <style>
+    :root{--bg:#0b111a;--panel:#111b28;--panel2:#162334;--text:#eef4fb;--muted:#a8b5c5;--accent:#70d7b7;--accent2:#83a9ff;--line:#293a4d;--shadow:0 18px 48px rgba(0,0,0,.28)}
+    :root[data-theme="light"]{--bg:#f4f7fb;--panel:#fff;--panel2:#edf3f8;--text:#142130;--muted:#526274;--accent:#087f64;--accent2:#315fc4;--line:#cfdae5;--shadow:0 16px 40px rgba(27,52,78,.12)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:5.5rem}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit}button,a{touch-action:manipulation}.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;z-index:99;background:var(--panel);padding:.75rem;border:2px solid var(--accent)}.shell{width:min(1160px,calc(100% - 2rem));margin:auto}.topbar{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px)}.nav{min-height:72px;display:flex;align-items:center;gap:1rem}.brand{font-weight:800;text-decoration:none;margin-right:auto}.links{display:flex;gap:1rem;align-items:center}.links a{text-decoration:none;color:var(--muted)}.links a:hover{color:var(--text)}.theme{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:10px;padding:.6rem .8rem;cursor:pointer}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.7rem 1rem;border-radius:10px;border:1px solid var(--line);text-decoration:none;font-weight:750}.btn.primary{background:var(--accent);border-color:var(--accent);color:#07140f}.btn:hover,.theme:hover{transform:translateY(-1px);box-shadow:var(--shadow)}:focus-visible{outline:3px solid var(--accent2);outline-offset:3px}.hero{padding:clamp(4rem,8vw,7rem) 0 3.5rem}.eyebrow{color:var(--accent);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem}.hero h1{font-size:clamp(2.6rem,7vw,5.5rem);line-height:.98;letter-spacing:-.055em;margin:.7rem 0 1rem;max-width:900px}.hero h1 span{color:var(--accent)}.hero .role{font-size:clamp(1.2rem,3vw,1.65rem);font-weight:750}.lead{font-size:clamp(1.05rem,2vw,1.22rem);max-width:800px;color:var(--muted)}.hero-note{max-width:820px;border-left:3px solid var(--accent);padding-left:1rem}.actions,.tags{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.5rem}.tags span{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:.4rem .7rem;font-size:.9rem}.section{padding:4.5rem 0}.section.alt{background:var(--panel)}.section h2{font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.1;letter-spacing:-.035em;margin:.4rem 0 1rem}.intro{max-width:780px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;margin-top:2rem}.card{grid-column:span 4;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.25rem;box-shadow:var(--shadow)}.alt .card{background:var(--panel2)}.card h3{margin:.1rem 0 .55rem}.card p,.card li{color:var(--muted)}.card ul{padding-left:1.15rem}.fit{grid-column:span 6}.fit strong{display:block;color:var(--accent);margin-bottom:.35rem}.case-layout{display:grid;grid-template-columns:1.25fr .75fr;gap:1.2rem;align-items:start}.case-copy{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:clamp(1.25rem,3vw,2rem)}.case-copy h3{margin-top:1.7rem}.case-copy p,.case-copy li{color:var(--muted)}.case-image{width:100%;height:auto;border-radius:16px;border:1px solid var(--line);background:var(--panel)}.architecture{display:grid;gap:.65rem;max-width:680px;margin:2rem auto}.node{padding:1rem;text-align:center;border:1px solid var(--line);border-radius:12px;background:var(--panel);font-weight:800}.arrow{text-align:center;color:var(--accent);font-size:1.4rem}.practices{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-top:1.3rem}.practices span{border:1px solid var(--line);border-radius:8px;padding:.5rem .7rem;color:var(--muted)}.skills{counter-reset:item;display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;padding:0;list-style:none}.skills li{counter-increment:item;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:.75rem}.skills li:before{content:counter(item,decimal-leading-zero);color:var(--accent);font-weight:800;margin-right:.65rem}.honest{border:1px solid var(--accent);background:color-mix(in srgb,var(--accent) 7%,var(--panel));border-radius:18px;padding:clamp(1.3rem,4vw,2.4rem)}.contact{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end}.contact-links{display:flex;flex-wrap:wrap;gap:.7rem}.footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted)}.mobile-toggle{display:none}
+    @media(max-width:820px){.mobile-toggle{display:block}.links{display:none;position:absolute;left:1rem;right:1rem;top:64px;flex-direction:column;align-items:stretch;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1rem}.links.open{display:flex}.card,.fit{grid-column:span 12}.case-layout,.contact{grid-template-columns:1fr}.skills{grid-template-columns:1fr 1fr}.nav>.btn{display:none}}
+    @media(max-width:520px){.skills{grid-template-columns:1fr}.hero{padding-top:3rem}.actions .btn{width:100%}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <header class="topbar">
+    <div class="shell nav">
+      <a class="brand" href="#top">Daniela Torres Almeida</a>
+      <button class="theme mobile-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-links">Menu</button>
+      <nav class="links" id="site-links" aria-label="Page sections">
+        <a href="#alignment">Role alignment</a><a href="#case-study">DevFlowHub</a><a href="#work">Engineering work</a><a href="#contact">Contact</a>
+      </nav>
+      <button class="theme" id="theme-toggle" type="button" aria-label="Switch to light theme">Light theme</button>
+      <a class="btn primary" href="./resume/">Tailored CV</a>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="shell">
+        <p class="eyebrow">Prepared for Ytech · Fullstack Java c/ React</p>
+        <h1>Daniela Torres Almeida<br><span>Junior Full-Stack Developer</span></h1>
+        <p class="role">Java · Spring Boot · React · TypeScript · PostgreSQL</p>
+        <div class="hero-note">
+          <p>Hi Gonçalo,</p>
+          <p class="lead">I created this focused portfolio to show how my current DevFlowHub work aligns with Ytech's Fullstack Java and React opportunity. I am based in Cascais, Portugal, and available for hybrid work in Lisbon.</p>
+        </div>
+        <p class="lead">DevFlowHub gives me practical experience across React, TypeScript, Java, Spring Boot, PostgreSQL, REST APIs, authentication, database migrations, testing, and full-stack debugging.</p>
+        <div class="actions">
+          <a class="btn primary" href="./resume/">View Tailored CV</a>
+          <a class="btn" href="./resume/?download=1" target="_blank" rel="noopener">Download / Save CV as PDF</a>
+          <a class="btn" href="#case-study">View DevFlowHub Case Study</a>
+          <a class="btn" href="#contact">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="alignment">
+      <div class="shell">
+        <p class="eyebrow">Role alignment</p><h2>Requirements mapped to practical evidence.</h2>
+        <p class="intro">The evidence below distinguishes current implementation work from technologies I would still be learning.</p>
+        <div class="grid">
+          <article class="card fit"><h3>Java</h3><strong>Evidence</strong><p>Java and Spring Boot backend work in DevFlowHub.</p></article>
+          <article class="card fit"><h3>React</h3><strong>Evidence</strong><p>React and TypeScript frontend development with Vite and REST API integration.</p></article>
+          <article class="card fit"><h3>Full-stack development</h3><strong>Evidence</strong><p>Frontend behaviour, backend APIs, authentication, relational data, migrations, debugging, and testing.</p></article>
+          <article class="card fit"><h3>Software development lifecycle</h3><strong>Evidence</strong><p>Requirement interpretation, implementation, migrations, tests, regression checks, documentation, pull requests, and delivery review.</p></article>
+          <article class="card fit"><h3>Agile-style workflow</h3><strong>Evidence</strong><p>Task-based development, incremental changes, feature branches, pull requests, testing, and technical documentation.</p></article>
+          <article class="card fit"><h3>Relational databases</h3><strong>Evidence</strong><p>PostgreSQL and SQL work provides a transferable relational foundation for MySQL.</p></article>
+          <article class="card fit"><h3>English</h3><strong>Evidence</strong><p>Technical documentation, pull-request communication, and project work conducted in English.</p></article>
+          <article class="card fit"><h3>Portugal and hybrid work</h3><strong>Evidence</strong><p>Currently based in Cascais, Portugal, and available for Lisbon hybrid work.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="case-study">
+      <div class="shell">
+        <p class="eyebrow">Dominant case study</p><h2>DevFlowHub: full-stack delivery in practice.</h2>
+        <div class="case-layout">
+          <article class="case-copy">
+            <h3>Project overview</h3><p>DevFlowHub is an in-progress platform for managing developers, projects, Agile tasks, and internal development programmes. It connects a React + TypeScript + Vite frontend to Java and Spring Boot REST APIs with PostgreSQL persistence.</p>
+            <h3>The problem</h3><p>The platform brings project work, task status, people, and development programmes into one structured workflow while protecting account and API operations.</p>
+            <h3>My contributions</h3><ul><li>Worked across frontend integration, backend API behaviour, relational data, security, migrations, testing, and debugging.</li><li>Implemented and tested JWT authentication, Spring Security rules, protected <code>/api/**</code> routes, inactive-user restrictions, consistent 401 responses, and password changes based on the authenticated JWT subject.</li><li>Added backend-controlled audit fields, kept <code>createdAt</code> immutable, maintained <code>updatedAt</code> automatically, and supported the change with a database migration.</li><li>Preserved microsecond timestamp precision and validated behaviour with controller, unit, persistence, and API smoke tests.</li></ul>
+            <h3>Integration and debugging</h3><p>I investigated React-to-Spring requests, authentication failures, local ports and environment configuration, migration behaviour, and the relationship between frontend requests and backend security responses.</p>
+            <h3>Workflow</h3><p>Work is broken into structured tasks and incremental changes, using feature branches, pull requests, implementation notes, test evidence, and review of security, migrations, and data integrity before merging.</p>
+            <h3>Current status and next work</h3><p>The project is actively being developed. The next focus is continuing the core management workflows, strengthening integration coverage, and refining error handling and user feedback as features mature.</p>
+          </article>
+          <div><img class="case-image" src="../assets/devflow-hub.png" alt="DevFlowHub authentication interface showing the login form" width="1212" height="868" loading="lazy" decoding="async" /></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" aria-labelledby="architecture-heading">
+      <div class="shell"><p class="eyebrow">Current architecture</p><h2 id="architecture-heading">A clear path from interface to persistence.</h2>
+        <div class="architecture" role="img" aria-label="React, TypeScript and Vite frontend connects through a REST API to Java and Spring Boot, secured by Spring Security and JWT, with PostgreSQL persistence">
+          <div class="node">React + TypeScript + Vite</div><div class="arrow" aria-hidden="true">↓</div><div class="node">REST API</div><div class="arrow" aria-hidden="true">↓</div><div class="node">Java + Spring Boot</div><div class="arrow" aria-hidden="true">↓</div><div class="node">Spring Security + JWT</div><div class="arrow" aria-hidden="true">↓</div><div class="node">PostgreSQL</div>
+        </div>
+        <div class="practices" aria-label="Supporting engineering practices"><span>Database migrations</span><span>Unit and controller tests</span><span>Persistence tests</span><span>PowerShell API smoke tests</span><span>Git and pull requests</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="work"><div class="shell"><p class="eyebrow">Selected engineering work</p><h2>Specific implementation evidence.</h2><div class="grid">
+      <article class="card"><h3>Authentication and API Security</h3><ul><li>JWT login and Spring Security</li><li>Protected API routes</li><li>Inactive-user restrictions</li><li>Standardised authentication errors</li><li>Password-change flow</li><li>Authentication smoke tests</li></ul></article>
+      <article class="card"><h3>Audit Fields and Data Integrity</h3><ul><li>Backend-controlled timestamps</li><li>Immutable <code>createdAt</code></li><li>Maintained <code>updatedAt</code></li><li>Database migration</li><li>Microsecond precision</li><li>Controller and persistence validation</li></ul></article>
+      <article class="card"><h3>API Testing and Regression Checks</h3><ul><li>PowerShell smoke tests</li><li>Login and protected-route checks</li><li>CRUD verification</li><li>Timestamp validation</li><li>Regression-sensitive flows</li></ul></article>
+      <article class="card"><h3>Full-Stack Debugging</h3><ul><li>React-to-Spring integration</li><li>Authentication debugging</li><li>Environment and local port issues</li><li>Database validation</li><li>Migration verification</li></ul></article>
+    </div></div></section>
+
+    <section class="section alt"><div class="shell"><p class="eyebrow">Technical focus</p><h2>Skills prioritised for this role.</h2><ol class="skills"><li>Java</li><li>Spring Boot</li><li>Spring Security</li><li>React</li><li>TypeScript</li><li>JavaScript</li><li>REST APIs</li><li>PostgreSQL</li><li>SQL</li><li>JWT</li><li>Git</li><li>GitHub</li><li>API testing</li><li>Database migrations</li><li>Debugging</li><li>HTML</li><li>CSS</li><li>Responsive design</li></ol></div></section>
+
+    <section class="section"><div class="shell"><div class="honest"><p class="eyebrow">Experience, stated clearly</p><h2>Depth of implementation is my strongest evidence.</h2><p class="lead">DevFlowHub requires me to work across backend architecture, authentication, relational data, REST API behaviour, frontend integration, migrations, testing, debugging, and structured delivery. I am still building the length of experience requested in the listing, while already working practically with its central Java, Spring Boot, React, and PostgreSQL stack.</p></div></div></section>
+
+    <section class="section alt"><div class="shell"><p class="eyebrow">Technologies to grow into</p><h2>Relevant next areas, without overstating experience.</h2><p class="intro">I would be interested in expanding into Kafka, Elasticsearch, MySQL, and MongoDB. My existing PostgreSQL, SQL, API, and data-migration work provides a useful relational foundation for learning MySQL; these technologies are learning targets, not claimed production experience.</p></div></section>
+
+    <section class="section"><div class="shell"><p class="eyebrow">Supporting projects</p><h2>Secondary evidence for quality and data work.</h2><div class="grid">
+      <article class="card"><h3>API QA Test Suite</h3><p>Python and Pytest API checks demonstrate structured assertions, regression thinking, readable reports, and a practical testing mindset.</p><a href="https://github.com/danielatorresalmeida/api-qa-test-suite" target="_blank" rel="noopener">View code</a></article>
+      <article class="card"><h3>Responsive Portfolio</h3><p>This portfolio demonstrates semantic HTML, responsive CSS, JavaScript interactions, accessibility checks, and automated smoke testing.</p><a href="https://danielatorresalmeida.github.io/Portfolio-website/" target="_blank" rel="noopener">View project</a></article>
+      <article class="card"><h3>Relational SQL Database</h3><p>A workshop database model supports the application through relational design, entity relationships, SQL organisation, and data-structure reasoning.</p></article>
+    </div></div></section>
+
+    <section class="section alt" id="contact"><div class="shell contact"><div><p class="eyebrow">Contact</p><h2>Thank you for reviewing my work.</h2><p class="intro">I would welcome the opportunity to discuss how my practical experience with Java, Spring Boot, React, PostgreSQL, authentication, and testing could contribute to Ytech's project.</p></div><div class="contact-links"><a class="btn primary" href="mailto:danielarosadolealtorresalmeida@gmail.com">Email Daniela</a><a class="btn" href="https://www.linkedin.com/in/daniela-torres-almeida-945884205/" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/danielatorresalmeida" target="_blank" rel="noopener">GitHub</a><a class="btn" href="./resume/">Tailored CV</a></div></div></section>
+  </main>
+  <footer class="footer"><div class="shell">Daniela Torres Almeida · Cascais, Portugal · Ytech-tailored portfolio</div></footer>
+  <script>
+    const root=document.documentElement,themeButton=document.getElementById("theme-toggle"),menuButton=document.getElementById("menu-toggle"),links=document.getElementById("site-links");
+    const saved=localStorage.getItem("ytech-theme"),preferred=window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";
+    function setTheme(theme){root.dataset.theme=theme;themeButton.textContent=theme==="dark"?"Light theme":"Dark theme";themeButton.setAttribute("aria-label",`Switch to ${theme==="dark"?"light":"dark"} theme`)}
+    setTheme(saved||preferred);themeButton.addEventListener("click",()=>{const next=root.dataset.theme==="dark"?"light":"dark";setTheme(next);localStorage.setItem("ytech-theme",next)});
+    menuButton.addEventListener("click",()=>{const open=links.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(open))});
+    links.addEventListener("click",event=>{if(event.target.matches("a")){links.classList.remove("open");menuButton.setAttribute("aria-expanded","false")}});
+  </script>
+</body>
+</html>
