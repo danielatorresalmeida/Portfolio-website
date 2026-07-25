@@ -1,0 +1,395 @@
+/*
+ * Shared visual system for Daniela's portfolio and CV routes.
+ * Loaded after each route's original stylesheet so content and behaviour remain route-specific.
+ */
+:root {
+  --yt-bg: #0b111a;
+  --yt-panel: #111b28;
+  --yt-panel-2: #162334;
+  --yt-text: #eef4fb;
+  --yt-muted: #a8b5c5;
+  --yt-accent: #70d7b7;
+  --yt-accent-2: #83a9ff;
+  --yt-line: #293a4d;
+  --yt-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+  --bg: var(--yt-bg);
+  --panel: var(--yt-panel);
+  --text: var(--yt-text);
+  --muted: var(--yt-muted);
+  --accent: var(--yt-accent);
+  --border: var(--yt-line);
+}
+
+:root[data-theme="light"] {
+  --yt-bg: #f4f7fb;
+  --yt-panel: #ffffff;
+  --yt-panel-2: #edf3f8;
+  --yt-text: #142130;
+  --yt-muted: #526274;
+  --yt-accent: #087f64;
+  --yt-accent-2: #315fc4;
+  --yt-line: #cfdae5;
+  --yt-shadow: 0 16px 40px rgba(27, 52, 78, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body,
+body.datadog-page {
+  color: var(--yt-text);
+  background: var(--yt-bg);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.65;
+}
+
+body::before,
+body::after,
+.hero::before,
+.hero::after {
+  opacity: 0.32;
+}
+
+a,
+button,
+.btn {
+  touch-action: manipulation;
+}
+
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--yt-accent-2);
+  outline-offset: 3px;
+}
+
+.container,
+.dd-shell,
+.resume,
+.topbar-inner {
+  width: min(1160px, calc(100% - 2rem));
+  max-width: 1160px;
+  margin-inline: auto;
+}
+
+.topbar,
+.dd-nav {
+  border-bottom: 1px solid var(--yt-line);
+  background: color-mix(in srgb, var(--yt-bg) 88%, transparent);
+  box-shadow: none;
+  backdrop-filter: blur(14px);
+}
+
+.topbar .topbar-inner,
+.dd-nav {
+  min-height: 72px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.brand,
+.dd-brand,
+.name {
+  color: var(--yt-text);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.nav a,
+.dd-nav-links a,
+.topbar a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25rem;
+}
+
+.hero,
+.dd-hero {
+  background: var(--yt-bg);
+  color: var(--yt-text);
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+.hero h1,
+.dd-hero h1,
+.intro h1,
+.resume h1 {
+  color: var(--yt-text);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6.5vw, 5.25rem);
+}
+
+.hero .accent,
+.hero h1 span,
+.dd-note,
+.dd-kicker,
+.kicker,
+.section-kicker,
+.project-status,
+.experience-date {
+  color: var(--yt-accent);
+}
+
+.lead,
+.section-intro,
+.dd-lead,
+.dd-section-header > p,
+.meta,
+.when,
+.where {
+  color: var(--yt-muted);
+}
+
+.section,
+.dd-section {
+  padding-block: clamp(3.75rem, 7vw, 5.5rem);
+}
+
+.section:nth-of-type(even),
+.section.alt,
+.dd-section:nth-of-type(even) {
+  background: var(--yt-panel);
+}
+
+.section h2,
+.dd-section h2 {
+  color: var(--yt-text);
+  font-size: clamp(1.9rem, 4vw, 3.1rem);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.card,
+.dd-card,
+.dd-callout,
+.offer-card,
+.resume .col,
+.resume .card,
+.project,
+.experience-item,
+.education-item,
+.supplemental-card {
+  color: var(--yt-text);
+  border: 1px solid var(--yt-line);
+  border-radius: 16px;
+  background: var(--yt-panel);
+  box-shadow: var(--yt-shadow);
+}
+
+.section.alt .card,
+.section:nth-of-type(even) .card,
+.dd-section:nth-of-type(even) .dd-card {
+  background: var(--yt-panel-2);
+}
+
+.card p,
+.card li,
+.dd-card p,
+.dd-card li,
+.dd-callout p,
+.project p,
+.project li {
+  color: var(--yt-muted);
+}
+
+.card h3,
+.dd-card h3,
+.project h3,
+.resume h2,
+.resume h3 {
+  color: var(--yt-text);
+}
+
+.card img,
+.dd-card-media,
+.project img,
+.project-site-shot {
+  border-radius: 12px;
+  border: 1px solid var(--yt-line);
+}
+
+.btn,
+.pill-btn,
+.chip,
+.dd-actions a,
+button {
+  min-height: 44px;
+  border: 1px solid var(--yt-line);
+  border-radius: 10px;
+  color: var(--yt-text);
+  background: var(--yt-panel);
+  font-weight: 750;
+  box-shadow: none;
+}
+
+.btn-light,
+.btn.primary,
+.pill-btn:not(.ghost),
+.dd-actions .btn-light {
+  color: #07140f;
+  border-color: var(--yt-accent);
+  background: var(--yt-accent);
+}
+
+.btn:hover,
+.pill-btn:hover,
+.chip:hover,
+.dd-actions a:hover,
+button:hover {
+  transform: translateY(-1px);
+  border-color: var(--yt-accent);
+  box-shadow: var(--yt-shadow);
+}
+
+.tag,
+.tags span,
+.dd-tags span,
+.skill,
+.skills span,
+.skills-list li,
+.courses-list li {
+  border-color: var(--yt-line);
+  border-radius: 999px;
+  color: var(--yt-text);
+  background: var(--yt-panel);
+}
+
+.resume {
+  color: var(--yt-text);
+  border: 1px solid var(--yt-line);
+  border-radius: 16px;
+  background: var(--yt-bg);
+  box-shadow: var(--yt-shadow);
+}
+
+.resume::before,
+.intro::after {
+  opacity: 0.2;
+}
+
+.resume .intro {
+  border-bottom: 4px solid var(--yt-accent);
+}
+
+.resume .col,
+.resume .card {
+  break-inside: avoid;
+}
+
+.resume h2 {
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--yt-line);
+  color: var(--yt-accent);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.resume a {
+  color: inherit;
+}
+
+.dd-grid,
+.project-grid,
+.fit-grid,
+.skills-grid,
+.courses-list {
+  gap: 1rem;
+}
+
+.dd-footer,
+footer {
+  color: var(--yt-muted);
+  border-top: 1px solid var(--yt-line);
+  background: var(--yt-bg);
+}
+
+@media (max-width: 820px) {
+  .container,
+  .dd-shell,
+  .resume,
+  .topbar-inner {
+    width: min(100% - 1.25rem, 1160px);
+  }
+
+  .topbar .topbar-inner,
+  .dd-nav {
+    min-height: 64px;
+  }
+
+  .hero,
+  .dd-hero {
+    padding-block: 3.5rem;
+  }
+
+  .card,
+  .dd-card,
+  .dd-callout {
+    border-radius: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media print {
+  :root,
+  :root[data-theme="dark"],
+  :root[data-theme="light"] {
+    --yt-bg: #ffffff;
+    --yt-panel: #ffffff;
+    --yt-panel-2: #ffffff;
+    --yt-text: #111111;
+    --yt-muted: #3f4852;
+    --yt-accent: #075f4c;
+    --yt-line: #b8c0c8;
+    --yt-shadow: none;
+  }
+
+  body,
+  .resume {
+    color: #111111 !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+  }
+
+  .topbar,
+  .dd-nav,
+  .actions,
+  #theme-toggle,
+  #print-btn,
+  .to-top {
+    display: none !important;
+  }
+
+  .card,
+  .dd-card,
+  .dd-callout,
+  .resume .col,
+  .resume .card {
+    color: #111111 !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+}
