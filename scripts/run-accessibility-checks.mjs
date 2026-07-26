@@ -9,14 +9,13 @@ const PAGES = [
 
 const AXE_OPTIONS = {
   runOnly: { type: "tag", values: ["wcag2a", "wcag2aa"] },
-  rules: {
-    // jsdom/browser-rendered checks in CI can be noisy for contrast due anti-aliasing.
-    "color-contrast": { enabled: false },
-  },
 };
 
 function formatViolation(violation) {
-  const targets = violation.nodes.slice(0, 3).map((node) => node.target.join(" ")).join(" | ");
+  const targets = violation.nodes
+    .slice(0, 3)
+    .map((node) => `${node.target.join(" ")}${node.failureSummary ? ` — ${node.failureSummary.replace(/\s+/g, " ")}` : ""}`)
+    .join(" | ");
   return `${violation.id} (${violation.impact || "unknown"}): ${targets}`;
 }
 
@@ -55,12 +54,10 @@ async function run() {
         continue;
       }
 
-      const seriousViolations = (results.violations || []).filter((violation) =>
-        ["serious", "critical"].includes(violation.impact)
-      );
+      const violations = results.violations || [];
 
-      if (seriousViolations.length > 0) {
-        seriousViolations.forEach((violation) => {
+      if (violations.length > 0) {
+        violations.forEach((violation) => {
           failures.push(`${page.name}: ${formatViolation(violation)}`);
         });
       }
@@ -74,7 +71,7 @@ async function run() {
     throw new Error(`Accessibility violations detected:\n- ${failures.join("\n- ")}`);
   }
 
-  console.log("Accessibility checks passed with no serious/critical violations.");
+  console.log("Accessibility checks passed with no WCAG A/AA violations.");
 }
 
 run().catch((error) => {

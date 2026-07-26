@@ -38,6 +38,22 @@
    (Remove any previous @media (prefers-color-scheme: light) blocks.) */
 
 * { box-sizing: border-box; }
+
+.skip-link {
+  position: fixed;
+  z-index: 10000;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.65rem 0.9rem;
+  color: var(--bg);
+  background: var(--accent);
+  border-radius: 0.5rem;
+  transform: translateY(-180%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
 html, body { height: 100%; }
 html {
   background: var(--bg);       /* defensive: avoid flash of white */
@@ -499,6 +515,12 @@ body {
 .reveal-on-scroll .section.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.reduce-motion-checks .reveal-on-scroll .section {
+  opacity: 1;
+  transform: none;
+  transition: none;
 }
 
 /* Cards grid */
