@@ -65,7 +65,7 @@ const translations = {
     metaLine: META_LINE_HTML,
     objectiveTitle: "Professional Summary",
     objectiveBody:
-      "Junior software development candidate with a background in arts and music education, now focused on frontend development, web development, UI/UX, and QA/testing. Experienced in building practical projects using HTML, CSS, JavaScript, TypeScript, Angular, Git, and design tools such as Figma. I bring creativity, attention to detail, adaptability, and a strong interest in building user-centered digital solutions.",
+      "Multidisciplinary software development candidate with hands-on project and internship experience across frontend interfaces, UI/UX, backend APIs, relational databases, QA/testing, and programming fundamentals. I build and evaluate practical digital solutions using Figma, HTML, CSS, JavaScript, TypeScript, React, Angular, Java, Python/FastAPI, SQL, PostgreSQL, Git/GitHub, and structured testing workflows. My background in arts, music education, language work, and hospitality strengthens creativity, communication, adaptability, precision, and user-centered problem solving.",
     experienceTitle: "Experience",
     experienceItems: [
       {
@@ -217,7 +217,7 @@ const translations = {
     metaLine: META_LINE_HTML,
     objectiveTitle: "Resumo Profissional",
     objectiveBody:
-      "Candidata junior em desenvolvimento de software, com percurso em artes e educacao musical, agora focada em frontend, desenvolvimento web, UI/UX e QA/testes. Experiencia em projetos praticos com HTML, CSS, JavaScript, TypeScript, Angular, Git e ferramentas de design como Figma. Trago criatividade, atencao ao detalhe, adaptabilidade e forte interesse em criar solucoes digitais centradas no utilizador.",
+      "Candidata multidisciplinar em desenvolvimento de software, com experiência prática em projetos e estágio nas áreas de interfaces frontend, UI/UX, APIs backend, bases de dados relacionais, QA/testes e fundamentos de programação. Desenvolvo e avalio soluções digitais com Figma, HTML, CSS, JavaScript, TypeScript, React, Angular, Java, Python/FastAPI, SQL, PostgreSQL, Git/GitHub e fluxos de teste estruturados. O meu percurso em artes, educação musical, trabalho linguístico e hotelaria reforça criatividade, comunicação, adaptabilidade, precisão e resolução de problemas centrada no utilizador.",
     experienceTitle: "Experiência",
     experienceItems: [
       {
@@ -453,7 +453,7 @@ const translations = {
 };
 
 translations[LANG_EN].objectiveBody =
-  "Junior UI/UX and frontend-focused web designer with a background in arts and music education, now building practical web interfaces with Figma, HTML, CSS, JavaScript, and TypeScript. I care about visual hierarchy, responsive behavior, accessibility basics, and design decisions that work in the browser.";
+  "Multidisciplinary software development candidate with hands-on project and internship experience across frontend interfaces, UI/UX, backend APIs, relational databases, QA/testing, and programming fundamentals. I build and evaluate practical digital solutions using Figma, HTML, CSS, JavaScript, TypeScript, React, Angular, Java, Python/FastAPI, SQL, PostgreSQL, Git/GitHub, and structured testing workflows. My background in arts, music education, language work, and hospitality strengthens creativity, communication, adaptability, precision, and user-centered problem solving.";
 translations[LANG_EN].skillGroups = [
   {
     title: "Design",
@@ -563,7 +563,7 @@ translations[LANG_EN].projectCatalogGroups = [
 
 translations[LANG_PT].objectiveTitle = "Resumo Profissional";
 translations[LANG_PT].objectiveBody =
-  "Web designer junior focada em UI/UX e frontend, com percurso em artes e educacao musical, atualmente a desenvolver interfaces web praticas com Figma, HTML, CSS, JavaScript e TypeScript. Dou prioridade a hierarquia visual, comportamento responsivo, bases de acessibilidade e decisoes de design que funcionam no browser.";
+  "Candidata multidisciplinar em desenvolvimento de software, com experiência prática em projetos e estágio nas áreas de interfaces frontend, UI/UX, APIs backend, bases de dados relacionais, QA/testes e fundamentos de programação. Desenvolvo e avalio soluções digitais com Figma, HTML, CSS, JavaScript, TypeScript, React, Angular, Java, Python/FastAPI, SQL, PostgreSQL, Git/GitHub e fluxos de teste estruturados. O meu percurso em artes, educação musical, trabalho linguístico e hotelaria reforça criatividade, comunicação, adaptabilidade, precisão e resolução de problemas centrada no utilizador.";
 translations[LANG_PT].skillsTitle = "Stack Tecnica Principal";
 translations[LANG_PT].skillGroups = [
   {

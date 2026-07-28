@@ -1602,9 +1602,9 @@ main.hero .container,
 
 /* Full-width presentation tuning */
 :root {
-  --content-max-width: 65vw;
-  --text-max-width: min(65vw, 1100px);
-  --wide-section-width: 65vw;
+  --content-max-width: 94vw;
+  --text-max-width: min(94vw, 1100px);
+  --wide-section-width: 94vw;
   --base-text-size: clamp(16px, 0.95vw, 19px);
   --section-title-size: clamp(32px, 3vw, 54px);
   --section-intro-size: clamp(18px, 1.2vw, 24px);
