@@ -784,10 +784,6 @@ html[data-theme="light"] .skip-link {
     grid-column: span 6 !important;
   }
 
-  .portfolio-page .role-version-grid > .role-version-card {
-    grid-column: span 6 !important;
-  }
-
   .portfolio-page .other-projects-list {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -836,10 +832,6 @@ html[data-theme="light"] .skip-link {
 
   .portfolio-page #about .technical-skills > h3 {
     text-align: left;
-  }
-
-  .portfolio-page #about .technical-skills-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .portfolio-page #selected-strengths .container,
@@ -903,12 +895,6 @@ html[data-theme="light"] .skip-link {
   }
 }
 
-@media screen and (min-width: 1800px) {
-  .portfolio-page #about .technical-skills-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
 @media screen and (max-width: 1179px) {
   .portfolio-page .hero .hero-inner {
     grid-template-columns: 1fr;
@@ -934,8 +920,7 @@ html[data-theme="light"] .skip-link {
   .portfolio-page #figma-designs .grid.cards > .card,
   .portfolio-page #figma-designs .grid.cards > .card:nth-last-child(2):nth-child(3n + 1),
   .portfolio-page #figma-designs .grid.cards > .card:last-child:nth-child(3n + 2),
-  .portfolio-page #skills-by-project .grid.cards > .card,
-  .portfolio-page .role-version-grid > .role-version-card {
+  .portfolio-page #skills-by-project .grid.cards > .card {
     grid-column: span 6 !important;
   }
 
@@ -949,10 +934,6 @@ html[data-theme="light"] .skip-link {
 
   .portfolio-page #about .about {
     max-width: 48rem !important;
-  }
-
-  .portfolio-page #about .technical-skills-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .portfolio-page .selected-strengths-list,
@@ -1001,8 +982,7 @@ html[data-theme="light"] .skip-link {
   .portfolio-page #figma-designs .grid.cards > .card,
   .portfolio-page #figma-designs .grid.cards > .card:nth-last-child(2):nth-child(3n + 1),
   .portfolio-page #figma-designs .grid.cards > .card:last-child:nth-child(3n + 2),
-  .portfolio-page #skills-by-project .grid.cards > .card,
-  .portfolio-page .role-version-grid > .role-version-card {
+  .portfolio-page #skills-by-project .grid.cards > .card {
     grid-column: span 12 !important;
   }
 
@@ -1808,9 +1788,10 @@ body:has(.resume) .topbar .topbar-inner {
   }
 
   body.portfolio-page #about .technical-card-head {
-    gap: 0.75rem;
+    flex-direction: column;
+    gap: 0.6rem;
     margin-bottom: 0.9rem;
-    align-items: center;
+    align-items: flex-start;
   }
 
   body.portfolio-page #about .technical-icon {
@@ -1941,5 +1922,46 @@ body:has(.resume) .topbar .topbar-inner {
   body:not(.datadog-page) #experience .timeline .what {
     width: 100% !important;
     max-width: 100% !important;
+  }
+}
+
+/*
+ * Technical Skills adaptive layout contract
+ * Stack the badge above the title and let the grid add columns only when a
+ * comfortable card width is available.
+ */
+@media screen {
+  body:not(.datadog-page) #about .technical-skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  }
+
+  body:not(.datadog-page) #about .technical-card-head {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  body:not(.datadog-page) #about .technical-card-head,
+  body:not(.datadog-page) #about .technical-card h4 {
+    min-width: 0;
+  }
+
+  body:not(.datadog-page) #about .technical-card h4 {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: auto;
+  }
+
+  body:not(.datadog-page) #about .technical-card h4:is(
+    [data-i18n="about.technical.se.title"],
+    [data-i18n="about.technical.platforms.title"],
+    [data-i18n="about.technical.data.title"],
+    [data-i18n="about.technical.java.title"]
+  ) {
+    font-size: clamp(1rem, 1.15vw, 1.15rem);
   }
 }

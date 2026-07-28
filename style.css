@@ -2099,37 +2099,6 @@ body {
   }
 }
 
-.role-version-grid {
-  align-items: stretch;
-}
-
-.role-version-grid .role-version-card {
-  min-height: 100%;
-}
-
-.role-version-grid .card-body {
-  gap: 12px;
-}
-
-.role-version-grid .card p {
-  flex: 1;
-}
-
-.role-version-grid .links {
-  width: 100%;
-}
-
-.role-version-grid .links > * {
-  flex: 1 1 150px;
-  min-width: 0;
-}
-
-@media (min-width: 700px) {
-  .grid.cards.role-version-grid .role-version-card {
-    grid-column: span 6;
-  }
-}
-
 @media (max-width: 760px) {
   :root {
     --section-title-size: clamp(26px, 8vw, 34px);
@@ -2361,20 +2330,8 @@ body {
 #about .technical-skills-grid {
   display: grid;
   gap: clamp(12px, 1.8vw, 18px);
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   align-items: stretch;
-}
-
-@media (min-width: 761px) {
-  #about .technical-skills-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1200px) {
-  #about .technical-skills-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
 
 #about .technical-card {
@@ -2391,18 +2348,30 @@ body {
 
 #about .technical-card-head {
   display: flex;
-  gap: 10px;
+  flex-direction: column;
+  gap: 8px;
   margin-bottom: 10px;
-  align-items: center;
+  align-items: flex-start;
 }
 
 #about .technical-card h4 {
+  width: 100%;
   margin: 0;
   font-size: clamp(20px, 1.55vw, 24px);
   line-height: 1.2;
   white-space: normal;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
   word-break: normal;
+  hyphens: auto;
+}
+
+#about .technical-card h4:is(
+  [data-i18n="about.technical.se.title"],
+  [data-i18n="about.technical.platforms.title"],
+  [data-i18n="about.technical.data.title"],
+  [data-i18n="about.technical.java.title"]
+) {
+  font-size: clamp(16px, 1.15vw, 18.4px);
 }
 
 html[lang="en"] #about .technical-card:first-child h4 {

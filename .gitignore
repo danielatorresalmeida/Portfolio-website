@@ -2,3 +2,5 @@ node_modules/
 coverage/
 tests/visual/artifacts/*.png
 !tests/visual/artifacts/.gitkeep
+ROLE_VERSIONS.md
+INTERVIEW_MODE_GUESTCENTRIC.md
