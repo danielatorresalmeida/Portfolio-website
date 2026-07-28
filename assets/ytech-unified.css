@@ -1865,3 +1865,81 @@ body:has(.resume) .topbar .topbar-inner {
     text-align: left;
   }
 }
+
+/*
+ * Final bounded-width contract
+ *
+ * This file is loaded after every route stylesheet, so these screen-only
+ * rules intentionally close the cascade. Page shells, focused sections and
+ * readable copy now share three predictable width tiers.
+ */
+@media screen {
+  :root {
+    --yt-layout-max: 1180px;
+    --yt-focus-max: 980px;
+    --yt-reading-max: 760px;
+    --yt-page-gutter: clamp(16px, 2vw, 24px);
+  }
+
+  body:not(.datadog-page) .container:not(.resume),
+  body.datadog-page .dd-shell {
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: var(--yt-layout-max) !important;
+    margin-inline: auto !important;
+    padding-inline: var(--yt-page-gutter) !important;
+  }
+
+  body:has(.resume) .resume {
+    box-sizing: border-box;
+    width: calc(100% - 2rem) !important;
+    max-width: var(--yt-layout-max) !important;
+    margin-inline: auto !important;
+    padding-inline: 0 !important;
+  }
+
+  body:has(.resume) .topbar .topbar-inner {
+    width: 100% !important;
+    max-width: none !important;
+    padding-inline: 0 !important;
+  }
+
+  body:not(.datadog-page) .hero-copy,
+  body:not(.datadog-page) .hero > .container > :not(.hero-highlights),
+  body:not(.datadog-page) .hero h1,
+  body:not(.datadog-page) .hero .lead,
+  body:not(.datadog-page) .core-stack-note,
+  body:not(.datadog-page) .section > .container > .section-intro,
+  body:not(.datadog-page) .section > .container > .section-kicker,
+  body:not(.datadog-page) #about .about-summary,
+  body:not(.datadog-page) #about .about-summary p,
+  body:not(.datadog-page) #experience .timeline .what p,
+  body:not(.datadog-page) #experience .experience-list {
+    max-width: var(--yt-reading-max) !important;
+  }
+
+  body:not(.datadog-page) .hero-highlights,
+  body:not(.datadog-page) .section > .container > h2,
+  body:not(.datadog-page) #selected-strengths > .container,
+  body:not(.datadog-page) #courses > .container,
+  body:not(.datadog-page) #experience > .container,
+  body:not(.datadog-page) #experience .timeline,
+  body:not(.datadog-page) #contact > .container.contact-layout {
+    width: 100% !important;
+    max-width: var(--yt-focus-max) !important;
+  }
+
+  body:not(.datadog-page) #selected-strengths > .container,
+  body:not(.datadog-page) #courses > .container,
+  body:not(.datadog-page) #experience > .container,
+  body:not(.datadog-page) #experience .timeline,
+  body:not(.datadog-page) #contact > .container.contact-layout {
+    margin-inline: auto !important;
+  }
+
+  body:not(.datadog-page) #experience .timeline .item,
+  body:not(.datadog-page) #experience .timeline .what {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}

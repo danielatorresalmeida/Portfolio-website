@@ -90,7 +90,8 @@ body {
 
 /* Layout */
 .container {
-  max-width: 1080px;
+  width: 100%;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 0 18px;
 }
@@ -330,7 +331,7 @@ body {
   font-size: clamp(32px,6vw,56px);
 }
 .lead {
-  max-width: 760px;
+  max-width: var(--text-max-width, 760px);
   margin: 0 auto 18px;
   color: var(--muted);
 }
@@ -361,7 +362,7 @@ body {
 }
 .hero-highlights {
   margin: 26px auto 0;
-  max-width: 920px;
+  max-width: var(--section-max-width, 980px);
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
@@ -998,14 +999,14 @@ body {
 #experience .timeline {
   display: grid;
   justify-items: center;
-  width: min(900px, 100%);
+  width: min(var(--section-max-width, 980px), 100%);
   margin: 0 auto;
   border-left: 0;
   padding-left: 0;
   text-align: center;
 }
 #experience .item {
-  width: min(900px, 100%);
+  width: min(var(--section-max-width, 980px), 100%);
   text-align: center;
 }
 #experience .what {
@@ -1013,14 +1014,14 @@ body {
 }
 #experience .what p,
 #experience .experience-list {
-  max-width: 760px;
+  max-width: var(--text-max-width, 760px);
   margin-left: auto;
   margin-right: auto;
 }
 
 /* Selected strengths */
 #selected-strengths .container {
-  width: min(980px, 100%);
+  width: min(var(--section-max-width, 980px), 100%);
   margin-left: auto;
   margin-right: auto;
   padding-inline: clamp(12px, 2.2vw, 24px);
@@ -1061,7 +1062,7 @@ body {
 
 /* Courses */
 #courses .container {
-  width: min(980px, 100%);
+  width: min(var(--section-max-width, 980px), 100%);
   margin-left: auto;
   margin-right: auto;
   padding-inline: clamp(12px, 2.2vw, 24px);
@@ -1097,8 +1098,8 @@ body {
 
 /* Contact */
 #contact .container.contact-layout {
-  max-width: 980px;
-  width: min(980px, 100%);
+  max-width: var(--section-max-width, 980px);
+  width: min(var(--section-max-width, 980px), 100%);
   margin: 0 auto;
   display: grid;
   gap: clamp(20px, 2.8vw, 34px);
@@ -1508,13 +1509,13 @@ main.hero .container,
 #about .about,
 #about .card,
 #about .skill-bars {
-  width: min(760px, 100%);
+  width: min(var(--text-max-width, 760px), 100%);
   margin-left: auto;
   margin-right: auto;
 }
 
 #about .about-profile {
-  width: min(760px, 100%);
+  width: min(var(--text-max-width, 760px), 100%);
   margin-left: auto;
   margin-right: auto;
 }
@@ -1529,12 +1530,12 @@ main.hero .container,
 
 #about .about-summary,
 #about .about-chips {
-  max-width: 760px;
+  max-width: var(--text-max-width, 760px);
 }
 
 #about .about-profile > .section-intro {
   width: 100%;
-  max-width: 760px;
+  max-width: var(--text-max-width, 760px);
   margin: 0 auto 12px;
 }
 
@@ -1545,7 +1546,7 @@ main.hero .container,
 
 /* About section: force one shared center axis for intro/photo/skills-title */
 #about {
-  --about-axis-width: 760px;
+  --about-axis-width: var(--text-max-width, 760px);
 }
 
 #about .container.two-col {
@@ -1578,11 +1579,12 @@ main.hero .container,
   text-align: center;
 }
 
-/* Full-width presentation tuning */
+/* Shared presentation sizing */
 :root {
-  --content-max-width: 65vw;
-  --text-max-width: min(65vw, 1100px);
-  --wide-section-width: 65vw;
+  --content-max-width: 1180px;
+  --section-max-width: 980px;
+  --text-max-width: 760px;
+  --wide-section-width: var(--content-max-width);
   --base-text-size: clamp(16px, 0.95vw, 19px);
   --section-title-size: clamp(32px, 3vw, 54px);
   --section-intro-size: clamp(18px, 1.2vw, 24px);
@@ -1590,17 +1592,18 @@ main.hero .container,
 
 @media (max-width: 1024px) {
   :root {
-    --content-max-width: 92vw;
-    --text-max-width: 92vw;
-    --wide-section-width: 92vw;
+    --content-max-width: 100%;
+    --section-max-width: 100%;
+    --text-max-width: min(760px, 100%);
+    --wide-section-width: 100%;
   }
 }
 
 .container {
   max-width: var(--content-max-width);
-  width: var(--content-max-width);
-  padding-left: 0;
-  padding-right: 0;
+  width: 100%;
+  padding-left: 18px;
+  padding-right: 18px;
 }
 
 body {
@@ -2230,7 +2233,7 @@ body {
 }
 
 #about .about {
-  width: min(780px, 100%);
+  width: min(var(--text-max-width, 760px), 100%);
   margin: 0 auto;
 }
 
