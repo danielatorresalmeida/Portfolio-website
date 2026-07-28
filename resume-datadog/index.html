@@ -32,7 +32,7 @@
         <h1>Daniela Torres Almeida</h1>
         <p class="dd-resume-line">Frontend-focused software developer | React, TypeScript, JavaScript, QA testing, API integration</p>
         <div class="dd-contact" aria-label="Contact links">
-          <a class="dd-inline-link" href="mailto:danielarosadolealtorresalmeida@gmail.com">danielarosadolealtorresalmeida@gmail.com</a>
+          <button class="dd-inline-link contact-reveal contact-reveal--inline" type="button" data-contact-reveal="email" aria-label="Reveal email address">Reveal email</button>
           <a class="dd-inline-link" href="https://github.com/danielatorresalmeida" target="_blank" rel="noopener">GitHub</a>
           <a class="dd-inline-link" href="https://www.linkedin.com/in/daniela-torres-almeida-945884205/" target="_blank" rel="noopener">LinkedIn</a>
           <span class="dd-resume-line">Cascais, Portugal</span>
@@ -196,6 +196,7 @@
       <p>2026 Daniela Almeida | Tailored CV route for Datadog Software Engineer - Early Career.</p>
     </div>
   </footer>
+  <script src="../assets/contact-reveal.js"></script>
   <script>
     const shouldAutoPrintDatadogCv = new URLSearchParams(window.location.search).get("download") === "1";
 

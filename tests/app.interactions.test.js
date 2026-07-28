@@ -7,6 +7,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const INDEX_HTML = fs.readFileSync(path.join(__dirname, "..", "index.html"), "utf8");
+const HOME_HTML = fs.readFileSync(path.join(__dirname, "..", "home", "index.html"), "utf8");
 const APP_SCRIPT = fs.readFileSync(path.join(__dirname, "..", "script.js"), "utf8");
 
 function createMatchMedia(prefersLight) {
@@ -39,10 +40,12 @@ function bootstrapApp(options = {}) {
     canvasContext,
     requestAnimationFrameImpl,
     cancelAnimationFrameImpl,
+    html = INDEX_HTML,
+    url = "http://localhost/",
   } = options;
 
-  const dom = new JSDOM(INDEX_HTML, {
-    url: "http://localhost/",
+  const dom = new JSDOM(html, {
+    url,
     runScripts: "outside-only",
     pretendToBeVisual: true,
   });
@@ -123,6 +126,23 @@ describe("portfolio interaction flows", () => {
     expect(localStorage.getItem("resume-theme")).toBe("light");
     expect(themeToggle.getAttribute("aria-pressed")).toBe("false");
     expect(themeToggle.getAttribute("aria-label")).toBe("Switch to dark theme");
+  });
+
+  it("resolves theme icons from the site root on the generated home route", () => {
+    dom = bootstrapApp({
+      html: HOME_HTML,
+      url: "http://localhost/home/",
+      prefersLight: false,
+    });
+    const { document } = dom.window;
+    const themeToggle = document.getElementById("theme-toggle");
+    const themeIcon = document.getElementById("theme-icon");
+
+    expect(themeIcon.src).toBe("http://localhost/assets/light.png");
+
+    themeToggle.click();
+
+    expect(themeIcon.src).toBe("http://localhost/assets/dark.png");
   });
 
   it("switches language and updates translated navigation labels", () => {

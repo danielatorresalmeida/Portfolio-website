@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "test": "vitest run",
+    "sync:home": "node scripts/sync-home-route.mjs",
+    "check:home": "node scripts/sync-home-route.mjs --check",
+    "test": "npm run check:home && vitest run",
     "test:watch": "vitest",
     "test:e2e": "node tests/e2e/smoke.selenium.mjs",
     "test:a11y": "node scripts/run-accessibility-checks.mjs",

@@ -41,6 +41,7 @@ jobs:
         run: |
           VERSION="${DEPLOY_SHA::8}"
           echo "Using version: $VERSION"
+          node scripts/sync-home-route.mjs
           node scripts/inject-asset-version.mjs --version "$VERSION" --root "."
 
       - name: Upload artifact

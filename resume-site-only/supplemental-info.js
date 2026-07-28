@@ -17,8 +17,8 @@
     en: {
       leftTitle: "Additional Information",
       leftItems: [
-        "<strong>Phone:</strong> +351 962046821.",
-        "<strong>Email:</strong> danielarosadolealtorresalmeida@gmail.com.",
+        '<strong>Phone:</strong> <button class="contact-reveal contact-reveal--inline" type="button" data-contact-reveal="phone" aria-label="Reveal phone number">Reveal phone</button>.',
+        '<strong>Email:</strong> <button class="contact-reveal contact-reveal--inline" type="button" data-contact-reveal="email" aria-label="Reveal email address">Reveal email</button>.',
         "<strong>Education:</strong> 12th Grade (Secondary Education, Level 3).",
         "<strong>Languages:</strong> Portuguese (native) and English (oral, written, reading: very good).",
         "<strong>Driver's License:</strong> Light Vehicles.",
@@ -34,8 +34,8 @@
     pt: {
       leftTitle: "Informação Adicional",
       leftItems: [
-        "<strong>Telefone:</strong> +351 962046821.",
-        "<strong>Email:</strong> danielarosadolealtorresalmeida@gmail.com.",
+        '<strong>Telefone:</strong> <button class="contact-reveal contact-reveal--inline" type="button" data-contact-reveal="phone" aria-label="Mostrar número de telefone">Mostrar telefone</button>.',
+        '<strong>Email:</strong> <button class="contact-reveal contact-reveal--inline" type="button" data-contact-reveal="email" aria-label="Mostrar endereço de email">Mostrar email</button>.',
         "<strong>Formação:</strong> 12.º Ano (Ensino Secundário, Nível 3).",
         "<strong>Idiomas:</strong> Português (língua materna) e Inglês (oral, escrita e leitura: muito bom).",
         "<strong>Carta de Condução:</strong> Ligeiros.",

@@ -15,11 +15,15 @@ const langToggle = document.getElementById("lang-toggle");
 const navToggle = document.getElementById("nav-toggle");
 const mainNav = document.getElementById("main-nav");
 const contactCvLink = document.getElementById("contact-cv-link");
+const portfolioScriptUrl =
+  document.currentScript?.src ||
+  document.querySelector('script[src*="script.js"]')?.src ||
+  window.location.href;
 
 const THEME_ICONS = {
   // Keep this mapping explicit because legacy file names are inverted.
-  light: "assets/dark.png",
-  dark: "assets/light.png",
+  light: new URL("assets/dark.png", portfolioScriptUrl).href,
+  dark: new URL("assets/light.png", portfolioScriptUrl).href,
 };
 
 // Safe browser-storage read that will not crash in restricted contexts.
