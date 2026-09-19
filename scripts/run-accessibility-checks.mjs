@@ -32,8 +32,13 @@ async function run() {
   try {
     driver = await buildChromeDriver();
 
-    for (const page of PAGES) {
+    for (const page of PAGES.flatMap(page => ['dark', 'light'].map(theme => ({ ...page, theme })))) {
       await driver.get(`${server.baseUrl}${page.path}`);
+      await driver.executeScript(`
+        if (document.documentElement.getAttribute('data-theme') !== arguments[0]) {
+          document.getElementById('theme-toggle')?.click();
+        }
+      `, page.theme);
       await driver.executeScript("document.documentElement.classList.add('reduce-motion-checks')");
       // Measure the settled UI, not interpolated colors during initial theme setup.
       await driver.executeAsyncScript(`
@@ -59,7 +64,7 @@ async function run() {
       );
 
       if (results?.__error) {
-        failures.push(`${page.name}: axe runtime error: ${results.__error}`);
+        failures.push(`${page.name} (${page.theme}): axe runtime error: ${results.__error}`);
         continue;
       }
 
@@ -67,7 +72,7 @@ async function run() {
 
       if (violations.length > 0) {
         violations.forEach((violation) => {
-          failures.push(`${page.name}: ${formatViolation(violation)}`);
+          failures.push(`${page.name} (${page.theme}): ${formatViolation(violation)}`);
         });
       }
     }

@@ -1376,6 +1376,11 @@ body:not(.datadog-page) .course-category {
   color: var(--yt-accent) !important;
 }
 
+/* Keep small project-status text above WCAG AA contrast in the light theme. */
+:root[data-theme="light"] body.portfolio-page .project-status {
+  color: #076b54 !important;
+}
+
 body:not(.datadog-page) .tag,
 body:not(.datadog-page) .tags span,
 body:not(.datadog-page) .skill,
