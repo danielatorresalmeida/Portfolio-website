@@ -273,20 +273,20 @@
               width="720" height="480"
               loading="lazy" decoding="async" />
             <div class="card-overlay">
-              <p data-i18n="projects.qa.overlay">Python + Pytest API automation with validation workflows and CI-ready reporting.</p>
+              <p data-i18n="projects.qa.overlay">One ReqRes smoke test with Python, pytest and an HTML report.</p>
             </div>
           </div>
           <div class="card-body">
-            <p class="project-summary" data-i18n="projects.qa.summary">QA automation suite for API regression detection with readable, shareable test evidence.</p>
+            <p class="project-summary" data-i18n="projects.qa.summary">Single-endpoint smoke test checking HTTP 200, a JSON object and the data key.</p>
             <h3 id="project-card-title-qa" data-i18n="projects.qa.title">API QA Test Suite</h3>
             <p class="project-note" data-i18n-html="projects.qa.mainTool"><strong>Main tool:</strong> Python</p>
             <p class="project-note" data-i18n-html="projects.qa.secondary"><strong>Also uses:</strong> Pytest, pytest-html, REST API basics, reporting workflow.</p>
-            <p class="project-note" data-i18n-html="projects.qa.demonstrates"><strong>What it demonstrates:</strong> QA/testing mindset, structured validation, and evidence-driven quality checks.</p>
-            <p class="project-contribution" data-i18n="projects.qa.what">What I did: Built Python-based API validation workflows, covering status, schema, and business-rule checks with publishable pytest-html reports.</p>
+            <p class="project-note" data-i18n-html="projects.qa.demonstrates"><strong>What it demonstrates:</strong> Basic API assertions, environment configuration, report generation and CI failure handling.</p>
+            <p class="project-contribution" data-i18n="projects.qa.what">What I did: Built a reusable HTTP client and one GET /users smoke test. It checks status 200, JSON object type and the data key; it does not validate schemas or business rules.</p>
             <ul class="project-flow">
-              <li data-i18n-html="projects.qa.problem"><strong>Problem:</strong> Manual API checks were slow and inconsistent before releases.</li>
-              <li data-i18n-html="projects.qa.solution"><strong>Solution:</strong> Created a reusable Python + Pytest suite with structured assertions and report generation.</li>
-              <li data-i18n-html="projects.qa.outcome"><strong>Outcome:</strong> Reduced verification time and improved confidence in API quality.</li>
+              <li data-i18n-html="projects.qa.problem"><strong>Scope:</strong> Verify the basic response shape of one endpoint.</li>
+              <li data-i18n-html="projects.qa.solution"><strong>Implementation:</strong> Python Requests, one pytest smoke test and pytest-html reporting.</li>
+              <li data-i18n-html="projects.qa.outcome"><strong>Evidence:</strong> The audited report had 0 passed / 1 skipped. A ReqRes API key is required for live validation; consult the latest report and CI result.</li>
             </ul>
             <p class="project-proof" data-i18n="projects.qa.proof">Stack: Python, Pytest, pytest-html, REST API basics, GitHub Pages.</p>
             <div class="tags"><span>REST API Basics</span><span>Python</span><span>Pytest</span><span>pytest-html</span><span>GitHub Pages</span></div>
