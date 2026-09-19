@@ -78,6 +78,10 @@ async function run() {
     for (const snapshot of SNAPSHOTS) {
       await driver.get(`${server.baseUrl}${snapshot.path}`);
       await driver.executeScript(`
+        // Keep snapshots independent of the runner's OS theme preference.
+        if (document.documentElement.getAttribute('data-theme') !== 'dark') {
+          document.getElementById('theme-toggle')?.click();
+        }
         document.documentElement.style.setProperty('scroll-behavior', 'auto');
         const style = document.createElement('style');
         style.innerHTML = '* { animation: none !important; transition: none !important; }';
@@ -86,6 +90,16 @@ async function run() {
 
       const element = await driver.findElement(By.css(snapshot.selector));
       await driver.executeScript("arguments[0].scrollIntoView({ block: 'start' });", element);
+      const readinessError = await driver.executeAsyncScript(`
+        const element = arguments[0];
+        const done = arguments[arguments.length - 1];
+        const images = [...element.querySelectorAll('img')];
+        images.forEach(image => { image.loading = 'eager'; });
+        Promise.all([document.fonts.ready, ...images.map(image => image.decode())])
+          .then(() => requestAnimationFrame(() => requestAnimationFrame(() => done(null))))
+          .catch(error => done(String(error)));
+      `, element);
+      if (readinessError) throw new Error(`${snapshot.name}: assets not ready: ${readinessError}`);
 
       const base64Png = await element.takeScreenshot(true);
       const actualBuffer = Buffer.from(base64Png, "base64");

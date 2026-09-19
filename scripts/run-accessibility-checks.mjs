@@ -35,6 +35,15 @@ async function run() {
     for (const page of PAGES) {
       await driver.get(`${server.baseUrl}${page.path}`);
       await driver.executeScript("document.documentElement.classList.add('reduce-motion-checks')");
+      // Measure the settled UI, not interpolated colors during initial theme setup.
+      await driver.executeAsyncScript(`
+        const done = arguments[arguments.length - 1];
+        document.fonts.ready.then(() => Promise.all(
+          document.getAnimations()
+            .filter(animation => animation.effect?.getComputedTiming().iterations !== Infinity)
+            .map(animation => animation.finished.catch(() => {}))
+        )).then(() => requestAnimationFrame(() => requestAnimationFrame(() => done())));
+      `);
       await driver.executeScript(axe.source);
 
       const results = await driver.executeAsyncScript(
