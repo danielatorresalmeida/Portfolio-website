@@ -94,5 +94,9 @@ export async function buildChromeDriver() {
     options.setChromeBinaryPath(process.env.CHROME_BIN);
   }
 
-  return new Builder().forBrowser("chrome").setChromeOptions(options).build();
+  const builder = new Builder().forBrowser("chrome").setChromeOptions(options);
+  if (process.env.CHROMEDRIVER_BIN) {
+    builder.setChromeService(new chrome.ServiceBuilder(process.env.CHROMEDRIVER_BIN));
+  }
+  return builder.build();
 }

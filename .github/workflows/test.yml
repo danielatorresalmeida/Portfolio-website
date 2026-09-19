@@ -42,12 +42,16 @@ jobs:
         if: ${{ matrix.node-version == '20' }}
         id: setup-chrome
         uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+          install-chromedriver: true
 
       - name: Run accessibility checks
         if: ${{ matrix.node-version == '20' }}
         env:
           CI: "true"
           CHROME_BIN: ${{ steps.setup-chrome.outputs.chrome-path }}
+          CHROMEDRIVER_BIN: ${{ steps.setup-chrome.outputs.chromedriver-path }}
         run: npm run test:a11y
 
       - name: Run Selenium smoke tests
@@ -55,6 +59,7 @@ jobs:
         env:
           CI: "true"
           CHROME_BIN: ${{ steps.setup-chrome.outputs.chrome-path }}
+          CHROMEDRIVER_BIN: ${{ steps.setup-chrome.outputs.chromedriver-path }}
         run: npm run test:e2e
 
       - name: Run visual regression snapshots
@@ -62,6 +67,7 @@ jobs:
         env:
           CI: "true"
           CHROME_BIN: ${{ steps.setup-chrome.outputs.chrome-path }}
+          CHROMEDRIVER_BIN: ${{ steps.setup-chrome.outputs.chromedriver-path }}
         run: npm run test:visual
 
       - name: Upload visual snapshot artifacts

@@ -65,13 +65,14 @@ async function run() {
     assert.equal(await (await driver.findElement(By.css("html"))).getAttribute("data-theme"), updatedTheme);
 
     await driver.executeScript(`
+      document.documentElement.style.scrollBehavior = 'auto';
       window.__openCalls = [];
       window.open = (...args) => { window.__openCalls.push(args); return null; };
       const firstLiveLink = document.querySelector(".card[data-href] .links a");
       if (firstLiveLink) firstLiveLink.addEventListener("click", (event) => event.preventDefault());
     `);
     const firstCardBody = await driver.findElement(By.css(".card[data-href] .card-body"));
-    await driver.executeScript("arguments[0].scrollIntoView({ block: 'center' });", firstCardBody);
+    await driver.executeScript("arguments[0].scrollIntoView({ behavior: 'instant', block: 'center' });", firstCardBody);
     await firstCardBody.click();
     assert.equal(await driver.executeScript("return window.__openCalls.length;"), 1);
 
