@@ -9,7 +9,9 @@ import { buildChromeDriver, shouldRunBrowserChecks, startStaticServer } from "./
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const BASELINE_DIR = path.resolve(__dirname, "..", "visual", "baseline");
+const BASELINE_ROOT = path.resolve(__dirname, "..", "visual", "baseline");
+// System fonts render differently on the Linux CI runner and Windows workstation.
+const BASELINE_DIR = process.platform === 'linux' ? path.join(BASELINE_ROOT, 'linux') : BASELINE_ROOT;
 const ARTIFACT_DIR = path.resolve(__dirname, "..", "visual", "artifacts");
 
 const SNAPSHOTS = [
@@ -109,8 +111,7 @@ async function run() {
       fs.writeFileSync(artifactActualPath, actualBuffer);
 
       if (!fs.existsSync(baselinePath)) {
-        fs.writeFileSync(baselinePath, actualBuffer);
-        console.log(`Created baseline snapshot: ${baselinePath}`);
+        failures.push(`${snapshot.name}: missing reviewed baseline at ${baselinePath}. Review the actual artifact before adding it.`);
         continue;
       }
 
