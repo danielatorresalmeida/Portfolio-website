@@ -42,7 +42,7 @@ No deletion or archival has been approved or performed. SUPERSEDED describes fut
 | `.tmp_docx_date/resume.zip` | SAFE TO ARCHIVE, after approval | Byte-identical to the DOCX above |
 | `assets/~$niela-Resume_23_01_26.docx` | SAFE TO ARCHIVE, after approval | Word temporary lock file |
 | `.tmp_*server*.log`, `.tmp_ps_server.log` | SAFE TO ARCHIVE, after approval | Local server output, not application content |
-| `assets/Colorido automático2736.pdf` | NEEDS HUMAN CONFIRMATION | One-page document with no extractable text; not evidence of course completion |
+| `assets/Colorido automático2736.pdf` | KEEP as source; publication NEEDS HUMAN CONFIRMATION | Visually verified IEFP certificate: Conceção de Web sites, UFCD 7903, 25h, completed March 2026. Contains personal identifiers; do not reproduce those in CV data or add a public download CTA. Does not establish the current 650h syllabus. |
 | `slb-ui-b1fae1/resume/daniela-torres-almeida-cv-web-ui.pdf` | SUPERSEDED | One-page previous Web/UI-targeted CV |
 | `general-it-software/`, `guestcentric-web-designer/`, `rumos-web-developer-lisboa/`, `datadog-software-engineer/`, `resume-datadog/`, `programador-software-crm-salesforce/`, `laranjazen-589420303/`, `ytech-fullstack-java-react/`, `slb-ui-b1fae1/` | NEEDS HUMAN CONFIRMATION | Historical targeted pages, potentially shared externally; retain without new homepage links |
 | `resume-site-only/reorganiza.html`, nested `resume-site-only/resume-site-only/index.html` | SAFE TO ARCHIVE, after approval | Legacy alternative CV routes; verify external use first |
@@ -50,3 +50,5 @@ No deletion or archival has been approved or performed. SUPERSEDED describes fut
 ## Publication dependencies
 
 Resolve internship and LLM dates before changing the live main CV. Confirm training details or explicitly leave module-level claims out. Keep education and language claims conservative; do not infer academic equivalence, CEFR levels or certifications.
+
+Candidate subsequently confirmed both experience end dates as September 2026, retaining August 2025/August 2024 starts respectively. These dates are now safe to use in the shared dataset. The current programme's official syllabus remains pending.
