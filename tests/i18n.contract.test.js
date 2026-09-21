@@ -35,10 +35,10 @@ describe('shared factual content and i18n contract', () => {
       for (const lang of ['en', 'pt-PT']) {
         const dom = new JSDOM(data.contents[lang]);
         const text = dom.window.document.body.textContent;
-        expect(text).toContain('650'); expect(text).toContain('400'); expect(text).toContain('2027');
+        expect(text).toContain('1050'); expect(text).toContain('600'); expect(text).toContain('350'); expect(text).toContain('400'); expect(text).toContain('2027');
         expect(text).toContain(lang === 'en' ? 'Sep 2026' : 'Set 2026');
         expect(text).not.toMatch(/Present|Presente|20%|30%|50%|10\+|fully secure|production ready/i);
-        expect(text).toContain(lang === 'en' ? 'Currently completing' : 'A frequentar');
+        expect(text).toContain(lang === 'en' ? 'Scheduled: 22 Sep 2026' : 'Início previsto: 22 set 2026');
         expect(text).toContain(lang === 'en' ? 'merge pending' : 'merge pendente');
         dom.window.close();
       }
