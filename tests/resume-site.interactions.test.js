@@ -110,8 +110,8 @@ describe("resume-site-only interaction flows", () => {
     expect(printButton.tagName).toBe("BUTTON");
     expect(printButton.getAttribute("aria-label")).toBe("Descarregar CV");
     expect(introTitle.textContent.trim()).toBe("Resumo Profissional");
-    expect(skillsTitle.textContent.trim()).toBe("Stack Tecnica Principal");
-    expect(document.body.textContent).not.toMatch(/[\u00C3\u00C2\uFFFD]/);
+    expect(skillsTitle.textContent.trim()).toBe("Competências Técnicas");
+    expect(document.getElementById('cv-content').textContent).not.toMatch(/[\u00C3\u00C2\uFFFD]/);
 
     langToggle.click();
 
@@ -155,30 +155,27 @@ describe("resume-site-only interaction flows", () => {
     expect(document.documentElement.lang).toBe("pt-PT");
   });
 
-  it("keeps outbound links in the first experience bullet after i18n render", () => {
+  it("keeps project evidence links after i18n render", () => {
     dom = bootstrapResumeApp({ url: "http://localhost/resume-site-only/?lang=en" });
     const { document } = dom.window;
-    const firstBullet = document.querySelector("#experience-col .item:first-of-type li");
-    const anchors = firstBullet.querySelectorAll("a[href]");
+    const firstProject = document.querySelector("#projects-col .item:first-of-type");
+    const anchors = firstProject.querySelectorAll("a[href]");
     expect(anchors.length).toBe(2);
-    expect(anchors[0].getAttribute("href")).toBe("https://danielatorresalmeida.github.io/Portfolio-website/");
-    expect(anchors[1].getAttribute("href")).toBe("https://robocollective.ai/");
+    expect(anchors[0].getAttribute("href")).toBe("https://github.com/danielatorresalmeida/DevFlow_Hub");
+    expect(anchors[1].getAttribute("href")).toBe("https://github.com/danielatorresalmeida/DevFlow_Hub/pull/53");
   });
 
-  it("updates supplemental-info content when language changes", async () => {
+  it("updates training and language sections when language changes", async () => {
     dom = bootstrapResumeApp({ url: "http://localhost/resume-site-only/" });
     const { document } = dom.window;
     const langToggle = document.getElementById("lang-toggle");
-    const leftTitle = document.querySelector("[data-supp-left-title]");
-    const rightTitle = document.querySelector("[data-supp-right-title]");
-
-    expect(leftTitle.textContent.trim()).toBe("Additional Information");
-    expect(rightTitle.textContent.trim()).toContain("Availability");
+    expect(document.querySelector('#training-col').textContent).toContain('Currently completing');
+    expect(document.querySelector('#languages-col h2').textContent).toBe('Languages');
 
     langToggle.click();
     await new Promise((resolve) => dom.window.setTimeout(resolve, 0));
 
-    expect(leftTitle.textContent.trim().toLowerCase()).toContain("inform");
-    expect(rightTitle.textContent.trim().toLowerCase()).toContain("dispon");
+    expect(document.querySelector('#training-col').textContent).toContain('A frequentar');
+    expect(document.querySelector('#languages-col h2').textContent).toBe('Idiomas');
   });
 });
