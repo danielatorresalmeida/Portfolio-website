@@ -1970,3 +1970,14 @@ body:has(.resume) .topbar .topbar-inner {
     font-size: clamp(1rem, 1.15vw, 1.15rem);
   }
 }
+
+/* Phase 3: concise developer introduction and readable training sections. */
+.portfolio-page .hero h1 { font-size: clamp(2.6rem, 4.2vw, 3.8rem); line-height: 1.08; max-width: 12ch; }
+.portfolio-page .hero .kicker { max-width: 48ch; }
+.portfolio-page .profile-story { max-width: 78ch; line-height: 1.8; }
+.portfolio-page .training-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 24px; margin: 24px 0; }
+.portfolio-page .training-grid article { border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+.portfolio-page #project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media(max-width: 720px) { .portfolio-page #project-grid { grid-template-columns: 1fr; } }
+.portfolio-page #project-grid > .card { grid-column: auto !important; }
+.portfolio-page #project-grid .card-media img { object-fit: contain; background: #0b1020; }

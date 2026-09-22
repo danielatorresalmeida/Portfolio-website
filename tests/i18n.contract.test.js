@@ -1,305 +1,91 @@
-import fs from "node:fs";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-import { JSDOM } from "jsdom";
-import { describe, expect, it } from "vitest";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const ROOT_DIR = path.resolve(__dirname, "..");
-
-function extractObjectBody(source, marker) {
-  const markerIndex = source.indexOf(marker);
-  if (markerIndex === -1) {
-    throw new Error(`Unable to find marker: ${marker}`);
-  }
-
-  const openBraceIndex = source.indexOf("{", markerIndex);
-  if (openBraceIndex === -1) {
-    throw new Error(`Unable to find object start for marker: ${marker}`);
-  }
-
-  let depth = 0;
-  let inString = false;
-  let quote = "";
-
-  for (let i = openBraceIndex; i < source.length; i += 1) {
-    const ch = source[i];
-    const prev = source[i - 1];
-
-    if (inString) {
-      if (ch === quote && prev !== "\\") {
-        inString = false;
-        quote = "";
-      }
-      continue;
-    }
-
-    if (ch === "'" || ch === '"' || ch === "`") {
-      inString = true;
-      quote = ch;
-      continue;
-    }
-
-    if (ch === "{") depth += 1;
-    if (ch === "}") {
-      depth -= 1;
-      if (depth === 0) {
-        return source.slice(openBraceIndex + 1, i);
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { JSDOM } from 'jsdom';
+import { describe, expect, it } from 'vitest';
+import { profile, localize } from '../resume/data/base.mjs';
+import { variants } from '../resume/variants/config.mjs';
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const read = name => fs.readFileSync(path.join(root, name), 'utf8');
+const mainScript = read('script.js');
+const declaration = mainScript.slice(mainScript.indexOf('const TRANSLATIONS ='), mainScript.indexOf('let currentLanguage'));
+const maps = Function('LANG_EN', 'LANG_PT', `${declaration}; return TRANSLATIONS;`)('en-US', 'pt-PT');
+function resume(id = 'master') {
+  const dom = new JSDOM(read(id === 'master' ? 'resume-site-only/index.html' : `resume/variants/${id}/index.html`));
+  const data = JSON.parse(dom.window.document.getElementById('cv-data').textContent);
+  dom.window.close();
+  return data;
+}
+describe('shared factual content and i18n contract', () => {
+  it('provides both languages for every live portfolio translation key', () => {
+    const dom = new JSDOM(read('index.html'));
+    for (const element of dom.window.document.querySelectorAll('*')) {
+      for (const attribute of element.attributes) {
+        if (!attribute.name.startsWith('data-i18n')) continue;
+        expect(maps['en-US'][attribute.value], attribute.value).toBeTruthy();
+        expect(maps['pt-PT'][attribute.value], attribute.value).toBeTruthy();
       }
     }
-  }
-
-  throw new Error(`Unable to find object end for marker: ${marker}`);
-}
-
-function extractTopLevelKeys(objectBody) {
-  const keys = new Set();
-  let depth = 0;
-  let inString = false;
-  let quote = "";
-
-  for (let i = 0; i < objectBody.length; i += 1) {
-    const ch = objectBody[i];
-    const prev = objectBody[i - 1];
-
-    if (inString) {
-      if (ch === quote && prev !== "\\") {
-        inString = false;
-        quote = "";
-      }
-      continue;
-    }
-
-    if (ch === "'" || ch === '"' || ch === "`") {
-      if (depth === 0 && ch === '"') {
-        let end = i + 1;
-        while (end < objectBody.length) {
-          const c = objectBody[end];
-          const p = objectBody[end - 1];
-          if (c === '"' && p !== "\\") break;
-          end += 1;
-        }
-        const key = objectBody.slice(i + 1, end);
-        let cursor = end + 1;
-        while (cursor < objectBody.length && /\s/.test(objectBody[cursor])) cursor += 1;
-        if (objectBody[cursor] === ":") keys.add(key);
-      }
-      inString = true;
-      quote = ch;
-      continue;
-    }
-
-    if (ch === "{" || ch === "[") depth += 1;
-    if (ch === "}" || ch === "]") depth -= 1;
-  }
-
-  return keys;
-}
-
-function collectDataI18nKeys(htmlSource) {
-  const keys = new Set();
-  const matches = htmlSource.matchAll(/data-i18n(?:-html|-placeholder)?="([^"]+)"/g);
-  for (const match of matches) keys.add(match[1]);
-  return keys;
-}
-
-function normalizeSkillValue(value) {
-  return String(value)
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .replace(/\+/g, " plus ")
-    .replace(/\s*\/\s*/g, " / ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function collectPortfolioSkillValues(translationMap) {
-  const keys = Object.keys(translationMap).filter((key) => /^coreStack\.\d+$/.test(key));
-
-  return keys.map((key) => translationMap[key]).filter(Boolean);
-}
-
-function loadResumeTranslations(scriptSource) {
-  const startMarker = "const translations =";
-  const endMarker = "const urlLanguage";
-  const start = scriptSource.indexOf(startMarker);
-  if (start === -1) throw new Error("Unable to find resume translations declaration");
-  const end = scriptSource.indexOf(endMarker, start);
-  if (end === -1) throw new Error("Unable to find resume translations end marker");
-
-  const declaration = scriptSource.slice(start, end);
-  // META_LINE_HTML is referenced inside the translations object.
-  // A placeholder value is sufficient for contract tests.
-  return Function(
-    "LANG_EN",
-    "LANG_PT",
-    "META_LINE_HTML",
-    `${declaration}; return translations;`
-  )("en", "pt-PT", "");
-}
-
-function loadMainTranslations(scriptSource) {
-  const startMarker = "const TRANSLATIONS =";
-  const endMarker = "let currentLanguage";
-  const start = scriptSource.indexOf(startMarker);
-  if (start === -1) throw new Error("Unable to find main translations declaration");
-  const end = scriptSource.indexOf(endMarker, start);
-  if (end === -1) throw new Error("Unable to find main translations end marker");
-
-  const declaration = scriptSource.slice(start, end);
-  return Function("LANG_EN", "LANG_PT", `${declaration}; return TRANSLATIONS;`)("en-US", "pt-PT");
-}
-
-describe("i18n contract", () => {
-  it("ensures all data-i18n keys in index.html exist in both EN and PT translation maps", () => {
-    const html = fs.readFileSync(path.join(ROOT_DIR, "index.html"), "utf8");
-    const script = fs.readFileSync(path.join(ROOT_DIR, "script.js"), "utf8");
-    const requiredKeys = collectDataI18nKeys(html);
-    const enBlock = extractObjectBody(script, "[LANG_EN]: {");
-    const ptBlock = extractObjectBody(script, "[LANG_PT]: {");
-
-    for (const key of requiredKeys) {
-      const keyPattern = new RegExp(`"${key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"\\s*:`);
-      expect(keyPattern.test(enBlock), `missing EN key: ${key}`).toBe(true);
-      expect(keyPattern.test(ptBlock), `missing PT key: ${key}`).toBe(true);
-    }
-  });
-
-  it("keeps top-level translation keys aligned for main and resume scripts", () => {
-    const mainScript = fs.readFileSync(path.join(ROOT_DIR, "script.js"), "utf8");
-    const mainEn = extractTopLevelKeys(extractObjectBody(mainScript, "[LANG_EN]: {"));
-    const mainPt = extractTopLevelKeys(extractObjectBody(mainScript, "[LANG_PT]: {"));
-    expect(Array.from(mainEn).sort()).toEqual(Array.from(mainPt).sort());
-
-    const resumeScript = fs.readFileSync(path.join(ROOT_DIR, "resume-site-only", "script.js"), "utf8");
-    const resumeEn = extractTopLevelKeys(extractObjectBody(resumeScript, "[LANG_EN]: {"));
-    const resumePt = extractTopLevelKeys(extractObjectBody(resumeScript, "[LANG_PT]: {"));
-    expect(Array.from(resumeEn).sort()).toEqual(Array.from(resumePt).sort());
-  });
-
-  it("prevents mojibake artifacts in resume translations", () => {
-    const resumeScript = fs.readFileSync(path.join(ROOT_DIR, "resume-site-only", "script.js"), "utf8");
-    const enBlock = extractObjectBody(resumeScript, "[LANG_EN]: {");
-    const ptBlock = extractObjectBody(resumeScript, "[LANG_PT]: {");
-    const mojibakePattern = /[\u00C3\u00C2\uFFFD]/;
-
-    expect(enBlock).not.toMatch(mojibakePattern);
-    expect(ptBlock).not.toMatch(mojibakePattern);
-  });
-
-  it("keeps resume section item counts aligned with translation arrays", () => {
-    const resumeHtml = fs.readFileSync(path.join(ROOT_DIR, "resume-site-only", "index.html"), "utf8");
-    const resumeScript = fs.readFileSync(path.join(ROOT_DIR, "resume-site-only", "script.js"), "utf8");
-    const translations = loadResumeTranslations(resumeScript);
-    const dom = new JSDOM(resumeHtml);
-    const { document } = dom.window;
-
-    const en = translations.en;
-    const pt = translations["pt-PT"];
-
-    expect(document.querySelectorAll("#experience-col .item").length).toBe(en.experienceItems.length);
-    expect(document.querySelectorAll("#skills-col .skill-group-card").length).toBe(en.skillGroups.length);
-    expect(document.querySelectorAll("#projects-col .item").length).toBe(en.projectItems.length);
-    expect(document.querySelectorAll("#more-projects-col li").length).toBe(en.moreProjectItems.length);
-    expect(document.querySelectorAll("#courses-col li").length).toBe(en.courses.length);
-    expect(document.querySelectorAll("#education-col .item").length).toBe(en.educationItems.length);
-    expect(document.querySelectorAll("#strengths-col li").length).toBe(en.strengths.length);
-
-    expect(en.experienceItems.length).toBe(pt.experienceItems.length);
-    expect(en.skillGroups.length).toBe(pt.skillGroups.length);
-    expect(en.projectItems.length).toBe(pt.projectItems.length);
-    expect(en.moreProjectItems.length).toBe(pt.moreProjectItems.length);
-    expect(en.courses.length).toBe(pt.courses.length);
-    expect(en.educationItems.length).toBe(pt.educationItems.length);
-    expect(en.strengths.length).toBe(pt.strengths.length);
-
-    const experienceNodes = Array.from(document.querySelectorAll("#experience-col .item"));
-    experienceNodes.forEach((item, index) => {
-      const domBullets = item.querySelectorAll("li").length;
-      expect(domBullets).toBe(en.experienceItems[index].bullets.length);
-      expect(en.experienceItems[index].bullets.length).toBe(pt.experienceItems[index].bullets.length);
-    });
-
+    expect(Object.keys(maps['en-US']).sort()).toEqual(Object.keys(maps['pt-PT']).sort());
     dom.window.close();
   });
-
-  it("keeps shared portfolio and resume facts aligned", () => {
-    const portfolioHtml = fs.readFileSync(path.join(ROOT_DIR, "index.html"), "utf8");
-    const portfolioScript = fs.readFileSync(path.join(ROOT_DIR, "script.js"), "utf8");
-    const resumeHtml = fs.readFileSync(path.join(ROOT_DIR, "resume-site-only", "index.html"), "utf8");
-    const resumeScript = fs.readFileSync(path.join(ROOT_DIR, "resume-site-only", "script.js"), "utf8");
-
-    const mainTranslations = loadMainTranslations(portfolioScript);
-    const resumeTranslations = loadResumeTranslations(resumeScript);
-
-    expect(mainTranslations["en-US"]["experience.role"]).toBe("Software Development Intern");
-    expect(mainTranslations["pt-PT"]["experience.role"]).toBe("Estagiaria de Desenvolvimento de Software");
-    expect(resumeTranslations.en.experienceItems[0].title).toContain("Software Development Intern");
-    expect(resumeTranslations["pt-PT"].experienceItems[0].title).toContain("Estagi");
-
-    expect(resumeHtml).toMatch(/20%/);
-    expect(resumeTranslations.en.experienceItems[0].bullets[4]).toMatch(/20%/);
-    expect(resumeTranslations["pt-PT"].experienceItems[0].bullets[4]).toMatch(/20%/);
-
-    expect(portfolioHtml).toContain('data-cv-en="./resume-site-only/?lang=en&download=1"');
-    expect(portfolioHtml).toContain('data-cv-pt="./resume-site-only/?lang=pt-PT&download=1"');
-    expect(portfolioScript).toContain('getAttribute("data-cv-en")');
-    expect(portfolioScript).toContain('getAttribute("data-cv-pt")');
-
-    const portfolioDom = new JSDOM(portfolioHtml);
-    const resumeDom = new JSDOM(resumeHtml);
-    const featuredProjects = Array.from(portfolioDom.window.document.querySelectorAll("#project-grid > .card"));
-    const featuredTitles = featuredProjects.map((card) =>
-      card.querySelector("h3")?.textContent?.trim()
-    );
-    expect(featuredProjects.length).toBe(6);
-    expect(featuredTitles).toEqual([
-      "DevFlow Hub",
-      "Clínica Médica",
-      "Responsive Portfolio",
-      "API QA Test Suite",
-      "Tic Tac Toe / Jogo do Galo in C",
-      "Penguin Fishing Game",
-    ]);
-
-    const portfolioExperienceItems = portfolioDom.window.document.querySelectorAll("#experience .timeline .item");
-    const resumeExperienceItems = resumeDom.window.document.querySelectorAll("#experience-col .item");
-    expect(portfolioExperienceItems.length).toBe(1);
-    expect(resumeExperienceItems.length).toBeGreaterThan(portfolioExperienceItems.length);
-    portfolioDom.window.close();
-    resumeDom.window.close();
+  it('keeps completed experience and ongoing training truthful across all variants', () => {
+    for (const id of Object.keys(variants)) {
+      const data = resume(id);
+      for (const lang of ['en', 'pt-PT']) {
+        const dom = new JSDOM(data.contents[lang]);
+        const text = dom.window.document.body.textContent;
+        expect(text).toContain('1050'); expect(text).toContain('600'); expect(text).toContain('350'); expect(text).toContain('400'); expect(text).toContain('2027');
+        expect(text).toContain(lang === 'en' ? 'Sep 2026' : 'Set 2026');
+        expect(text).not.toMatch(/Present|Presente|20%|30%|50%|10\+|fully secure|production ready/i);
+        expect(text).toContain(lang === 'en' ? 'Scheduled: 22 Sep 2026' : 'Início previsto: 22 set 2026');
+        expect(text).toContain(lang === 'en' ? 'merge pending' : 'merge pendente');
+        dom.window.close();
+      }
+    }
   });
-
-  it("keeps all portfolio skill items represented in resume skills", () => {
-    const portfolioScript = fs.readFileSync(path.join(ROOT_DIR, "script.js"), "utf8");
-    const resumeScript = fs.readFileSync(path.join(ROOT_DIR, "resume-site-only", "script.js"), "utf8");
-
-    const mainTranslations = loadMainTranslations(portfolioScript);
-    const resumeTranslations = loadResumeTranslations(resumeScript);
-
-    const languagePairs = [
-      { portfolio: "en-US", resume: "en" },
-      { portfolio: "pt-PT", resume: "pt-PT" },
-    ];
-
-    languagePairs.forEach(({ portfolio, resume }) => {
-      const portfolioSkills = collectPortfolioSkillValues(mainTranslations[portfolio]).map(
-        normalizeSkillValue
-      );
-      const resumeSkills = [
-        ...resumeTranslations[resume].skillGroups.flatMap((group) => group.items),
-        ...resumeTranslations[resume].keySkills,
-      ].map(normalizeSkillValue);
-      const resumeSkillSet = new Set(resumeSkills);
-
-      Array.from(new Set(portfolioSkills)).forEach((skill) => {
-        expect(
-          resumeSkillSet.has(skill),
-          `missing resume skill for ${portfolio}: ${skill}`
-        ).toBe(true);
-      });
-    });
+  it('keeps all variants on the same factual experience, skills and project descriptions', () => {
+    for (const [id, variant] of Object.entries(variants)) for (const lang of ['en', 'pt-PT']) {
+      const p = localize(profile, lang), dom = new JSDOM(resume(id).contents[lang]);
+      const document = dom.window.document;
+      for (const job of p.experience) {
+        const section = document.querySelector(`[data-experience-id="${job.id}"]`);
+        expect(section.textContent).toContain(job.dates);
+        for (const bullet of job.bullets) expect(section.textContent).toContain(bullet);
+      }
+      expect([...document.querySelectorAll('[data-project-id]')].map(e => e.dataset.projectId)).toEqual(variant.projects);
+      for (const projectId of variant.projects) expect(document.querySelector(`[data-project-id="${projectId}"]`).textContent).toContain(p.projects[projectId].short);
+      for (const group of Object.values(p.skills)) for (const skill of group.items) expect(document.querySelector('#skills-col').textContent).toContain(skill);
+      dom.window.close();
+    }
+  });
+  it('uses four selected portfolio projects in the agreed order and working CV language routes', () => {
+    const dom = new JSDOM(read('index.html')), document = dom.window.document;
+    expect([...document.querySelectorAll('#project-grid > .card h3')].map(e => e.textContent)).toEqual(['DevFlow Hub', 'Portfolio Website', 'To-Do List App', 'Penguin Fishing Game']);
+    const link = document.getElementById('contact-cv-link');
+    expect(link.dataset.cvEn).toBe('./resume-site-only/?lang=en&download=1');
+    expect(link.dataset.cvPt).toBe('./resume-site-only/?lang=pt-PT&download=1');
+    expect(document.querySelector('#experience').textContent).not.toMatch(/Present|Presente|20%/);
+    dom.window.close();
+  });
+  it('keeps company versions out of search indexes and shares styles/runtime', () => {
+    for (const id of Object.keys(variants)) {
+      const dom = new JSDOM(read(id === 'master' ? 'resume-site-only/index.html' : `resume/variants/${id}/index.html`));
+      const document = dom.window.document;
+      if (id !== 'master') expect(document.querySelector('meta[name="robots"]').content).toBe('noindex,nofollow');
+      expect(document.querySelector('link[rel="stylesheet"]').href).toContain('resume/shared/cv.css');
+      expect(document.querySelector('script[src]').src).toContain('resume-site-only/script.js');
+      expect(document.querySelectorAll('h1')).toHaveLength(1);
+      dom.window.close();
+    }
+  });
+  it('keeps translated CV sections aligned and free of replacement characters', () => {
+    for (const id of Object.keys(variants)) {
+      const data = resume(id), en = new JSDOM(data.contents.en), pt = new JSDOM(data.contents['pt-PT']);
+      expect([...en.window.document.querySelectorAll('section')].map(e => e.id)).toEqual([...pt.window.document.querySelectorAll('section')].map(e => e.id));
+      expect(data.contents['pt-PT']).not.toContain('\uFFFD');
+      expect(pt.window.document.querySelector('#intro-section h2').textContent).toBe('Resumo Profissional');
+      en.window.close(); pt.window.close();
+    }
   });
 });

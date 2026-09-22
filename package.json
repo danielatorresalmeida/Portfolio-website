@@ -5,12 +5,15 @@
   "scripts": {
     "sync:home": "node scripts/sync-home-route.mjs",
     "check:home": "node scripts/sync-home-route.mjs --check",
-    "test": "npm run check:home && vitest run",
+    "test": "npm run check:home && npm run check:resumes && vitest run",
     "test:watch": "vitest",
     "test:e2e": "node tests/e2e/smoke.selenium.mjs",
     "test:a11y": "node scripts/run-accessibility-checks.mjs",
     "test:visual": "node tests/e2e/visual-regression.selenium.mjs",
-    "validate:links": "node scripts/validate-links-assets.mjs"
+    "validate:links": "node scripts/validate-links-assets.mjs",
+    "build:resumes": "node scripts/build-resumes.mjs",
+    "check:resumes": "node scripts/build-resumes.mjs --check",
+    "build:profile": "node scripts/build-profile.mjs && npm run sync:home"
   },
   "devDependencies": {
     "axe-core": "^4.11.1",
