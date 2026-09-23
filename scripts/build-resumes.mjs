@@ -16,4 +16,4 @@ for (const [id, variant] of Object.entries(variants)) {
     fs.writeFileSync(destination, content);
   }
 }
-console.log(`${check ? 'Verified' : 'Generated'} master and six company CVs from shared facts.`);
+console.log(`${check ? 'Verified' : 'Generated'} ${Object.keys(variants).length} CVs from shared facts.`);
