@@ -8,7 +8,7 @@
 - `resume/shared/cv.css`: shared responsive and A4 print styles.
 - `resume-site-only/script.js`: shared language, theme and print behaviour.
 
-The public CV stays at `/resume-site-only/`; six noindex company CVs live at `/resume/variants/<company>/`. They are not six portfolios. The existing `/home/` compatibility route is generated from the single root portfolio. HTML copies are generated outputs, not independent factual documents.
+The public CV stays at `/resume-site-only/`; seven noindex company CVs live at `/resume/variants/<company>/`. They are not separate portfolios. The existing `/home/` compatibility route is generated from the single root portfolio. HTML copies are generated outputs, not independent factual documents.
 
 ## Editing and validation
 
@@ -26,7 +26,7 @@ node scripts/check-profile-browser.mjs
 node scripts/export-cv.mjs
 ```
 
-`export-cv.mjs` exports Master EN/PT plus six English company PDFs. Set `CV_OUTPUT_DIR` to choose the output directory. Exported documents include the existing contact details after the same reveal controls used by the website. CV print layout is two A4 pages at 10.5pt body text; pages remain readable without compressing the full career and four projects into one page.
+`export-cv.mjs` exports Master EN/PT plus seven English company PDFs. Set `CV_OUTPUT_DIR` to choose the output directory. Exported documents include the existing contact details after the same reveal controls used by the website. CV print layout is two A4 pages at 10.5pt body text; pages remain readable without compressing the full career and four projects into one page.
 
 Inspect PDFs and actual browser snapshots before accepting reference changes. Windows and Linux references remain separate because system fonts differ. Do not loosen thresholds or suppress failed checks.
 
@@ -34,9 +34,9 @@ For a vacancy-specific adjustment, select the nearest company configuration and 
 
 ## Evidence and limits
 
-- DevFlow Phase 2 is validated at PR #53 head `0149c8d`, but remained OPEN when checked on 2026-09-21. Its system roles/document authorization/demo are explicitly labelled as validated in the pending PR, not merged into main. Recheck status before changing that label.
+- DevFlow Phase 2 is validated at PR #53 head `0149c8d`, but remained OPEN when checked on 2026-09-23. Its system roles/document authorization/demo are explicitly labelled as validated in the pending PR, not merged into main. Recheck status before changing that label.
 - Core skills follow demonstrated GitHub work; Python/FastAPI exposure, Firebase, Selenium, automation and UI/UX are additional experience, without arbitrary proficiency scores.
-- Candidate-confirmed CESAE Digital / PRO_MOV Software Developer programme: 22 September 2026 - 20 May 2027, 1050h total (50h transversal, 600h technical, 400h FPCT). FPCT: 1 March - 20 May 2027. On the reference date, 21 September 2026, this is scheduled, not in progress. Update status after the actual start is confirmed. Future modules are not completed skills.
+- Candidate-confirmed CESAE Digital / PRO_MOV Software Developer programme: 22 September 2026 - 20 May 2027, 1050h total (50h transversal, 600h technical, 400h FPCT). FPCT: 1 March - 20 May 2027. The candidate confirmed on 23 September 2026 that the course has started; its status is in progress. Future modules are not completed skills.
 - Candidate-confirmed completed pathway: Linguagens de Programação - Programação em JAVA, IEFP / Centro de Emprego e Formação Profissional de Faro, 350h, completed 30 July 2026. The candidate reported verifying the original certificate; it was not independently accessed in this revision. Consolidate the ten UFCD under this official title, without claiming advanced proficiency.
 - The previously inspected IEFP certificate for Conceção de Web sites (UFCD 7903, 25h, March 2026) remains separate. Certificate identifiers are not published.
 - Education and self-assessed languages retain the existing CV's qualifications without academic equivalence or invented CEFR levels. Prior course lists without supporting documents are not promoted to certified achievements.
@@ -50,3 +50,9 @@ See `phase3-audit.md` for KEEP / SUPERSEDED / SAFE TO ARCHIVE / NEEDS HUMAN CONF
 ## Publication
 
 The deployment workflow publishes successful main builds. Feature-branch preparation and a pull request do not update the live site. Review the final profile and remaining factual gaps before integrating the presentation changes. Do not send applications or outreach automatically.
+
+## GMV internship variant
+
+`resume/variants/gmv/` is the GMV Software Engineer internship CV (EN, with PT-PT translation). It preserves the Master title, experience, training and project order; emphasizes Java/Spring Boot, web development, automated testing and CI. Angular and C++ are not added as skills. DevFlow PR #53 was confirmed OPEN and not merged on 2026-09-23.
+
+Export only this variant with `CV_VARIANT=gmv` and `CV_OUTPUT_DIR` set, then run `node scripts/export-cv.mjs`. The filename is `Daniela_Torres_Almeida_CV_GMV_Software_Engineer_Intern.pdf`.

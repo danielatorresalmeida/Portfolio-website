@@ -39,5 +39,5 @@ try {
       fs.writeFileSync(path.join(output, `portfolio-${width}-${lang}.png`), Buffer.from(result.data, 'base64'));
     }
   }
-  console.log('All seven CVs: EN/PT mobile layout and axe passed; portfolio EN/PT mobile/desktop overflow and captures passed.');
+  console.log(`All ${Object.keys(variants).length} CVs: EN/PT mobile layout and axe passed; portfolio EN/PT mobile/desktop overflow and captures passed.`);
 } finally { if(driver) await driver.quit(); await server.close(); }
