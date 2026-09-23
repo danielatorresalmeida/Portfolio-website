@@ -169,13 +169,13 @@ describe("resume-site-only interaction flows", () => {
     dom = bootstrapResumeApp({ url: "http://localhost/resume-site-only/" });
     const { document } = dom.window;
     const langToggle = document.getElementById("lang-toggle");
-    expect(document.querySelector('#training-col').textContent).toContain('Scheduled: 22 Sep 2026');
+    expect(document.querySelector('#training-col').textContent).toContain('In progress: 22 Sep 2026');
     expect(document.querySelector('#languages-col h2').textContent).toBe('Languages');
 
     langToggle.click();
     await new Promise((resolve) => dom.window.setTimeout(resolve, 0));
 
-    expect(document.querySelector('#training-col').textContent).toContain('Início previsto: 22 set 2026');
+    expect(document.querySelector('#training-col').textContent).toContain('Em curso: 22 set 2026');
     expect(document.querySelector('#languages-col h2').textContent).toBe('Idiomas');
   });
 });
