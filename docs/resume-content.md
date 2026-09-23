@@ -8,7 +8,7 @@
 - `resume/shared/cv.css`: shared responsive and A4 print styles.
 - `resume-site-only/script.js`: shared language, theme and print behaviour.
 
-The public CV stays at `/resume-site-only/`; seven noindex company CVs live at `/resume/variants/<company>/`. They are not separate portfolios. The existing `/home/` compatibility route is generated from the single root portfolio. HTML copies are generated outputs, not independent factual documents.
+The public CV stays at `/resume-site-only/`; eight noindex company CVs live at `/resume/variants/<company>/`. They are not separate portfolios. The existing `/home/` compatibility route is generated from the single root portfolio. HTML copies are generated outputs, not independent factual documents.
 
 ## Editing and validation
 
@@ -26,7 +26,7 @@ node scripts/check-profile-browser.mjs
 node scripts/export-cv.mjs
 ```
 
-`export-cv.mjs` exports Master EN/PT plus seven English company PDFs. Set `CV_OUTPUT_DIR` to choose the output directory. Exported documents include the existing contact details after the same reveal controls used by the website. CV print layout is two A4 pages at 10.5pt body text; pages remain readable without compressing the full career and four projects into one page.
+`export-cv.mjs` exports Master EN/PT plus eight English company PDFs. Set `CV_OUTPUT_DIR` to choose the output directory. Exported documents include the existing contact details after the same reveal controls used by the website. CV print layout is two A4 pages at 10.5pt body text; pages remain readable without compressing the full career and four projects into one page.
 
 Inspect PDFs and actual browser snapshots before accepting reference changes. Windows and Linux references remain separate because system fonts differ. Do not loosen thresholds or suppress failed checks.
 
@@ -56,3 +56,9 @@ The deployment workflow publishes successful main builds. Feature-branch prepara
 `resume/variants/gmv/` is the GMV Software Engineer internship CV (EN, with PT-PT translation). It preserves the Master title, experience, training and project order; emphasizes Java/Spring Boot, web development, automated testing and CI. Angular and C++ are not added as skills. DevFlow PR #53 was confirmed OPEN and not merged on 2026-09-23.
 
 Export only this variant with `CV_VARIANT=gmv` and `CV_OUTPUT_DIR` set, then run `node scripts/export-cv.mjs`. The filename is `Daniela_Torres_Almeida_CV_GMV_Software_Engineer_Intern.pdf`.
+
+## Celfocus Application Security internship variant
+
+`resume/variants/celfocus-application-security/` is separate from the Master and the generic Celfocus version. It keeps the Software Developer / Front-End Developer in training title and all four projects, emphasizing existing DevFlow authentication, role/resource authorization, negative access-control tests and CI. FloLabs bullets are reordered without new claims. Security skill labels reflect DevFlow PR #53, verified OPEN and not merged at head `0149c8d` on 2026-09-23; they do not imply production security or penetration-testing experience.
+
+Export using `CV_VARIANT=celfocus-application-security` and `CV_OUTPUT_DIR` with `node scripts/export-cv.mjs`. Output: `Daniela_Torres_Almeida_CV_Celfocus_Application_Security_Intern.pdf`.
