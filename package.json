@@ -13,7 +13,8 @@
     "validate:links": "node scripts/validate-links-assets.mjs",
     "build:resumes": "node scripts/build-resumes.mjs",
     "check:resumes": "node scripts/build-resumes.mjs --check",
-    "build:profile": "node scripts/build-profile.mjs && npm run sync:home"
+    "build:profile": "node scripts/build-profile.mjs && npm run sync:home",
+    "check:dns": "node scripts/check-domain-dns.mjs"
   },
   "devDependencies": {
     "axe-core": "^4.11.1",
