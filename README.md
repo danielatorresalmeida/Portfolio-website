@@ -11,6 +11,16 @@ Personal portfolio website showcasing my work as a **Software Developer / Front-
 
 A bilingual [OPUS project case study](https://danielatorresalmeida.github.io/Portfolio-website/projects/opus/) is also available on this portfolio. The GitHub repository contains the source code and installation instructions. **A public interactive deployment is not yet available**; the portfolio will link to one only after it has been set up and tested.
 
+## 🧭 Free hosting and domain migration
+
+The [zero-additional-cost hosting roadmap](docs/zero-cost-hosting-roadmap.md) explains the current free GitHub Pages deployments, a possible **Oracle Always Free** server for Laravel/Spring Boot, budget risks, backups and a staged migration to `torresalmeida.com`. **No cloud paid plan or DNS change is activated by this documentation.**
+
+To inspect public DNS records **without changing anything**:
+
+```bash
+npm run check:dns
+```
+
 ## ✨ Highlights
 
 - 🌍 Bilingual interface in English and European Portuguese
