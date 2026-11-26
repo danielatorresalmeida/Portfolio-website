@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="OPUS: a Laravel and MySQL classical music library with composer search, favourites, permissions, and selective Open Opus API import. A completed CESAE Digital project by Daniela Torres Almeida.">
+  <title>OPUS | Classical Music Library · Daniela Torres Almeida</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0e2321;--surface:#15312d;--surface2:#1b3c35;--ink:#f2f0e9;--muted:#c5d4cc;--gold:#dfc78e;--line:#42645a}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}
+    a{color:var(--gold)}a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:4px}.wrap{width:min(1080px,92vw);margin:auto}
+    header{border-bottom:1px solid var(--line)}nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 0;flex-wrap:wrap}
+    .back{text-decoration:none;color:var(--ink);font-weight:600}.lang{display:flex;gap:.4rem}.lang button{color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:20px;padding:.3rem .8rem;cursor:pointer}.lang button[aria-pressed="true"]{color:#112924;background:var(--gold);border-color:var(--gold)}
+    .hero{padding:4rem 0 3rem;display:grid;grid-template-columns:1fr 210px;align-items:center;gap:3rem}.eyebrow{text-transform:uppercase;letter-spacing:.16em;color:var(--gold);font-weight:700;font-size:.8rem}
+    h1{font-family:Georgia,serif;font-weight:500;letter-spacing:.04em;font-size:clamp(3.5rem,10vw,7.3rem);line-height:1.05;margin:.35rem 0}h2{font-family:Georgia,serif;font-size:2rem;font-weight:500;margin:.3rem 0 1rem}
+    p.lead{font-size:1.22rem;max-width:58ch}.muted{color:var(--muted)}.opus-symbol{width:210px;max-width:100%;filter:drop-shadow(0 0 45px rgba(223,199,142,.15))}
+    .links{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.5rem}.btn{display:inline-block;text-decoration:none;padding:.78rem 1.15rem;border:1px solid var(--gold);border-radius:6px;font-weight:650}.primary{background:var(--gold);color:#0c2420}.secondary{color:var(--ink)}
+    section{padding:2rem 0}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.3rem}.card h3{margin:.1rem 0 .5rem;color:var(--gold);font-size:1.02rem}.card p{margin:0;color:var(--muted)}
+    .flow{background:var(--surface2);border-left:3px solid var(--gold);border-radius:6px;padding:1.3rem;line-height:1.9}.stack{display:flex;gap:.5rem;flex-wrap:wrap}.tag{border:1px solid var(--line);border-radius:999px;padding:.3rem .75rem;font-size:.85rem;color:var(--muted)}
+    footer{margin-top:2rem;padding:2rem 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+    @media(max-width:670px){.hero{grid-template-columns:1fr;gap:1rem;padding:2.4rem 0}.opus-symbol{width:120px;order:-1}.grid{grid-template-columns:1fr}h1{font-size:4rem}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+<header><nav class="wrap" aria-label="Main navigation">
+  <a class="back" href="../../home/" data-en="← Daniela Torres Almeida · Portfolio" data-pt="← Daniela Torres Almeida · Portefólio">← Daniela Torres Almeida · Portfolio</a>
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="pt" aria-pressed="false">PT</button></div>
+</nav></header>
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <p class="eyebrow" data-en="Completed CESAE Digital project · November 2026" data-pt="Projeto concluído no CESAE Digital · Novembro de 2026">Completed CESAE Digital project · November 2026</p>
+      <h1>OPUS</h1>
+      <p class="lead" data-en="A classical music library built with Laravel: composer and work catalogues, research tools and carefully controlled data imports." data-pt="Uma biblioteca de música erudita desenvolvida em Laravel: catálogos de compositores e obras, ferramentas de pesquisa e importação controlada de dados.">A classical music library built with Laravel: composer and work catalogues, research tools and carefully controlled data imports.</p>
+      <div class="links"><a class="btn primary" href="https://github.com/danielatorresalmeida/opus-laravel" target="_blank" rel="noopener" data-en="View source code" data-pt="Ver código-fonte">View source code</a><a class="btn secondary" href="https://github.com/danielatorresalmeida/opus-laravel#instalação" target="_blank" rel="noopener" data-en="Installation instructions" data-pt="Instruções de instalação">Installation instructions</a></div>
+    </div>
+    <svg class="opus-symbol" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-label="Original OPUS musical emblem">
+      <rect x="3" y="3" width="74" height="74" rx="37" fill="none" stroke="#d9c28a" stroke-width="1.5"/>
+      <g stroke="#d9c28a" fill="none" stroke-linecap="round"><path d="M19 29h42M19 35h42M19 41h42M19 47h42M19 53h42" opacity=".45"/><path d="M33 55V25l18-5v29" stroke-width="2.4"/></g>
+      <g fill="#d9c28a"><ellipse cx="27" cy="55" rx="7.5" ry="5" transform="rotate(-22 27 55)"/><ellipse cx="45" cy="49" rx="7.5" ry="5" transform="rotate(-22 45 49)"/></g>
+    </svg>
+  </section>
+  <section aria-labelledby="features">
+    <p class="eyebrow" data-en="What I built" data-pt="O que desenvolvi">What I built</p>
+    <h2 id="features" data-en="Core functionality" data-pt="Funcionalidades principais">Core functionality</h2>
+    <div class="grid">
+      <article class="card"><h3 data-en="Composer and work catalogue" data-pt="Catálogo de compositores e obras">Composer and work catalogue</h3><p data-en="Search, musical-period and work-count filters, sorting, pagination and detailed records." data-pt="Pesquisa, filtros por período musical e número de obras, ordenação, paginação e fichas detalhadas.">Search, musical-period and work-count filters, sorting, pagination and detailed records.</p></article>
+      <article class="card"><h3 data-en="Authentication and permissions" data-pt="Autenticação e permissões">Authentication and permissions</h3><p data-en="Public browsing, authenticated favourites and editing, with creation, deletion and imports restricted to administrators." data-pt="Consulta pública, favoritos e edição para utilizadores autenticados, com criação, eliminação e importação reservadas a administradores.">Public browsing, authenticated favourites and editing, with creation, deletion and imports restricted to administrators.</p></article>
+      <article class="card"><h3 data-en="Classical music API integration" data-pt="Integração com API musical">Classical music API integration</h3><p data-en="Selective Open Opus imports by external ID, duplicate checks, preservation of local edits, transactions and error handling." data-pt="Importação seletiva da Open Opus por identificador externo, prevenção de duplicados, preservação de edições locais, transações e tratamento de erros.">Selective Open Opus imports by external ID, duplicate checks, preservation of local edits, transactions and error handling.</p></article>
+      <article class="card"><h3 data-en="Images, scores and sources" data-pt="Imagens, partituras e fontes">Images, scores and sources</h3><p data-en="Optional images and PDF score uploads, file validation and links to specialist music research resources." data-pt="Carregamento opcional de imagens e partituras PDF, validação de ficheiros e ligações para arquivos de investigação musical.">Optional images and PDF score uploads, file validation and links to specialist music research resources.</p></article>
+    </div>
+  </section>
+  <section aria-labelledby="architecture">
+    <p class="eyebrow" data-en="Implementation" data-pt="Implementação">Implementation</p>
+    <h2 id="architecture" data-en="Technical approach" data-pt="Abordagem técnica">Technical approach</h2>
+    <p class="flow">Browser + Blade views → Laravel routes and controllers → Eloquent models → MySQL<br>Laravel HTTP client → Open Opus external API<br>Laravel public filesystem → Images and PDF scores</p>
+    <div class="stack" aria-label="Technologies"><span class="tag">PHP</span><span class="tag">Laravel</span><span class="tag">Blade</span><span class="tag">MySQL</span><span class="tag">Eloquent ORM</span><span class="tag">HTTP / JSON</span><span class="tag">Git / GitHub</span></div>
+  </section>
+  <section aria-labelledby="status">
+    <p class="eyebrow" data-en="Project status" data-pt="Estado do projeto">Project status</p>
+    <h2 id="status" data-en="Completed, documented and available on GitHub" data-pt="Concluído, documentado e disponível no GitHub">Completed, documented and available on GitHub</h2>
+    <p data-en="OPUS was completed and defended in November 2026 as a CESAE Digital Laravel project. The repository includes the source code and local setup instructions. A public interactive demonstration is not yet deployed; this page is a project overview, not the running application." data-pt="O OPUS foi concluído e defendido em novembro de 2026 como projeto Laravel do CESAE Digital. O repositório inclui o código-fonte e instruções de instalação local. Ainda não existe uma demonstração interativa pública; esta página apresenta o projeto, não a aplicação em execução.">OPUS was completed and defended in November 2026 as a CESAE Digital Laravel project. The repository includes the source code and local setup instructions. A public interactive demonstration is not yet deployed; this page is a project overview, not the running application.</p>
+  </section>
+</main>
+<footer><div class="wrap">© 2026 Daniela Torres Almeida · <a href="https://github.com/danielatorresalmeida" target="_blank" rel="noopener">GitHub</a> · <a href="mailto:careers@torresalmeida.com">Contact</a></div></footer>
+<script>
+  const buttons = document.querySelectorAll('[data-lang]');
+  function setLanguage(lang) {
+    document.documentElement.lang = lang === 'pt' ? 'pt-PT' : 'en';
+    document.querySelectorAll('[data-en][data-pt]').forEach(el => {el.textContent = el.getAttribute(lang === 'pt' ? 'data-pt' : 'data-en');});
+    buttons.forEach(b => b.setAttribute('aria-pressed',String(b.dataset.lang === lang)));
+  }
+  buttons.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.lang)));
+</script>
+</body>
+</html>
