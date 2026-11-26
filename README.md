@@ -9,7 +9,7 @@ Personal portfolio website showcasing my work as a **Software Developer / Front-
 
 **[OPUS — Classical Music Library](https://github.com/danielatorresalmeida/opus-laravel)** is a completed Laravel/PHP/MySQL application developed during CESAE Digital. It includes a searchable composer-and-works catalogue, authentication, role-based permissions, favourites, image/PDF uploads, and selective Open Opus API import with duplicate checks and preservation of locally edited records.
 
-The GitHub repository contains the source code and installation instructions. **A public interactive deployment is not yet available**; the portfolio will link to one only after it has been set up and tested.
+A bilingual [OPUS project case study](https://danielatorresalmeida.github.io/Portfolio-website/projects/opus/) is also available on this portfolio. The GitHub repository contains the source code and installation instructions. **A public interactive deployment is not yet available**; the portfolio will link to one only after it has been set up and tested.
 
 ## ✨ Highlights
 
