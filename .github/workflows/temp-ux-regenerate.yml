@@ -1,0 +1,39 @@
+name: Temporary UX regenerate and validate
+on:
+  push:
+    branches:
+      - feature/visitor-experience-project-explorer
+    paths:
+      - .github/workflows/temp-ux-regenerate.yml
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/visitor-experience-project-explorer
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      - name: Generate home pages from source
+        run: npm run build:profile
+      - name: Verify contracts and links
+        run: |
+          npm test
+          npm run validate:links
+      - name: Commit generated page files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html home/index.html script.js
+          if ! git diff --cached --quiet; then
+            git commit -m "build: generate accessible filtered project explorer"
+            git push origin HEAD:feature/visitor-experience-project-explorer
+          fi
