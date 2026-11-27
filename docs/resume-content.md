@@ -10,6 +10,16 @@
 
 The public CV stays at `/resume-site-only/`; seven noindex company CVs live at `/resume/variants/<company>/`. They are not separate portfolios. The existing `/home/` compatibility route is generated from the single root portfolio. HTML copies are generated outputs, not independent factual documents.
 
+## November 2026 source update
+
+- **OPUS — Classical Music Library:** completed CESAE Digital Laravel/PHP/MySQL/Blade project. Public code and a bilingual case study; **no public interactive Laravel deployment yet**. Selective Open Opus API import with duplicate checks; images/PDF scores are uploaded separately.
+- **Gestor de Tarefas Inteligente:** JavaScript/HTML/CSS with deadlines, filters, browser-local task storage and Open-Meteo; published on GitHub Pages. Login is simulated, not real authentication.
+- **Professional positioning:** Front-End / Full-Stack Software Developer in training, with the 400-hour FPCT planned for 1 March–20 May 2027 and full-time Junior Developer availability from **21 May 2027**.
+- **Skills:** PHP, Laravel, Blade and MySQL are now evidenced by the completed OPUS project. C# is labelled **in training**.
+- Eight generated CV views (Master plus seven company-specific versions) include OPUS and the JavaScript task manager, while preserving targeted emphasis, historical training and experience. The portfolio front page highlights these two latest projects above the four previous case-study cards.
+- Verified 27 November 2026: DevFlow Hub PR #53 is still **open/unmerged**. Do not change its status until merge is confirmed.
+- Page copies are generated from `resume/data/base.mjs`, `resume/variants/config.mjs`, `resume/render.mjs`, `scripts/build-profile.mjs` and `fragments/recent-projects.fragment`. Rebuild both site and CVs after editing these files; do not edit generated copies by hand.
+
 ## Editing and validation
 
 ```powershell

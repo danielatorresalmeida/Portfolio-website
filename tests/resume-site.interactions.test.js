@@ -161,8 +161,8 @@ describe("resume-site-only interaction flows", () => {
     const firstProject = document.querySelector("#projects-col .item:first-of-type");
     const anchors = firstProject.querySelectorAll("a[href]");
     expect(anchors.length).toBe(2);
-    expect(anchors[0].getAttribute("href")).toBe("https://github.com/danielatorresalmeida/DevFlow_Hub");
-    expect(anchors[1].getAttribute("href")).toBe("https://github.com/danielatorresalmeida/DevFlow_Hub/pull/53");
+    expect(anchors[0].getAttribute("href")).toBe("https://github.com/danielatorresalmeida/opus-laravel");
+    expect(anchors[1].getAttribute("href")).toBe("https://danielatorresalmeida.github.io/Portfolio-website/projects/opus/");
   });
 
   it("updates training and language sections when language changes", async () => {
