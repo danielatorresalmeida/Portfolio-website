@@ -56,3 +56,26 @@ h1{font-size:clamp(3rem,7vw,6.5rem)}
 .next-panel h4{margin:0;font-size:1.25rem}
 @media(max-width:850px){.api-flow{grid-template-columns:repeat(2,minmax(0,1fr))}.project .image-preview img{height:260px}}
 @media(max-width:450px){.api-flow{grid-template-columns:1fr}.project .image-preview img{height:200px}}
+
+/* Optional spatial gallery, progressively enhanced with CSS perspective. */
+.spatial-gallery{margin:2rem 0 0;padding:clamp(1rem,3vw,2rem);border:1px solid var(--line);border-radius:16px;background:var(--panel)}
+.spatial-gallery summary{font-size:1.2rem;min-height:44px;align-content:center}
+.spatial-gallery[open] summary{margin-bottom:1rem}
+.gallery-stage{position:relative;isolation:isolate;overflow:hidden;perspective:950px;height:clamp(240px,40vw,470px);margin:1.5rem 0;background:radial-gradient(ellipse at 50% 30%,var(--panel),var(--bg) 78%);border:1px solid var(--line);border-radius:12px}
+.gallery-stage::before{content:"";position:absolute;inset:45% -60% -80%;background:repeating-linear-gradient(90deg,transparent 0 69px,var(--line) 70px 71px),repeating-linear-gradient(0deg,transparent 0 69px,var(--line) 70px 71px);transform:rotateX(66deg);transform-origin:top;opacity:.35}
+.gallery-panel{position:absolute;top:10%;left:26%;width:48%;height:80%;display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:.5rem;padding:clamp(.6rem,2vw,1.5rem);background:var(--panel);border:1px solid var(--line);border-radius:10px;box-shadow:0 18px 40px #0003;text-align:center;overflow:hidden}
+.gallery-panel[data-position="center"]{z-index:2;transform:translateZ(30px);border-color:var(--accent)}
+.gallery-panel[data-position="left"]{transform:translateX(-83%) rotateY(48deg) scale(.79);opacity:.58}
+.gallery-panel[data-position="right"]{transform:translateX(83%) rotateY(-48deg) scale(.79);opacity:.58}
+.gallery-panel img{width:100%;min-height:0;flex:1;object-fit:contain}
+.gallery-panel-opus img{max-width:160px}
+.gallery-panel strong{font-size:clamp(.85rem,2vw,1.35rem)}
+.gallery-symbol{font-size:.75rem;color:var(--accent);letter-spacing:.13em}
+.gallery-plus{font:4rem Georgia,serif;color:var(--accent)}
+.gallery-controls,.gallery-selector{display:flex;justify-content:center;align-items:center;gap:.6rem;flex-wrap:wrap}
+.gallery-controls button:disabled{opacity:.5;cursor:not-allowed}
+.gallery-selector{margin:1rem 0}
+.gallery-selector button[aria-pressed="true"]{background:var(--button);color:var(--on-button)}
+.gallery-caption{text-align:center;margin:1rem auto;max-width:64ch}
+.gallery-caption h3{margin:.5rem 0}
+@media(max-width:600px),(prefers-reduced-motion:reduce){.gallery-panel[data-position="left"],.gallery-panel[data-position="right"],.gallery-stage::before{display:none}.gallery-panel[data-position="center"]{left:7%;width:86%;transform:none}.gallery-stage{perspective:none}}
