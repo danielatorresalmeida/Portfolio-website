@@ -97,3 +97,8 @@ h1{font-size:clamp(3rem,7vw,6.5rem)}
 .spatial-gallery:fullscreen .gallery-caption{margin:.6rem auto}
 .spatial-gallery:fullscreen .gallery-caption h3{font-size:clamp(1.5rem,3vw,2.5rem)}
 @media(max-width:600px){.spatial-gallery:fullscreen .room-mount{height:45vh}}
+
+.exhibit[id]{scroll-margin-top:6rem}
+.gallery-caption .gallery-controls .primary{margin-top:.6rem}
+.gallery-caption .gallery-controls .primary+.primary{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+@media(max-width:850px){.exhibit[id]{scroll-margin-top:1rem}}
