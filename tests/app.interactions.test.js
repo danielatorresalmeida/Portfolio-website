@@ -162,6 +162,61 @@ describe("portfolio interaction flows", () => {
     expect(localStorage.getItem("portfolio-language")).toBe("pt-PT");
   });
 
+  it("helps visitors browse only published demos or code-first projects, in both languages", () => {
+    dom = bootstrapApp();
+    const { document } = dom.window;
+    const cards = [...document.querySelectorAll('#projects [data-project-kind]')];
+    const visible = () => cards.filter((card) => !card.hidden);
+    const results = document.getElementById('project-filter-results');
+    const all = document.querySelector('[data-project-filter="all"]');
+    const published = document.querySelector('[data-project-filter="published"]');
+    const source = document.querySelector('[data-project-filter="source"]');
+
+    expect(cards).toHaveLength(6);
+    expect(document.querySelector('.project-explorer').hidden).toBe(false);
+    expect(visible()).toHaveLength(6);
+    expect(all.getAttribute('aria-pressed')).toBe('true');
+    expect(results.textContent).toBe('6 projects shown');
+
+    published.click();
+    expect(visible()).toHaveLength(3);
+    expect(visible().every((card) => card.dataset.projectKind === 'published')).toBe(true);
+    expect(published.getAttribute('aria-pressed')).toBe('true');
+    expect(all.getAttribute('aria-pressed')).toBe('false');
+    expect(results.textContent).toBe('3 projects shown');
+
+    document.getElementById('lang-toggle').click();
+    expect(published.textContent).toBe('Demonstrações online');
+    expect(results.textContent).toBe('A mostrar 3 projetos');
+
+    source.click();
+    expect(visible()).toHaveLength(3);
+    expect(visible().every((card) => card.dataset.projectKind === 'source')).toBe(true);
+    all.click();
+    expect(visible()).toHaveLength(6);
+  });
+
+  it("puts projects first, makes skills easy to find and keeps details accessible", () => {
+    dom = bootstrapApp();
+    const { document, open } = dom.window;
+    const main = document.querySelector('.hero');
+    const projects = document.getElementById('projects');
+    const skills = document.getElementById('skills');
+    expect(main.compareDocumentPosition(projects) & dom.window.Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(projects.compareDocumentPosition(skills) & dom.window.Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(document.querySelector('#main-nav a[href="#skills"]').textContent).toBe('Skills');
+    expect(document.querySelectorAll('.hero .cta .btn')).toHaveLength(2);
+    const card = document.querySelector('#project-grid .card[data-href]');
+    const details = card.querySelector('details.project-more');
+    expect(details).not.toBeNull();
+    details.querySelector('summary').click();
+    expect(details.open).toBe(true);
+    expect(open).not.toHaveBeenCalled();
+    document.getElementById('lang-toggle').click();
+    expect(document.querySelector('#main-nav a[href="#skills"]').textContent).toBe('Competências');
+    expect(details.querySelector('summary').textContent).toBe('Detalhes técnicos');
+  });
+
   it("keeps CV button download behavior aligned with selected language", () => {
     dom = bootstrapApp();
     const { document } = dom.window;

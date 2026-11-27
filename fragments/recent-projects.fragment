@@ -1,7 +1,7 @@
 <div class="recent-projects" aria-labelledby="recent-projects-heading">
   <h3 id="recent-projects-heading" class="recent-projects-heading" data-i18n="recent.heading">New work · 2026</h3>
   <div class="recent-projects-grid">
-    <article class="recent-project recent-project-opus" aria-labelledby="recent-project-opus-title">
+    <article data-project-kind="source" class="recent-project recent-project-opus" aria-labelledby="recent-project-opus-title">
       <div class="recent-project-top">
         <div class="recent-project-symbol"><img src="assets/opus-mark.svg" alt="" width="84" height="84" loading="lazy"></div>
         <div>
@@ -18,7 +18,7 @@
         <a class="btn btn-ghost" href="https://github.com/danielatorresalmeida/opus-laravel" target="_blank" rel="noopener" data-i18n="recent.source">Source code</a>
       </div>
     </article>
-    <article class="recent-project recent-project-tasks" aria-labelledby="recent-project-tasks-title">
+    <article data-project-kind="published" class="recent-project recent-project-tasks" aria-labelledby="recent-project-tasks-title">
       <div class="recent-project-top">
         <div class="recent-project-js" aria-hidden="true">JS</div>
         <div>

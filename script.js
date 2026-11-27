@@ -48,7 +48,6 @@ function setStoredValue(key, value) {
 const TRANSLATIONS = {
   [LANG_EN]: {
   "nav.projects": "Projects",
-  "nav.figma": "UI/UX",
   "nav.about": "About",
   "nav.experience": "Experience",
   "nav.contact": "Contact",
@@ -60,7 +59,6 @@ const TRANSLATIONS = {
   "hero.title": "Daniela Torres Almeida",
   "hero.lead": "I build web applications and APIs with PHP/Laravel, JavaScript, React/TypeScript and Java/Spring Boot, drawing on startup experience and completed CESAE projects.",
   "hero.cta.work": "View Projects",
-  "hero.cta.contact": "Contact Me",
   "hero.highlights.0.title": "Recent project · OPUS",
   "hero.highlights.0.text": "Completed Laravel/MySQL classical music library with Open Opus API integration.",
   "hero.highlights.1.title": "Current training",
@@ -207,12 +205,18 @@ const TRANSLATIONS = {
   "coreStack.backend.item.7": "MySQL",
   "coreStack.backend.item.8": "PostgreSQL",
   "coreStack.backend.item.9": "SQL",
-  "coreStack.additional.item.6": "C# (in training)"
+  "coreStack.additional.item.6": "C# (in training)",
+  "nav.skills": "Skills",
+  "projects.filter.help": "Choose what you want to explore:",
+  "projects.filter.all": "All projects",
+  "projects.filter.published": "Online demos",
+  "projects.filter.source": "Code & case studies",
+  "projects.filter.results": "{count} projects shown",
+  "projects.more": "Technical details"
 },
   [LANG_PT]: {
   "nav.projects": "Projetos",
-  "nav.figma": "UI/UX",
-  "nav.about": "Sobre",
+  "nav.about": "Sobre mim",
   "nav.experience": "Experiência",
   "nav.contact": "Contacto",
   "nav.menu.open": "Abrir navegação",
@@ -223,7 +227,6 @@ const TRANSLATIONS = {
   "hero.title": "Daniela Torres Almeida",
   "hero.lead": "Desenvolvo aplicações web e APIs com PHP/Laravel, JavaScript, React/TypeScript e Java/Spring Boot, com experiência numa startup e projetos concluídos no CESAE.",
   "hero.cta.work": "Ver projetos",
-  "hero.cta.contact": "Contactar",
   "hero.highlights.0.title": "Projeto recente · OPUS",
   "hero.highlights.0.text": "Biblioteca de música erudita concluída em Laravel/MySQL com integração da API Open Opus.",
   "hero.highlights.1.title": "Formação atual",
@@ -370,7 +373,14 @@ const TRANSLATIONS = {
   "coreStack.backend.item.7": "MySQL",
   "coreStack.backend.item.8": "PostgreSQL",
   "coreStack.backend.item.9": "SQL",
-  "coreStack.additional.item.6": "C# (em formação)"
+  "coreStack.additional.item.6": "C# (em formação)",
+  "nav.skills": "Competências",
+  "projects.filter.help": "Escolhe o tipo de projetos que queres explorar:",
+  "projects.filter.all": "Todos os projetos",
+  "projects.filter.published": "Demonstrações online",
+  "projects.filter.source": "Código e estudos de caso",
+  "projects.filter.results": "A mostrar {count} projetos",
+  "projects.more": "Detalhes técnicos"
 }
 };
 
@@ -624,7 +634,36 @@ function applyTranslations(language) {
 
   setThemeToggleAria(document.documentElement.getAttribute("data-theme") || "dark");
   applyOrphanControl();
+  updateProjectFilterResults();
 }
+
+// Discover projects by publication status without hiding anything when JS is unavailable.
+const projectFilterButtons = [...document.querySelectorAll("#projects [data-project-filter]")];
+const projectFilterCards = [...document.querySelectorAll("#projects [data-project-kind]")];
+
+function updateProjectFilterResults() {
+  const result = document.getElementById("project-filter-results");
+  if (!result) return;
+  const count = projectFilterCards.filter((card) => !card.hidden).length;
+  result.textContent = t("projects.filter.results").replace("{count}", String(count));
+}
+
+function selectProjectFilter(filter) {
+  if (!["all", "published", "source"].includes(filter)) return;
+  projectFilterButtons.forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.dataset.projectFilter === filter));
+  });
+  projectFilterCards.forEach((card) => {
+    card.hidden = filter !== "all" && card.dataset.projectKind !== filter;
+  });
+  updateProjectFilterResults();
+}
+
+projectFilterButtons.forEach((button) => button.addEventListener("click", () => {
+  selectProjectFilter(button.dataset.projectFilter);
+}));
+selectProjectFilter("all");
+document.querySelector("#projects .project-explorer")?.removeAttribute("hidden");
 
 langToggle?.addEventListener("click", () => {
   applyTranslations(currentLanguage === LANG_PT ? LANG_EN : LANG_PT);
