@@ -16,6 +16,9 @@ const nav = document.querySelector('#chapter-nav');
 let observer;
 let activeChapter = 'logic';
 const exampleTasks = [true,false,false];
+let fishingScore = 0;
+let fishingTurns = 5;
+let apiRole = 'member';
 const language = document.querySelector('#language');
 const theme = document.querySelector('#theme');
 const storage = {
@@ -30,7 +33,7 @@ const link = (label,href) => {const a=el('a',label);a.href=href;return a};
 
 function projectCard(id){
   const p=profile.projects[id];
-  const article=el('article',null,'project');
+  const article=el('article',null,'project project-'+id);
   const copy=el('div');
   copy.append(el('p',localize(p.status,lang),'status'),el('h4',p.name),el('p',localize(p.short,lang)));
   const tags=el('ul',null,'tags');
@@ -62,7 +65,13 @@ function projectCard(id){
     image.alt=p.alt;
     image.loading='lazy';
     image.decoding='async';
-    figure.append(image,el('figcaption',tr('Project screenshot','Captura do projeto')));
+    const preview=link('',image.getAttribute('src'));
+    preview.className='image-preview';
+    preview.setAttribute('aria-label',tr('View full screenshot: ','Ver captura completa: ')+p.name);
+    preview.target='_blank';
+    preview.rel='noopener';
+    preview.append(image);
+    figure.append(preview,el('figcaption',tr('Project screenshot · open to enlarge','Captura do projeto · abrir para ampliar')));
     article.append(figure);
   }else if(id==='opus'){
     const figure=el('figure');
@@ -71,7 +80,7 @@ function projectCard(id){
     image.alt='OPUS';
     image.loading='lazy';
     figure.append(image,el('figcaption',tr('Project emblem · not a screenshot','Símbolo do projeto · não é uma captura de ecrã')));
-    figure.style.maxWidth='160px';
+    figure.classList.add('opus-emblem');
     article.append(figure);
     article.classList.add('has-image');
   }
@@ -104,6 +113,79 @@ function taskExhibit(){
   update();
   return exhibit;
 }
+const learningNotes = {
+  logic:['Before building an interface, a program needs rules that keep its state consistent. The C project makes those rules explicit through validated input and scoring.','Antes de construir uma interface, um programa precisa de regras que mantenham o estado consistente. O projeto em C torna essas regras explícitas através da validação de input e da pontuação.'],
+  interfaces:['A working application also needs to be usable. The portfolio adds responsive layout, keyboard navigation and automated quality checks to that foundation.','Uma aplicação funcional também precisa de ser fácil de utilizar. O portefólio acrescenta layouts responsivos, navegação por teclado e verificações automatizadas de qualidade a essa base.'],
+  interaction:['The next layer is behaviour: keeping the interface in sync with data, whether stored in the browser or synchronised through an authenticated service.','A camada seguinte é o comportamento: manter a interface sincronizada com os dados, quer sejam guardados no navegador, quer através de um serviço autenticado.'],
+  backend:['An interface is only part of the system. The server must decide whether requests are valid, authorised and safe to persist.','Uma interface é apenas parte do sistema. O servidor precisa de decidir se os pedidos são válidos, autorizados e seguros para guardar.'],
+  opus:['OPUS brings these ideas together: a musical catalogue, a relational database, authentication, controlled imports and a real domain of knowledge from music education.','O OPUS reúne estas ideias: um catálogo musical, uma base de dados relacional, autenticação, importações controladas e conhecimento adquirido no ensino da música.']
+};
+function exhibitShell(title,description){
+  const box=el('section',null,'exhibit');
+  box.append(el('p',tr('INTERACTIVE EXHIBIT','DEMONSTRAÇÃO INTERATIVA'),'eyebrow'),el('h4',tr(...title)),el('p',tr(...description)));
+  return box;
+}
+function logicExhibit(){
+  const box=exhibitShell(['Rules, choices and state','Regras, escolhas e estado'],['A deterministic mini-game inspired by Penguin Fishing Game. This is an illustrative JavaScript exercise, not a port of the C source.','Um minijogo determinístico inspirado no Penguin Fishing Game. É um exercício ilustrativo em JavaScript, não uma adaptação do código C original.']);
+  const controls=el('div',null,'exhibit-actions');
+  const cast=el('button',tr('Cast the line','Lançar a linha'));
+  const reset=el('button',tr('Reset','Reiniciar'));
+  cast.type=reset.type='button';
+  const score=el('p',null,'exhibit-output');
+  score.setAttribute('role','status');
+  const code=el('pre',null,'state-code');
+  const update=()=>{
+    cast.disabled=fishingTurns===0;
+    score.textContent=tr('Score: '+fishingScore+' · Turns remaining: '+fishingTurns,'Pontuação: '+fishingScore+' · Jogadas restantes: '+fishingTurns);
+    code.textContent=JSON.stringify({score:fishingScore,turns:fishingTurns,gameOver:fishingTurns===0},null,2);
+  };
+  cast.addEventListener('click',()=>{if(fishingTurns>0){fishingTurns--;fishingScore+=10;update()}});
+  reset.addEventListener('click',()=>{fishingScore=0;fishingTurns=5;update()});
+  controls.append(cast,reset);
+  box.append(controls,score,code);
+  update();
+  return box;
+}
+function apiExhibit(){
+  const box=exhibitShell(['Follow an API request','Acompanhar um pedido à API'],['Choose a role to see an illustrative authorisation flow. This is a local simulation, not a live DevFlow Hub endpoint or its exact permission policy.','Escolhe um perfil para observar um fluxo ilustrativo de autorização. É uma simulação local, não um endpoint ativo do DevFlow Hub nem a sua política exata de permissões.']);
+  const controls=el('div',null,'exhibit-actions');
+  controls.setAttribute('role','group');
+  controls.setAttribute('aria-label',tr('Example role','Perfil de exemplo'));
+  const steps=el('ol',null,'api-flow');
+  const output=el('pre',null,'state-code');
+  const status=el('p',null,'exhibit-output');
+  status.setAttribute('role','status');
+  const update=()=>{
+    const allowed=apiRole==='member';
+    for(const b of controls.querySelectorAll('button'))b.setAttribute('aria-pressed',String(b.dataset.role===apiRole));
+    steps.replaceChildren(...[
+      tr('Client · GET /projects/42','Cliente · GET /projects/42'),
+      tr('API · validate identity','API · validar identidade'),
+      allowed?tr('Authorisation · allowed','Autorização · permitida'):tr('Authorisation · denied','Autorização · recusada'),
+      allowed?tr('Database · read project','Base de dados · consultar projeto'):tr('Database · not queried','Base de dados · sem consulta')
+    ].map(s=>el('li',s)));
+    status.textContent=allowed?'200 OK':'403 Forbidden';
+    output.textContent=JSON.stringify(allowed?{id:42,name:'Example project'}:{error:'Forbidden'},null,2);
+  };
+  for(const [role,labels] of [['member',['Project member','Membro do projeto']],['visitor',['Non-member','Sem acesso ao projeto']]]){
+    const b=el('button',tr(...labels));
+    b.type='button';b.dataset.role=role;
+    b.addEventListener('click',()=>{apiRole=role;update()});
+    controls.append(b);
+  }
+  box.append(controls,steps,status,output);
+  update();
+  return box;
+}
+function nextChapter(){
+  const box=el('div',null,'next-panel');
+  box.append(el('h4',tr('What comes next','O que se segue')),el('p',localize(profile.training.expected,lang)),el('p',tr('Curricular internship: 1 March – 20 May 2027 · Full-time availability from 21 May 2027.','Estágio curricular: 1 de março a 20 de maio de 2027 · Disponibilidade a tempo inteiro a partir de 21 de maio de 2027.')));
+  const actions=el('div',null,'links');
+  actions.append(link(tr('View CV','Consultar CV'),'../resume-site-only/'),link(tr('Contact','Contacto'),'../home/#contact'));
+  box.append(actions);
+  return box;
+}
+
 function markCurrent(id){
   activeChapter=id;
   for(const a of nav.querySelectorAll('a')){
@@ -148,8 +230,12 @@ function render(){
     section.append(el('span',String(i+1).padStart(2,'0'),'number'));
     const body=el('div');
     body.append(title,el('p',tr(...chapter.intro),'chapter-intro'));
-    if(chapter.id==='interaction')body.append(taskExhibit());
+    if(learningNotes[chapter.id])body.append(el('p',tr(...learningNotes[chapter.id]),'learning-note'));
     for(const id of chapter.projects)body.append(projectCard(id));
+    if(chapter.id==='logic')body.append(logicExhibit());
+    if(chapter.id==='interaction')body.append(taskExhibit());
+    if(chapter.id==='backend')body.append(apiExhibit());
+    if(chapter.id==='next')body.append(nextChapter());
     section.append(body);
     fragment.append(section);
   });
