@@ -61,7 +61,7 @@ const description = 'Software Developer in training in Cascais, Portugal. PHP/La
 doc.title = title;
 for (const selector of ['meta[name="description"]', 'meta[property="og:description"]', 'meta[name="twitter:description"]']) doc.querySelector(selector)?.setAttribute('content', description);
 for (const selector of ['meta[property="og:title"]', 'meta[name="twitter:title"]']) doc.querySelector(selector)?.setAttribute('content', title);
-const wanted = new Set();
+const wanted = new Set(['projects.filter.results']);
 for (const element of doc.querySelectorAll('*')) for (const attribute of element.attributes) if (attribute.name.startsWith('data-i18n')) wanted.add(attribute.value);
 for (const key of Object.keys(maps['en-US'])) if (/^(theme\.|lang\.|toTop\.|contact\.|nav\.menu)/.test(key)) wanted.add(key);
 for (const lang of Object.keys(maps)) maps[lang] = Object.fromEntries(Object.entries(maps[lang]).filter(([key]) => wanted.has(key)));
