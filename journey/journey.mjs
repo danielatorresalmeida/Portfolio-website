@@ -235,9 +235,15 @@ function render(){
     body.append(title,el('p',tr(...chapter.intro),'chapter-intro'));
     if(learningNotes[chapter.id])body.append(el('p',tr(...learningNotes[chapter.id]),'learning-note'));
     for(const id of chapter.projects)body.append(projectCard(id));
-    if(chapter.id==='logic')body.append(logicExhibit());
-    if(chapter.id==='interaction')body.append(taskExhibit());
-    if(chapter.id==='backend')body.append(apiExhibit());
+    const exhibits={logic:logicExhibit,interaction:taskExhibit,backend:apiExhibit};
+    if(exhibits[chapter.id]){
+      const exhibit=exhibits[chapter.id]();
+      exhibit.id=chapter.id+'-exhibit';
+      const heading=exhibit.querySelector('h4');
+      heading.id=exhibit.id+'-title';
+      exhibit.setAttribute('aria-labelledby',heading.id);
+      body.append(exhibit);
+    }
     if(chapter.id==='next')body.append(nextChapter());
     section.append(body);
     fragment.append(section);
