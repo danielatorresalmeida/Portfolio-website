@@ -33,3 +33,26 @@ h1{font-size:clamp(3rem,7vw,6.5rem)}
 .exhibit p{margin:.5rem 0}
 @media(max-width:850px){.hero,.project.has-image{grid-template-columns:1fr}.chapter{grid-template-columns:50px minmax(0,1fr)}.chapter-nav{position:static}.chapter{scroll-margin-top:1rem}}
 @media(max-width:600px){.chapter{grid-template-columns:1fr}.journey-map{padding:.6rem}.map-link{padding:.8rem;min-height:94px}.project,.exhibit{padding:1rem}.hero{gap:1.5rem}}
+
+/* Individual exhibits and balanced evidence previews */
+.learning-note{max-width:72ch;border-left:2px solid var(--line);padding-left:1rem;margin:1.4rem 0}
+.image-preview{display:block;border-radius:8px;background:var(--bg)}
+.project .image-preview img{width:100%;height:clamp(170px,24vw,300px);object-fit:contain;object-position:center}
+.project-devflow .image-preview img{height:280px}
+.project-opus{--panel:#e9e0ce;--ink:#31291b;--muted:#5e503a;--accent:#685024;--line:#9c8964;background:var(--panel);color:var(--ink);padding:clamp(1.4rem,3vw,2.5rem)}
+:root[data-theme="dark"] .project-opus{--panel:#343126;--ink:#f6edd8;--muted:#d9cbb0;--accent:#e6ce95;--line:#877650}
+.project-opus h4{font-family:Georgia,serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:400}
+.project-opus .opus-emblem{width:min(180px,100%);justify-self:center;align-self:center}
+.project-opus .opus-emblem img{border:0}
+.exhibit-actions{display:flex;gap:.6rem;flex-wrap:wrap;margin:1.2rem 0}
+.exhibit-actions button[aria-pressed="true"]{background:var(--button);color:var(--on-button)}
+.exhibit-actions button:disabled{opacity:.65;cursor:not-allowed}
+.exhibit .exhibit-output{font-weight:700;color:var(--ink)}
+.state-code{background:var(--panel);color:var(--ink);padding:1rem;border-radius:8px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.9rem}
+.api-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));list-style:none;padding:0;gap:.6rem;counter-reset:flow}
+.api-flow li{counter-increment:flow;border:1px solid var(--line);padding:.85rem;border-radius:8px;overflow-wrap:anywhere}
+.api-flow li::before{content:counter(flow,decimal-leading-zero);display:block;color:var(--accent);font-size:.8rem;font-weight:700;margin-bottom:.5rem}
+.next-panel{border:1px dashed var(--line);padding:1.5rem;border-radius:10px}
+.next-panel h4{margin:0;font-size:1.25rem}
+@media(max-width:850px){.api-flow{grid-template-columns:repeat(2,minmax(0,1fr))}.project .image-preview img{height:260px}}
+@media(max-width:450px){.api-flow{grid-template-columns:1fr}.project .image-preview img{height:200px}}
