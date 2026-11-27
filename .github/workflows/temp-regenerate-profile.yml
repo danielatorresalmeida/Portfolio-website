@@ -1,0 +1,48 @@
+name: Temporary regenerate CV and profile files
+
+on:
+  push:
+    branches:
+      - feature/refresh-online-cv-and-profile-nov2026
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout feature branch
+        uses: actions/checkout@v4
+        with:
+          ref: feature/refresh-online-cv-and-profile-nov2026
+          persist-credentials: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Generate all CVs and portfolio content
+        run: |
+          npm run build:resumes
+          npm run build:profile
+
+      - name: Validate generated output
+        run: |
+          npm test
+          npm run validate:links
+
+      - name: Commit generated pages only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add resume-site-only/index.html resume/variants index.html home/index.html script.js
+          if ! git diff --cached --quiet; then
+            git commit -m "build: regenerate bilingual homepage and online CV variants"
+            git push origin HEAD:feature/refresh-online-cv-and-profile-nov2026
+          fi
