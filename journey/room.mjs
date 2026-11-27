@@ -1,4 +1,5 @@
 // Opt-in WebGL exhibition. No server, credentials or project API calls.
+import { buildInstallation } from './installations.mjs';
 const THREE_URL='https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js';
 export async function createRoom({mount,chapters,profile,tr,onSelect,initialIndex=0}){
   const T=await import(THREE_URL);
@@ -50,13 +51,22 @@ export async function createRoom({mount,chapters,profile,tr,onSelect,initialInde
   }
   const projectIds=['penguin','portfolio','todo','devflow','opus',null];
   function poster(chapter,i){
-    const c=document.createElement('canvas');c.width=1024;c.height=680;
+    const c=document.createElement('canvas');c.width=1024;c.height=i===3?260:680;
     const ctx=c.getContext('2d');
     const gold=i===4;
     const texture=track(new T.CanvasTexture(c));texture.colorSpace=T.SRGBColorSpace;
     texture.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());
     const draw=(img)=>{
       if(disposed)return;
+      if(i===3){
+        ctx.fillStyle='#182a23';ctx.fillRect(0,0,1024,260);
+        ctx.strokeStyle='#91ad98';ctx.lineWidth=4;ctx.strokeRect(12,12,1000,236);
+        ctx.fillStyle='#b7d7bf';ctx.font='bold 26px system-ui';ctx.fillText('DEVFLOW HUB / 04',40,52);
+        ctx.font='bold 48px system-ui';ctx.fillText(tr('Behind the Interface','Para além da interface'),40,115,944);
+        ctx.font='28px system-ui';ctx.fillText(tr('Client · API · Authorisation · Database','Cliente · API · Autorização · Base de dados'),40,177,944);
+        ctx.font='22px system-ui';ctx.fillText(tr('Conceptual architecture · local illustration','Arquitetura conceptual · ilustração local'),40,224,944);
+        texture.needsUpdate=true;requestDraw();return;
+      }
       ctx.fillStyle=gold?'#343126':'#182a23';ctx.fillRect(0,0,1024,680);
       ctx.strokeStyle=gold?'#e6ce95':'#91ad98';ctx.lineWidth=4;ctx.strokeRect(18,18,988,644);
       ctx.fillStyle=gold?'#e6ce95':'#b7d7bf';ctx.font='bold 27px system-ui';ctx.fillText('TORRES ALMEIDA DIGITAL  /  0'+(i+1),48,63);
@@ -80,18 +90,14 @@ export async function createRoom({mount,chapters,profile,tr,onSelect,initialInde
     };
     draw();
     const p=profile.projects[projectIds[i]];
-    const src=i===4?'../assets/opus-mark.svg':p?.image?'../'+p.image:null;
+    const src=i===3?null:i===4?'../assets/opus-mark.svg':p?.image?'../'+p.image:null;
     if(src){const img=new Image();img.onload=()=>draw(img);img.src=src;}
     return texture;
   }
   chapters.forEach((chapter,i)=>{
     const side=i%2===0?-1:1,z=-3-Math.floor(i/2)*7;
     const group=new T.Group();group.position.set(side*3.94,2.25,z);group.rotation.y=side===-1?Math.PI/2:-Math.PI/2;scene.add(group);
-    const frameMesh=new T.Mesh(track(new T.BoxGeometry(4.15,2.82,.12)),trim);group.add(frameMesh);
-    const surface=new T.Mesh(track(new T.PlaneGeometry(4,2.65)),track(new T.MeshBasicMaterial({map:poster(chapter,i),toneMapped:false})));
-    surface.position.z=.075;surface.userData.index=i;group.add(surface);panels.push(surface);
-    // Small architectural ledge beneath each exhibit, not an interactive obstacle.
-    box(.35,.13,4.3,side*3.78,.75,z,plinth);
+    panels.push(...buildInstallation(T,group,i,poster(chapter,i),track));
     const spot=new T.SpotLight(0xfff1db,15,8,Math.PI/5,.75,2);
     spot.position.set(side*2.5,4.05,z+.25);
     spot.target.position.set(side*3.8,2.2,z);
@@ -116,8 +122,8 @@ export async function createRoom({mount,chapters,profile,tr,onSelect,initialInde
     selected=index;overviewMode=false;
     const side=index%2===0?-1:1,z=-3-Math.floor(index/2)*7;
     const tangent=Math.tan(T.MathUtils.degToRad(camera.fov/2));
-    const distance=Math.min(7,Math.max(3.55,4.15/(2*tangent*Math.max(.55,camera.aspect)*.82)));
-    dest.set(side*(3.865-distance),2.25,z+.12);destLook.set(side*3.865,2.25,z);
+    const distance=Math.min(7.4,Math.max(4.7,4.2/(2*tangent*Math.max(.55,camera.aspect)*.82)+.75));
+    dest.set(side*(3.865-distance),2.35,z+.55);destLook.set(side*3.22,2.03,z);
     orient(immediate);
   }
   function overview(){
