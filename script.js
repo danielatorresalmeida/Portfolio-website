@@ -653,6 +653,7 @@ projectFilterButtons.forEach((button) => button.addEventListener("click", () => 
   selectProjectFilter(button.dataset.projectFilter);
 }));
 selectProjectFilter("all");
+document.querySelector("#projects .project-explorer")?.removeAttribute("hidden");
 
 langToggle?.addEventListener("click", () => {
   applyTranslations(currentLanguage === LANG_PT ? LANG_EN : LANG_PT);
