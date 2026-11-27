@@ -123,10 +123,27 @@ export function renderGallery({chapters,profile,lang,el,link,tr}){
     prev.disabled=selected===0;next.disabled=selected===chapters.length-1;
     for(const b of selector.children)b.setAttribute('aria-pressed',String(Number(b.dataset.index)===selected));
     caption.replaceChildren(el('h3',tr(...chapter.title)),el('p',tr(...chapter.intro)));
-    const open=link(tr('Explore this chapter ↓','Explorar este capítulo ↓'),'#'+chapter.id);
-    open.className='primary';
-    open.addEventListener('click',()=>{host.open=false;requestAnimationFrame(()=>{const title=document.getElementById(chapter.id+'-title');if(title){title.tabIndex=-1;title.focus({preventScroll:true});title.closest('section').scrollIntoView({block:'start'})}})});
-    caption.append(open);
+    const actions=el('div',null,'gallery-controls');
+    function destination(label,id){
+      const a=link(label,'#'+id);
+      a.className='primary';
+      a.addEventListener('click',async(event)=>{
+        event.preventDefault();
+        if(document.fullscreenElement===host){try{await document.exitFullscreen()}catch{}}
+        host.open=false;
+        const section=document.getElementById(id);
+        const heading=document.getElementById(id+'-title');
+        if(section&&heading){
+          history.replaceState(null,'','#'+id);
+          heading.tabIndex=-1;
+          requestAnimationFrame(()=>{heading.focus({preventScroll:true});section.scrollIntoView({block:'start'})});
+        }
+      });
+      return a;
+    }
+    actions.append(destination(tr('Explore this chapter ↓','Explorar este capítulo ↓'),chapter.id));
+    if(['logic','interaction','backend'].includes(chapter.id))actions.append(destination(tr('Try the interactive exhibit ↓','Experimentar a demonstração ↓'),chapter.id+'-exhibit'));
+    caption.append(actions);
   }
   function choose(index){selected=Math.max(0,Math.min(chapters.length-1,index));paint();isOverview=false;overview.textContent=tr('View the corridor','Ver o corredor');if(room){room.focus(selected);roomStatus.textContent=tr('Select an installation or use the chapter controls to move.','Seleciona uma instalação ou usa os controlos dos capítulos para te moveres.')}}
   chapters.forEach((chapter,i)=>{
