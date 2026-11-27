@@ -48,6 +48,7 @@ export const profile = {
     opus: {
       name: 'OPUS — Classical Music Library',
       repo: 'https://github.com/danielatorresalmeida/opus-laravel',
+      overview: 'https://danielatorresalmeida.github.io/Portfolio-website/projects/opus/',
       demo: null,
       stack: ['PHP', 'Laravel', 'MySQL', 'Blade', 'Open Opus API'],
       status: l('Completed · November 2026 · CESAE Digital', 'Concluído · novembro de 2026 · CESAE Digital'),
