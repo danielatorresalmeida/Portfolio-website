@@ -200,7 +200,7 @@ const TRANSLATIONS = {
   "recent.tasks.status": "Published · CESAE Digital · November 2026",
   "recent.tasks.title": "Intelligent Task Manager",
   "recent.tasks.subtitle": "Interactive JavaScript web app",
-  "recent.tasks.description": "A browser-based task manager with deadlines, status filters, localStorage, light/dark themes and weather data from the Open-Meteo API.",
+  "recent.tasks.description": "A browser-based task manager with deadlines, status filters, browser storage, light/dark themes and weather data from the Open-Meteo API.",
   "recent.tasks.note": "The demo is live. Sign-in is simulated, and tasks are saved only in the user's browser.",
   "recent.tasks.live": "Open live demo"
 },
@@ -358,7 +358,7 @@ const TRANSLATIONS = {
   "recent.tasks.status": "Publicado · CESAE Digital · novembro de 2026",
   "recent.tasks.title": "Gestor de Tarefas Inteligente",
   "recent.tasks.subtitle": "Aplicação web interativa em JavaScript",
-  "recent.tasks.description": "Um gestor de tarefas no navegador, com prazos, filtros por estado, localStorage, temas claro/escuro e dados meteorológicos da API Open-Meteo.",
+  "recent.tasks.description": "Um gestor de tarefas no navegador, com prazos, filtros por estado, armazenamento local, temas claro/escuro e dados meteorológicos da API Open-Meteo.",
   "recent.tasks.note": "A demonstração está online. O início de sessão é simulado e as tarefas ficam guardadas apenas no navegador.",
   "recent.tasks.live": "Abrir demonstração"
 }
