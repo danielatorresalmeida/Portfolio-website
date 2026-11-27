@@ -9,21 +9,24 @@
 <script type="module" src="./journey.mjs"></script>
 </head>
 <body>
-<a class="skip" href="#content">Skip to content</a>
+<a class="skip" href="#content" data-en="Skip to content" data-pt="Saltar para o conteúdo">Skip to content</a>
 <header class="wrap top">
 <a href="../home/" class="brand">TORRES ALMEIDA<span>.</span></a>
 <nav aria-label="Portfolio"><a href="../home/#projects" data-en="Projects" data-pt="Projetos">Projects</a> <a href="../resume-site-only/" data-en="CV" data-pt="CV">CV</a></nav>
 <div class="controls"><button id="language" type="button" aria-label="Switch to Portuguese">PT</button><button id="theme" type="button" aria-label="Toggle dark theme" aria-pressed="false">◐</button></div>
 </header>
 <main id="content" class="wrap">
-<section class="hero">
+<section class="hero"><div class="hero-copy">
 <p class="eyebrow" data-en="THE DEVELOPER'S JOURNEY" data-pt="O PERCURSO EM SOFTWARE DEVELOPMENT">THE DEVELOPER'S JOURNEY</p>
-<h1 data-en="Learning by building." data-pt="Aprender a construir.">Learning by building.</h1>
+<h1 data-en="Learning by building." data-pt="Aprender através dos projetos.">Learning by building.</h1>
 <p class="lead" data-en="From music education to software development. Explore the projects that connect programming fundamentals, interfaces, data and complete applications." data-pt="Do ensino da música ao desenvolvimento de software. Explora os projetos que ligam fundamentos de programação, interfaces, dados e aplicações completas.">From music education to software development. Explore the projects that connect programming fundamentals, interfaces, data and complete applications.</p>
 <a class="primary" href="#chapters" data-en="Explore the chapters ↓" data-pt="Explorar os capítulos ↓">Explore the chapters ↓</a>
+</div>
+<nav id="journey-map" class="journey-map" aria-label="Journey map" hidden></nav>
 </section>
 <section id="chapters" aria-labelledby="chapters-title">
 <div class="section-head"><h2 id="chapters-title" data-en="Six chapters. An ongoing journey." data-pt="Seis capítulos. Um percurso em evolução.">Six chapters. An ongoing journey.</h2><p data-en="A thematic journey, not a strict timeline." data-pt="Um percurso temático, não uma cronologia rígida.">A thematic journey, not a strict timeline.</p></div>
+<nav id="chapter-nav" class="chapter-nav" aria-label="Chapter navigation" hidden></nav>
 <div id="chapter-list"><p data-en="Explore my projects in the main portfolio." data-pt="Explora os meus projetos no portefólio principal.">Explore my projects in the main portfolio.</p><a href="../home/#projects">Projects / Projetos</a></div>
 </section>
 </main>
