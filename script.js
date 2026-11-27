@@ -71,7 +71,7 @@ const TRANSLATIONS = {
   "coreStack.note": "Core technologies are demonstrated in selected projects. Additional experience is listed separately; no arbitrary proficiency scores.",
   "coreStack.frontend.title": "Core · Front-End",
   "projects.heading": "Selected projects",
-  "projects.intro": "Four projects showing full-stack implementation, front-end quality and programming fundamentals. Technical details and known limitations are documented in their repositories.",
+  "projects.intro": "Recent Laravel and JavaScript projects, followed by four more examples of full-stack development, front-end quality and programming fundamentals.",
   "projects.portfolio.status": "Published portfolio",
   "projects.portfolio.demonstrates": "Semantic HTML, accessible interaction and frontend quality workflows.",
   "figma.heading": "UI/UX as a development complement",
@@ -189,7 +189,20 @@ const TRANSLATIONS = {
   "experience.llm.organisation": "Remote",
   "projects.portfolio.demoLabel": "Live site",
   "projects.todo.demoLabel": "Open demo · sign-in required for tasks",
-  "training.completed.description": "350h · Completed Jul 2026. Java and Java web development, algorithms, C/C++ fundamentals, SQL, database access, software engineering, development methodologies and programming projects."
+  "training.completed.description": "350h · Completed Jul 2026. Java and Java web development, algorithms, C/C++ fundamentals, SQL, database access, software engineering, development methodologies and programming projects.",
+  "recent.heading": "New work · 2026",
+  "recent.opus.status": "Completed · CESAE Digital · November 2026",
+  "recent.opus.subtitle": "Classical Music Library",
+  "recent.opus.description": "A Laravel and MySQL catalogue of composers and works, with searches, filters, favourites, role-based permissions, PDF scores and selective Open Opus API imports.",
+  "recent.opus.note": "The project overview and source code are public; the interactive Laravel application is not yet deployed.",
+  "recent.opus.caseStudy": "View project",
+  "recent.source": "Source code",
+  "recent.tasks.status": "Published · CESAE Digital · November 2026",
+  "recent.tasks.title": "Intelligent Task Manager",
+  "recent.tasks.subtitle": "Interactive JavaScript web app",
+  "recent.tasks.description": "A browser-based task manager with deadlines, status filters, browser storage, light/dark themes and weather data from the Open-Meteo API.",
+  "recent.tasks.note": "The demo is live. Sign-in is simulated, and tasks are saved only in the user's browser.",
+  "recent.tasks.live": "Open live demo"
 },
   [LANG_PT]: {
   "nav.projects": "Projetos",
@@ -216,7 +229,7 @@ const TRANSLATIONS = {
   "coreStack.note": "As tecnologias principais são demonstradas nos projetos selecionados. A experiência adicional aparece separadamente, sem níveis arbitrários.",
   "coreStack.frontend.title": "Principais · Front-End",
   "projects.heading": "Projetos selecionados",
-  "projects.intro": "Quatro projetos que mostram implementação Full-Stack, qualidade frontend e fundamentos de programação. Os detalhes técnicos e limitações conhecidas estão documentados nos repositórios.",
+  "projects.intro": "Projetos recentes em Laravel e JavaScript, seguidos de mais quatro exemplos de desenvolvimento Full-Stack, qualidade frontend e fundamentos de programação.",
   "projects.portfolio.status": "Portfolio publicado",
   "projects.portfolio.demonstrates": "HTML semântico, interação acessível e validação de qualidade frontend.",
   "figma.heading": "UI/UX como complemento ao desenvolvimento",
@@ -334,7 +347,20 @@ const TRANSLATIONS = {
   "experience.llm.organisation": "Remoto",
   "projects.portfolio.demoLabel": "Ver website",
   "projects.todo.demoLabel": "Abrir demo · tarefas requerem autenticação",
-  "training.completed.description": "350h · Concluído em jul 2026. Java e aplicações web em Java, algoritmos, fundamentos de C/C++, SQL, acesso a bases de dados, engenharia de software, metodologias de desenvolvimento e projetos de programação."
+  "training.completed.description": "350h · Concluído em jul 2026. Java e aplicações web em Java, algoritmos, fundamentos de C/C++, SQL, acesso a bases de dados, engenharia de software, metodologias de desenvolvimento e projetos de programação.",
+  "recent.heading": "Novos projetos · 2026",
+  "recent.opus.status": "Concluído · CESAE Digital · novembro de 2026",
+  "recent.opus.subtitle": "Biblioteca de música erudita",
+  "recent.opus.description": "Um catálogo de compositores e obras em Laravel e MySQL, com pesquisa, filtros, favoritos, permissões por perfil, partituras PDF e importação seletiva da API Open Opus.",
+  "recent.opus.note": "A apresentação do projeto e o código estão publicados; a aplicação Laravel interativa ainda não está alojada.",
+  "recent.opus.caseStudy": "Ver projeto",
+  "recent.source": "Código-fonte",
+  "recent.tasks.status": "Publicado · CESAE Digital · novembro de 2026",
+  "recent.tasks.title": "Gestor de Tarefas Inteligente",
+  "recent.tasks.subtitle": "Aplicação web interativa em JavaScript",
+  "recent.tasks.description": "Um gestor de tarefas no navegador, com prazos, filtros por estado, armazenamento local, temas claro/escuro e dados meteorológicos da API Open-Meteo.",
+  "recent.tasks.note": "A demonstração está online. O início de sessão é simulado e as tarefas ficam guardadas apenas no navegador.",
+  "recent.tasks.live": "Abrir demonstração"
 }
 };
 

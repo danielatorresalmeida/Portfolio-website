@@ -2540,7 +2540,115 @@ html[lang="en"] #about .technical-card:first-child h4 {
   }
 }
 
-
-
-
-
+/* Recent academic work (real project emblem; no synthetic application screenshots). */
+.recent-projects {
+  margin: 0 0 30px;
+}
+.recent-projects-heading {
+  font-size: clamp(18px, 2vw, 22px);
+  margin: 0 0 15px;
+  font-weight: 700;
+}
+.recent-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.recent-project {
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--panel);
+  padding: clamp(16px, 2vw, 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.recent-project-opus {
+  background: linear-gradient(135deg, color-mix(in srgb, #2b7359 14%, var(--panel)), var(--panel) 65%);
+}
+.recent-project-tasks {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 9%, var(--panel)), var(--panel) 65%);
+}
+.recent-project-top {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  min-width: 0;
+}
+.recent-project-symbol,
+.recent-project-js {
+  width: 74px;
+  height: 74px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: #183b31;
+  color: #f1d395;
+  font-weight: 800;
+  font-size: 28px;
+  letter-spacing: -1px;
+}
+.recent-project-symbol img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  display: block;
+}
+.recent-project-js {
+  background: #f0d868;
+  color: #252014;
+}
+.recent-project h4 {
+  font-size: clamp(20px, 2.5vw, 27px);
+  line-height: 1.15;
+  margin: 2px 0 4px;
+}
+.recent-project-status {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+  font-weight: 650;
+}
+.recent-project-subtitle {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
+.recent-project > p {
+  margin: 0;
+  line-height: 1.6;
+}
+.recent-project-note {
+  color: var(--muted);
+  font-size: 14px;
+}
+.recent-project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.recent-project-tags span {
+  color: var(--text);
+  font-size: 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 9px;
+}
+.recent-project-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: auto;
+}
+.recent-project-links .btn {
+  text-decoration: none;
+}
+@media (max-width: 760px) {
+  .recent-projects-grid { grid-template-columns: 1fr; }
+  .recent-project { text-align: left; }
+  .recent-project-top { align-items: center; }
+  .recent-project-links { justify-content: flex-start; }
+}
