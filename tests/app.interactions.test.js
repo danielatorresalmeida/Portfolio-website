@@ -205,7 +205,7 @@ describe("portfolio interaction flows", () => {
     expect(main.compareDocumentPosition(projects) & dom.window.Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
     expect(projects.compareDocumentPosition(skills) & dom.window.Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
     expect(document.querySelector('#main-nav a[href="#skills"]').textContent).toBe('Skills');
-    expect(document.querySelectorAll('.hero .cta .btn')).toHaveLength(3);
+    expect(document.querySelectorAll('.hero .cta .btn')).toHaveLength(2);
     const card = document.querySelector('#project-grid .card[data-href]');
     const details = card.querySelector('details.project-more');
     expect(details).not.toBeNull();
