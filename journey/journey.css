@@ -88,3 +88,12 @@ h1{font-size:clamp(3rem,7vw,6.5rem)}
 .room-mount{height:clamp(280px,48vw,600px);width:100%;background:#14231e;overflow:hidden;border-radius:12px;border:1px solid var(--line);margin:1.5rem 0}
 .room-mount canvas{display:block;width:100%;height:100%;cursor:pointer}
 @media(max-width:600px){.room-mount{height:340px}}
+
+/* Native fullscreen is optional; all chapter controls stay within the fullscreen host. */
+.spatial-gallery:fullscreen{width:100%;height:100%;margin:0;padding:clamp(1rem,2vw,2rem);border:0;border-radius:0;background:var(--bg);color:var(--ink);overflow:auto}
+.spatial-gallery:fullscreen .room-mount{height:clamp(220px,62vh,900px);max-width:1600px;margin:1rem auto}
+.spatial-gallery:fullscreen .gallery-mode{justify-content:center}
+.spatial-gallery:fullscreen .room-status{text-align:center}
+.spatial-gallery:fullscreen .gallery-caption{margin:.6rem auto}
+.spatial-gallery:fullscreen .gallery-caption h3{font-size:clamp(1.5rem,3vw,2.5rem)}
+@media(max-width:600px){.spatial-gallery:fullscreen .room-mount{height:45vh}}
