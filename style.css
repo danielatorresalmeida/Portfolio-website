@@ -2652,3 +2652,109 @@ html[lang="en"] #about .technical-card:first-child h4 {
   .recent-project-top { align-items: center; }
   .recent-project-links { justify-content: flex-start; }
 }
+
+/* Portfolio UX: accessible, opt-in project browsing. */
+.project-explorer {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  padding: 0 0 22px;
+}
+.project-filter-controls { min-width: 0; }
+.project-filter-help {
+  margin: 0 0 10px;
+  font-weight: 650;
+  color: var(--text);
+  line-height: 1.4;
+}
+.project-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.project-filter-btn {
+  appearance: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--text);
+  padding: 10px 14px;
+  min-height: 44px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.project-filter-btn[aria-pressed="true"] {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 17%, var(--panel));
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+.project-filter-btn:hover {
+  border-color: var(--accent);
+}
+.project-filter-btn:focus-visible,
+.project-more summary:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+.project-filter-results {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0 0 10px;
+}
+#projects [data-project-kind][hidden] {
+  display: none !important;
+}
+.project-more {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 8px 0;
+}
+.project-more summary {
+  width: fit-content;
+  max-width: 100%;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text);
+  border-radius: 6px;
+  padding: 4px 3px;
+}
+.project-more summary:hover {
+  color: var(--accent);
+}
+.project-more-body {
+  padding: 14px 2px 6px;
+  display: grid;
+  gap: 11px;
+}
+.project-more-body .project-contribution,
+.project-more-body .project-flow,
+.project-more-body .project-proof {
+  text-align: left;
+}
+@media (max-width: 760px) {
+  .project-explorer { align-items: flex-start; text-align: left; }
+  .project-filter-controls { width: 100%; }
+  .project-filter-results { margin: 0; }
+  #projects .grid.cards .card-body,
+  #projects .grid.cards .card-body h3,
+  #projects .grid.cards .project-summary,
+  #projects .grid.cards .project-contribution,
+  #projects .grid.cards .project-proof,
+  #projects .grid.cards .project-flow,
+  #about .profile-story,
+  #courses .container > p,
+  #experience .timeline,
+  #experience .timeline .item,
+  #experience .timeline .what {
+    text-align: left;
+  }
+  #projects .grid.cards .card-body { align-items: stretch; }
+  #projects .grid.cards .tags,
+  #projects .grid.cards .links { justify-content: flex-start; }
+  .project-more summary { text-align: left; }
+}
