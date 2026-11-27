@@ -1,4 +1,4 @@
-// CSS 3D prototype: no WebGL, remote assets or mandatory motion.
+// Accessible CSS gallery with optional WebGL exhibition.
 let selected = 0;
 let cleanupRoom = null;
 export function renderGallery({chapters,profile,lang,el,link,tr}){
@@ -20,11 +20,24 @@ export function renderGallery({chapters,profile,lang,el,link,tr}){
   roomStatus.setAttribute('role','status');
   const roomMount=el('div',null,'room-mount');
   roomMount.hidden=true;
-  mode.append(enter,overview,roomStatus);
+  const fullscreen=el('button',tr('Full screen','Ecrã inteiro'));
+  fullscreen.type='button';fullscreen.hidden=true;
+  const updateFullscreen=()=>{fullscreen.textContent=document.fullscreenElement===host?tr('Exit full screen','Sair do ecrã inteiro'):tr('Full screen','Ecrã inteiro')};
+  fullscreen.addEventListener('click',async()=>{
+    try{
+      if(document.fullscreenElement===host)await document.exitFullscreen();
+      else await host.requestFullscreen();
+    }catch(error){roomStatus.textContent=tr('Full screen is unavailable in this browser.','O ecrã inteiro não está disponível neste navegador.')}
+  });
+  document.addEventListener('fullscreenchange',updateFullscreen);
+  mode.append(enter,overview,fullscreen,roomStatus);
+  let isOverview=false;
   let room=null,loading=false,generation=0;
   function stopRoom(){
     generation++;loading=false;room?.dispose();room=null;
-    roomMount.hidden=true;stage.hidden=false;overview.hidden=true;
+    roomMount.hidden=true;stage.hidden=false;overview.hidden=true;fullscreen.hidden=true;isOverview=false;
+    if(document.fullscreenElement===host)document.exitFullscreen().catch(()=>{});
+    overview.textContent=tr('View the corridor','Ver o corredor');
     enter.disabled=false;enter.setAttribute('aria-pressed','false');
     enter.textContent=tr('Enter the 3D exhibition','Entrar na exposição 3D');
     roomStatus.textContent='';
@@ -41,6 +54,8 @@ export function renderGallery({chapters,profile,lang,el,link,tr}){
       const instance=await createRoom({mount:roomMount,chapters,profile,tr,onSelect:choose,initialIndex:selected});
       if(token!==generation){instance.dispose();return}
       room=instance;loading=false;roomMount.hidden=false;stage.hidden=true;overview.hidden=false;
+      fullscreen.hidden=!document.fullscreenEnabled||typeof host.requestFullscreen!=='function';
+      updateFullscreen();
       enter.setAttribute('aria-pressed','true');
       enter.textContent=tr('Return to simple gallery','Voltar à galeria simples');
       roomStatus.textContent=tr('Select an installation or use the chapter controls to move.','Seleciona uma instalação ou usa os controlos dos capítulos para te moveres.');
@@ -53,10 +68,21 @@ export function renderGallery({chapters,profile,lang,el,link,tr}){
     }
   }
   enter.addEventListener('click',startRoom);
-  overview.addEventListener('click',()=>room?.overview());
+  overview.addEventListener('click',()=>{
+    if(!room)return;
+    isOverview=!isOverview;
+    overview.textContent=isOverview?tr('Return to installation','Voltar à instalação'):tr('View the corridor','Ver o corredor');
+    if(isOverview){
+      room.overview();
+      roomStatus.textContent=tr('Corridor overview · choose an installation to approach it.','Vista do corredor · escolhe uma instalação para te aproximares.');
+    }else{
+      room.focus(selected);
+      roomStatus.textContent=tr('Select an installation or use the chapter controls to move.','Seleciona uma instalação ou usa os controlos dos capítulos para te moveres.');
+    }
+  });
   const onToggle=()=>{if(!host.open)stopRoom()};
   host.addEventListener('toggle',onToggle);
-  cleanupRoom=()=>{host.removeEventListener('toggle',onToggle);stopRoom()};
+  cleanupRoom=()=>{host.removeEventListener('toggle',onToggle);document.removeEventListener('fullscreenchange',updateFullscreen);stopRoom()};
   const controls=el('div',null,'gallery-controls');
   const prev=el('button',tr('← Previous','← Anterior'));
   const next=el('button',tr('Next →','Seguinte →'));
@@ -102,7 +128,7 @@ export function renderGallery({chapters,profile,lang,el,link,tr}){
     open.addEventListener('click',()=>{host.open=false;requestAnimationFrame(()=>{const title=document.getElementById(chapter.id+'-title');if(title){title.tabIndex=-1;title.focus({preventScroll:true});title.closest('section').scrollIntoView({block:'start'})}})});
     caption.append(open);
   }
-  function choose(index){selected=Math.max(0,Math.min(chapters.length-1,index));paint();room?.focus(selected)}
+  function choose(index){selected=Math.max(0,Math.min(chapters.length-1,index));paint();isOverview=false;overview.textContent=tr('View the corridor','Ver o corredor');if(room){room.focus(selected);roomStatus.textContent=tr('Select an installation or use the chapter controls to move.','Seleciona uma instalação ou usa os controlos dos capítulos para te moveres.')}}
   chapters.forEach((chapter,i)=>{
     const b=el('button',String(i+1).padStart(2,'0'));
     b.type='button';b.dataset.index=i;b.setAttribute('aria-label',tr(...chapter.title));
