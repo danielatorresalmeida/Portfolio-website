@@ -1,4 +1,5 @@
 import { profile, localize } from '../resume/data/base.mjs';
+import { renderGallery } from './gallery.mjs';
 
 const chapters = [
   {id:'logic', title:['Thinking in Logic','Pensar em lógica'], intro:['Start with rules, choices and program state.','Começar pelas regras, escolhas e estado do programa.'], projects:['penguin']},
@@ -220,6 +221,8 @@ function render(){
   language.setAttribute('aria-label',tr('Switch to Portuguese','Mudar para inglês'));
   theme.setAttribute('aria-label',tr('Toggle dark theme','Alternar tema escuro'));
   renderNavigation();
+  renderGallery({chapters,profile,lang,el,link,tr});
+  document.querySelector('#spatial-gallery').hidden=false;
   const fragment=document.createDocumentFragment();
   chapters.forEach((chapter,i)=>{
     const section=el('section',null,'chapter');
