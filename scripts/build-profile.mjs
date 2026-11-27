@@ -24,7 +24,7 @@ put('hero.highlights.1.title', 'Current training', 'Formação atual');
 put('hero.highlights.1.text', 'CESAE Digital · Software Developer · 22 September 2026 - 20 May 2027.', 'CESAE Digital · Software Developer · 22 de setembro de 2026 - 20 de maio de 2027.');
 put('hero.highlights.2.title', 'Next step · 2027', 'Próxima etapa · 2027');
 put('hero.highlights.2.text', '400-hour FPCT internship: 1 March–20 May. Available for full-time Junior Developer roles from 21 May 2027.', 'FPCT de 400 horas: 1 de março a 20 de maio. Disponível para funções júnior a tempo inteiro a partir de 21 de maio de 2027.');
-doc.querySelector('.hero .cta').innerHTML = `<a class="btn btn-light" href="#projects" data-i18n="hero.cta.work">View Projects</a><a class="btn btn-ghost" href="./resume-site-only/" ${put('hero.cta.cv', 'View Resume / CV', 'Ver CV')}>View Resume / CV</a><a class="btn btn-ghost" href="#contact" data-i18n="hero.cta.contact">Contact Me</a>`;
+doc.querySelector('.hero .cta').innerHTML = `<a class="btn btn-light" href="#projects" data-i18n="hero.cta.work">View Projects</a><a class="btn btn-ghost" href="./resume-site-only/" ${put('hero.cta.cv', 'View Resume / CV', 'Ver CV')}>View Resume / CV</a>`;
 
 doc.querySelector('#main-nav').innerHTML = `<a href="#projects" ${put('nav.projects', 'Projects', 'Projetos')}>Projects</a><a href="#skills" ${put('nav.skills', 'Skills', 'Competências')}>Skills</a><a href="#about" ${put('nav.about', 'About', 'Sobre mim')}>About</a><a href="#experience" ${put('nav.experience', 'Experience', 'Experiência')}>Experience</a><a href="#contact" ${put('nav.contact', 'Contact', 'Contacto')}>Contact</a>`;
 doc.querySelector('.core-stack').id = 'skills';
