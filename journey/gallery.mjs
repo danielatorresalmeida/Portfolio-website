@@ -1,13 +1,62 @@
 // CSS 3D prototype: no WebGL, remote assets or mandatory motion.
 let selected = 0;
+let cleanupRoom = null;
 export function renderGallery({chapters,profile,lang,el,link,tr}){
   const host=document.querySelector('#spatial-gallery');
   if(!host)return;
   const wasOpen=host.open;
+  cleanupRoom?.();
   host.replaceChildren();
   const summary=el('summary',tr('Enter the spatial gallery','Entrar na galeria espacial'));
   const intro=el('p',tr('Explore one installation at a time. Use the arrows or select any chapter. You can return to the full reading view at any moment.','Explora uma instalação de cada vez. Utiliza as setas ou seleciona um capítulo. Podes voltar à leitura completa a qualquer momento.'));
   const stage=el('div',null,'gallery-stage');
+  const mode=el('div',null,'gallery-mode');
+  const enter=el('button',tr('Enter the 3D exhibition','Entrar na exposição 3D'));
+  enter.type='button';
+  enter.setAttribute('aria-pressed','false');
+  const overview=el('button',tr('View the corridor','Ver o corredor'));
+  overview.type='button';overview.hidden=true;
+  const roomStatus=el('p',null,'room-status');
+  roomStatus.setAttribute('role','status');
+  const roomMount=el('div',null,'room-mount');
+  roomMount.hidden=true;
+  mode.append(enter,overview,roomStatus);
+  let room=null,loading=false,generation=0;
+  function stopRoom(){
+    generation++;loading=false;room?.dispose();room=null;
+    roomMount.hidden=true;stage.hidden=false;overview.hidden=true;
+    enter.disabled=false;enter.setAttribute('aria-pressed','false');
+    enter.textContent=tr('Enter the 3D exhibition','Entrar na exposição 3D');
+    roomStatus.textContent='';
+  }
+  async function startRoom(){
+    if(room||loading){stopRoom();return}
+    loading=true;
+    const token=++generation;
+    enter.textContent=tr('Cancel loading','Cancelar carregamento');
+    roomStatus.textContent=tr('Loading the 3D exhibition…','A carregar a exposição 3D…');
+    try{
+      const {createRoom}=await import('./room.mjs');
+      if(token!==generation)return;
+      const instance=await createRoom({mount:roomMount,chapters,profile,tr,onSelect:choose,initialIndex:selected});
+      if(token!==generation){instance.dispose();return}
+      room=instance;loading=false;roomMount.hidden=false;stage.hidden=true;overview.hidden=false;
+      enter.setAttribute('aria-pressed','true');
+      enter.textContent=tr('Return to simple gallery','Voltar à galeria simples');
+      roomStatus.textContent=tr('Select an installation or use the chapter controls to move.','Seleciona uma instalação ou usa os controlos dos capítulos para te moveres.');
+      room.focus(selected,true);
+    }catch(error){
+      if(token!==generation)return;
+      stopRoom();
+      roomStatus.textContent=tr('3D could not load. The simple gallery is still available.','Não foi possível carregar o 3D. A galeria simples continua disponível.');
+      console.warn('Optional 3D exhibition unavailable',error);
+    }
+  }
+  enter.addEventListener('click',startRoom);
+  overview.addEventListener('click',()=>room?.overview());
+  const onToggle=()=>{if(!host.open)stopRoom()};
+  host.addEventListener('toggle',onToggle);
+  cleanupRoom=()=>{host.removeEventListener('toggle',onToggle);stopRoom()};
   const controls=el('div',null,'gallery-controls');
   const prev=el('button',tr('← Previous','← Anterior'));
   const next=el('button',tr('Next →','Seguinte →'));
@@ -53,7 +102,7 @@ export function renderGallery({chapters,profile,lang,el,link,tr}){
     open.addEventListener('click',()=>{host.open=false;requestAnimationFrame(()=>{const title=document.getElementById(chapter.id+'-title');if(title){title.tabIndex=-1;title.focus({preventScroll:true});title.closest('section').scrollIntoView({block:'start'})}})});
     caption.append(open);
   }
-  function choose(index){selected=Math.max(0,Math.min(chapters.length-1,index));paint()}
+  function choose(index){selected=Math.max(0,Math.min(chapters.length-1,index));paint();room?.focus(selected)}
   chapters.forEach((chapter,i)=>{
     const b=el('button',String(i+1).padStart(2,'0'));
     b.type='button';b.dataset.index=i;b.setAttribute('aria-label',tr(...chapter.title));
@@ -61,7 +110,7 @@ export function renderGallery({chapters,profile,lang,el,link,tr}){
   });
   prev.addEventListener('click',()=>choose(selected-1));next.addEventListener('click',()=>choose(selected+1));
   // Native buttons are the keyboard and touch controls; no intercepted page scrolling.
-  host.append(summary,intro,stage,controls,selector,caption);
+  host.append(summary,intro,mode,stage,roomMount,controls,selector,caption);
   host.open=wasOpen;
   paint();
 }
