@@ -48,7 +48,6 @@ function setStoredValue(key, value) {
 const TRANSLATIONS = {
   [LANG_EN]: {
   "nav.projects": "Projects",
-  "nav.figma": "UI/UX",
   "nav.about": "About",
   "nav.experience": "Experience",
   "nav.contact": "Contact",
@@ -207,12 +206,18 @@ const TRANSLATIONS = {
   "coreStack.backend.item.7": "MySQL",
   "coreStack.backend.item.8": "PostgreSQL",
   "coreStack.backend.item.9": "SQL",
-  "coreStack.additional.item.6": "C# (in training)"
+  "coreStack.additional.item.6": "C# (in training)",
+  "nav.skills": "Skills",
+  "projects.filter.help": "Choose what you want to explore:",
+  "projects.filter.all": "All projects",
+  "projects.filter.published": "Online demos",
+  "projects.filter.source": "Code & case studies",
+  "projects.filter.results": "{count} projects shown",
+  "projects.more": "Technical details"
 },
   [LANG_PT]: {
   "nav.projects": "Projetos",
-  "nav.figma": "UI/UX",
-  "nav.about": "Sobre",
+  "nav.about": "Sobre mim",
   "nav.experience": "Experiência",
   "nav.contact": "Contacto",
   "nav.menu.open": "Abrir navegação",
@@ -370,7 +375,14 @@ const TRANSLATIONS = {
   "coreStack.backend.item.7": "MySQL",
   "coreStack.backend.item.8": "PostgreSQL",
   "coreStack.backend.item.9": "SQL",
-  "coreStack.additional.item.6": "C# (em formação)"
+  "coreStack.additional.item.6": "C# (em formação)",
+  "nav.skills": "Competências",
+  "projects.filter.help": "Escolhe o tipo de projetos que queres explorar:",
+  "projects.filter.all": "Todos os projetos",
+  "projects.filter.published": "Demonstrações online",
+  "projects.filter.source": "Código e estudos de caso",
+  "projects.filter.results": "A mostrar {count} projetos",
+  "projects.more": "Detalhes técnicos"
 }
 };
 
