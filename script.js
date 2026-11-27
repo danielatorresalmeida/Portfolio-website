@@ -624,7 +624,35 @@ function applyTranslations(language) {
 
   setThemeToggleAria(document.documentElement.getAttribute("data-theme") || "dark");
   applyOrphanControl();
+  updateProjectFilterResults();
 }
+
+// Discover projects by publication status without hiding anything when JS is unavailable.
+const projectFilterButtons = [...document.querySelectorAll("#projects [data-project-filter]")];
+const projectFilterCards = [...document.querySelectorAll("#projects [data-project-kind]")];
+
+function updateProjectFilterResults() {
+  const result = document.getElementById("project-filter-results");
+  if (!result) return;
+  const count = projectFilterCards.filter((card) => !card.hidden).length;
+  result.textContent = t("projects.filter.results").replace("{count}", String(count));
+}
+
+function selectProjectFilter(filter) {
+  if (!["all", "published", "source"].includes(filter)) return;
+  projectFilterButtons.forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.dataset.projectFilter === filter));
+  });
+  projectFilterCards.forEach((card) => {
+    card.hidden = filter !== "all" && card.dataset.projectKind !== filter;
+  });
+  updateProjectFilterResults();
+}
+
+projectFilterButtons.forEach((button) => button.addEventListener("click", () => {
+  selectProjectFilter(button.dataset.projectFilter);
+}));
+selectProjectFilter("all");
 
 langToggle?.addEventListener("click", () => {
   applyTranslations(currentLanguage === LANG_PT ? LANG_EN : LANG_PT);
