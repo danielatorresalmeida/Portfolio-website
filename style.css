@@ -2654,6 +2654,7 @@ html[lang="en"] #about .technical-card:first-child h4 {
 }
 
 /* Portfolio UX: accessible, opt-in project browsing. */
+#projects .project-explorer[hidden] { display: none !important; }
 .project-explorer {
   display: flex;
   align-items: end;
